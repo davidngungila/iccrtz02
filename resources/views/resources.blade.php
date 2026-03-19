@@ -262,7 +262,7 @@
                             Video <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-slate-600">Library</span>
                         </h2>
                         <p class="text-xl text-slate-600 max-w-2xl mx-auto">
-                            Access our collection of teaching videos, worship sessions, and training materials
+                            Watch our collection of teaching videos, worship sessions, and training materials directly on our site
                         </p>
                     </div>
                     
@@ -281,7 +281,7 @@
                                     <i class="ph ph-video mr-1"></i> 450+ videos
                                 </div>
                                 <span class="inline-flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg font-semibold">
-                                    <span>Watch Now</span>
+                                    <span>Visit Channel</span>
                                     <i class="ph ph-arrow-right"></i>
                                 </span>
                             </a>
@@ -297,7 +297,7 @@
                                     <i class="ph ph-video mr-1"></i> 230+ videos
                                 </div>
                                 <span class="inline-flex items-center gap-2 px-4 py-2 bg-slate-600 text-white rounded-lg font-semibold">
-                                    <span>Watch Now</span>
+                                    <span>Visit Channel</span>
                                     <i class="ph ph-arrow-right"></i>
                                 </span>
                             </a>
@@ -313,124 +313,251 @@
                                     <i class="ph ph-video mr-1"></i> 180+ videos
                                 </div>
                                 <span class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg font-semibold">
-                                    <span>Watch Now</span>
+                                    <span>Visit Channel</span>
                                     <i class="ph ph-arrow-right"></i>
                                 </span>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Praise Team Songs -->
+                    <!-- Praise Team Songs with Video Preview -->
                     <div>
-                        <h3 class="text-2xl font-bold text-slate-900 text-center mb-8">Praise Team Songs</h3>
-                        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                            <a href="https://www.youtube.com/watch?v=IHn_YFij38M&t=4208s" target="_blank" class="group bg-white rounded-2xl p-6 shadow-lg border-2 border-red-100 hover:shadow-2xl hover:border-red-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
-                                <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                                    <i class="ph ph-music-notes text-white text-2xl"></i>
+                        <h3 class="text-2xl font-bold text-slate-900 text-center mb-8">Praise Team Songs - Watch Now</h3>
+                        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                            <!-- Video 1 -->
+                            <div class="group bg-white rounded-2xl shadow-lg border-2 border-red-100 overflow-hidden hover:shadow-2xl hover:border-red-400 transition-all duration-300">
+                                <div class="relative aspect-video bg-slate-900">
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/IHn_YFij38M?start=4208" 
+                                        title="Karismatiki Katoliki - Umaja wa vyuu"
+                                        class="absolute inset-0 w-full h-full"
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                    </iframe>
                                 </div>
-                                <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-red-600 transition">Karismatiki Katoliki</h4>
-                                <p class="text-sm text-slate-600 mb-3">Umaja wa vyuu</p>
-                                <span class="inline-flex items-center gap-1 text-red-600 text-sm font-semibold">
-                                    <i class="ph ph-play"></i>
-                                    <span>Watch</span>
-                                </span>
-                            </a>
+                                <div class="p-6">
+                                    <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-red-600 transition">Karismatiki Katoliki</h4>
+                                    <p class="text-slate-600 mb-4">Umaja wa vyuu - University ministry worship</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-slate-500">
+                                            <i class="ph ph-clock mr-1"></i> Worship Session
+                                        </span>
+                                        <a href="https://www.youtube.com/watch?v=IHn_YFij38M&t=4208s" target="_blank" class="inline-flex items-center gap-1 text-red-600 text-sm font-semibold hover:text-red-700">
+                                            <i class="ph ph-youtube-logo"></i>
+                                            <span>YouTube</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
 
-                            <a href="https://www.youtube.com/watch?v=g6iF-vOAbPk" target="_blank" class="group bg-white rounded-2xl p-6 shadow-lg border-2 border-slate-100 hover:shadow-2xl hover:border-slate-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
-                                <div class="w-16 h-16 bg-gradient-to-br from-slate-500 to-slate-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                                    <i class="ph ph-music-notes text-white text-2xl"></i>
+                            <!-- Video 2 -->
+                            <div class="group bg-white rounded-2xl shadow-lg border-2 border-slate-100 overflow-hidden hover:shadow-2xl hover:border-slate-400 transition-all duration-300">
+                                <div class="relative aspect-video bg-slate-900">
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/g6iF-vOAbPk" 
+                                        title="Karismatiki Katoliki - Worship Session"
+                                        class="absolute inset-0 w-full h-full"
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                    </iframe>
                                 </div>
-                                <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-slate-600 transition">Karismatiki Katoliki</h4>
-                                <p class="text-sm text-slate-600 mb-3">Worship session</p>
-                                <span class="inline-flex items-center gap-1 text-slate-600 text-sm font-semibold">
-                                    <i class="ph ph-play"></i>
-                                    <span>Watch</span>
-                                </span>
-                            </a>
+                                <div class="p-6">
+                                    <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-slate-600 transition">Karismatiki Katoliki</h4>
+                                    <p class="text-slate-600 mb-4">Worship session with praise team</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-slate-500">
+                                            <i class="ph ph-clock mr-1"></i> Live Performance
+                                        </span>
+                                        <a href="https://www.youtube.com/watch?v=g6iF-vOAbPk" target="_blank" class="inline-flex items-center gap-1 text-slate-600 text-sm font-semibold hover:text-slate-700">
+                                            <i class="ph ph-youtube-logo"></i>
+                                            <span>YouTube</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
 
-                            <a href="https://www.youtube.com/watch?v=P8E_GW2nY9g" target="_blank" class="group bg-white rounded-2xl p-6 shadow-lg border-2 border-green-100 hover:shadow-2xl hover:border-green-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
-                                <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                                    <i class="ph ph-music-notes text-white text-2xl"></i>
+                            <!-- Video 3 -->
+                            <div class="group bg-white rounded-2xl shadow-lg border-2 border-green-100 overflow-hidden hover:shadow-2xl hover:border-green-400 transition-all duration-300">
+                                <div class="relative aspect-video bg-slate-900">
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/P8E_GW2nY9g" 
+                                        title="Karismatiki Katoliki - Praise & Worship"
+                                        class="absolute inset-0 w-full h-full"
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                    </iframe>
                                 </div>
-                                <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-green-600 transition">Karismatiki Katoliki</h4>
-                                <p class="text-sm text-slate-600 mb-3">Praise & worship</p>
-                                <span class="inline-flex items-center gap-1 text-green-600 text-sm font-semibold">
-                                    <i class="ph ph-play"></i>
-                                    <span>Watch</span>
-                                </span>
-                            </a>
+                                <div class="p-6">
+                                    <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-green-600 transition">Karismatiki Katoliki</h4>
+                                    <p class="text-slate-600 mb-4">Praise & worship gathering</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-slate-500">
+                                            <i class="ph ph-clock mr-1"></i> Worship Time
+                                        </span>
+                                        <a href="https://www.youtube.com/watch?v=P8E_GW2nY9g" target="_blank" class="inline-flex items-center gap-1 text-green-600 text-sm font-semibold hover:text-green-700">
+                                            <i class="ph ph-youtube-logo"></i>
+                                            <span>YouTube</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
 
-                            <a href="https://www.youtube.com/watch?v=r6Di764gHQ4" target="_blank" class="group bg-white rounded-2xl p-6 shadow-lg border-2 border-yellow-100 hover:shadow-2xl hover:border-yellow-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
-                                <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                                    <i class="ph ph-music-notes text-white text-2xl"></i>
+                            <!-- Video 4 -->
+                            <div class="group bg-white rounded-2xl shadow-lg border-2 border-yellow-100 overflow-hidden hover:shadow-2xl hover:border-yellow-400 transition-all duration-300">
+                                <div class="relative aspect-video bg-slate-900">
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/r6Di764gHQ4" 
+                                        title="Lord Grace Team - Worship Performance"
+                                        class="absolute inset-0 w-full h-full"
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                    </iframe>
                                 </div>
-                                <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-yellow-600 transition">Lord Grace Team</h4>
-                                <p class="text-sm text-slate-600 mb-3">Worship performance</p>
-                                <span class="inline-flex items-center gap-1 text-yellow-600 text-sm font-semibold">
-                                    <i class="ph ph-play"></i>
-                                    <span>Watch</span>
-                                </span>
-                            </a>
+                                <div class="p-6">
+                                    <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-yellow-600 transition">Lord Grace Team</h4>
+                                    <p class="text-slate-600 mb-4">Professional worship performance</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-slate-500">
+                                            <i class="ph ph-clock mr-1"></i> Performance
+                                        </span>
+                                        <a href="https://www.youtube.com/watch?v=r6Di764gHQ4" target="_blank" class="inline-flex items-center gap-1 text-yellow-600 text-sm font-semibold hover:text-yellow-700">
+                                            <i class="ph ph-youtube-logo"></i>
+                                            <span>YouTube</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
 
-                            <a href="https://www.youtube.com/watch?v=vHjhAFHVRzA" target="_blank" class="group bg-white rounded-2xl p-6 shadow-lg border-2 border-purple-100 hover:shadow-2xl hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
-                                <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                                    <i class="ph ph-music-notes text-white text-2xl"></i>
+                            <!-- Video 5 -->
+                            <div class="group bg-white rounded-2xl shadow-lg border-2 border-purple-100 overflow-hidden hover:shadow-2xl hover:border-purple-400 transition-all duration-300">
+                                <div class="relative aspect-video bg-slate-900">
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/vHjhAFHVRzA" 
+                                        title="Lord Grace Team - Praise Session"
+                                        class="absolute inset-0 w-full h-full"
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                    </iframe>
                                 </div>
-                                <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-purple-600 transition">Lord Grace Team</h4>
-                                <p class="text-sm text-slate-600 mb-3">Praise session</p>
-                                <span class="inline-flex items-center gap-1 text-purple-600 text-sm font-semibold">
-                                    <i class="ph ph-play"></i>
-                                    <span>Watch</span>
-                                </span>
-                            </a>
+                                <div class="p-6">
+                                    <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-purple-600 transition">Lord Grace Team</h4>
+                                    <p class="text-slate-600 mb-4">Energetic praise session</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-slate-500">
+                                            <i class="ph ph-clock mr-1"></i> Praise Time
+                                        </span>
+                                        <a href="https://www.youtube.com/watch?v=vHjhAFHVRzA" target="_blank" class="inline-flex items-center gap-1 text-purple-600 text-sm font-semibold hover:text-purple-700">
+                                            <i class="ph ph-youtube-logo"></i>
+                                            <span>YouTube</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
 
-                            <a href="https://www.youtube.com/watch?v=TOd2fC_6EWY" target="_blank" class="group bg-white rounded-2xl p-6 shadow-lg border-2 border-blue-100 hover:shadow-2xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
-                                <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                                    <i class="ph ph-music-notes text-white text-2xl"></i>
+                            <!-- Video 6 -->
+                            <div class="group bg-white rounded-2xl shadow-lg border-2 border-blue-100 overflow-hidden hover:shadow-2xl hover:border-blue-400 transition-all duration-300">
+                                <div class="relative aspect-video bg-slate-900">
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/TOd2fC_6EWY" 
+                                        title="Lord Grace Team - Live Worship"
+                                        class="absolute inset-0 w-full h-full"
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                    </iframe>
                                 </div>
-                                <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition">Lord Grace Team</h4>
-                                <p class="text-sm text-slate-600 mb-3">Live worship</p>
-                                <span class="inline-flex items-center gap-1 text-blue-600 text-sm font-semibold">
-                                    <i class="ph ph-play"></i>
-                                    <span>Watch</span>
-                                </span>
-                            </a>
+                                <div class="p-6">
+                                    <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition">Lord Grace Team</h4>
+                                    <p class="text-slate-600 mb-4">Live worship experience</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-slate-500">
+                                            <i class="ph ph-clock mr-1"></i> Live Session
+                                        </span>
+                                        <a href="https://www.youtube.com/watch?v=TOd2fC_6EWY" target="_blank" class="inline-flex items-center gap-1 text-blue-600 text-sm font-semibold hover:text-blue-700">
+                                            <i class="ph ph-youtube-logo"></i>
+                                            <span>YouTube</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                            <a href="https://www.youtube.com/watch?v=s-U8mJMScxQ" target="_blank" class="group bg-white rounded-2xl p-6 shadow-lg border-2 border-red-100 hover:shadow-2xl hover:border-red-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
-                                <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                                    <i class="ph ph-music-notes text-white text-2xl"></i>
+                        <!-- Additional Videos Grid -->
+                        <div class="mt-8">
+                            <h4 class="text-xl font-bold text-slate-900 text-center mb-6">More Worship Videos</h4>
+                            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                                <!-- Video 7 -->
+                                <div class="group bg-white rounded-2xl shadow-lg border-2 border-red-100 overflow-hidden hover:shadow-2xl hover:border-red-400 transition-all duration-300">
+                                    <div class="relative aspect-video bg-slate-900">
+                                        <iframe 
+                                            src="https://www.youtube.com/embed/s-U8mJMScxQ" 
+                                            title="Lord Grace Team - Praise & Worship"
+                                            class="absolute inset-0 w-full h-full"
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                    <div class="p-4">
+                                        <h5 class="text-lg font-bold text-slate-900 mb-1 group-hover:text-red-600 transition">Lord Grace Team</h5>
+                                        <p class="text-sm text-slate-600">Praise & worship</p>
+                                    </div>
                                 </div>
-                                <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-red-600 transition">Lord Grace Team</h4>
-                                <p class="text-sm text-slate-600 mb-3">Praise & worship</p>
-                                <span class="inline-flex items-center gap-1 text-red-600 text-sm font-semibold">
-                                    <i class="ph ph-play"></i>
-                                    <span>Watch</span>
-                                </span>
-                            </a>
 
-                            <a href="https://www.youtube.com/watch?v=DJi3nzO5cFM" target="_blank" class="group bg-white rounded-2xl p-6 shadow-lg border-2 border-slate-100 hover:shadow-2xl hover:border-slate-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
-                                <div class="w-16 h-16 bg-gradient-to-br from-slate-500 to-slate-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                                    <i class="ph ph-music-notes text-white text-2xl"></i>
+                                <!-- Video 8 -->
+                                <div class="group bg-white rounded-2xl shadow-lg border-2 border-slate-100 overflow-hidden hover:shadow-2xl hover:border-slate-400 transition-all duration-300">
+                                    <div class="relative aspect-video bg-slate-900">
+                                        <iframe 
+                                            src="https://www.youtube.com/embed/DJi3nzO5cFM" 
+                                            title="Lord Grace Team - Music Ministry"
+                                            class="absolute inset-0 w-full h-full"
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                    <div class="p-4">
+                                        <h5 class="text-lg font-bold text-slate-900 mb-1 group-hover:text-slate-600 transition">Lord Grace Team</h5>
+                                        <p class="text-sm text-slate-600">Music ministry</p>
+                                    </div>
                                 </div>
-                                <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-slate-600 transition">Lord Grace Team</h4>
-                                <p class="text-sm text-slate-600 mb-3">Music ministry</p>
-                                <span class="inline-flex items-center gap-1 text-slate-600 text-sm font-semibold">
-                                    <i class="ph ph-play"></i>
-                                    <span>Watch</span>
-                                </span>
-                            </a>
 
-                            <a href="https://www.youtube.com/watch?v=szGy_XaLbFw" target="_blank" class="group bg-white rounded-2xl p-6 shadow-lg border-2 border-green-100 hover:shadow-2xl hover:border-green-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
-                                <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                                    <i class="ph ph-music-notes text-white text-2xl"></i>
+                                <!-- Video 9 -->
+                                <div class="group bg-white rounded-2xl shadow-lg border-2 border-green-100 overflow-hidden hover:shadow-2xl hover:border-green-400 transition-all duration-300">
+                                    <div class="relative aspect-video bg-slate-900">
+                                        <iframe 
+                                            src="https://www.youtube.com/embed/szGy_XaLbFw" 
+                                            title="Lord Grace Team - Live Performance"
+                                            class="absolute inset-0 w-full h-full"
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                    <div class="p-4">
+                                        <h5 class="text-lg font-bold text-slate-900 mb-1 group-hover:text-green-600 transition">Lord Grace Team</h5>
+                                        <p class="text-sm text-slate-600">Live performance</p>
+                                    </div>
                                 </div>
-                                <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-green-600 transition">Lord Grace Team</h4>
-                                <p class="text-sm text-slate-600 mb-3">Live performance</p>
-                                <span class="inline-flex items-center gap-1 text-green-600 text-sm font-semibold">
-                                    <i class="ph ph-play"></i>
-                                    <span>Watch</span>
-                                </span>
-                            </a>
+
+                                <!-- Load More Button -->
+                                <div class="group bg-white rounded-2xl shadow-lg border-2 border-purple-100 hover:shadow-2xl hover:border-purple-400 transition-all duration-300 flex flex-col items-center justify-center p-8 cursor-pointer">
+                                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                                        <i class="ph ph-plus text-white text-2xl"></i>
+                                    </div>
+                                    <h5 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-purple-600 transition">More Videos</h5>
+                                    <p class="text-sm text-slate-600 text-center">Additional worship sessions and performances</p>
+                                    <span class="inline-flex items-center gap-1 text-purple-600 text-sm font-semibold mt-3">
+                                        <span>Coming Soon</span>
+                                        <i class="ph ph-arrow-right"></i>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
