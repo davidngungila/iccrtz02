@@ -64,7 +64,13 @@
             }
         </style>
     </head>
-    <body class="min-h-screen bg-white text-slate-900 antialiased font-medium" x-data="{ mobileMenuOpen: false }">
+    <body class="min-h-screen bg-white text-slate-900 antialiased font-medium" x-data="{ 
+        mobileMenuOpen: false,
+        selectedRegion: 'all',
+        selectedType: 'all',
+        searchTerm: '',
+        showTimetable: false
+    }">
         @include('components.header')
 
         <main class="pt-24 lg:pt-28">
@@ -84,11 +90,11 @@
                             Find your local community and join thousands of Catholic students growing in faith together.
                         </p>
                         <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-                            <a href="#regions" class="px-8 py-4 bg-white text-slate-900 font-bold rounded-full hover:bg-slate-100 transition-all shadow-xl">
-                                <i class="ph ph-map-pin mr-2"></i> Browse Regions
+                            <a href="#campuses" class="px-8 py-4 bg-white text-slate-900 font-bold rounded-full hover:bg-slate-100 transition-all shadow-xl">
+                                <i class="ph ph-map-pin mr-2"></i> Browse Campuses
                             </a>
-                            <a href="{{ url('join') }}" class="px-8 py-4 bg-slate-700 text-white font-bold rounded-full hover:bg-slate-600 transition-all">
-                                <i class="ph ph-users-three mr-2"></i> Join ICCRTZ
+                            <a href="#timetable" class="px-8 py-4 bg-slate-700 text-white font-bold rounded-full hover:bg-slate-600 transition-all">
+                                <i class="ph ph-clock mr-2"></i> View Timetable
                             </a>
                         </div>
                     </div>
@@ -101,8 +107,8 @@
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                         <div class="bg-white rounded-2xl p-6 text-center shadow-lg border border-slate-100">
                             <i class="ph ph-graduation-cap text-slate-900 text-3xl mb-3"></i>
-                            <div class="text-3xl font-black text-slate-900">50+</div>
-                            <div class="text-sm text-slate-600">Campuses</div>
+                            <div class="text-3xl font-black text-slate-900">52</div>
+                            <div class="text-sm text-slate-600">Registered Campuses</div>
                         </div>
                         <div class="bg-white rounded-2xl p-6 text-center shadow-lg border border-slate-100">
                             <i class="ph ph-church text-slate-900 text-3xl mb-3"></i>
@@ -111,13 +117,144 @@
                         </div>
                         <div class="bg-white rounded-2xl p-6 text-center shadow-lg border border-slate-100">
                             <i class="ph ph-users text-slate-900 text-3xl mb-3"></i>
-                            <div class="text-3xl font-black text-slate-900">8,000+</div>
+                            <div class="text-3xl font-black text-slate-900">8,500+</div>
                             <div class="text-sm text-slate-600">Active Members</div>
                         </div>
                         <div class="bg-white rounded-2xl p-6 text-center shadow-lg border border-slate-100">
                             <i class="ph ph-map-trifold text-slate-900 text-3xl mb-3"></i>
-                            <div class="text-3xl font-black text-slate-900">25+</div>
-                            <div class="text-sm text-slate-600">Regions</div>
+                            <div class="text-3xl font-black text-slate-900">31</div>
+                            <div class="text-sm text-slate-600">Regions Covered</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Filters Section -->
+            <section class="py-8 bg-white border-b border-slate-100">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                        <h3 class="text-lg font-bold text-slate-900 mb-4">Filter Campuses</h3>
+                        <div class="grid gap-4 md:grid-cols-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Search</label>
+                                <div class="relative">
+                                    <i class="ph ph-search absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
+                                    <input type="text" x-model="searchTerm" placeholder="Search campus name..." 
+                                           class="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-slate-900 focus:border-transparent">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Region</label>
+                                <select x-model="selectedRegion" class="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-slate-900 focus:border-transparent">
+                                    <option value="all">All Regions</option>
+                                    <option value="dar-es-salaam">Dar es Salaam</option>
+                                    <option value="arusha">Arusha</option>
+                                    <option value="kilimanjaro">Kilimanjaro</option>
+                                    <option value="mwanza">Mwanza</option>
+                                    <option value="dodoma">Dodoma</option>
+                                    <option value="mbeya">Mbeya</option>
+                                    <option value="tanga">Tanga</option>
+                                    <option value="morogoro">Morogoro</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Type</label>
+                                <select x-model="selectedType" class="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-slate-900 focus:border-transparent">
+                                    <option value="all">All Types</option>
+                                    <option value="university">University</option>
+                                    <option value="college">College</option>
+                                    <option value="institute">Institute</option>
+                                    <option value="technical">Technical</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Quick Actions</label>
+                                <button @click="showTimetable = !showTimetable" 
+                                        class="w-full px-4 py-2 bg-slate-900 text-white rounded-xl hover:bg-slate-800 transition-all">
+                                    <i class="ph ph-clock mr-2"></i> View Timetable
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Meeting Timetable -->
+            <section x-show="showTimetable" x-transition class="py-8 bg-slate-50">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="bg-white rounded-2xl shadow-lg p-8 border border-slate-100">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-6">Weekly Meeting Timetable</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-50">
+                                        <th class="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Day</th>
+                                        <th class="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Time</th>
+                                        <th class="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Campus</th>
+                                        <th class="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Location</th>
+                                        <th class="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Type</th>
+                                        <th class="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Contact</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="hover:bg-slate-50">
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-900 font-semibold">Monday</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">6:00 PM</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-900">University of Dar es Salaam</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">Chapel, Main Campus</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm"><span class="px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs">Worship</span></td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">+255 754 123 456</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50">
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-900 font-semibold">Tuesday</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">5:30 PM</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-900">Ardhi University</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">Room 201, Admin Block</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm"><span class="px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs">Bible Study</span></td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">+255 754 234 567</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50">
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-900 font-semibold">Wednesday</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">6:00 PM</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-900">St. Augustine University</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">Student Center</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm"><span class="px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs">Prayer</span></td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">+255 754 345 678</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50">
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-900 font-semibold">Thursday</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">5:00 PM</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-900">University of Dodoma</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">Lecture Hall 3</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm"><span class="px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs">Fellowship</span></td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">+255 754 456 789</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50">
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-900 font-semibold">Friday</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">6:30 PM</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-900">Mount Meru University</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">Chapel</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm"><span class="px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs">Praise & Worship</span></td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">+255 754 567 890</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50">
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-900 font-semibold">Saturday</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">10:00 AM</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-900">Mwalimu Nyerere Memorial Academy</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">Main Hall</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm"><span class="px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs">Leadership Training</span></td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">+255 754 678 901</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50">
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-900 font-semibold">Sunday</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">4:00 PM</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-900">St. Mary University</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">University Chapel</td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm"><span class="px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs">Mass & Fellowship</span></td>
+                                        <td class="border border-slate-200 px-4 py-3 text-sm text-slate-600">+255 754 789 012</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

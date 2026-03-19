@@ -42,6 +42,11 @@ Route::get('/teachings', function () {
     return view('teachings');
 });
 
+// Calendar
+Route::get('/calendar', function () {
+    return view('calendar');
+});
+
 // Additional Routes for Header Links
 Route::get('/about/history', function () {
     return view('about.history');
