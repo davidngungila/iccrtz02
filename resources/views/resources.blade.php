@@ -1,10 +1,78 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Resources - ICCRTZ Tanzania</title>
+        <meta name="description" content="Download resources, guides, and materials from ICCRTZ Tanzania - Prayer guides, ministry resources, leadership materials">
+        <meta name="keywords" content="ICCRTZ Tanzania resources, downloads, guides, prayer, ministry materials, leadership, Catholic formation">
 
-@section('title', 'Resources - ICCRTZ Tanzania')
-@section('description', 'Download resources, guides, and materials from ICCRTZ Tanzania - Prayer guides, ministry resources, leadership materials')
-@section('keywords', 'ICCRTZ Tanzania resources, downloads, guides, prayer, ministry materials, leadership, Catholic formation')
+        <link rel="icon" href="{{ asset('logo.png') }}" type="image/png">
 
-@section('content')
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="https://unpkg.com/@phosphor-icons/web"></script>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <style>
+            body { font-family: 'Manrope', sans-serif; }
+            .font-serif { font-family: 'Playfair Display', serif; }
+            .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px); }
+            [x-cloak] { display: none !important; }
+            .nav-link { font-size: 1.05rem; position: relative; }
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: 1.5rem;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
+                transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            }
+            .nav-link:hover::after {
+                width: 100%;
+                animation: borderSlide 1s infinite linear;
+                background: linear-gradient(90deg, #0f172a 25%, #1e293b 25%, #1e293b 50%, #0f172a 50%, #0f172a 75%, #1e293b 75%);
+                background-size: 200% 100%;
+            }
+            @keyframes borderSlide {
+                0% { background-position: 100% 0; }
+                100% { background-position: -100% 0; }
+            }
+            .group:hover .mega-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+            .mega-menu {
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+                transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            }
+            .nav-border-animate {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, #0f172a, transparent);
+                animation: borderPulse 3s infinite;
+            }
+            @keyframes borderPulse {
+                0%, 100% { opacity: 0.3; transform: scaleX(0.5); }
+                50% { opacity: 1; transform: scaleX(1); }
+            }
+        </style>
+    </head>
+    <body x-data="{ mobileMenuOpen: false }" class="bg-slate-50">
+        @include('components.header')
+
+        <main>
 <!-- Hero Section - Advanced -->
 <section class="relative min-h-[60vh] h-[60vh] max-h-[700px] overflow-hidden">
     <div class="relative h-full bg-gradient-to-br from-slate-900 via-red-800 to-slate-900">
@@ -431,4 +499,26 @@
         </div>
     </div>
 </section>
-@endsection
+</main>
+
+        @include('components.footer')
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Smooth scrolling for anchor links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
