@@ -247,67 +247,17 @@
                                 <textarea rows="3" placeholder="Please specify any dietary restrictions or allergies..." class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-600 focus:border-transparent"></textarea>
                             </div>
 
-                            <!-- Accommodation -->
-                            <div>
-                                <label class="block text-lg font-bold text-slate-900 mb-4">Accommodation (Optional)</label>
-                                <div class="grid gap-4 md:grid-cols-2">
-                                <label class="relative cursor-pointer">
-                                    <input type="radio" name="accommodation" value="sharing" x-model="accommodationType" class="peer sr-only" checked>
-                                    <div class="p-4 border-2 border-slate-200 rounded-xl peer-checked:border-red-600 peer-checked:bg-red-50 hover:bg-slate-50 transition-all">
-                                        <div class="text-center">
-                                            <i class="ph ph-users-three text-2xl mb-2 text-slate-600"></i>
-                                            <div class="font-bold text-slate-900">Sharing Room</div>
-                                            <div class="text-sm text-slate-600">TSh 20,000 (7 nights)</div>
-                                        </div>
-                                    </div>
-                                </label>
-                                <label class="relative cursor-pointer">
-                                    <input type="radio" name="accommodation" value="private" x-model="accommodationType" class="peer sr-only">
-                                    <div class="p-4 border-2 border-slate-200 rounded-xl peer-checked:border-red-600 peer-checked:bg-red-50 hover:bg-slate-50 transition-all">
-                                        <div class="text-center">
-                                            <i class="ph ph-user text-2xl mb-2 text-slate-600"></i>
-                                            <div class="font-bold text-slate-900">Private Room</div>
-                                            <div class="text-sm text-slate-600">TSh 50,000 (7 nights)</div>
-                                        </div>
-                                    </div>
-                                </label>
-                            </div>
-                            </div>
-
                             <!-- Payment Method -->
                             <div>
-                                <label class="block text-lg font-bold text-slate-900 mb-4">Payment Method *</label>
-                                <div class="grid gap-4 md:grid-cols-3">
-                                    <label class="relative cursor-pointer">
-                                        <input type="radio" name="payment" value="mobile" x-model="paymentMethod" class="peer sr-only" checked>
-                                        <div class="p-4 border-2 border-slate-200 rounded-xl peer-checked:border-red-600 peer-checked:bg-red-50 hover:bg-slate-50 transition-all">
-                                            <div class="text-center">
-                                                <i class="ph ph-device-mobile text-2xl mb-2 text-slate-600"></i>
-                                                <div class="font-bold text-slate-900">Mobile Money</div>
-                                                <div class="text-sm text-slate-600">Tigo Pesa, M-Pesa, Airtel</div>
-                                            </div>
-                                        </div>
-                                    </label>
-                                    <label class="relative cursor-pointer">
-                                        <input type="radio" name="payment" value="bank" x-model="paymentMethod" class="peer sr-only">
-                                        <div class="p-4 border-2 border-slate-200 rounded-xl peer-checked:border-red-600 peer-checked:bg-red-50 hover:bg-slate-50 transition-all">
-                                            <div class="text-center">
-                                                <i class="ph ph-bank text-2xl mb-2 text-slate-600"></i>
-                                                <div class="font-bold text-slate-900">Bank Transfer</div>
-                                                <div class="text-sm text-slate-600">Direct deposit</div>
-                                            </div>
-                                        </div>
-                                    </label>
-                                    <label class="relative cursor-pointer">
-                                        <input type="radio" name="payment" value="onsite" x-model="paymentMethod" class="peer sr-only">
-                                        <div class="p-4 border-2 border-slate-200 rounded-xl peer-checked:border-red-600 peer-checked:bg-red-50 hover:bg-slate-50 transition-all">
-                                            <div class="text-center">
-                                                <i class="ph ph-cash-register text-2xl mb-2 text-slate-600"></i>
-                                                <div class="font-bold text-slate-900">On-site Payment</div>
-                                                <div class="text-sm text-slate-600">Pay at venue</div>
-                                            </div>
-                                        </div>
-                                    </label>
+                                <label class="block text-lg font-bold text-slate-900 mb-4">Payment Information</label>
+                                <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                                    <p class="text-slate-600 leading-relaxed">
+                                        Payment details will be provided upon registration confirmation. We accept various payment methods including mobile money, bank transfers, and on-site payments.
+                                    </p>
+                                    <div class="mt-4 flex items-center gap-2 text-sm text-slate-500">
+                                        <i class="ph ph-info"></i>
+                                        <span>You will receive payment instructions via email after registration</span>
+                                    </div>
                                 </div>
                             </div>
 
@@ -389,12 +339,13 @@
                 </div>
             </section>
 
-            <!-- Event Highlights -->
+            <!-- Advanced Impact -->
             <section class="py-20 bg-white">
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="text-center mb-16">
-                        <h2 class="text-3xl font-serif text-slate-900 font-bold mb-4">What to Expect</h2>
-                        <p class="text-lg text-slate-600">Seven days of spiritual renewal and divine encounters</p>
+                        <h2 class="text-4xl font-serif text-slate-900 font-bold mb-4">Advanced Impact</h2>
+                        <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">Innovative Solutions for Lasting Change</p>
+                        <p class="text-lg text-slate-600 mt-4">Leveraging cutting-edge technology and data-driven approaches to maximize our impact and create sustainable transformation across Tanzania.</p>
                     </div>
 
                     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -425,6 +376,29 @@
                             </div>
                             <h3 class="font-bold text-slate-900 mb-2">Fellowship</h3>
                             <p class="text-sm text-slate-600">Connect with believers from across Tanzania and beyond</p>
+                        </div>
+                    </div>
+
+                    <!-- Impact Statistics -->
+                    <div class="mt-16 bg-gradient-to-br from-red-50 to-slate-50 rounded-3xl p-8 border border-red-100">
+                        <h3 class="text-2xl font-bold text-slate-900 text-center mb-8">Our Impact</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                            <div class="text-center">
+                                <div class="text-3xl font-black text-red-600 mb-2">25+</div>
+                                <div class="text-sm text-slate-600">Years of Ministry</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-black text-red-600 mb-2">50K+</div>
+                                <div class="text-sm text-slate-600">Lives Transformed</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-black text-red-600 mb-2">100+</div>
+                                <div class="text-sm text-slate-600">Campus Chapters</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-black text-red-600 mb-2">31</div>
+                                <div class="text-sm text-slate-600">Regions Reached</div>
+                            </div>
                         </div>
                     </div>
                 </div>
