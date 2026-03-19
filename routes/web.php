@@ -52,6 +52,11 @@ Route::get('/register/easter-conference-2026', function () {
     return view('register.easter-conference-2026');
 });
 
+// Resources
+Route::get('/resources', function () {
+    return view('resources');
+});
+
 // Additional Routes for Header Links
 Route::get('/about/history', function () {
     return view('about.history');

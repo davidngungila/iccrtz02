@@ -73,6 +73,7 @@
             <a href="{{ url('students-ministry') }}" class="nav-link font-bold hover:text-slate-900 transition-colors py-8">Students</a>
             <a href="{{ url('alumni-network') }}" class="nav-link font-bold hover:text-slate-900 transition-colors py-8">Alumni</a>
             <a href="{{ url('events') }}" class="nav-link font-bold hover:text-slate-900 transition-colors py-8">Events</a>
+            <a href="{{ url('resources') }}" class="nav-link font-bold hover:text-slate-900 transition-colors py-8">Resources</a>
         </div>
 
         <div class="flex items-center gap-4">
@@ -140,6 +141,7 @@
                 <a href="{{ url('students-ministry') }}" class="block text-2xl font-serif font-black text-slate-900 hover:text-slate-900">Students</a>
                 <a href="{{ url('alumni-network') }}" class="block text-2xl font-serif font-black text-slate-900 hover:text-slate-900">Alumni</a>
                 <a href="{{ url('events') }}" class="block text-2xl font-serif font-black text-slate-900 hover:text-slate-900">Events</a>
+                <a href="{{ url('resources') }}" class="block text-2xl font-serif font-black text-slate-900 hover:text-slate-900">Resources</a>
             </nav>
 
             <div class="mt-8 pt-8 border-t border-slate-200">
