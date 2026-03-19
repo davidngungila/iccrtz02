@@ -116,13 +116,13 @@
                             </div>
                         </div>
 
-                        <!-- Early Bird Alert -->
-                        <div class="bg-yellow-400/20 border border-yellow-400/30 rounded-xl p-4 mb-8 backdrop-blur-sm max-w-2xl mx-auto">
-                            <div class="flex items-center gap-3 text-yellow-300">
-                                <i class="ph ph-warning-circle text-2xl animate-pulse"></i>
+                        <!-- Standard Registration Alert -->
+                        <div class="bg-slate-100 border border-slate-300 rounded-xl p-4 mb-8 backdrop-blur-sm max-w-2xl mx-auto">
+                            <div class="flex items-center gap-3 text-slate-700">
+                                <i class="ph ph-info text-2xl"></i>
                                 <div class="text-center">
-                                    <div class="font-bold text-lg">🎉 EARLY BIRD DISCOUNT - 30% OFF! 🎉</div>
-                                    <div class="text-sm">Limited Time Offer - Register Before December 31, 2025</div>
+                                    <div class="font-bold text-lg">Standard Registration: TSh 30,000</div>
+                                    <div class="text-sm">International visitors: Free (with option to contribute)</div>
                                 </div>
                             </div>
                         </div>
@@ -150,8 +150,7 @@
                                             <div class="text-center">
                                                 <i class="ph ph-graduation-cap text-2xl mb-2 text-slate-600"></i>
                                                 <div class="font-bold text-slate-900">Student</div>
-                                                <div class="text-sm text-slate-600">TSh 50,000</div>
-                                                <div class="text-xs text-red-600 font-semibold">Early Bird: TSh 35,000</div>
+                                                <div class="text-sm text-slate-600">TSh 30,000</div>
                                             </div>
                                         </div>
                                     </label>
@@ -161,8 +160,7 @@
                                             <div class="text-center">
                                                 <i class="ph ph-briefcase text-2xl mb-2 text-slate-600"></i>
                                                 <div class="font-bold text-slate-900">Alumni</div>
-                                                <div class="text-sm text-slate-600">TSh 80,000</div>
-                                                <div class="text-xs text-red-600 font-semibold">Early Bird: TSh 56,000</div>
+                                                <div class="text-sm text-slate-600">TSh 30,000</div>
                                             </div>
                                         </div>
                                     </label>
@@ -172,8 +170,8 @@
                                             <div class="text-center">
                                                 <i class="ph ph-globe text-2xl mb-2 text-slate-600"></i>
                                                 <div class="font-bold text-slate-900">International</div>
-                                                <div class="text-sm text-slate-600">$200 USD</div>
-                                                <div class="text-xs text-red-600 font-semibold">Early Bird: $140 USD</div>
+                                                <div class="text-sm text-slate-600">Free</div>
+                                                <div class="text-xs text-green-600 font-semibold">Can contribute/support</div>
                                             </div>
                                         </div>
                                     </label>
@@ -253,29 +251,27 @@
                             <div>
                                 <label class="block text-lg font-bold text-slate-900 mb-4">Accommodation (Optional)</label>
                                 <div class="grid gap-4 md:grid-cols-2">
-                                    <label class="relative cursor-pointer">
-                                        <input type="radio" name="accommodation" value="sharing" x-model="accommodationType" class="peer sr-only" checked>
-                                        <div class="p-4 border-2 border-slate-200 rounded-xl peer-checked:border-red-600 peer-checked:bg-red-50 hover:bg-slate-50 transition-all">
-                                            <div class="text-center">
-                                                <i class="ph ph-users-three text-2xl mb-2 text-slate-600"></i>
-                                                <div class="font-bold text-slate-900">Sharing Room</div>
-                                                <div class="text-sm text-slate-600">TSh 20,000 (7 nights)</div>
-                                                <div class="text-xs text-red-600 font-semibold">Early Bird: TSh 14,000</div>
-                                            </div>
+                                <label class="relative cursor-pointer">
+                                    <input type="radio" name="accommodation" value="sharing" x-model="accommodationType" class="peer sr-only" checked>
+                                    <div class="p-4 border-2 border-slate-200 rounded-xl peer-checked:border-red-600 peer-checked:bg-red-50 hover:bg-slate-50 transition-all">
+                                        <div class="text-center">
+                                            <i class="ph ph-users-three text-2xl mb-2 text-slate-600"></i>
+                                            <div class="font-bold text-slate-900">Sharing Room</div>
+                                            <div class="text-sm text-slate-600">TSh 20,000 (7 nights)</div>
                                         </div>
-                                    </label>
-                                    <label class="relative cursor-pointer">
-                                        <input type="radio" name="accommodation" value="private" x-model="accommodationType" class="peer sr-only">
-                                        <div class="p-4 border-2 border-slate-200 rounded-xl peer-checked:border-red-600 peer-checked:bg-red-50 hover:bg-slate-50 transition-all">
-                                            <div class="text-center">
-                                                <i class="ph ph-user text-2xl mb-2 text-slate-600"></i>
-                                                <div class="font-bold text-slate-900">Private Room</div>
-                                                <div class="text-sm text-slate-600">TSh 50,000 (7 nights)</div>
-                                                <div class="text-xs text-red-600 font-semibold">Early Bird: TSh 35,000</div>
-                                            </div>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer">
+                                    <input type="radio" name="accommodation" value="private" x-model="accommodationType" class="peer sr-only">
+                                    <div class="p-4 border-2 border-slate-200 rounded-xl peer-checked:border-red-600 peer-checked:bg-red-50 hover:bg-slate-50 transition-all">
+                                        <div class="text-center">
+                                            <i class="ph ph-user text-2xl mb-2 text-slate-600"></i>
+                                            <div class="font-bold text-slate-900">Private Room</div>
+                                            <div class="text-sm text-slate-600">TSh 50,000 (7 nights)</div>
                                         </div>
-                                    </label>
-                                </div>
+                                    </div>
+                                </label>
+                            </div>
                             </div>
 
                             <!-- Payment Method -->
@@ -315,6 +311,38 @@
                                 </div>
                             </div>
 
+                            <!-- Contribution/Support for International Visitors -->
+                            <div x-show="registrationType === 'international'" class="bg-green-50 rounded-xl p-6 border border-green-200">
+                                <h3 class="text-lg font-bold text-slate-900 mb-4">Contribution & Support (Optional)</h3>
+                                <p class="text-sm text-slate-600 mb-4">
+                                    Your registration is free! If you'd like to contribute to support the conference and help others attend, please consider a voluntary contribution.
+                                </p>
+                                <div class="grid gap-4 md:grid-cols-2">
+                                    <div>
+                                        <label class="block text-sm font-semibold text-slate-700 mb-2">Contribution Amount (USD)</label>
+                                        <select class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-600 focus:border-transparent">
+                                            <option value="">No contribution</option>
+                                            <option value="50">$50 USD</option>
+                                            <option value="100">$100 USD</option>
+                                            <option value="200">$200 USD</option>
+                                            <option value="500">$500 USD</option>
+                                            <option value="1000">$1,000 USD</option>
+                                            <option value="custom">Custom amount</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-semibold text-slate-700 mb-2">Custom Amount (USD)</label>
+                                        <input type="number" placeholder="Enter amount" min="1" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-600 focus:border-transparent">
+                                    </div>
+                                </div>
+                                <div class="mt-4 p-3 bg-green-100 rounded-lg">
+                                    <p class="text-sm text-green-700">
+                                        <i class="ph ph-heart mr-1"></i>
+                                        Your contribution helps subsidize registrations for those who cannot afford to attend.
+                                    </p>
+                                </div>
+                            </div>
+
                             <!-- Emergency Contact -->
                             <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
                                 <h3 class="text-lg font-bold text-slate-900 mb-4">Emergency Contact</h3>
@@ -349,11 +377,11 @@
 
                             <!-- Submit Button -->
                             <div class="text-center">
-                                <button type="submit" class="px-12 py-4 bg-red-600 text-white font-bold rounded-full hover:bg-red-700 transition-all shadow-xl shadow-red-600/30 animate-pulse text-lg">
-                                    Complete Registration - Save 30%!
+                                <button type="submit" class="px-12 py-4 bg-red-600 text-white font-bold rounded-full hover:bg-red-700 transition-all shadow-xl shadow-red-600/30 text-lg">
+                                    Complete Registration
                                 </button>
                                 <p class="text-sm text-slate-500 mt-4">
-                                    Early bird discount ends December 31, 2025. Regular prices apply from January 1, 2026.
+                                    Standard registration fee: TSh 30,000 for Tanzanian participants, Free for international visitors.
                                 </p>
                             </div>
                         </form>

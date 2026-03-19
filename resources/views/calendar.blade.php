@@ -139,8 +139,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{ url('register/easter-conference-2026') }}" class="w-full bg-red-600 text-white px-4 py-3 rounded-full font-bold hover:bg-red-700 transition-all text-center animate-pulse">
-                                    Register Now - Save 30%!
+                                <a href="{{ url('register/easter-conference-2026') }}" class="w-full bg-red-600 text-white px-4 py-3 rounded-full font-bold hover:bg-red-700 transition-all text-center">
+                                    Register Now
                                 </a>
                             </div>
                         </div>

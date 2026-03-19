@@ -87,15 +87,15 @@
                                     <p class="text-lg md:text-xl text-slate-200 mb-6 leading-relaxed">Experience resurrection power at our biggest international gathering! Join thousands from across Tanzania and East Africa.</p>
                                     <div class="bg-yellow-400/20 border border-yellow-400/30 rounded-xl p-4 mb-6 backdrop-blur-sm">
                                         <div class="flex items-center gap-3 text-yellow-300">
-                                            <i class="ph ph-warning-circle text-2xl animate-pulse"></i>
+                                            <i class="ph ph-warning-circle text-2xl"></i>
                                             <div>
                                                 <div class="font-bold text-lg">March 30 - April 5, 2026 • Mbeya</div>
-                                                <div class="text-sm">Early Bird Discount Ends Soon! Limited Seats Available!</div>
+                                                <div class="text-sm">Standard Registration: TSh 30,000 | International Visitors: Free</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="flex flex-col sm:flex-row items-center gap-4">
-                                        <a href="{{ url('register/easter-conference-2026') }}" class="w-full sm:w-auto px-10 py-4 bg-red-600 text-white font-bold rounded-full hover:bg-red-700 shadow-xl shadow-red-600/30 transition-all text-center animate-pulse">Register Now - Save 30%!</a>
+                                        <a href="{{ url('register/easter-conference-2026') }}" class="w-full sm:w-auto px-10 py-4 bg-red-600 text-white font-bold rounded-full hover:bg-red-700 shadow-xl shadow-red-600/30 transition-all text-center">Register Now</a>
                                         <a href="{{ url('events') }}" class="w-full sm:w-auto px-10 py-4 bg-white/10 text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all text-center backdrop-blur-md">Learn More</a>
                                     </div>
                                 </div>
