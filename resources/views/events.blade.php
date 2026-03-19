@@ -401,7 +401,328 @@
                 </div>
             </section>
 
-            <!-- Programs Categories -->
+            <!-- Annual Events -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <span class="text-slate-900 font-black text-xs uppercase tracking-[0.4em] mb-4 inline-block">Annual Events</span>
+                        <h2 class="text-4xl font-serif text-slate-900 font-bold mb-6">Our Yearly Calendar</h2>
+                        <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                            Join us for these powerful annual events that transform lives and strengthen faith across Tanzania.
+                        </p>
+                    </div>
+
+                    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                        <!-- Night of Praise -->
+                        <div class="group bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
+                            <div class="relative">
+                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="Night of Praise" class="w-full h-48 object-cover">
+                                <div class="absolute top-4 left-4 bg-slate-900 text-white px-3 py-1 rounded-full text-sm font-semibold">Annual Event</div>
+                            </div>
+                            <div class="p-6">
+                                <span class="inline-block px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs font-bold mb-3">Dar es Salaam</span>
+                                <h3 class="text-xl font-bold text-slate-900 mb-3">Night of Praise</h3>
+                                <p class="text-slate-600 leading-relaxed mb-4">
+                                    An electrifying night of worship and praise featuring top gospel artists and powerful ministry.
+                                </p>
+                                <div class="flex items-center justify-between text-sm text-slate-500 mb-4">
+                                    <span><i class="ph ph-calendar mr-1"></i> December</span>
+                                    <span><i class="ph ph-users mr-1"></i> 5,000+ attendees</span>
+                                </div>
+                                <a href="{{ url('events/night-of-praise') }}" class="w-full bg-slate-900 text-white px-4 py-3 rounded-full font-bold hover:bg-slate-800 transition-all text-center">
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- NexGen Camp -->
+                        <div class="group bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
+                            <div class="relative">
+                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613879/volunteer-helping-with-donation-box_dwuyr7.jpg" alt="NexGen Camp" class="w-full h-48 object-cover">
+                                <div class="absolute top-4 left-4 bg-slate-800 text-white px-3 py-1 rounded-full text-sm font-semibold">Youth Camp</div>
+                            </div>
+                            <div class="p-6">
+                                <span class="inline-block px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs font-bold mb-3">Dar es Salaam</span>
+                                <h3 class="text-xl font-bold text-slate-900 mb-3">NexGen Camp</h3>
+                                <p class="text-slate-600 leading-relaxed mb-4">
+                                    Next Generation empowerment camp designed for youth and young adults to discover their purpose.
+                                </p>
+                                <div class="flex items-center justify-between text-sm text-slate-500 mb-4">
+                                    <span><i class="ph ph-calendar mr-1"></i> August</span>
+                                    <span><i class="ph ph-users mr-1"></i> 1,000+ youth</span>
+                                </div>
+                                <a href="{{ url('events/nexgen-camp') }}" class="w-full bg-slate-800 text-white px-4 py-3 rounded-full font-bold hover:bg-slate-700 transition-all text-center">
+                                    Register Now
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Leadership Summit -->
+                        <div class="group bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
+                            <div class="relative">
+                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613870/african-kid-marketplace-_7_xiwx7g.jpg" alt="Leadership Summit" class="w-full h-48 object-cover">
+                                <div class="absolute top-4 left-4 bg-slate-700 text-white px-3 py-1 rounded-full text-sm font-semibold">Leadership</div>
+                            </div>
+                            <div class="p-6">
+                                <span class="inline-block px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs font-bold mb-3">Dar es Salaam</span>
+                                <h3 class="text-xl font-bold text-slate-900 mb-3">Leadership Summit</h3>
+                                <p class="text-slate-600 leading-relaxed mb-4">
+                                    Premier leadership training conference for campus leaders, coordinators, and ministry workers.
+                                </p>
+                                <div class="flex items-center justify-between text-sm text-slate-500 mb-4">
+                                    <span><i class="ph ph-calendar mr-1"></i> June</span>
+                                    <span><i class="ph ph-users mr-1"></i> 500+ leaders</span>
+                                </div>
+                                <a href="{{ url('events/leadership-summit') }}" class="w-full bg-slate-700 text-white px-4 py-3 rounded-full font-bold hover:bg-slate-600 transition-all text-center">
+                                    Join Summit
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Diocesan Overnights -->
+                        <div class="group bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
+                            <div class="relative">
+                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613873/african-kid-marketplace-_8_caa2f7.jpg" alt="Diocesan Overnights" class="w-full h-48 object-cover">
+                                <div class="absolute top-4 left-4 bg-slate-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Regional</div>
+                            </div>
+                            <div class="p-6">
+                                <span class="inline-block px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs font-bold mb-3">All Dioceses</span>
+                                <h3 class="text-xl font-bold text-slate-900 mb-3">Diocesan Overnights</h3>
+                                <p class="text-slate-600 leading-relaxed mb-4">
+                                    Regional overnight prayer and fellowship gatherings in each diocese throughout the year.
+                                </p>
+                                <div class="flex items-center justify-between text-sm text-slate-500 mb-4">
+                                    <span><i class="ph ph-calendar mr-1"></i> Quarterly</span>
+                                    <span><i class="ph ph-users mr-1"></i> 200+ per event</span>
+                                </div>
+                                <a href="{{ url('events/diocesan-overnights') }}" class="w-full bg-slate-600 text-white px-4 py-3 rounded-full font-bold hover:bg-slate-500 transition-all text-center">
+                                    Find Your Diocese
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Open Gate Camp -->
+                        <div class="group bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
+                            <div class="relative">
+                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="Open Gate Camp" class="w-full h-48 object-cover">
+                                <div class="absolute top-4 left-4 bg-slate-900 text-white px-3 py-1 rounded-full text-sm font-semibold">Camp</div>
+                            </div>
+                            <div class="p-6">
+                                <span class="inline-block px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs font-bold mb-3">Moshi</span>
+                                <h3 class="text-xl font-bold text-slate-900 mb-3">Open Gate Camp</h3>
+                                <p class="text-slate-600 leading-relaxed mb-4">
+                                    Transformative camping experience at the foothills of Mount Kilimanjaro with spiritual renewal.
+                                </p>
+                                <div class="flex items-center justify-between text-sm text-slate-500 mb-4">
+                                    <span><i class="ph ph-calendar mr-1"></i> September</span>
+                                    <span><i class="ph ph-users mr-1"></i> 800+ campers</span>
+                                </div>
+                                <a href="{{ url('events/open-gate-camp') }}" class="w-full bg-slate-900 text-white px-4 py-3 rounded-full font-bold hover:bg-slate-800 transition-all text-center">
+                                    Book Camp
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Perfect Vision Camp -->
+                        <div class="group bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
+                            <div class="relative">
+                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613879/volunteer-helping-with-donation-box_dwuyr7.jpg" alt="Perfect Vision Camp" class="w-full h-48 object-cover">
+                                <div class="absolute top-4 left-4 bg-slate-800 text-white px-3 py-1 rounded-full text-sm font-semibold">Camp</div>
+                            </div>
+                            <div class="p-6">
+                                <span class="inline-block px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs font-bold mb-3">Mbeya</span>
+                                <h3 class="text-xl font-bold text-slate-900 mb-3">Perfect Vision Camp</h3>
+                                <p class="text-slate-600 leading-relaxed mb-4">
+                                    Vision and purpose discovery camp in the scenic highlands of Mbeya region.
+                                </p>
+                                <div class="flex items-center justify-between text-sm text-slate-500 mb-4">
+                                    <span><i class="ph ph-calendar mr-1"></i> October</span>
+                                    <span><i class="ph ph-users mr-1"></i> 600+ participants</span>
+                                </div>
+                                <a href="{{ url('events/perfect-vision-camp') }}" class="w-full bg-slate-800 text-white px-4 py-3 rounded-full font-bold hover:bg-slate-700 transition-all text-center">
+                                    Join Camp
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Tamasha la Sifa -->
+                        <div class="group bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all lg:col-span-3">
+                            <div class="grid md:grid-cols-2 gap-0">
+                                <div class="relative">
+                                    <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613870/african-kid-marketplace-_7_xiwx7g.jpg" alt="Tamasha la Sifa" class="w-full h-full object-cover min-h-[300px]">
+                                    <div class="absolute top-4 left-4 bg-slate-700 text-white px-3 py-1 rounded-full text-sm font-semibold">Festival</div>
+                                </div>
+                                <div class="p-8 flex flex-col justify-center">
+                                    <span class="inline-block px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs font-bold mb-3">Morogoro</span>
+                                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Tamasha la Sifa</h3>
+                                    <p class="text-slate-600 leading-relaxed mb-4">
+                                        The ultimate praise and worship festival bringing together thousands of believers for celebration, music, and spiritual renewal in Morogoro.
+                                    </p>
+                                    <div class="flex items-center justify-between text-sm text-slate-500 mb-6">
+                                        <span><i class="ph ph-calendar mr-1"></i> November</span>
+                                        <span><i class="ph ph-users mr-1"></i> 3,000+ worshippers</span>
+                                        <span><i class="ph ph-clock mr-1"></i> 3 days</span>
+                                    </div>
+                                    <a href="{{ url('events/tamasha-la-sifa') }}" class="w-full bg-slate-700 text-white px-6 py-3 rounded-full font-bold hover:bg-slate-600 transition-all text-center">
+                                        Join Festival
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- YouTube Live Streaming -->
+            <section class="py-20 bg-slate-50">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <span class="text-slate-900 font-black text-xs uppercase tracking-[0.4em] mb-4 inline-block">Live Streaming</span>
+                        <h2 class="text-4xl font-serif text-slate-900 font-bold mb-6">Watch Events Live</h2>
+                        <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                            Can't attend in person? Join us live on YouTube! All our major events are streamed for our global audience.
+                        </p>
+                    </div>
+
+                    <div class="grid gap-8 lg:grid-cols-2">
+                        <!-- Live Stream Card -->
+                        <div class="bg-white rounded-3xl shadow-lg p-8 border border-slate-100">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center">
+                                    <i class="ph ph-youtube-logo text-white text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-slate-900">YouTube Live</h3>
+                                    <p class="text-slate-600">Subscribe to our channel for notifications</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-50 rounded-2xl p-6 mb-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-3 h-3 bg-red-600 rounded-full animate-pulse"></div>
+                                    <span class="text-sm font-semibold text-red-600">LIVE NOW</span>
+                                    <span class="text-sm text-slate-500">1.2K watching</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 mb-2">Weekly Fellowship - Dar es Salaam</h4>
+                                <p class="text-sm text-slate-600 mb-4">Join our weekly worship and teaching session live from UDSM Chapel</p>
+                                <button class="w-full bg-red-600 text-white px-4 py-3 rounded-full font-bold hover:bg-red-700">
+                                    <i class="ph ph-play mr-2"></i> Watch Live Now
+                                </button>
+                            </div>
+
+                            <div class="space-y-4">
+                                <h4 class="font-bold text-slate-900">Upcoming Live Streams</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl">
+                                        <div>
+                                            <div class="font-semibold text-slate-900">Leadership Summit 2026</div>
+                                            <div class="text-sm text-slate-600">Tomorrow, 9:00 AM</div>
+                                        </div>
+                                        <button class="px-3 py-1 bg-slate-900 text-white rounded-lg text-sm">Set Reminder</button>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl">
+                                        <div>
+                                            <div class="font-semibold text-slate-900">Night of Praise Rehearsal</div>
+                                            <div class="text-sm text-slate-600">Friday, 6:00 PM</div>
+                                        </div>
+                                        <button class="px-3 py-1 bg-slate-900 text-white rounded-lg text-sm">Set Reminder</button>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl">
+                                        <div>
+                                            <div class="font-semibold text-slate-900">Easter Conference - Day 1</div>
+                                            <div class="text-sm text-slate-600">Mar 30, 2026, 10:00 AM</div>
+                                        </div>
+                                        <button class="px-3 py-1 bg-slate-900 text-white rounded-lg text-sm">Set Reminder</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- YouTube Channels -->
+                        <div class="bg-white rounded-3xl shadow-lg p-8 border border-slate-100">
+                            <h3 class="text-2xl font-bold text-slate-900 mb-6">Our YouTube Channels</h3>
+                            
+                            <div class="space-y-4">
+                                <!-- Main Channel -->
+                                <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-all cursor-pointer">
+                                    <img src="https://via.placeholder.com/80x80/1e293b/ffffff?text=ICCRTZ" alt="ICCRTZ Main" class="w-16 h-16 rounded-xl">
+                                    <div class="flex-1">
+                                        <h4 class="font-bold text-slate-900">ICCRTZ Official</h4>
+                                        <p class="text-sm text-slate-600 mb-2">Main channel for conferences and major events</p>
+                                        <div class="flex items-center gap-4 text-sm text-slate-500">
+                                            <span><i class="ph ph-users mr-1"></i> 15.2K subscribers</span>
+                                            <span><i class="ph ph-video mr-1"></i> 450+ videos</span>
+                                        </div>
+                                    </div>
+                                    <button class="px-4 py-2 bg-red-600 text-white rounded-full text-sm font-semibold hover:bg-red-700">
+                                        Subscribe
+                                    </button>
+                                </div>
+
+                                <!-- Youth Channel -->
+                                <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-all cursor-pointer">
+                                    <img src="https://via.placeholder.com/80x80/dc2626/ffffff?text=NEXGEN" alt="NexGen" class="w-16 h-16 rounded-xl">
+                                    <div class="flex-1">
+                                        <h4 class="font-bold text-slate-900">NexGen ICCRTZ</h4>
+                                        <p class="text-sm text-slate-600 mb-2">Youth-focused content and NexGen Camp highlights</p>
+                                        <div class="flex items-center gap-4 text-sm text-slate-500">
+                                            <span><i class="ph ph-users mr-1"></i> 8.7K subscribers</span>
+                                            <span><i class="ph ph-video mr-1"></i> 230+ videos</span>
+                                        </div>
+                                    </div>
+                                    <button class="px-4 py-2 bg-red-600 text-white rounded-full text-sm font-semibold hover:bg-red-700">
+                                        Subscribe
+                                    </button>
+                                </div>
+
+                                <!-- Worship Channel -->
+                                <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-all cursor-pointer">
+                                    <img src="https://via.placeholder.com/80x80/7c3aed/ffffff?text=WORSHIP" alt="Worship" class="w-16 h-16 rounded-xl">
+                                    <div class="flex-1">
+                                        <h4 class="font-bold text-slate-900">ICCRTZ Worship</h4>
+                                        <p class="text-sm text-slate-600 mb-2">Worship sessions, Night of Praise, and music ministry</p>
+                                        <div class="flex items-center gap-4 text-sm text-slate-500">
+                                            <span><i class="ph ph-users mr-1"></i> 12.1K subscribers</span>
+                                            <span><i class="ph ph-video mr-1"></i> 180+ videos</span>
+                                        </div>
+                                    </div>
+                                    <button class="px-4 py-2 bg-red-600 text-white rounded-full text-sm font-semibold hover:bg-red-700">
+                                        Subscribe
+                                    </button>
+                                </div>
+
+                                <!-- Teaching Channel -->
+                                <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-all cursor-pointer">
+                                    <img src="https://via.placeholder.com/80x80/059669/ffffff?text=TEACHING" alt="Teaching" class="w-16 h-16 rounded-xl">
+                                    <div class="flex-1">
+                                        <h4 class="font-bold text-slate-900">ICCRTZ Teachings</h4>
+                                        <p class="text-sm text-slate-600 mb-2">Bible teachings, seminars, and leadership training</p>
+                                        <div class="flex items-center gap-4 text-sm text-slate-500">
+                                            <span><i class="ph ph-users mr-1"></i> 6.3K subscribers</span>
+                                            <span><i class="ph ph-video mr-1"></i> 320+ videos</span>
+                                        </div>
+                                    </div>
+                                    <button class="px-4 py-2 bg-red-600 text-white rounded-full text-sm font-semibold hover:bg-red-700">
+                                        Subscribe
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 p-4 bg-yellow-50 rounded-xl border border-yellow-200">
+                                <div class="flex items-start gap-3">
+                                    <i class="ph ph-bell text-yellow-600 text-xl mt-0.5"></i>
+                                    <div>
+                                        <h5 class="font-bold text-slate-900 mb-1">Never Miss a Stream!</h5>
+                                        <p class="text-sm text-slate-600">Subscribe to all our channels and enable notifications to get alerts when we go live.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Program Categories -->
             <section id="programs" class="py-20 bg-slate-50">
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="text-center mb-16">
