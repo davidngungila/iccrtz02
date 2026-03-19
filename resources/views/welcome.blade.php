@@ -597,8 +597,8 @@
                         </p>
                     </div>
 
-                    <div class="grid lg:grid-cols-3 gap-8 mb-16">
-                        <!-- Advanced Analytics -->
+                    <div class="grid lg:grid-cols-2 gap-8 mb-16">
+                        <!-- Data-Driven Impact -->
                         <div class="bg-white rounded-2xl p-8 shadow-xl border border-slate-100 hover:shadow-2xl transition-all duration-300">
                             <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
                                 <i class="ph-bold ph-chart-line text-white text-2xl"></i>
@@ -623,7 +623,7 @@
                             </ul>
                         </div>
 
-                        <!-- Mobile Technology -->
+                        <!-- Mobile Innovation -->
                         <div class="bg-white rounded-2xl p-8 shadow-xl border border-slate-100 hover:shadow-2xl transition-all duration-300">
                             <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
                                 <i class="ph-bold ph-devices text-white text-2xl"></i>
@@ -644,31 +644,6 @@
                                 <li class="flex items-center text-slate-600">
                                     <i class="ph-bold ph-check-circle text-blue-500 mr-3"></i>
                                     SMS-based emergency alerts
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Sustainable Solutions -->
-                        <div class="bg-white rounded-2xl p-8 shadow-xl border border-slate-100 hover:shadow-2xl transition-all duration-300">
-                            <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6">
-                                <i class="ph-bold ph-leaf text-white text-2xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-slate-900 mb-4">Green Technology</h3>
-                            <p class="text-slate-600 mb-6 leading-relaxed">
-                                Sustainable and eco-friendly solutions that reduce environmental impact while increasing efficiency and long-term viability of our programs.
-                            </p>
-                            <ul class="space-y-3 text-sm">
-                                <li class="flex items-center text-slate-600">
-                                    <i class="ph-bold ph-check-circle text-emerald-500 mr-3"></i>
-                                    Solar-powered community centers
-                                </li>
-                                <li class="flex items-center text-slate-600">
-                                    <i class="ph-bold ph-check-circle text-emerald-500 mr-3"></i>
-                                    Sustainable farming technology
-                                </li>
-                                <li class="flex items-center text-slate-600">
-                                    <i class="ph-bold ph-check-circle text-emerald-500 mr-3"></i>
-                                    Water conservation systems
                                 </li>
                             </ul>
                         </div>
@@ -702,18 +677,6 @@
                                 <div class="text-slate-300 mb-1">Powered</div>
                                 <div class="text-slate-400 text-sm">Predictive needs analysis</div>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Technology Partners -->
-                    <div class="text-center">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-8">Technology Partners</h3>
-                        <div class="flex flex-wrap items-center justify-center gap-8 opacity-60">
-                            <div class="text-2xl font-bold text-slate-600">CloudTech</div>
-                            <div class="text-2xl font-bold text-slate-600">DataFlow</div>
-                            <div class="text-2xl font-bold text-slate-600">MobileFirst</div>
-                            <div class="text-2xl font-bold text-slate-600">GreenTech</div>
-                            <div class="text-2xl font-bold text-slate-600">AI Solutions</div>
                         </div>
                     </div>
                 </div>
