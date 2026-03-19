@@ -101,55 +101,62 @@
                     <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100">
                         <div class="grid md:grid-cols-2 gap-0">
                             <div class="relative">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="National Conference" class="w-full h-full object-cover min-h-[400px]">
-                                <div class="absolute top-6 left-6 bg-red-600 text-white px-4 py-2 rounded-full text-sm font-bold">
-                                    Featured Event
+                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="International Easter Conference" class="w-full h-full object-cover min-h-[400px]">
+                                <div class="absolute top-6 left-6 bg-red-600 text-white px-4 py-2 rounded-full text-sm font-bold animate-pulse">
+                                    URGENT - Register Now!
                                 </div>
                             </div>
                             <div class="p-10 flex flex-col justify-center">
                                 <div class="mb-6">
-                                    <span class="inline-block px-3 py-1 bg-slate-900 text-white rounded-full text-xs font-bold mb-4">National Event</span>
-                                    <h2 class="text-3xl font-serif font-bold text-slate-900 mb-4">National Conference 2024</h2>
+                                    <span class="inline-block px-3 py-1 bg-slate-900 text-white rounded-full text-xs font-bold mb-4">International Event</span>
+                                    <h2 class="text-3xl font-serif font-bold text-slate-900 mb-4">International Easter Conference 2026</h2>
                                     <p class="text-slate-600 leading-relaxed mb-6">
-                                        Join us for our biggest annual gathering featuring powerful worship, inspiring speakers, 
-                                        leadership workshops, and fellowship with Catholic students from across Tanzania.
+                                        Experience the power of resurrection at our biggest international gathering! Join thousands 
+                                        of Catholic students from across Tanzania and East Africa for three days of powerful worship, 
+                                        life-changing teachings, divine encounters, and Easter celebration.
                                     </p>
+                                    <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-6">
+                                        <div class="flex items-center gap-2 text-yellow-800">
+                                            <i class="ph ph-warning-circle text-xl"></i>
+                                            <span class="font-bold">Limited Seats Available - Early Bird Discount Ends Soon!</span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="grid grid-cols-2 gap-4 mb-8">
                                     <div class="flex items-center gap-3">
                                         <i class="ph ph-calendar text-slate-900 text-xl"></i>
                                         <div>
                                             <div class="text-sm text-slate-500">Date</div>
-                                            <div class="font-bold text-slate-900">Dec 15-17, 2024</div>
+                                            <div class="font-bold text-slate-900">April 3-6, 2026</div>
                                         </div>
                                     </div>
                                     <div class="flex items-center gap-3">
                                         <i class="ph ph-map-pin text-slate-900 text-xl"></i>
                                         <div>
                                             <div class="text-sm text-slate-500">Location</div>
-                                            <div class="font-bold text-slate-900">Dar es Salaam</div>
+                                            <div class="font-bold text-slate-900">Dodoma</div>
                                         </div>
                                     </div>
                                     <div class="flex items-center gap-3">
                                         <i class="ph ph-users text-slate-900 text-xl"></i>
                                         <div>
                                             <div class="text-sm text-slate-500">Expected</div>
-                                            <div class="font-bold text-slate-900">500+ Attendees</div>
+                                            <div class="font-bold text-slate-900">2,000+ Attendees</div>
                                         </div>
                                     </div>
                                     <div class="flex items-center gap-3">
                                         <i class="ph ph-clock text-slate-900 text-xl"></i>
                                         <div>
                                             <div class="text-sm text-slate-500">Duration</div>
-                                            <div class="font-bold text-slate-900">3 Days</div>
+                                            <div class="font-bold text-slate-900">4 Days</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex gap-4">
-                                    <a href="{{ url('register/national-conference-2024') }}" class="px-6 py-3 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 transition-all">
-                                        Register Now
+                                    <a href="{{ url('register/easter-conference-2026') }}" class="px-6 py-3 bg-red-600 text-white font-bold rounded-full hover:bg-red-700 transition-all animate-pulse">
+                                        Register Now - Save Your Spot!
                                     </a>
-                                    <a href="{{ url('events/national-conference-2024') }}" class="px-6 py-3 bg-slate-100 text-slate-900 font-bold rounded-full hover:bg-slate-200 transition-all">
+                                    <a href="{{ url('events/easter-conference-2026') }}" class="px-6 py-3 bg-slate-100 text-slate-900 font-bold rounded-full hover:bg-slate-200 transition-all">
                                         Learn More
                                     </a>
                                 </div>
@@ -171,6 +178,46 @@
                     </div>
 
                     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                        <!-- Easter Conference 2026 - Urgent Event -->
+                        <div class="group bg-white rounded-3xl shadow-lg border-2 border-red-200 overflow-hidden hover:shadow-xl transition-all relative">
+                            <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold animate-pulse z-10">
+                                URGENT
+                            </div>
+                            <div class="relative">
+                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="International Easter Conference" class="w-full h-48 object-cover">
+                                <div class="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Apr 3-6, 2026</div>
+                            </div>
+                            <div class="p-6">
+                                <span class="inline-block px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold mb-3">International Conference</span>
+                                <h3 class="text-xl font-bold text-slate-900 mb-3">International Easter Conference 2026</h3>
+                                <p class="text-slate-600 leading-relaxed mb-4">
+                                    Experience resurrection power! International gathering with powerful worship, teachings, and divine encounters.
+                                </p>
+                                <div class="flex items-center justify-between text-sm text-slate-500 mb-4">
+                                    <span><i class="ph ph-map-pin mr-1"></i> Dodoma</span>
+                                    <span><i class="ph ph-users mr-1"></i> 2,000+ spots</span>
+                                </div>
+                                <div class="mb-4">
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span class="font-semibold text-slate-700">Early Bird Registration</span>
+                                        <span class="font-bold text-red-600">1,250/2,000</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-red-600 h-2 rounded-full" style="width: 62.5%"></div>
+                                    </div>
+                                </div>
+                                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-4">
+                                    <div class="flex items-center gap-2 text-yellow-800 text-sm">
+                                        <i class="ph ph-warning-circle"></i>
+                                        <span class="font-semibold">Early Bird Discount Ends Soon!</span>
+                                    </div>
+                                </div>
+                                <a href="{{ url('register/easter-conference-2026') }}" class="w-full bg-red-600 text-white px-4 py-3 rounded-full font-semibold hover:bg-red-700 transition-all text-center animate-pulse">
+                                    Register Now - Save 30%!
+                                </a>
+                            </div>
+                        </div>
+
                         <div class="group bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
                             <div class="relative">
                                 <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613879/volunteer-helping-with-donation-box_dwuyr7.jpg" alt="Leadership Retreat" class="w-full h-48 object-cover">

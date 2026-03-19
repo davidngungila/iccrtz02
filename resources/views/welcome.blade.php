@@ -71,7 +71,38 @@
     <section class="relative h-[calc(100vh-6rem)] min-h-[620px] overflow-hidden rounded-none">
                 <div class="swiper heroSwiper h-full w-full">
                     <div class="swiper-wrapper">
-                        <!-- Slide 1: Students Ministry -->
+                        <!-- Slide 1: International Easter Conference 2026 - URGENT -->
+                        <div class="swiper-slide relative flex items-center">
+                            <div class="absolute inset-0 z-0">
+                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="International Easter Conference" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-r from-red-950/90 via-red-950/40 to-transparent"></div>
+                            </div>
+                            <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+                                <div class="max-w-2xl translate-y-10 opacity-0 transition-all duration-1000 slide-content">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <span class="inline-block px-4 py-1.5 bg-red-600 text-white rounded-full text-xs font-bold tracking-widest uppercase animate-pulse">URGENT</span>
+                                        <span class="inline-block px-4 py-1.5 bg-red-900/20 text-white rounded-full text-xs font-bold tracking-widest uppercase border border-red-900/30">International Event</span>
+                                    </div>
+                                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 leading-[1.05]">Easter <span class="text-red-300">Conference 2026</span></h1>
+                                    <p class="text-lg md:text-xl text-slate-200 mb-6 leading-relaxed">Experience resurrection power at our biggest international gathering! Join thousands from across Tanzania and East Africa.</p>
+                                    <div class="bg-yellow-400/20 border border-yellow-400/30 rounded-xl p-4 mb-6 backdrop-blur-sm">
+                                        <div class="flex items-center gap-3 text-yellow-300">
+                                            <i class="ph ph-warning-circle text-2xl animate-pulse"></i>
+                                            <div>
+                                                <div class="font-bold text-lg">April 3-6, 2026 • Dodoma</div>
+                                                <div class="text-sm">Early Bird Discount Ends Soon! Limited Seats Available!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row items-center gap-4">
+                                        <a href="{{ url('register/easter-conference-2026') }}" class="w-full sm:w-auto px-10 py-4 bg-red-600 text-white font-bold rounded-full hover:bg-red-700 shadow-xl shadow-red-600/30 transition-all text-center animate-pulse">Register Now - Save 30%!</a>
+                                        <a href="{{ url('events') }}" class="w-full sm:w-auto px-10 py-4 bg-white/10 text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all text-center backdrop-blur-md">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: Students Ministry -->
                         <div class="swiper-slide relative flex items-center">
                             <div class="absolute inset-0 z-0">
                                 <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="Students Ministry" class="w-full h-full object-cover">
@@ -90,7 +121,7 @@
                             </div>
                         </div>
 
-                        <!-- Slide 2: Alumni Network -->
+                        <!-- Slide 3: Alumni Network -->
                         <div class="swiper-slide relative flex items-center">
                             <div class="absolute inset-0 z-0">
                                 <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613879/volunteer-helping-with-donation-box_dwuyr7.jpg" alt="Alumni Network" class="w-full h-full object-cover">
@@ -109,7 +140,7 @@
                             </div>
                         </div>
 
-                        <!-- Slide 3: Spiritual Formation -->
+                        <!-- Slide 4: Spiritual Formation -->
                         <div class="swiper-slide relative flex items-center">
                             <div class="absolute inset-0 z-0">
                                 <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613870/african-kid-marketplace-_7_xiwx7g.jpg" alt="Spiritual Formation" class="w-full h-full object-cover">
@@ -128,7 +159,7 @@
                             </div>
                         </div>
 
-                        <!-- Slide 4: Leadership Development -->
+                        <!-- Slide 5: Leadership Development -->
                         <div class="swiper-slide relative flex items-center">
                             <div class="absolute inset-0 z-0">
                                 <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613873/african-kid-marketplace-_8_caa2f7.jpg" alt="Leadership Development" class="w-full h-full object-cover">
