@@ -189,7 +189,11 @@
                                 </li>
                                 <li class="flex items-start gap-2">
                                     <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
-                                    <span>Spiritual formation</span>
+                                    <span>Online Fellowship - Every Saturday 8:00PM - 9:00PM</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
+                                    <span>Spiritual formation programs</span>
                                 </li>
                             </ul>
                         </div>

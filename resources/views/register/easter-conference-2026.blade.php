@@ -100,8 +100,8 @@
                                 </div>
                                 <div>
                                     <i class="ph ph-map-pin text-3xl mb-2"></i>
-                                    <div class="text-sm text-red-200">Location</div>
-                                    <div class="text-xl font-bold">Mbeya, Tanzania</div>
+                                    <div class="text-sm text-red-200">Venue</div>
+                                    <div class="text-xl font-bold">St Mary's Secondary School, Mbeya</div>
                                 </div>
                                 <div>
                                     <i class="ph ph-users text-3xl mb-2"></i>
@@ -379,25 +379,51 @@
                         </div>
                     </div>
 
-                    <!-- Impact Statistics -->
-                    <div class="mt-16 bg-gradient-to-br from-red-50 to-slate-50 rounded-3xl p-8 border border-red-100">
-                        <h3 class="text-2xl font-bold text-slate-900 text-center mb-8">Our Impact</h3>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <!-- Advanced Impact Metrics -->
+                    <div class="mt-16 bg-gradient-to-br from-slate-900 to-red-900 rounded-3xl p-8 border border-slate-800">
+                        <h3 class="text-2xl font-bold text-white text-center mb-8">Advanced Impact Metrics</h3>
+                        <p class="text-slate-200 text-center mb-12 max-w-2xl mx-auto">Real-time data showing our progressive impact across communities</p>
+                        
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
                             <div class="text-center">
-                                <div class="text-3xl font-black text-red-600 mb-2">25+</div>
-                                <div class="text-sm text-slate-600">Years of Ministry</div>
+                                <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span class="text-2xl font-black text-white">98%</span>
+                                </div>
+                                <h4 class="font-bold text-white mb-1">Program Efficiency</h4>
+                                <p class="text-sm text-slate-300">Resource optimization rate</p>
                             </div>
                             <div class="text-center">
-                                <div class="text-3xl font-black text-red-600 mb-2">50K+</div>
-                                <div class="text-sm text-slate-600">Lives Transformed</div>
+                                <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span class="text-lg font-black text-white">24/7</span>
+                                </div>
+                                <h4 class="font-bold text-white mb-1">Monitoring</h4>
+                                <p class="text-sm text-slate-300">Real-time impact tracking</p>
                             </div>
                             <div class="text-center">
-                                <div class="text-3xl font-black text-red-600 mb-2">100+</div>
-                                <div class="text-sm text-slate-600">Campus Chapters</div>
+                                <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span class="text-lg font-black text-white">15min</span>
+                                </div>
+                                <h4 class="font-bold text-white mb-1">Response Time</h4>
+                                <p class="text-sm text-slate-300">Emergency assistance delivery</p>
                             </div>
                             <div class="text-center">
-                                <div class="text-3xl font-black text-red-600 mb-2">31</div>
-                                <div class="text-sm text-slate-600">Regions Reached</div>
+                                <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="ph ph-cpu text-white text-2xl"></i>
+                                </div>
+                                <h4 class="font-bold text-white mb-1">AI Powered</h4>
+                                <p class="text-sm text-slate-300">Predictive needs analysis</p>
+                            </div>
+                        </div>
+
+                        <!-- Technology Partners -->
+                        <div class="border-t border-slate-700 pt-8">
+                            <h4 class="text-lg font-bold text-white text-center mb-6">Technology Partners</h4>
+                            <div class="flex flex-wrap justify-center gap-4">
+                                <div class="px-4 py-2 bg-slate-800 rounded-lg text-slate-200 font-semibold">CloudTech</div>
+                                <div class="px-4 py-2 bg-slate-800 rounded-lg text-slate-200 font-semibold">DataFlow</div>
+                                <div class="px-4 py-2 bg-slate-800 rounded-lg text-slate-200 font-semibold">MobileFirst</div>
+                                <div class="px-4 py-2 bg-slate-800 rounded-lg text-slate-200 font-semibold">GreenTech</div>
+                                <div class="px-4 py-2 bg-red-600 rounded-lg text-white font-semibold">AI Solutions</div>
                             </div>
                         </div>
                     </div>
