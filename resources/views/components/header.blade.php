@@ -3,11 +3,11 @@
     <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
         <a href="{{ url('/') }}" class="flex items-center gap-3 group/logo">
             <div class="h-20 w-20 rounded-2xl object-contain bg-white p-3 transition-transform group-hover/logo:scale-105 overflow-hidden shadow-lg">
-                <img src="{{ asset('logo.png') }}" alt="CCT-UF Logo" class="w-full h-full object-contain">
+                <img src="{{ asset('logo.png') }}" alt="ICCRTZ Logo" class="w-full h-full object-contain">
             </div>
             <div class="flex flex-col">
-                <span class="text-2xl font-black tracking-tighter text-slate-900 leading-none">CCT-UF</span>
-                <span class="text-xs font-bold text-slate-500 leading-none mt-1">Universities Fellowship</span>
+                <span class="text-2xl font-black tracking-tighter text-slate-900 leading-none">ICCRTZ</span>
+                <span class="text-xs font-bold text-slate-500 leading-none mt-1">Students & Alumni</span>
             </div>
         </a>
 
@@ -24,7 +24,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div>
                             <h3 class="font-black text-slate-900 mb-4 flex items-center gap-2">
-                                <i class="ph ph-church text-slate-900"></i> Our Fellowship
+                                <i class="ph ph-church text-slate-900"></i> Our Ministry
                             </h3>
                             <ul class="space-y-3">
                                 <li><a href="{{ url('about/history') }}" class="text-slate-600 hover:text-slate-900 transition-colors">History</a></li>
@@ -49,7 +49,7 @@
                                 <i class="ph ph-heart text-slate-900"></i> Get Involved
                             </h3>
                             <ul class="space-y-3">
-                                <li><a href="{{ url('join') }}" class="text-slate-600 hover:text-slate-900 transition-colors">Join Fellowship</a></li>
+                                <li><a href="{{ url('join') }}" class="text-slate-600 hover:text-slate-900 transition-colors">Join ICCRTZ</a></li>
                                 <li><a href="{{ url('volunteer') }}" class="text-slate-600 hover:text-slate-900 transition-colors">Volunteer</a></li>
                                 <li><a href="{{ url('support') }}" class="text-slate-600 hover:text-slate-900 transition-colors">Support Us</a></li>
                             </ul>
@@ -95,11 +95,11 @@
             <div class="flex items-center justify-between mb-8">
                 <a href="{{ url('/') }}" class="flex items-center gap-3">
                     <div class="h-12 w-12 rounded-xl object-contain bg-white p-2">
-                        <img src="{{ asset('logo.png') }}" alt="CCT-UF Logo" class="w-full h-full object-contain">
+                        <img src="{{ asset('logo.png') }}" alt="ICCRTZ Logo" class="w-full h-full object-contain">
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-lg font-black tracking-tighter text-slate-900 leading-none">CCT-UF</span>
-                        <span class="text-xs font-bold text-slate-500 leading-none mt-1">Universities Fellowship</span>
+                        <span class="text-lg font-black tracking-tighter text-slate-900 leading-none">ICCRTZ</span>
+                        <span class="text-xs font-bold text-slate-500 leading-none mt-1">Students & Alumni</span>
                     </div>
                 </a>
                 <button @click="mobileMenuOpen = false" class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center hover:bg-slate-200 transition-colors">
@@ -143,7 +143,7 @@
             </nav>
 
             <div class="mt-8 pt-8 border-t border-slate-200">
-                <a href="{{ url('join') }}" class="w-full inline-block py-4 bg-slate-900 text-white font-black text-xs uppercase tracking-widest text-center rounded-2xl shadow-xl shadow-slate-900/20">Join Fellowship</a>
+                <a href="{{ url('join') }}" class="w-full inline-block py-4 bg-slate-900 text-white font-black text-xs uppercase tracking-widest text-center rounded-2xl shadow-xl shadow-slate-900/20">Join ICCRTZ</a>
             </div>
         </div>
     </div>

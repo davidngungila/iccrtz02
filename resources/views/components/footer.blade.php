@@ -4,15 +4,15 @@
         <div class="col-span-1 md:col-span-1 lg:col-span-1">
             <a href="{{ url('/') }}" class="flex items-center gap-3 mb-6">
                 <div class="h-16 w-16 rounded-2xl object-contain bg-white p-3 shadow-lg">
-                    <img src="{{ asset('logo.png') }}" alt="CCT-UF Logo" class="w-full h-full object-contain">
+                    <img src="{{ asset('logo.png') }}" alt="ICCRTZ Logo" class="w-full h-full object-contain">
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-lg font-black tracking-tighter text-white leading-none">CCT-UF</span>
-                    <span class="text-xs font-bold text-slate-400 leading-none mt-1">Universities Fellowship</span>
+                    <span class="text-lg font-black tracking-tighter text-white leading-none">ICCRTZ</span>
+                    <span class="text-xs font-bold text-slate-400 leading-none mt-1">Students & Alumni</span>
                 </div>
             </a>
             <p class="text-slate-400 leading-relaxed text-sm mb-6">
-                Forming Catholic disciples and empowering leaders through spiritual formation and community building across Tanzania's universities since 1995.
+                Forming Catholic disciples and empowering leaders through spiritual formation and community building across Tanzania's colleges and universities since 1995.
             </p>
             <div class="flex items-center gap-4">
                 <span class="text-xs font-bold text-slate-300">25+ Years</span>
@@ -37,7 +37,7 @@
         <div>
             <h4 class="font-bold mb-6 text-slate-300">Get Involved</h4>
             <ul class="space-y-3 text-sm">
-                <li><a href="{{ url('join') }}" class="hover:text-white transition-colors">Join Fellowship</a></li>
+                <li><a href="{{ url('join') }}" class="hover:text-white transition-colors">Join ICCRTZ</a></li>
                 <li><a href="{{ url('volunteer') }}" class="hover:text-white transition-colors">Volunteer</a></li>
                 <li><a href="{{ url('support') }}" class="hover:text-white transition-colors">Support Ministry</a></li>
                 <li><a href="{{ url('contact') }}" class="hover:text-white transition-colors">Contact Us</a></li>
@@ -50,12 +50,12 @@
                 <li class="flex items-start gap-3">
                     <i class="ph ph-map-pin text-slate-300 mt-0.5"></i>
                     <span>
-                        Catholic Charismatic Tanzania<br>
-                        Universities Fellowship<br>
+                        Inter-Colleges Charismatic Catholic Renewer Tanzania<br>
+                        Students & Alumni Ministry<br>
                         P.O.Box 7744, Dar es Salaam<br>
                         Tanzania<br>
                         <br>
-                        <strong>Email:</strong> info@cctuf.org<br>
+                        <strong>Email:</strong> info@iccrctz.org<br>
                         <strong>Phone:</strong> +255 22 211 0000
                     </span>
                 </li>
@@ -70,7 +70,7 @@
                 <a href="{{ url('terms') }}" class="hover:text-slate-300 transition-colors">Terms & Conditions</a>
                 <a href="{{ url('faq') }}" class="hover:text-slate-300 transition-colors">FAQ</a>
             </div>
-            <p class="text-sm text-slate-500">© 2024 Catholic Charismatic Tanzania – Universities Fellowship. All rights reserved. | 25+ Years of Spiritual Formation</p>
+            <p class="text-sm text-slate-500">© 2024 Inter-Colleges Charismatic Catholic Renewer Tanzania. All rights reserved. | 25+ Years of Spiritual Formation</p>
         </div>
     </div>
 </footer>

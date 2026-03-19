@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <title>Catholic Charismatic Tanzania – Universities Fellowship | Students & Alumni Ministry</title>
+        <title>Inter-Colleges Charismatic Catholic Renewer Tanzania | Students & Alumni Ministry</title>
 
         <link rel="icon" href="{{ asset('logo.png') }}" type="image/png">
 
@@ -402,7 +402,7 @@
                 <div class="max-w-7xl mx-auto px-6 relative z-10">
                     <div class="text-center mb-16">
                         <span class="inline-block px-4 py-2 bg-slate-200 text-slate-700 rounded-full text-sm font-bold tracking-widest uppercase mb-6">25+ Years of Ministry</span>
-                        <h2 class="text-4xl md:text-6xl font-serif text-slate-900 mb-8 font-bold">Celebrating Decades of <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-slate-900">Spiritual Formation</span></h2>
+                        <h2 class="text-4xl md:text-6xl font-serif text-slate-900 mb-8 font-bold">Celebrating Decades of <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-slate-900">ICCRTZ</span> Spiritual Formation</h2>
                         <p class="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-12">
                             For over 25 years, Catholic Charismatic Tanzania – Universities Fellowship has been forming disciples, empowering leaders, and building faith communities across Tanzania's universities.
                         </p>
