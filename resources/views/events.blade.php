@@ -170,25 +170,22 @@
             <section id="upcoming" class="py-20 bg-white">
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="text-center mb-16">
-                        <span class="text-slate-900 font-black text-xs uppercase tracking-[0.4em] mb-4 inline-block">Upcoming</span>
-                        <h2 class="text-4xl font-serif text-slate-900 font-bold mb-6">Upcoming Events</h2>
+                        <span class="text-slate-900 font-black text-xs uppercase tracking-[0.4em] mb-4 inline-block">Upcoming Events</span>
+                        <h2 class="text-4xl font-serif text-slate-900 font-bold mb-6">Our Annual Calendar</h2>
                         <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                            Don't miss out on these transformative opportunities to grow in faith and leadership.
+                            Mark your calendar for these transformative events that bring together thousands of believers across Tanzania.
                         </p>
                     </div>
 
                     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                         <!-- Easter Conference 2026 - Urgent Event -->
-                        <div class="group bg-white rounded-3xl shadow-lg border-2 border-red-200 overflow-hidden hover:shadow-xl transition-all relative">
-                            <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold animate-pulse z-10">
-                                URGENT
-                            </div>
+                        <div class="group bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
                             <div class="relative">
                                 <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="International Easter Conference" class="w-full h-48 object-cover">
-                                <div class="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Mar 30 - Apr 5, 2026</div>
+                                <div class="absolute top-4 left-4 bg-slate-900 text-white px-3 py-1 rounded-full text-sm font-semibold">Mar 30 - Apr 5, 2026</div>
                             </div>
                             <div class="p-6">
-                                <span class="inline-block px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold mb-3">International Conference</span>
+                                <span class="inline-block px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs font-bold mb-3">International Conference</span>
                                 <h3 class="text-xl font-bold text-slate-900 mb-3">International Easter Conference 2026</h3>
                                 <p class="text-slate-600 leading-relaxed mb-4">
                                     Experience resurrection power! International gathering with powerful worship, teachings, and divine encounters.
@@ -199,181 +196,71 @@
                                 </div>
                                 <div class="mb-4">
                                     <div class="flex justify-between text-sm mb-1">
-                                        <span class="font-semibold text-slate-700">Early Bird Registration</span>
+                                        <span class="font-semibold text-slate-700">Registration Progress</span>
                                         <span class="font-bold text-red-600">1,250/2,000</span>
                                     </div>
                                     <div class="w-full bg-gray-200 rounded-full h-2">
                                         <div class="bg-red-600 h-2 rounded-full" style="width: 62.5%"></div>
                                     </div>
                                 </div>
-                                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-4">
-                                    <div class="flex items-center gap-2 text-yellow-800 text-sm">
-                                        <i class="ph ph-warning-circle"></i>
-                                        <span class="font-semibold">Early Bird Discount Ends Soon!</span>
-                                    </div>
-                                </div>
-                                <a href="{{ url('register/easter-conference-2026') }}" class="w-full bg-red-600 text-white px-4 py-3 rounded-full font-semibold hover:bg-red-700 transition-all text-center animate-pulse">
-                                    Register Now - Save 30%!
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="group bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
-                            <div class="relative">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613879/volunteer-helping-with-donation-box_dwuyr7.jpg" alt="Leadership Retreat" class="w-full h-48 object-cover">
-                                <div class="absolute top-4 left-4 bg-slate-800 text-white px-3 py-1 rounded-full text-sm font-semibold">Jan 5-7</div>
-                            </div>
-                            <div class="p-6">
-                                <span class="inline-block px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs font-bold mb-3">Retreat</span>
-                                <h3 class="text-xl font-bold text-slate-900 mb-3">Leadership Retreat</h3>
-                                <p class="text-slate-600 leading-relaxed mb-4">
-                                    Intensive leadership training for student leaders and coordinators from all regions.
-                                </p>
-                                <div class="flex items-center justify-between text-sm text-slate-500 mb-4">
-                                    <span><i class="ph ph-map-pin mr-1"></i> Morogoro</span>
-                                    <span><i class="ph ph-users mr-1"></i> 100 spots</span>
-                                </div>
-                                <div class="mb-4">
-                                    <div class="flex justify-between text-sm mb-1">
-                                        <span class="font-semibold text-slate-700">Registration</span>
-                                        <span class="font-bold text-slate-900">80/100</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2">
-                                        <div class="bg-slate-800 h-2 rounded-full" style="width: 80%"></div>
-                                    </div>
-                                </div>
-                                <a href="{{ url('register/leadership-retreat') }}" class="w-full bg-slate-900 text-white px-4 py-3 rounded-full font-semibold hover:bg-slate-800 transition-all text-center">
+                                <a href="{{ url('register/easter-conference-2026') }}" class="w-full bg-red-600 text-white px-4 py-3 rounded-full font-bold hover:bg-red-700 transition-all text-center">
                                     Register Now
                                 </a>
                             </div>
                         </div>
 
+                        <!-- Night of Praise -->
                         <div class="group bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
+                            <div class="absolute top-4 right-4 bg-slate-900 text-white px-3 py-1 rounded-full text-sm font-bold z-10">
+                                DECEMBER
+                            </div>
                             <div class="relative">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613870/african-kid-marketplace-_7_xiwx7g.jpg" alt="Spiritual Formation" class="w-full h-48 object-cover">
-                                <div class="absolute top-4 left-4 bg-slate-700 text-white px-3 py-1 rounded-full text-sm font-semibold">Weekly</div>
+                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="Night of Praise" class="w-full h-48 object-cover">
+                                <div class="absolute top-4 left-4 bg-slate-900 text-white px-3 py-1 rounded-full text-sm font-semibold">Dec 15-16, 2026</div>
                             </div>
                             <div class="p-6">
-                                <span class="inline-block px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs font-bold mb-3">Formation</span>
-                                <h3 class="text-xl font-bold text-slate-900 mb-3">Spiritual Formation Program</h3>
+                                <span class="inline-block px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs font-bold mb-3">Annual Event</span>
+                                <h3 class="text-xl font-bold text-slate-900 mb-3">Night of Praise</h3>
                                 <p class="text-slate-600 leading-relaxed mb-4">
-                                    Weekly sessions for deepening faith and developing charismatic gifts.
+                                    An electrifying night of worship featuring top gospel artists, powerful ministry, and life-transforming encounters.
                                 </p>
-                                <div class="flex items-center justify-between text-sm text-slate-500 mb-4">
-                                    <span><i class="ph ph-map-pin mr-1"></i> All Campuses</span>
-                                    <span><i class="ph ph-clock mr-1"></i> 2 hours</span>
+                                <div class="space-y-2 mb-4">
+                                    <div class="flex items-center justify-between text-sm">
+                                        <span class="text-slate-500"><i class="ph ph-map-pin mr-1"></i> Dar es Salaam</span>
+                                        <span class="text-slate-500"><i class="ph ph-users mr-1"></i> 5,000+ expected</span>
+                                    </div>
+                                    <div class="flex items-center justify-between text-sm">
+                                        <span class="text-slate-500"><i class="ph ph-clock mr-1"></i> 6:00 PM - 2:00 AM</span>
+                                        <span class="text-slate-500"><i class="ph ph-music-notes mr-1"></i> Live Concert</span>
+                                    </div>
                                 </div>
                                 <div class="mb-4">
                                     <div class="flex justify-between text-sm mb-1">
-                                        <span class="font-semibold text-slate-700">Active</span>
-                                        <span class="font-bold text-slate-900">200+ Students</span>
+                                        <span class="font-semibold text-slate-700">Registration Open</span>
+                                        <span class="font-bold text-slate-600">2,100/5,000</span>
                                     </div>
                                     <div class="w-full bg-gray-200 rounded-full h-2">
-                                        <div class="bg-slate-700 h-2 rounded-full" style="width: 100%"></div>
+                                        <div class="bg-slate-900 h-2 rounded-full" style="width: 42%"></div>
                                     </div>
                                 </div>
-                                <a href="{{ url('join/spiritual-formation') }}" class="w-full bg-slate-900 text-white px-4 py-3 rounded-full font-semibold hover:bg-slate-800 transition-all text-center">
-                                    Join Program
+                                <a href="{{ url('events/night-of-praise') }}" class="w-full bg-slate-900 text-white px-4 py-3 rounded-full font-bold hover:bg-slate-800 transition-all text-center">
+                                    Learn More
                                 </a>
                             </div>
                         </div>
 
+                        <!-- NexGen Camp -->
                         <div class="group bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
+                            <div class="absolute top-4 right-4 bg-slate-800 text-white px-3 py-1 rounded-full text-sm font-bold z-10">
+                                AUGUST
+                            </div>
                             <div class="relative">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613873/african-kid-marketplace-_8_caa2f7.jpg" alt="Alumni Reunion" class="w-full h-48 object-cover">
-                                <div class="absolute top-4 left-4 bg-slate-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Feb 10</div>
+                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613879/volunteer-helping-with-donation-box_dwuyr7.jpg" alt="NexGen Camp" class="w-full h-48 object-cover">
+                                <div class="absolute top-4 left-4 bg-slate-800 text-white px-3 py-1 rounded-full text-sm font-semibold">Aug 8-14, 2026</div>
                             </div>
                             <div class="p-6">
-                                <span class="inline-block px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs font-bold mb-3">Alumni</span>
-                                <h3 class="text-xl font-bold text-slate-900 mb-3">Alumni Reunion</h3>
-                                <p class="text-slate-600 leading-relaxed mb-4">
-                                    Annual gathering for alumni to reconnect, network, and share success stories.
-                                </p>
-                                <div class="flex items-center justify-between text-sm text-slate-500 mb-4">
-                                    <span><i class="ph ph-map-pin mr-1"></i> Dar es Salaam</span>
-                                    <span><i class="ph ph-users mr-1"></i> 300+ expected</span>
-                                </div>
-                                <div class="mb-4">
-                                    <div class="flex justify-between text-sm mb-1">
-                                        <span class="font-semibold text-slate-700">Registration</span>
-                                        <span class="font-bold text-slate-900">150/300</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2">
-                                        <div class="bg-slate-600 h-2 rounded-full" style="width: 50%"></div>
-                                    </div>
-                                </div>
-                                <a href="{{ url('register/alumni-reunion') }}" class="w-full bg-slate-900 text-white px-4 py-3 rounded-full font-semibold hover:bg-slate-800 transition-all text-center">
-                                    Register Now
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="group bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
-                            <div class="relative">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613868/african-children-enjoying-life_sebm6h.jpg" alt="Campus Mission" class="w-full h-48 object-cover">
-                                <div class="absolute top-4 left-4 bg-slate-900 text-white px-3 py-1 rounded-full text-sm font-semibold">Mar 15-17</div>
-                            </div>
-                            <div class="p-6">
-                                <span class="inline-block px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs font-bold mb-3">Mission</span>
-                                <h3 class="text-xl font-bold text-slate-900 mb-3">Campus Mission Week</h3>
-                                <p class="text-slate-600 leading-relaxed mb-4">
-                                    Evangelization and outreach activities across university campuses.
-                                </p>
-                                <div class="flex items-center justify-between text-sm text-slate-500 mb-4">
-                                    <span><i class="ph ph-map-pin mr-1"></i> Nationwide</span>
-                                    <span><i class="ph ph-users mr-1"></i> 50+ Campuses</span>
-                                </div>
-                                <div class="mb-4">
-                                    <div class="flex justify-between text-sm mb-1">
-                                        <span class="font-semibold text-slate-700">Volunteers</span>
-                                        <span class="font-bold text-slate-900">500+ Needed</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2">
-                                        <div class="bg-slate-900 h-2 rounded-full" style="width: 60%"></div>
-                                    </div>
-                                </div>
-                                <a href="{{ url('volunteer/campus-mission') }}" class="w-full bg-slate-900 text-white px-4 py-3 rounded-full font-semibold hover:bg-slate-800 transition-all text-center">
-                                    Volunteer
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="group bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
-                            <div class="relative">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="Music Workshop" class="w-full h-48 object-cover">
-                                <div class="absolute top-4 left-4 bg-slate-800 text-white px-3 py-1 rounded-full text-sm font-semibold">Apr 5-7</div>
-                            </div>
-                            <div class="p-6">
-                                <span class="inline-block px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs font-bold mb-3">Workshop</span>
-                                <h3 class="text-xl font-bold text-slate-900 mb-3">Music & Worship Workshop</h3>
-                                <p class="text-slate-600 leading-relaxed mb-4">
-                                    Training for music ministry teams and worship leaders.
-                                </p>
-                                <div class="flex items-center justify-between text-sm text-slate-500 mb-4">
-                                    <span><i class="ph ph-map-pin mr-1"></i> Dodoma</span>
-                                    <span><i class="ph ph-users mr-1"></i> 50 spots</span>
-                                </div>
-                                <div class="mb-4">
-                                    <div class="flex justify-between text-sm mb-1">
-                                        <span class="font-semibold text-slate-700">Registration</span>
-                                        <span class="font-bold text-slate-900">30/50</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2">
-                                        <div class="bg-slate-800 h-2 rounded-full" style="width: 60%"></div>
-                                    </div>
-                                </div>
-                                <a href="{{ url('register/music-workshop') }}" class="w-full bg-slate-900 text-white px-4 py-3 rounded-full font-semibold hover:bg-slate-800 transition-all text-center">
-                                    Register Now
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="group bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
-                            <div class="relative">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613879/volunteer-helping-with-donation-box_dwuyr7.jpg" alt="Summer Camp" class="w-full h-48 object-cover">
-                                <div class="absolute top-4 left-4 bg-slate-700 text-white px-3 py-1 rounded-full text-sm font-semibold">Jun 20-25</div>
-                            </div>
-                            <div class="p-6">
+                                <span class="inline-block px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs font-bold mb-3">Youth Camp</span>
+                                <h3 class="text-xl font-bold text-slate-900 mb-3">NexGen Camp 2026</h3>
                                 <span class="inline-block px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs font-bold mb-3">Camp</span>
                                 <h3 class="text-xl font-bold text-slate-900 mb-3">Summer Leadership Camp</h3>
                                 <p class="text-slate-600 leading-relaxed mb-4">

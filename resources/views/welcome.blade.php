@@ -266,6 +266,111 @@
                 </div>
             </section>
 
+<!-- Annual Events Preview -->
+<section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="text-slate-900 font-black text-xs uppercase tracking-[0.4em] mb-4 inline-block">Annual Events</span>
+            <h2 class="text-4xl font-serif text-slate-900 font-bold mb-6">Our Yearly Calendar</h2>
+            <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                Join thousands of believers across Tanzania for these transformative annual events that strengthen faith and build community.
+            </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <!-- Easter Conference -->
+            <div class="group bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
+                <div class="relative">
+                    <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="Easter Conference" class="w-full h-32 object-cover">
+                    <div class="absolute top-2 left-2 bg-red-600 text-white px-2 py-1 rounded-full text-xs font-semibold">Mar 30-Apr 5</div>
+                    <div class="absolute top-2 right-2 bg-red-600 text-white px-2 py-1 rounded-full text-xs font-bold animate-pulse">URGENT</div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-slate-900 mb-2">Easter Conference</h3>
+                    <p class="text-sm text-slate-600 mb-3">International gathering in Mbeya with powerful worship and teachings.</p>
+                    <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+                        <span><i class="ph ph-map-pin mr-1"></i> Mbeya</span>
+                        <span><i class="ph ph-users mr-1"></i> 2,000+</span>
+                    </div>
+                    <a href="{{ url('register/easter-conference-2026') }}" class="w-full bg-red-600 text-white px-3 py-2 rounded-lg text-sm font-bold hover:bg-red-700 transition-all text-center">
+                        Register Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Night of Praise -->
+            <div class="group bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
+                <div class="relative">
+                    <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613879/volunteer-helping-with-donation-box_dwuyr7.jpg" alt="Night of Praise" class="w-full h-32 object-cover">
+                    <div class="absolute top-2 left-2 bg-slate-900 text-white px-2 py-1 rounded-full text-xs font-semibold">Dec 15-16</div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-slate-900 mb-2">Night of Praise</h3>
+                    <p class="text-sm text-slate-600 mb-3">Electrifying worship night featuring top gospel artists in Dar es Salaam.</p>
+                    <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+                        <span><i class="ph ph-map-pin mr-1"></i> Dar es Salaam</span>
+                        <span><i class="ph ph-users mr-1"></i> 5,000+</span>
+                    </div>
+                    <a href="{{ url('events/night-of-praise') }}" class="w-full bg-slate-900 text-white px-3 py-2 rounded-lg text-sm font-bold hover:bg-slate-800 transition-all text-center">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+
+            <!-- NexGen Camp -->
+            <div class="group bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
+                <div class="relative">
+                    <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613870/african-kid-marketplace-_7_xiwx7g.jpg" alt="NexGen Camp" class="w-full h-32 object-cover">
+                    <div class="absolute top-2 left-2 bg-slate-800 text-white px-2 py-1 rounded-full text-xs font-semibold">Aug 8-14</div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-slate-900 mb-2">NexGen Camp</h3>
+                    <p class="text-sm text-slate-600 mb-3">Youth empowerment camp for next generation leaders in Dar es Salaam.</p>
+                    <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+                        <span><i class="ph ph-map-pin mr-1"></i> Dar es Salaam</span>
+                        <span><i class="ph ph-users mr-1"></i> 1,000+</span>
+                    </div>
+                    <a href="{{ url('events/nexgen-camp') }}" class="w-full bg-slate-800 text-white px-3 py-2 rounded-lg text-sm font-bold hover:bg-slate-700 transition-all text-center">
+                        Register Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- All Events -->
+            <div class="group bg-gradient-to-br from-slate-900 to-slate-700 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all">
+                <div class="p-6 text-center h-full flex flex-col justify-center">
+                    <i class="ph ph-calendar text-white text-3xl mb-3"></i>
+                    <h3 class="font-bold text-white mb-2">More Events</h3>
+                    <p class="text-sm text-slate-200 mb-4">Leadership Summit, Open Gate Camp, Perfect Vision Camp, Tamasha la Sifa & more!</p>
+                    <a href="{{ url('events') }}" class="w-full bg-white text-slate-900 px-3 py-2 rounded-lg text-sm font-bold hover:bg-slate-100 transition-all text-center">
+                        View All Events
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="text-center">
+                <div class="text-3xl font-black text-slate-900">7</div>
+                <div class="text-sm text-slate-600">Major Annual Events</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-black text-slate-900">15,000+</div>
+                <div class="text-sm text-slate-600">Annual Participants</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-black text-slate-900">31</div>
+                <div class="text-sm text-slate-600">Regions Reached</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-black text-slate-900">365</div>
+                <div class="text-sm text-slate-600">Days of Ministry</div>
+            </div>
+        </div>
+    </div>
+</section>
+
     <section class="py-32 bg-white" id="about">
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="grid gap-12 lg:grid-cols-12 lg:items-start">
