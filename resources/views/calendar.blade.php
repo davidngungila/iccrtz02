@@ -128,14 +128,14 @@
                                         <i class="ph ph-calendar text-slate-900"></i>
                                         <div>
                                             <div class="text-xs text-slate-500">Date</div>
-                                            <div class="font-bold text-slate-900 text-sm">Apr 3-6, 2026</div>
+                                            <div class="font-bold text-slate-900 text-sm">Mar 30 - Apr 5, 2026</div>
                                         </div>
                                     </div>
                                     <div class="flex items-center gap-2">
                                         <i class="ph ph-map-pin text-slate-900"></i>
                                         <div>
                                             <div class="text-xs text-slate-500">Location</div>
-                                            <div class="font-bold text-slate-900 text-sm">Dodoma</div>
+                                            <div class="font-bold text-slate-900 text-sm">Mbeya</div>
                                         </div>
                                     </div>
                                 </div>

@@ -89,7 +89,7 @@
                                         <div class="flex items-center gap-3 text-yellow-300">
                                             <i class="ph ph-warning-circle text-2xl animate-pulse"></i>
                                             <div>
-                                                <div class="font-bold text-lg">April 3-6, 2026 • Dodoma</div>
+                                                <div class="font-bold text-lg">March 30 - April 5, 2026 • Mbeya</div>
                                                 <div class="text-sm">Early Bird Discount Ends Soon! Limited Seats Available!</div>
                                             </div>
                                         </div>

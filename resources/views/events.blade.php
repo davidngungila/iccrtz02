@@ -127,14 +127,14 @@
                                         <i class="ph ph-calendar text-slate-900 text-xl"></i>
                                         <div>
                                             <div class="text-sm text-slate-500">Date</div>
-                                            <div class="font-bold text-slate-900">April 3-6, 2026</div>
+                                            <div class="font-bold text-slate-900">Mar 30 - Apr 5, 2026</div>
                                         </div>
                                     </div>
                                     <div class="flex items-center gap-3">
                                         <i class="ph ph-map-pin text-slate-900 text-xl"></i>
                                         <div>
                                             <div class="text-sm text-slate-500">Location</div>
-                                            <div class="font-bold text-slate-900">Dodoma</div>
+                                            <div class="font-bold text-slate-900">Mbeya</div>
                                         </div>
                                     </div>
                                     <div class="flex items-center gap-3">
@@ -148,7 +148,7 @@
                                         <i class="ph ph-clock text-slate-900 text-xl"></i>
                                         <div>
                                             <div class="text-sm text-slate-500">Duration</div>
-                                            <div class="font-bold text-slate-900">4 Days</div>
+                                            <div class="font-bold text-slate-900">7 Days</div>
                                         </div>
                                     </div>
                                 </div>
@@ -185,7 +185,7 @@
                             </div>
                             <div class="relative">
                                 <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="International Easter Conference" class="w-full h-48 object-cover">
-                                <div class="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Apr 3-6, 2026</div>
+                                <div class="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Mar 30 - Apr 5, 2026</div>
                             </div>
                             <div class="p-6">
                                 <span class="inline-block px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold mb-3">International Conference</span>
@@ -194,7 +194,7 @@
                                     Experience resurrection power! International gathering with powerful worship, teachings, and divine encounters.
                                 </p>
                                 <div class="flex items-center justify-between text-sm text-slate-500 mb-4">
-                                    <span><i class="ph ph-map-pin mr-1"></i> Dodoma</span>
+                                    <span><i class="ph ph-map-pin mr-1"></i> Mbeya</span>
                                     <span><i class="ph ph-users mr-1"></i> 2,000+ spots</span>
                                 </div>
                                 <div class="mb-4">
