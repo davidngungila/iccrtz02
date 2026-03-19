@@ -266,55 +266,172 @@
                         </p>
                     </div>
                     
-                    <div class="grid gap-8 md:grid-cols-3">
-                        <!-- YouTube Channel Links -->
-                        <a href="https://youtube.com/@iccrztanzania" target="_blank" class="group bg-white rounded-2xl p-8 shadow-lg border-2 border-red-100 hover:shadow-2xl hover:border-red-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
-                            <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
-                                <i class="ph ph-youtube-logo text-white text-3xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-red-600 transition">ICCRTZ Official</h3>
-                            <p class="text-slate-600 leading-relaxed mb-4">Main channel with conferences and major events</p>
-                            <div class="text-sm text-slate-500 mb-4">
-                                <i class="ph ph-users mr-1"></i> 15.2K subscribers<br>
-                                <i class="ph ph-video mr-1"></i> 450+ videos
-                            </div>
-                            <span class="inline-flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg font-semibold">
-                                <span>Watch Now</span>
-                                <i class="ph ph-arrow-right"></i>
-                            </span>
-                        </a>
-                        
-                        <a href="https://youtube.com/@nexgeniccrztanzania" target="_blank" class="group bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-100 hover:shadow-2xl hover:border-slate-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
-                            <div class="w-20 h-20 bg-gradient-to-br from-slate-500 to-slate-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
-                                <i class="ph ph-youtube-logo text-white text-3xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-slate-600 transition">NexGen ICCRTZ</h3>
-                            <p class="text-slate-600 leading-relaxed mb-4">Youth-focused content and NexGen Camp highlights</p>
-                            <div class="text-sm text-slate-500 mb-4">
-                                <i class="ph ph-users mr-1"></i> 8.7K subscribers<br>
-                                <i class="ph ph-video mr-1"></i> 230+ videos
-                            </div>
-                            <span class="inline-flex items-center gap-2 px-4 py-2 bg-slate-600 text-white rounded-lg font-semibold">
-                                <span>Watch Now</span>
-                                <i class="ph ph-arrow-right"></i>
-                            </span>
-                        </a>
-                        
-                        <a href="https://youtube.com/@iccrztanzaniaworship" target="_blank" class="group bg-white rounded-2xl p-8 shadow-lg border-2 border-purple-100 hover:shadow-2xl hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
-                            <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
-                                <i class="ph ph-youtube-logo text-white text-3xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-purple-600 transition">ICCRTZ Worship</h3>
-                            <p class="text-slate-600 leading-relaxed mb-4">Worship sessions, Night of Praise, and music ministry</p>
-                            <div class="text-sm text-slate-500 mb-4">
-                                <i class="ph ph-users mr-1"></i> 12.1K subscribers<br>
-                                <i class="ph ph-video mr-1"></i> 180+ videos
-                            </div>
-                            <span class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg font-semibold">
-                                <span>Watch Now</span>
-                                <i class="ph ph-arrow-right"></i>
-                            </span>
-                        </a>
+                    <!-- YouTube Channels -->
+                    <div class="mb-16">
+                        <h3 class="text-2xl font-bold text-slate-900 text-center mb-8">Our YouTube Channels</h3>
+                        <div class="grid gap-8 md:grid-cols-3">
+                            <a href="https://youtube.com/@iccrztanzania" target="_blank" class="group bg-white rounded-2xl p-8 shadow-lg border-2 border-red-100 hover:shadow-2xl hover:border-red-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
+                                <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
+                                    <i class="ph ph-youtube-logo text-white text-3xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-red-600 transition">ICCRTZ Official</h3>
+                                <p class="text-slate-600 leading-relaxed mb-4">Main channel with conferences and major events</p>
+                                <div class="text-sm text-slate-500 mb-4">
+                                    <i class="ph ph-users mr-1"></i> 15.2K subscribers<br>
+                                    <i class="ph ph-video mr-1"></i> 450+ videos
+                                </div>
+                                <span class="inline-flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg font-semibold">
+                                    <span>Watch Now</span>
+                                    <i class="ph ph-arrow-right"></i>
+                                </span>
+                            </a>
+                            
+                            <a href="https://youtube.com/@nexgeniccrztanzania" target="_blank" class="group bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-100 hover:shadow-2xl hover:border-slate-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
+                                <div class="w-20 h-20 bg-gradient-to-br from-slate-500 to-slate-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
+                                    <i class="ph ph-youtube-logo text-white text-3xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-slate-600 transition">NexGen ICCRTZ</h3>
+                                <p class="text-slate-600 leading-relaxed mb-4">Youth-focused content and NexGen Camp highlights</p>
+                                <div class="text-sm text-slate-500 mb-4">
+                                    <i class="ph ph-users mr-1"></i> 8.7K subscribers<br>
+                                    <i class="ph ph-video mr-1"></i> 230+ videos
+                                </div>
+                                <span class="inline-flex items-center gap-2 px-4 py-2 bg-slate-600 text-white rounded-lg font-semibold">
+                                    <span>Watch Now</span>
+                                    <i class="ph ph-arrow-right"></i>
+                                </span>
+                            </a>
+                            
+                            <a href="https://youtube.com/@iccrztanzaniaworship" target="_blank" class="group bg-white rounded-2xl p-8 shadow-lg border-2 border-purple-100 hover:shadow-2xl hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
+                                <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
+                                    <i class="ph ph-youtube-logo text-white text-3xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-purple-600 transition">ICCRTZ Worship</h3>
+                                <p class="text-slate-600 leading-relaxed mb-4">Worship sessions, Night of Praise, and music ministry</p>
+                                <div class="text-sm text-slate-500 mb-4">
+                                    <i class="ph ph-users mr-1"></i> 12.1K subscribers<br>
+                                    <i class="ph ph-video mr-1"></i> 180+ videos
+                                </div>
+                                <span class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg font-semibold">
+                                    <span>Watch Now</span>
+                                    <i class="ph ph-arrow-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Praise Team Songs -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900 text-center mb-8">Praise Team Songs</h3>
+                        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                            <a href="https://www.youtube.com/watch?v=IHn_YFij38M&t=4208s" target="_blank" class="group bg-white rounded-2xl p-6 shadow-lg border-2 border-red-100 hover:shadow-2xl hover:border-red-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                                    <i class="ph ph-music-notes text-white text-2xl"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-red-600 transition">Karismatiki Katoliki</h4>
+                                <p class="text-sm text-slate-600 mb-3">Umaja wa vyuu</p>
+                                <span class="inline-flex items-center gap-1 text-red-600 text-sm font-semibold">
+                                    <i class="ph ph-play"></i>
+                                    <span>Watch</span>
+                                </span>
+                            </a>
+
+                            <a href="https://www.youtube.com/watch?v=g6iF-vOAbPk" target="_blank" class="group bg-white rounded-2xl p-6 shadow-lg border-2 border-slate-100 hover:shadow-2xl hover:border-slate-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-slate-500 to-slate-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                                    <i class="ph ph-music-notes text-white text-2xl"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-slate-600 transition">Karismatiki Katoliki</h4>
+                                <p class="text-sm text-slate-600 mb-3">Worship session</p>
+                                <span class="inline-flex items-center gap-1 text-slate-600 text-sm font-semibold">
+                                    <i class="ph ph-play"></i>
+                                    <span>Watch</span>
+                                </span>
+                            </a>
+
+                            <a href="https://www.youtube.com/watch?v=P8E_GW2nY9g" target="_blank" class="group bg-white rounded-2xl p-6 shadow-lg border-2 border-green-100 hover:shadow-2xl hover:border-green-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                                    <i class="ph ph-music-notes text-white text-2xl"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-green-600 transition">Karismatiki Katoliki</h4>
+                                <p class="text-sm text-slate-600 mb-3">Praise & worship</p>
+                                <span class="inline-flex items-center gap-1 text-green-600 text-sm font-semibold">
+                                    <i class="ph ph-play"></i>
+                                    <span>Watch</span>
+                                </span>
+                            </a>
+
+                            <a href="https://www.youtube.com/watch?v=r6Di764gHQ4" target="_blank" class="group bg-white rounded-2xl p-6 shadow-lg border-2 border-yellow-100 hover:shadow-2xl hover:border-yellow-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                                    <i class="ph ph-music-notes text-white text-2xl"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-yellow-600 transition">Lord Grace Team</h4>
+                                <p class="text-sm text-slate-600 mb-3">Worship performance</p>
+                                <span class="inline-flex items-center gap-1 text-yellow-600 text-sm font-semibold">
+                                    <i class="ph ph-play"></i>
+                                    <span>Watch</span>
+                                </span>
+                            </a>
+
+                            <a href="https://www.youtube.com/watch?v=vHjhAFHVRzA" target="_blank" class="group bg-white rounded-2xl p-6 shadow-lg border-2 border-purple-100 hover:shadow-2xl hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                                    <i class="ph ph-music-notes text-white text-2xl"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-purple-600 transition">Lord Grace Team</h4>
+                                <p class="text-sm text-slate-600 mb-3">Praise session</p>
+                                <span class="inline-flex items-center gap-1 text-purple-600 text-sm font-semibold">
+                                    <i class="ph ph-play"></i>
+                                    <span>Watch</span>
+                                </span>
+                            </a>
+
+                            <a href="https://www.youtube.com/watch?v=TOd2fC_6EWY" target="_blank" class="group bg-white rounded-2xl p-6 shadow-lg border-2 border-blue-100 hover:shadow-2xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                                    <i class="ph ph-music-notes text-white text-2xl"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition">Lord Grace Team</h4>
+                                <p class="text-sm text-slate-600 mb-3">Live worship</p>
+                                <span class="inline-flex items-center gap-1 text-blue-600 text-sm font-semibold">
+                                    <i class="ph ph-play"></i>
+                                    <span>Watch</span>
+                                </span>
+                            </a>
+
+                            <a href="https://www.youtube.com/watch?v=s-U8mJMScxQ" target="_blank" class="group bg-white rounded-2xl p-6 shadow-lg border-2 border-red-100 hover:shadow-2xl hover:border-red-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                                    <i class="ph ph-music-notes text-white text-2xl"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-red-600 transition">Lord Grace Team</h4>
+                                <p class="text-sm text-slate-600 mb-3">Praise & worship</p>
+                                <span class="inline-flex items-center gap-1 text-red-600 text-sm font-semibold">
+                                    <i class="ph ph-play"></i>
+                                    <span>Watch</span>
+                                </span>
+                            </a>
+
+                            <a href="https://www.youtube.com/watch?v=DJi3nzO5cFM" target="_blank" class="group bg-white rounded-2xl p-6 shadow-lg border-2 border-slate-100 hover:shadow-2xl hover:border-slate-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-slate-500 to-slate-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                                    <i class="ph ph-music-notes text-white text-2xl"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-slate-600 transition">Lord Grace Team</h4>
+                                <p class="text-sm text-slate-600 mb-3">Music ministry</p>
+                                <span class="inline-flex items-center gap-1 text-slate-600 text-sm font-semibold">
+                                    <i class="ph ph-play"></i>
+                                    <span>Watch</span>
+                                </span>
+                            </a>
+
+                            <a href="https://www.youtube.com/watch?v=szGy_XaLbFw" target="_blank" class="group bg-white rounded-2xl p-6 shadow-lg border-2 border-green-100 hover:shadow-2xl hover:border-green-400 transition-all duration-300 transform hover:-translate-y-2 text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                                    <i class="ph ph-music-notes text-white text-2xl"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-green-600 transition">Lord Grace Team</h4>
+                                <p class="text-sm text-slate-600 mb-3">Live performance</p>
+                                <span class="inline-flex items-center gap-1 text-green-600 text-sm font-semibold">
+                                    <i class="ph ph-play"></i>
+                                    <span>Watch</span>
+                                </span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
