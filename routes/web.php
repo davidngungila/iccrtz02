@@ -7,6 +7,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Quick Admin Access
+Route::get('/admin', function () {
+    return redirect()->route('admin.login');
+});
+
 // About Section
 Route::get('/about', function () {
     return view('about');
@@ -172,4 +177,33 @@ Route::get('/programs/arts', function () {
 
 Route::get('/programs/international', function () {
     return view('programs.international');
+});
+
+// Admin Routes
+Route::prefix('admin')->group(function () {
+    Route::get('/login', [App\Http\Controllers\Admin\AuthController::class, 'showLogin'])->name('admin.login');
+    Route::post('/login', [App\Http\Controllers\Admin\AuthController::class, 'login'])->name('admin.login.post');
+    Route::post('/logout', [App\Http\Controllers\Admin\AuthController::class, 'logout'])->name('admin.logout');
+    
+    Route::middleware(\App\Http\Middleware\AdminAuth::class)->group(function () {
+        Route::get('/', function () {
+            return view('admin.dashboard');
+        })->name('admin.dashboard');
+        
+        Route::get('/events', function () {
+            return view('admin.events');
+        })->name('admin.events');
+        
+        Route::get('/content', function () {
+            return view('admin.content');
+        })->name('admin.content');
+        
+        Route::get('/users', function () {
+            return view('admin.users');
+        })->name('admin.users');
+        
+        Route::get('/settings', function () {
+            return view('admin.settings');
+        })->name('admin.settings');
+    });
 });

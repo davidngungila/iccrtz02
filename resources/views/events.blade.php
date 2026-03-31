@@ -102,8 +102,8 @@
                         <div class="grid md:grid-cols-2 gap-0">
                             <div class="relative">
                                 <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="International Easter Conference" class="w-full h-full object-cover min-h-[400px]">
-                                <div class="absolute top-6 left-6 bg-red-600 text-white px-4 py-2 rounded-full text-sm font-bold animate-pulse">
-                                    URGENT - Register Now!
+                                <div class="absolute top-6 left-6 bg-green-600 text-white px-4 py-2 rounded-full text-sm font-bold animate-pulse">
+                                    🔴 LIVE NOW - Day 1
                                 </div>
                             </div>
                             <div class="p-10 flex flex-col justify-center">
@@ -115,10 +115,10 @@
                                         of Catholic students from across Tanzania and East Africa for three days of powerful worship, 
                                         life-changing teachings, divine encounters, and Easter celebration.
                                     </p>
-                                    <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-6">
-                                        <div class="flex items-center gap-2 text-yellow-800">
-                                            <i class="ph ph-warning-circle text-xl"></i>
-                                            <span class="font-bold">Limited Seats Available - Early Bird Discount Ends Soon!</span>
+                                    <div class="bg-green-50 border border-green-200 rounded-xl p-4 mb-6">
+                                        <div class="flex items-center gap-2 text-green-800">
+                                            <i class="ph ph-broadcast text-xl"></i>
+                                            <span class="font-bold">🔴 CONFERENCE IS LIVE! Join us in Mbeya or watch online</span>
                                         </div>
                                     </div>
                                 </div>
@@ -153,8 +153,8 @@
                                     </div>
                                 </div>
                                 <div class="flex gap-4">
-                                    <a href="{{ url('register/easter-conference-2026') }}" class="px-6 py-3 bg-red-600 text-white font-bold rounded-full hover:bg-red-700 transition-all animate-pulse">
-                                        Register Now - Save Your Spot!
+                                    <a href="{{ url('register/easter-conference-2026') }}" class="px-6 py-3 bg-green-600 text-white font-bold rounded-full hover:bg-green-700 transition-all animate-pulse">
+                                        🔴 Join Live Stream
                                     </a>
                                     <a href="{{ url('events/easter-conference-2026') }}" class="px-6 py-3 bg-slate-100 text-slate-900 font-bold rounded-full hover:bg-slate-200 transition-all">
                                         Learn More
@@ -178,11 +178,12 @@
                     </div>
 
                     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                        <!-- Easter Conference 2026 - Urgent Event -->
+                        <!-- Easter Conference 2026 - LIVE EVENT -->
                         <div class="group bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
                             <div class="relative">
                                 <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="International Easter Conference" class="w-full h-48 object-cover">
-                                <div class="absolute top-4 left-4 bg-slate-900 text-white px-3 py-1 rounded-full text-sm font-semibold">Mar 30 - Apr 5, 2026</div>
+                                <div class="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold animate-pulse">🔴 LIVE NOW</div>
+                                <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold">DAY 1</div>
                             </div>
                             <div class="p-6">
                                 <span class="inline-block px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs font-bold mb-3">International Conference</span>
@@ -195,16 +196,22 @@
                                     <span><i class="ph ph-users mr-1"></i> 2,000+ spots</span>
                                 </div>
                                 <div class="mb-4">
+                                    <div class="bg-green-50 border border-green-200 rounded-xl p-3 mb-3">
+                                        <div class="flex items-center gap-2 text-green-800 text-sm">
+                                            <i class="ph ph-broadcast"></i>
+                                            <span class="font-semibold">Conference is LIVE! Watch online or join in Mbeya</span>
+                                        </div>
+                                    </div>
                                     <div class="flex justify-between text-sm mb-1">
-                                        <span class="font-semibold text-slate-700">Registration Progress</span>
-                                        <span class="font-bold text-red-600">1,250/2,000</span>
+                                        <span class="font-semibold text-slate-700">Live Attendance</span>
+                                        <span class="font-bold text-green-600">1,250+ joined</span>
                                     </div>
                                     <div class="w-full bg-gray-200 rounded-full h-2">
-                                        <div class="bg-red-600 h-2 rounded-full" style="width: 62.5%"></div>
+                                        <div class="bg-green-600 h-2 rounded-full animate-pulse" style="width: 62.5%"></div>
                                     </div>
                                 </div>
-                                <a href="{{ url('register/easter-conference-2026') }}" class="w-full bg-red-600 text-white px-4 py-3 rounded-full font-bold hover:bg-red-700 transition-all text-center">
-                                    Register Now
+                                <a href="{{ url('register/easter-conference-2026') }}" class="w-full bg-green-600 text-white px-4 py-3 rounded-full font-bold hover:bg-green-700 transition-all text-center">
+                                    🔴 Join Live Stream
                                 </a>
                             </div>
                         </div>
