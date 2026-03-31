@@ -11,9 +11,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->web(append: [
-            \App\Http\Middleware\AdminAuth::class,
-        ]);
+        // AdminAuth middleware is applied only to admin routes in web.php
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
