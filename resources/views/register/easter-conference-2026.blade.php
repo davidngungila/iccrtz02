@@ -193,15 +193,15 @@
                             <div class="grid gap-6 md:grid-cols-2">
                                 <div>
                                     <label class="block text-sm font-semibold text-slate-700 mb-2">First Name *</label>
-                                    <input type="text" required class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-600 focus:border-transparent">
+                                    <input type="text" required placeholder="Enter your first name" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-600 focus:border-transparent">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-semibold text-slate-700 mb-2">Last Name *</label>
-                                    <input type="text" required class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-600 focus:border-transparent">
+                                    <input type="text" required placeholder="Enter your last name" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-600 focus:border-transparent">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-semibold text-slate-700 mb-2">Email Address *</label>
-                                    <input type="email" required class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-600 focus:border-transparent">
+                                    <input type="email" required placeholder="Enter your email address" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-600 focus:border-transparent">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-semibold text-slate-700 mb-2">Phone Number *</label>
@@ -215,7 +215,7 @@
                                     <label class="block text-sm font-semibold text-slate-700 mb-2" x-show="registrationType === 'student'">University/College *</label>
                                     <label class="block text-sm font-semibold text-slate-700 mb-2" x-show="registrationType === 'alumni'">Current Occupation *</label>
                                     <label class="block text-sm font-semibold text-slate-700 mb-2" x-show="registrationType === 'international'">Organization/Ministry *</label>
-                                    <input type="text" required class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-600 focus:border-transparent">
+                                    <input type="text" required placeholder="Enter your university/college/organization" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-600 focus:border-transparent">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-semibold text-slate-700 mb-2">Study Year/Position *</label>
@@ -310,11 +310,11 @@
                                 <div class="grid gap-4 md:grid-cols-2">
                                     <div>
                                         <label class="block text-sm font-semibold text-slate-700 mb-2">Contact Name *</label>
-                                        <input type="text" required class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-600 focus:border-transparent">
+                                        <input type="text" required placeholder="Enter emergency contact name" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-600 focus:border-transparent">
                                     </div>
                                     <div>
                                         <label class="block text-sm font-semibold text-slate-700 mb-2">Contact Phone *</label>
-                                        <input type="tel" required class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-600 focus:border-transparent">
+                                        <input type="tel" required placeholder="Enter emergency contact phone" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-red-600 focus:border-transparent">
                                     </div>
                                 </div>
                             </div>
