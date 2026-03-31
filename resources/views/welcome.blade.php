@@ -95,7 +95,6 @@
                                         <i class="ph ph-warning-circle text-2xl"></i>
                                         <div>
                                             <div class="font-bold text-lg">March 30 - April 5, 2026 • Mbeya</div>
-                                            <div class="text-sm">Standard Registration: TSh 30,000 | International Visitors: Free</div>
                                         </div>
                                     </div>
                                     <div class="flex flex-col sm:flex-row items-center gap-4">
