@@ -475,110 +475,27 @@
                 <div class="grid gap-6 lg:grid-cols-3">
                     <!-- Calendar -->
                     <div class="lg:col-span-2">
-                        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                            <!-- Calendar Header -->
-                            <div class="flex items-center justify-between mb-6">
-                                <div class="flex items-center gap-4">
-                                    <button @click="previousMonth()" class="p-2 hover:bg-slate-100 rounded-lg transition-all">
-                                        <i class="ph ph-arrow-left text-slate-600"></i>
-                                    </button>
-                                    <h3 class="text-lg font-semibold text-slate-900" x-text="monthNames[currentMonth] + ' ' + currentYear"></h3>
-                                    <button @click="nextMonth()" class="p-2 hover:bg-slate-100 rounded-lg transition-all">
-                                        <i class="ph ph-arrow-right text-slate-600"></i>
-                                    </button>
-                                </div>
-                                <button @click="goToToday()" class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm font-medium hover:bg-purple-200 transition-all">
-                                    Today
-                                </button>
-                            </div>
-
-                            <!-- Calendar Grid -->
-                            <div class="grid grid-cols-7 gap-1 mb-2">
-                                <!-- Weekday Headers -->
-                                <template x-for="day in ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']">
-                                    <div class="text-center text-xs font-medium text-slate-500 py-2" x-text="day"></div>
-                                </template>
-                                
-                                <!-- Empty Cells for First Week -->
-                                <template x-for="i in firstDayOfMonth">
-                                    <div class="aspect-square"></div>
-                                </template>
-                                
-                                <!-- Calendar Days -->
-                                <template x-for="day in daysInMonth">
-                                    <div @click="selectDate(day)" 
-                                         :class="selectedDate === day ? 'bg-purple-100 border-purple-500' : 'hover:bg-slate-50 border-slate-200'"
-                                         class="aspect-square border rounded-lg p-2 cursor-pointer transition-all relative">
-                                        <div class="text-sm font-medium" :class="selectedDate === day ? 'text-purple-900' : 'text-slate-900'" x-text="day"></div>
-                                        
-                                        <!-- Event Indicators -->
-                                        <div class="mt-1 space-y-1">
-                                            <template x-for="event in eventsForDate(day).slice(0, 3)" :key="event.id">
-                                                <div class="text-xs px-1 py-0.5 rounded truncate" 
-                                                     :class="getEventTypeColor(event.type)"
-                                                     x-text="event.name.length > 8 ? event.name.substring(0, 8) + '...' : event.name">
-                                                </div>
-                                            </template>
-                                            <div x-show="eventsForDate(day).length > 3" class="text-xs text-slate-500">
-                                                +<span x-text="eventsForDate(day).length - 3"></span> more
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- Event Count Badge -->
-                                        <div x-show="eventsForDate(day).length > 0" 
-                                             class="absolute top-1 right-1 w-5 h-5 bg-purple-600 text-white text-xs rounded-full flex items-center justify-center"
-                                             x-text="eventsForDate(day).length">
-                                        </div>
-                                    </div>
-                                </template>
-                            </div>
-
-                            <!-- Calendar Legend -->
-                            <div class="mt-6 pt-6 border-t border-slate-200">
-                                <h4 class="text-sm font-medium text-slate-700 mb-3">Event Types</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-2 py-1 text-xs font-medium rounded-full bg-purple-100 text-purple-800 border border-purple-200">Conference</span>
-                                    <span class="px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800 border border-blue-200">Summit</span>
-                                    <span class="px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800 border border-green-200">Workshop</span>
-                                    <span class="px-2 py-1 text-xs font-medium rounded-full bg-yellow-100 text-yellow-800 border border-yellow-200">Service</span>
-                                    <span class="px-2 py-1 text-xs font-medium rounded-full bg-pink-100 text-pink-800 border border-pink-200">Reunion</span>
-                                </div>
-                            </div>
-                        </div>
+                        @include('admin.calendar_component')
                     </div>
                     
-                    <!-- Selected Date Events -->
+                    <!-- Upcoming Events List -->
                     <div>
                         <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                            <h3 class="text-lg font-semibold text-slate-900 mb-4">
-                                <span x-show="selectedDate" x-text="'Events for ' + monthNames[currentMonth] + ' ' + selectedDate + ', ' + currentYear"></span>
-                                <span x-show="!selectedDate">Select a date to view events</span>
-                            </h3>
-                            
-                            <div x-show="selectedDate" class="space-y-3">
-                                <template x-for="event in eventsForDate(selectedDate)" :key="event.id">
-                                    <div class="border border-slate-200 rounded-lg p-4 hover:bg-slate-50 transition-all">
-                                        <div class="flex items-start justify-between">
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Upcoming Events</h3>
+                            <div class="space-y-3">
+                                <template x-for="event in events.filter(e => e.status === 'upcoming' || e.status === 'live')" :key="event.id">
+                                    <div class="border border-slate-200 rounded-lg p-3 hover:bg-slate-50 transition-all">
+                                        <div class="flex items-start gap-3">
+                                            <div class="w-2 h-2 rounded-full mt-2"
+                                                 :class="event.status === 'live' ? 'bg-red-600 animate-pulse' : 'bg-purple-600'"></div>
                                             <div class="flex-1">
-                                                <div class="flex items-center gap-2 mb-2">
-                                                    <h4 class="font-medium text-slate-900" x-text="event.name"></h4>
-                                                    <span class="px-2 py-1 text-xs font-medium rounded-full" 
-                                                          :class="getEventStatusColor(event.status)"
-                                                          x-text="event.status"></span>
+                                                <h4 class="font-medium text-slate-900 text-sm" x-text="event.name"></h4>
+                                                <div class="text-xs text-slate-600 mt-1">
+                                                    <span x-text="event.date"></span> • 
+                                                    <span x-text="event.time"></span>
                                                 </div>
-                                                <div class="text-sm text-slate-600 space-y-1">
-                                                    <div class="flex items-center gap-2">
-                                                        <i class="ph ph-clock"></i>
-                                                        <span x-text="event.time + ' - ' + event.endTime"></span>
-                                                    </div>
-                                                    <div class="flex items-center gap-2">
-                                                        <i class="ph ph-map-pin"></i>
-                                                        <span x-text="event.location"></span>
-                                                    </div>
-                                                    <div class="flex items-center gap-2">
-                                                        <i class="ph ph-users"></i>
-                                                        <span x-text="event.registrations + '/' + event.capacity + ' registered'"></span>
-                                                    </div>
+                                                <div class="text-xs text-slate-500">
+                                                    <span x-text="event.location"></span>
                                                 </div>
                                             </div>
                                             <div class="flex items-center gap-2 ml-4">
