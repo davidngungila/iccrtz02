@@ -214,6 +214,26 @@ Route::prefix('admin')->group(function () {
             return view('admin.reports');
         })->name('admin.reports');
         
+        Route::get('/diocese', function () {
+            return view('admin.diocese');
+        })->name('admin.diocese');
+        
+        Route::get('/parish', function () {
+            return view('admin.parish');
+        })->name('admin.parish');
+        
+        Route::get('/groups', function () {
+            return view('admin.groups');
+        })->name('admin.groups');
+        
+        Route::get('/profile', function () {
+            return view('admin.profile');
+        })->name('admin.profile');
+        
+        Route::get('/security', function () {
+            return view('admin.security');
+        })->name('admin.security');
+        
         Route::get('/settings', function () {
             return view('admin.settings');
         })->name('admin.settings');
