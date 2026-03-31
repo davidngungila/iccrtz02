@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Advanced Analytics Dashboard')
+@section('title', 'Advanced Dashboard')
 
 @section('page-title', 'Advanced Analytics Dashboard')
 
@@ -10,7 +10,6 @@
     refreshInterval: null,
     lastRefresh: new Date(),
     autoRefresh: false,
-    charts: {},
     dashboardData: {
         overview: {
             totalMembers: 2847,
@@ -115,279 +114,6 @@
             activeUsers: 47
         }
     },
-    initCharts() {
-        this.$nextTick(() => {
-            this.initRegistrationChart();
-            this.initDioceseChart();
-            this.initDonationChart();
-            this.initEventChart();
-            this.initAgeChart();
-            this.initGenderChart();
-            this.initEngagementChart();
-        });
-    },
-    initRegistrationChart() {
-        const ctx = document.getElementById('registrationChart');
-        if (ctx) {
-            this.charts.registration = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: this.dashboardData.members.registrations.map(r => r.date),
-                    datasets: [{
-                        label: 'New Registrations',
-                        data: this.dashboardData.members.registrations.map(r => r.count),
-                        borderColor: '#8b5cf6',
-                        backgroundColor: 'rgba(139, 92, 246, 0.1)',
-                        borderWidth: 2,
-                        tension: 0.4,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            grid: {
-                                color: 'rgba(0, 0, 0, 0.05)'
-                            }
-                        },
-                        x: {
-                            grid: {
-                                display: false
-                            }
-                        }
-                    }
-                }
-            });
-        }
-    },
-    initDioceseChart() {
-        const ctx = document.getElementById('dioceseChart');
-        if (ctx) {
-            this.charts.diocese = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: this.dashboardData.members.byDiocese.map(d => d.name.split(' ')[0]),
-                    datasets: [{
-                        label: 'Members',
-                        data: this.dashboardData.members.byDiocese.map(d => d.members),
-                        backgroundColor: this.dashboardData.members.byDiocese.map(d => d.color)
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            grid: {
-                                color: 'rgba(0, 0, 0, 0.05)'
-                            }
-                        },
-                        x: {
-                            grid: {
-                                display: false
-                            }
-                        }
-                    }
-                }
-            });
-        }
-    },
-    initDonationChart() {
-        const ctx = document.getElementById('donationChart');
-        if (ctx) {
-            this.charts.donation = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: this.dashboardData.donations.monthly.map(d => d.month),
-                    datasets: [{
-                        label: 'Donations (TSh)',
-                        data: this.dashboardData.donations.monthly.map(d => d.amount),
-                        borderColor: '#10b981',
-                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                        borderWidth: 2,
-                        tension: 0.4,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            grid: {
-                                color: 'rgba(0, 0, 0, 0.05)'
-                            },
-                            ticks: {
-                                callback: function(value) {
-                                    return 'TSh ' + (value / 1000000).toFixed(1) + 'M';
-                                }
-                            }
-                        },
-                        x: {
-                            grid: {
-                                display: false
-                            }
-                        }
-                    }
-                }
-            });
-        }
-    },
-    initEventChart() {
-        const ctx = document.getElementById('eventChart');
-        if (ctx) {
-            this.charts.event = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: this.dashboardData.events.categories.map(c => c.name),
-                    datasets: [{
-                        data: this.dashboardData.events.categories.map(c => c.revenue),
-                        backgroundColor: [
-                            '#8b5cf6',
-                            '#3b82f6',
-                            '#10b981',
-                            '#f59e0b',
-                            '#ef4444'
-                        ]
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'bottom'
-                        }
-                    }
-                }
-            });
-        }
-    },
-    initAgeChart() {
-        const ctx = document.getElementById('ageChart');
-        if (ctx) {
-            this.charts.age = new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: this.dashboardData.members.byAge.map(a => a.range + ' years'),
-                    datasets: [{
-                        data: this.dashboardData.members.byAge.map(a => a.count),
-                        backgroundColor: [
-                            '#8b5cf6',
-                            '#3b82f6',
-                            '#10b981',
-                            '#f59e0b',
-                            '#ef4444'
-                        ]
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'right'
-                        }
-                    }
-                }
-            });
-        }
-    },
-    initGenderChart() {
-        const ctx = document.getElementById('genderChart');
-        if (ctx) {
-            this.charts.gender = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Male', 'Female'],
-                    datasets: [{
-                        data: [this.dashboardData.members.byGender.male, this.dashboardData.members.byGender.female],
-                        backgroundColor: ['#3b82f6', '#ec4899']
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'bottom'
-                        }
-                    }
-                }
-            });
-        }
-    },
-    initEngagementChart() {
-        const ctx = document.getElementById('engagementChart');
-        if (ctx) {
-            this.charts.engagement = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: this.dashboardData.engagement.topPages.map(p => p.page),
-                    datasets: [{
-                        label: 'Views',
-                        data: this.dashboardData.engagement.topPages.map(p => p.views),
-                        backgroundColor: '#8b5cf6'
-                    }, {
-                        label: 'Conversion %',
-                        data: this.dashboardData.engagement.topPages.map(p => p.conversion),
-                        backgroundColor: '#10b981',
-                        yAxisID: 'y1'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            position: 'left',
-                            grid: {
-                                color: 'rgba(0, 0, 0, 0.05)'
-                            }
-                        },
-                        y1: {
-                            beginAtZero: true,
-                            position: 'right',
-                            grid: {
-                                display: false
-                            },
-                            ticks: {
-                                callback: function(value) {
-                                    return value + '%';
-                                }
-                            }
-                        },
-                        x: {
-                            grid: {
-                                display: false
-                            }
-                        }
-                    }
-                }
-            });
-        }
-    },
     startAutoRefresh() {
         if (this.autoRefresh) {
             this.refreshInterval = setInterval(() => {
@@ -410,7 +136,7 @@
             this.stopAutoRefresh();
         }
     }
-}" x-init="initCharts()" x-cloak>
+}" x-init="startAutoRefresh()">
     <!-- Advanced Dashboard Header -->
     <div class="flex items-center justify-between mb-8">
         <div>
@@ -595,8 +321,11 @@
             <!-- Registration Trend Chart -->
             <div class="mb-6">
                 <h4 class="text-sm font-medium text-slate-700 mb-3">Registration Trend</h4>
-                <div class="h-48">
-                    <canvas id="registrationChart"></canvas>
+                <div class="h-48 bg-slate-100 rounded-lg flex items-center justify-center">
+                    <div class="text-center">
+                        <i class="ph ph-chart-line text-4xl text-slate-400 mb-2"></i>
+                        <p class="text-slate-600">Registration trend visualization</p>
+                    </div>
                 </div>
             </div>
 
@@ -605,16 +334,37 @@
                 <!-- By Diocese -->
                 <div>
                     <h4 class="text-sm font-medium text-slate-700 mb-3">Members by Diocese</h4>
-                    <div class="h-48">
-                        <canvas id="dioceseChart"></canvas>
+                    <div class="space-y-2">
+                        <template x-for="diocese in dashboardData.members.byDiocese" :key="diocese.name">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2 flex-1">
+                                    <div class="w-3 h-3 rounded-full" :style="'background-color: ' + diocese.color"></div>
+                                    <span class="text-sm text-slate-700 truncate" x-text="diocese.name"></span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-sm font-medium text-slate-900" x-text="diocese.members.toLocaleString()"></span>
+                                    <span class="text-xs text-green-600" x-text="'+' + diocese.growth + '%'"></span>
+                                </div>
+                            </div>
+                        </template>
                     </div>
                 </div>
 
-                <!-- Age Distribution -->
+                <!-- By Age Group -->
                 <div>
                     <h4 class="text-sm font-medium text-slate-700 mb-3">Age Distribution</h4>
-                    <div class="h-48">
-                        <canvas id="ageChart"></canvas>
+                    <div class="space-y-2">
+                        <template x-for="age in dashboardData.members.byAge" :key="age.range">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-slate-700" x-text="age.range + ' years'"></span>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-24 bg-slate-200 rounded-full h-2">
+                                        <div class="bg-purple-600 h-2 rounded-full" :style="'width: ' + age.percentage + '%'"></div>
+                                    </div>
+                                    <span class="text-sm font-medium text-slate-900" x-text="age.percentage + '%'"></span>
+                                </div>
+                            </div>
+                        </template>
                     </div>
                 </div>
             </div>
@@ -622,8 +372,25 @@
             <!-- Gender Distribution -->
             <div class="mt-6 pt-6 border-t border-slate-200">
                 <h4 class="text-sm font-medium text-slate-700 mb-3">Gender Distribution</h4>
-                <div class="h-32">
-                    <canvas id="genderChart"></canvas>
+                <div class="flex items-center gap-6">
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-slate-700">Male</span>
+                            <span class="text-sm font-medium text-slate-900" x-text="dashboardData.members.byGender.male.toLocaleString()"></span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-2">
+                            <div class="bg-blue-600 h-2 rounded-full" :style="'width: ' + (dashboardData.members.byGender.male / (dashboardData.members.byGender.male + dashboardData.members.byGender.female) * 100) + '%'"></div>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-slate-700">Female</span>
+                            <span class="text-sm font-medium text-slate-900" x-text="dashboardData.members.byGender.female.toLocaleString()"></span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-2">
+                            <div class="bg-pink-600 h-2 rounded-full" :style="'width: ' + (dashboardData.members.byGender.female / (dashboardData.members.byGender.male + dashboardData.members.byGender.female) * 100) + '%'"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -707,8 +474,11 @@
             <!-- Monthly Donation Chart -->
             <div class="mb-6">
                 <h4 class="text-sm font-medium text-slate-700 mb-3">Monthly Donations</h4>
-                <div class="h-48">
-                    <canvas id="donationChart"></canvas>
+                <div class="h-48 bg-slate-100 rounded-lg flex items-center justify-center">
+                    <div class="text-center">
+                        <i class="ph ph-chart-bar text-4xl text-slate-400 mb-2"></i>
+                        <p class="text-slate-600">Monthly donation trend</p>
+                    </div>
                 </div>
             </div>
 
@@ -755,8 +525,16 @@
             <!-- Event Categories -->
             <div class="mb-6">
                 <h4 class="text-sm font-medium text-slate-700 mb-3">Revenue by Category</h4>
-                <div class="h-48">
-                    <canvas id="eventChart"></canvas>
+                <div class="space-y-2">
+                    <template x-for="category in dashboardData.events.categories" :key="category.name">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-slate-700" x-text="category.name"></span>
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm font-medium text-slate-900" x-text="'TSh ' + (category.revenue / 1000000).toFixed(1) + 'M'"></span>
+                                <span class="text-xs text-slate-500" x-text="category.count + ' events'"></span>
+                            </div>
+                        </div>
+                    </template>
                 </div>
             </div>
 
@@ -880,8 +658,19 @@
             <!-- Top Performing Pages -->
             <div>
                 <h4 class="text-sm font-medium text-slate-700 mb-3">Top Performing Pages</h4>
-                <div class="h-48">
-                    <canvas id="engagementChart"></canvas>
+                <div class="space-y-2">
+                    <template x-for="page in dashboardData.engagement.topPages" :key="page.page">
+                        <div class="flex items-center justify-between p-2 bg-slate-50 rounded">
+                            <div class="flex-1">
+                                <div class="text-sm font-medium text-slate-900" x-text="page.page"></div>
+                                <div class="text-xs text-slate-600" x-text="page.views.toLocaleString() + ' views'"></div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm font-medium text-green-600" x-text="page.conversion + '%'"></div>
+                                <div class="text-xs text-slate-600">Conversion</div>
+                            </div>
+                        </div>
+                    </template>
                 </div>
             </div>
         </div>
