@@ -202,8 +202,24 @@ Route::prefix('admin')->group(function () {
             return view('admin.users');
         })->name('admin.users');
         
+        Route::get('/donations', function () {
+            return view('admin.donations');
+        })->name('admin.donations');
+        
+        Route::get('/communications', function () {
+            return view('admin.communications');
+        })->name('admin.communications');
+        
+        Route::get('/reports', function () {
+            return view('admin.reports');
+        })->name('admin.reports');
+        
         Route::get('/settings', function () {
             return view('admin.settings');
         })->name('admin.settings');
+        
+        Route::get('/backup', function () {
+            return view('admin.backup');
+        })->name('admin.backup');
     });
 });
