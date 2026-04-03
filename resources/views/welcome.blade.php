@@ -269,6 +269,97 @@
                 </div>
             </section>
 
+            <!-- Featured Videos Section -->
+            <section class="py-16 bg-gradient-to-br from-red-50 to-rose-50">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <div class="inline-flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-full mb-4">
+                            <i class="ph ph-youtube-logo text-xl"></i>
+                            <span class="font-bold">Featured Videos</span>
+                        </div>
+                        <h2 class="text-4xl font-serif text-slate-900 font-bold mb-4">Watch Our Latest Content</h2>
+                        <p class="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+                            Experience the power of ICCRTZ through our featured videos and live streams from recent events and conferences.
+                        </p>
+                    </div>
+
+                    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
+                        <!-- ICCR INTERNATIONAL EASTER CONFERENCE -->
+                        <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all group">
+                            <div class="relative">
+                                <iframe src="https://www.youtube.com/embed/iankOP8Lzcw" 
+                                        title="ICCR INTERNATIONAL EASTER CONFERENCE" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen
+                                        class="w-full h-48 object-cover">
+                                </iframe>
+                                <div class="absolute top-2 right-2 bg-red-600 text-white px-2 py-1 rounded-full text-xs font-bold">NEW</div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-slate-900 mb-2">ICCR INTERNATIONAL EASTER CONFERENCE</h4>
+                                <p class="text-sm text-slate-600 mb-2">Complete Conference Highlights</p>
+                                <div class="flex items-center gap-2 text-xs text-slate-500">
+                                    <span><i class="ph ph-clock mr-1"></i> March 31 - April 5, 2026</span>
+                                    <span><i class="ph ph-eye mr-1"></i> 8.2K views</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Day 5 -->
+                        <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all group">
+                            <div class="relative">
+                                <iframe src="https://www.youtube.com/embed/1mV8lItaZlY" 
+                                        title="ICCR INTERNATIONAL EASTER CONFERENCE DAY 5" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen
+                                        class="w-full h-48 object-cover">
+                                </iframe>
+                                <div class="absolute top-2 left-2 bg-green-600 text-white px-2 py-1 rounded-full text-xs font-bold">POPULAR</div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-slate-900 mb-2">Easter Conference Day 5</h4>
+                                <p class="text-sm text-slate-600 mb-2">Final Day Highlights</p>
+                                <div class="flex items-center gap-2 text-xs text-slate-500">
+                                    <span><i class="ph ph-clock mr-1"></i> April 5, 2026</span>
+                                    <span><i class="ph ph-eye mr-1"></i> 12.5K views</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Worship Session -->
+                        <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all group">
+                            <div class="relative">
+                                <iframe src="https://www.youtube.com/embed/a_TDzfg9Pgc?t=3439" 
+                                        title="Power Worship Session" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen
+                                        class="w-full h-48 object-cover">
+                                </iframe>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-slate-900 mb-2">Power Worship Session</h4>
+                                <p class="text-sm text-slate-600 mb-2">Anointed Worship & Praise</p>
+                                <div class="flex items-center gap-2 text-xs text-slate-500">
+                                    <span><i class="ph ph-clock mr-1"></i> April 3, 2026</span>
+                                    <span><i class="ph ph-eye mr-1"></i> 6.8K views</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="https://www.youtube.com/@karismatikikatolikiumojawa4252" target="_blank" class="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-full font-bold hover:bg-red-700 transition-all shadow-xl">
+                            <i class="ph ph-youtube-logo"></i>
+                            <span>Watch More Videos</span>
+                            <i class="ph ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
 <!-- Annual Events Preview -->
 <section class="py-20 bg-slate-50">
     <div class="max-w-7xl mx-auto px-6">
