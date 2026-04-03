@@ -261,11 +261,121 @@
             updatedAt: '2026-03-24'
         }
     ],
+    liveStreams: [
+        {
+            id: 1,
+            title: 'ICCR INTERNATIONAL EASTER CONFERENCE DAY 5',
+            url: 'https://www.youtube.com/embed/1mV8lItaZlY',
+            thumbnail: 'https://img.youtube.com/vi/1mV8lItaZlY/maxresdefault.jpg',
+            views: '12.5K',
+            date: '2026-04-05',
+            status: 'live',
+            duration: '3:45:00',
+            speaker: 'Various Speakers',
+            description: 'Final day of the International Easter Conference with powerful worship and teaching sessions.'
+        },
+        {
+            id: 2,
+            title: 'INTERNATIONAL EASTER CONFERENCE DAY 4 - RELATIONSHIP SEMINAR with Ev. A.Kanuti',
+            url: 'https://www.youtube.com/embed/a_TDzfg9Pgc',
+            thumbnail: 'https://img.youtube.com/vi/a_TDzfg9Pgc/maxresdefault.jpg',
+            views: '8.3K',
+            date: '2026-04-04',
+            status: 'completed',
+            duration: '2:30:00',
+            speaker: 'Ev. A. Kanuti',
+            description: 'Relationship seminar focused on building strong Christian relationships and marriage preparation.'
+        },
+        {
+            id: 3,
+            title: 'INTERNATIONAL EASTER CONFERENCE - THURSDAY HOLY MASS',
+            url: 'https://www.youtube.com/embed/Y6jFbe8N5cI',
+            thumbnail: 'https://img.youtube.com/vi/Y6jFbe8N5cI/maxresdefault.jpg',
+            views: '15.2K',
+            date: '2026-04-03',
+            status: 'completed',
+            duration: '2:15:00',
+            speaker: 'Bishop Jude Thaddeus Ruwa\'ichi',
+            description: 'Holy Mass celebration as part of the International Easter Conference proceedings.'
+        },
+        {
+            id: 4,
+            title: 'HEALING OF FAMILY TREE - INTERNATIONAL EASTER CONFERENCE DAY 3',
+            url: 'https://www.youtube.com/embed/Gah1V3DPhRQ',
+            thumbnail: 'https://img.youtube.com/vi/Gah1V3DPhRQ/maxresdefault.jpg',
+            views: '9.8K',
+            date: '2026-04-02',
+            status: 'completed',
+            duration: '2:45:00',
+            speaker: 'Fr. John Michael',
+            description: 'Powerful teaching on healing generational issues and breaking family curses through prayer.'
+        },
+        {
+            id: 5,
+            title: 'IBADA YA KUABUDU EKARIST',
+            url: 'https://www.youtube.com/embed/tylTppFpWF8',
+            thumbnail: 'https://img.youtube.com/vi/tylTppFpWF8/maxresdefault.jpg',
+            views: '6.7K',
+            date: '2026-04-01',
+            status: 'completed',
+            duration: '1:30:00',
+            speaker: 'Fr. Joseph Mwangi',
+            description: 'Eucharistic worship service with praise and worship led by the ICCRTZ music team.'
+        },
+        {
+            id: 6,
+            title: 'ASKOFU MKUU GERVAS NYAISONGA JIMBO KUU KATOLIKI MBEYA, ANAFUNDISHA',
+            url: 'https://www.youtube.com/embed/A_O5Heqledw',
+            thumbnail: 'https://img.youtube.com/vi/A_O5Heqledw/maxresdefault.jpg',
+            views: '11.4K',
+            date: '2026-03-31',
+            status: 'completed',
+            duration: '3:20:00',
+            speaker: 'Archbishop Gervas Nyaisonga',
+            description: 'Teaching session by the Archbishop of Mbeya Archdiocese on faith and spiritual growth.'
+        },
+        {
+            id: 7,
+            title: 'KUTENDA MAMBO MAKUU (DOING GREAT EXPLOITS), MWALIMU KANUTI ANAFUNDISHA',
+            url: 'https://www.youtube.com/embed/yJ1xwLTidKk',
+            thumbnail: 'https://img.youtube.com/vi/yJ1xwLTidKk/maxresdefault.jpg',
+            views: '7.9K',
+            date: '2026-03-30',
+            status: 'completed',
+            duration: '2:00:00',
+            speaker: 'Mwalimu Kanuti',
+            description: 'Inspirational teaching on achieving great things through faith and determination.'
+        },
+        {
+            id: 8,
+            title: 'INTERNATIONAL EASTER CONFERENCE 2026 ARCHDIOCESE OF MBEYA - TANZANIA',
+            url: 'https://www.youtube.com/embed/PgIJm42OJhw',
+            thumbnail: 'https://img.youtube.com/vi/PgIJm42OJhw/maxresdefault.jpg',
+            views: '18.6K',
+            date: '2026-03-31',
+            status: 'completed',
+            duration: '4:00:00',
+            speaker: 'Various Speakers',
+            description: 'Main conference opening day with keynote addresses and worship sessions.'
+        },
+        {
+            id: 9,
+            title: 'INTERNATIONAL EASTER CONFERENCE DAY 3',
+            url: 'https://www.youtube.com/embed/Rax72Zy8Gx4',
+            thumbnail: 'https://img.youtube.com/vi/Rax72Zy8Gx4/maxresdefault.jpg',
+            views: '10.2K',
+            date: '2026-04-02',
+            status: 'completed',
+            duration: '3:30:00',
+            speaker: 'Various Speakers',
+            description: 'Third day of the conference featuring multiple teaching sessions and workshops.'
+        }
+    ],
     registrations: [
         { id: 1, eventId: 1, name: 'John Michael', email: 'john@example.com', phone: '+255 712 345 678', diocese: 'Archdiocese of Dar es Salaam', parish: 'St. Mary\'s Cathedral', registrationDate: '2026-03-25', status: 'confirmed', paymentStatus: 'paid', amount: 30000 },
         { id: 2, eventId: 1, name: 'Sarah Kimani', email: 'sarah@example.com', phone: '+255 713 456 789', diocese: 'Archdiocese of Mbeya', parish: 'St. Joseph\'s Cathedral', registrationDate: '2026-03-26', status: 'confirmed', paymentStatus: 'paid', amount: 30000 },
         { id: 3, eventId: 1, name: 'Robert Chen', email: 'robert@example.com', phone: '+255 714 567 890', diocese: 'Diocese of Arusha', parish: 'Holy Spirit Church', registrationDate: '2026-03-27', status: 'pending', paymentStatus: 'pending', amount: 30000 },
-        { id: 4, eventId: 2, name: 'Grace Mbeki', email: 'grace@example.com', phone: '+255 715 678 901', diocese: 'Diocese of Dodoma', parish: 'St. Paul\'s Church', registrationDate: '2026-03-28', status: 'confirmed', paymentStatus: 'paid', amount: 15000 },
+        { id: 4, eventId: 2, name: 'Grace Mbeki', email: 'grace@example.com', phone: '+255 715 678 901', diocese: 'Archdiocese of Mbeya', parish: 'St. Joseph\'s Cathedral', registrationDate: '2026-03-28', status: 'confirmed', paymentStatus: 'paid', amount: 15000 },
         { id: 5, eventId: 2, name: 'Michael Johnson', email: 'michael@example.com', phone: '+255 716 789 012', diocese: 'Diocese of Mwanza', parish: 'Christ the King Church', registrationDate: '2026-03-29', status: 'confirmed', paymentStatus: 'paid', amount: 15000 },
         { id: 6, eventId: 3, name: 'David Ngungila', email: 'david@example.com', phone: '+255 717 890 123', diocese: 'Archdiocese of Dar es Salaam', parish: 'St. Mary\'s Cathedral', registrationDate: '2026-03-10', status: 'confirmed', paymentStatus: 'paid', amount: 0 },
         { id: 7, eventId: 4, name: 'Anna Mwangi', email: 'anna@example.com', phone: '+255 718 901 234', diocese: 'Archdiocese of Dar es Salaam', parish: 'St. Joseph\'s Cathedral', registrationDate: '2026-03-20', status: 'confirmed', paymentStatus: 'paid', amount: 10000 },
@@ -371,6 +481,19 @@
             const matchesStatus = this.filterStatus === 'all' || e.status === this.filterStatus;
             return matchesSearch && matchesType && matchesStatus;
         });
+    },
+    getStreamStatusColor(status) {
+        const colors = {
+            'live': 'bg-red-600 text-white animate-pulse',
+            'upcoming': 'bg-blue-600 text-white',
+            'completed': 'bg-green-600 text-white',
+            'scheduled': 'bg-yellow-600 text-white'
+        };
+        return colors[status] || 'bg-slate-600 text-white';
+    },
+    playVideo(stream) {
+        // Video will play in the iframe directly
+        console.log('Playing video:', stream.title);
     }
 }" x-cloak>
     <!-- Events Header -->
@@ -470,6 +593,69 @@
                     <div class="bg-yellow-600 h-2 rounded-full" :style="'width: ' + (events.reduce((sum, e) => sum + e.registrations, 0) / events.reduce((sum, e) => sum + e.capacity, 0)) * 100 + '%'"></div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Live Streaming Section -->
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 mb-8">
+        <div class="flex items-center justify-between mb-6">
+            <div>
+                <h2 class="text-2xl font-bold text-slate-900 mb-2">Watch Events Live</h2>
+                <p class="text-slate-600">Can't attend in person? Join us live on YouTube! All our major events are streamed for our global audience.</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="px-3 py-1 bg-red-600 text-white rounded-full text-sm font-medium animate-pulse flex items-center gap-2">
+                    <span class="w-2 h-2 bg-white rounded-full"></span>
+                    <span x-text="liveStreams.filter(s => s.status === 'live').length + ' Live Now'"></span>
+                </span>
+            </div>
+        </div>
+
+        <!-- Live Streams Grid - 4 per row -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <template x-for="stream in liveStreams" :key="stream.id">
+                <div class="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-all">
+                    <!-- Video Thumbnail -->
+                    <div class="relative aspect-video bg-slate-100">
+                        <img :src="stream.thumbnail" :alt="stream.title" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-all">
+                            <button @click="playVideo(stream)" class="bg-white/90 text-slate-900 rounded-full p-3 hover:bg-white transition-all">
+                                <i class="ph ph-play text-xl"></i>
+                            </button>
+                        </div>
+                        <div class="absolute top-2 left-2">
+                            <span class="px-2 py-1 text-xs font-medium rounded" :class="getStreamStatusColor(stream.status)" x-text="stream.status.toUpperCase()"></span>
+                        </div>
+                        <div class="absolute bottom-2 right-2">
+                            <span class="px-2 py-1 text-xs font-medium rounded bg-black/80 text-white" x-text="stream.duration"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Video Info -->
+                    <div class="p-4">
+                        <h3 class="font-semibold text-slate-900 mb-1 line-clamp-2" x-text="stream.title"></h3>
+                        <p class="text-sm text-slate-600 mb-2" x-text="stream.speaker"></p>
+                        <p class="text-xs text-slate-500 line-clamp-2 mb-3" x-text="stream.description"></p>
+                        
+                        <!-- Video Stats -->
+                        <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+                            <span x-text="stream.views + ' views'"></span>
+                            <span x-text="stream.date"></span>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="flex items-center gap-2">
+                            <button @click="playVideo(stream)" class="flex-1 bg-purple-600 text-white px-3 py-2 rounded-lg hover:bg-purple-700 transition-all text-sm font-medium">
+                                <i class="ph ph-play mr-1"></i>
+                                Watch Now
+                            </button>
+                            <button class="text-slate-600 hover:text-slate-900">
+                                <i class="ph ph-share"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </template>
         </div>
     </div>
 
@@ -1011,6 +1197,15 @@
                         <h4 class="font-medium text-slate-900 mb-2">Description</h4>
                         <p class="text-sm text-slate-600" x-text="selectedEvent.description"></p>
                     </div>
+
+                    <template x-if="selectedEvent.videoUrl">
+                        <div>
+                            <h4 class="font-medium text-slate-900 mb-2">Live Stream</h4>
+                            <div class="aspect-video bg-slate-100 rounded-lg overflow-hidden">
+                                <iframe :src="selectedEvent.videoUrl" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </template>
                 </div>
             </div>
         </div>
