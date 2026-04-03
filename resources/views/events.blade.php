@@ -99,6 +99,78 @@
                     grid-template-columns: repeat(3, 1fr);
                 }
             }
+            .live-stream-box {
+                background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+                box-shadow: 0 20px 25px -5px rgba(220, 38, 38, 0.3), 0 10px 10px -5px rgba(220, 38, 38, 0.2);
+                border: 2px solid rgba(255, 255, 255, 0.2);
+                position: relative;
+                overflow: hidden;
+            }
+            .live-stream-box::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+                animation: shimmer 3s infinite;
+            }
+            @keyframes shimmer {
+                0% { left: -100%; }
+                100% { left: 100%; }
+            }
+            .live-indicator {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(10px);
+                padding: 0.5rem 1.5rem;
+                border-radius: 9999px;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+            }
+            .live-dot {
+                width: 12px;
+                height: 12px;
+                background: #ffffff;
+                border-radius: 50%;
+                position: relative;
+            }
+            .live-dot::before {
+                content: '';
+                position: absolute;
+                top: -4px;
+                left: -4px;
+                right: -4px;
+                bottom: -4px;
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                animation: ping 2s infinite;
+            }
+            @keyframes ping {
+                0% { transform: scale(1); opacity: 1; }
+                75%, 100% { transform: scale(1.5); opacity: 0; }
+            }
+            .featured-video {
+                position: relative;
+                border-radius: 1rem;
+                overflow: hidden;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            }
+            .featured-video::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                border-radius: 1rem;
+                padding: 2px;
+                background: linear-gradient(45deg, #dc2626, #f59e0b, #dc2626);
+                -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+                pointer-events: none;
+            }
         </style>
     </head>
     <body class="min-h-screen bg-white text-slate-900 antialiased font-medium" x-data="{ mobileMenuOpen: false }">
@@ -130,46 +202,106 @@
                 </div>
             </section>
 
-            <!-- Live Streaming Section -->
-            <section id="livestream" class="py-16 bg-gradient-to-br from-red-50 to-slate-50">
+            <!-- Enhanced Live Streaming Section -->
+            <section id="livestream" class="py-20 bg-gradient-to-br from-red-50 via-white to-slate-50">
                 <div class="max-w-7xl mx-auto px-6">
-                    <div class="text-center mb-12">
-                        <div class="inline-flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-full mb-4">
-                            <span class="w-3 h-3 bg-white rounded-full live-badge"></span>
-                            <span class="font-bold">LIVE STREAMING NOW</span>
+                    <!-- Centered Live Streaming Box -->
+                    <div class="max-w-4xl mx-auto mb-16">
+                        <div class="live-stream-box rounded-3xl p-8 text-white text-center relative">
+                            <!-- Live Indicator -->
+                            <div class="absolute top-6 right-6">
+                                <div class="live-indicator">
+                                    <div class="live-dot live-badge"></div>
+                                    <span class="font-bold text-sm">LIVE</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Main Content -->
+                            <div class="mb-6">
+                                <div class="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full mb-6">
+                                    <i class="ph ph-youtube-logo text-4xl text-white"></i>
+                                </div>
+                                <h2 class="text-4xl lg:text-5xl font-bold mb-4 font-serif">LIVE STREAMING NOW</h2>
+                                <h3 class="text-2xl lg:text-3xl font-bold mb-6">Watch Events Live</h3>
+                                <p class="text-lg lg:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+                                    Can't attend in person? Join us live on YouTube! All our major events are streamed for our global audience.
+                                </p>
+                            </div>
+                            
+                            <!-- Stats -->
+                            <div class="grid grid-cols-3 gap-4 mb-8">
+                                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                                    <div class="text-2xl font-bold mb-1">5,000+</div>
+                                    <div class="text-sm text-white/80">Attendees</div>
+                                </div>
+                                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                                    <div class="text-2xl font-bold mb-1">150+</div>
+                                    <div class="text-sm text-white/80">Countries</div>
+                                </div>
+                                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                                    <div class="text-2xl font-bold mb-1">24/7</div>
+                                    <div class="text-sm text-white/80">Streaming</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Action Button -->
+                            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                                <a href="#featured-video" class="px-8 py-4 bg-white text-red-600 font-bold rounded-full hover:bg-slate-100 transition-all shadow-xl flex items-center gap-2">
+                                    <i class="ph ph-play"></i>
+                                    Watch Live Now
+                                </a>
+                                <a href="https://www.youtube.com/@iccrtz" target="_blank" class="px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-bold rounded-full hover:bg-white/30 transition-all border border-white/30 flex items-center gap-2">
+                                    <i class="ph ph-youtube-logo"></i>
+                                    Subscribe
+                                </a>
+                            </div>
                         </div>
-                        <h2 class="text-4xl font-bold text-slate-900 mb-4">Watch Events Live</h2>
-                        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
-                            Can't attend in person? Join us live on YouTube! All our major events are streamed for our global audience.
-                        </p>
                     </div>
 
                     <!-- Featured Live Stream -->
-                    <div class="mb-12">
-                        <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
-                            <div class="relative">
-                                <div class="absolute top-4 left-4 z-10">
-                                    <span class="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-2">
-                                        <span class="w-2 h-2 bg-white rounded-full live-badge"></span>
-                                        LIVE NOW
-                                    </span>
+                    <div id="featured-video" class="mb-16">
+                        <div class="text-center mb-8">
+                            <h3 class="text-3xl font-bold text-slate-900 mb-4">Featured Live Stream</h3>
+                            <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                                Join thousands watching the International Easter Conference 2026 live from St Mary's International Schools
+                            </p>
+                        </div>
+                        
+                        <div class="max-w-5xl mx-auto">
+                            <div class="bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden featured-video">
+                                <div class="relative">
+                                    <div class="absolute top-4 left-4 z-20">
+                                        <span class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg">
+                                            <span class="w-3 h-3 bg-white rounded-full live-badge"></span>
+                                            LIVE NOW
+                                        </span>
+                                    </div>
+                                    <div class="video-container">
+                                        <iframe src="https://www.youtube.com/embed/1mV8lItaZlY" 
+                                                title="ICCR INTERNATIONAL EASTER CONFERENCE DAY 5" 
+                                                frameborder="0" 
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                                allowfullscreen>
+                                        </iframe>
+                                    </div>
                                 </div>
-                                <div class="video-container">
-                                    <iframe src="https://www.youtube.com/embed/1mV8lItaZlY" 
-                                            title="ICCR INTERNATIONAL EASTER CONFERENCE DAY 5" 
-                                            frameborder="0" 
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                            allowfullscreen>
-                                    </iframe>
-                                </div>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="text-2xl font-bold text-slate-900 mb-2">ICCR INTERNATIONAL EASTER CONFERENCE DAY 5</h3>
-                                <p class="text-slate-600 mb-4">Join us for the final day of the International Easter Conference 2026 - Archdiocese of Mbeya, Tanzania</p>
-                                <div class="flex items-center gap-4 text-sm text-slate-500">
-                                    <span><i class="ph ph-map-pin mr-1"></i> St Mary's International Schools</span>
-                                    <span><i class="ph ph-calendar mr-1"></i> April 5, 2026</span>
-                                    <span><i class="ph ph-users mr-1"></i> 5,000+ attending</span>
+                                <div class="p-8">
+                                    <h3 class="text-2xl font-bold text-slate-900 mb-3">ICCR INTERNATIONAL EASTER CONFERENCE DAY 5</h3>
+                                    <p class="text-slate-600 mb-6 text-lg">Join us for the final day of the International Easter Conference 2026 - Archdiocese of Mbeya, Tanzania</p>
+                                    <div class="grid md:grid-cols-3 gap-4 text-sm">
+                                        <div class="flex items-center gap-2 text-slate-600">
+                                            <i class="ph ph-map-pin text-red-500"></i>
+                                            <span>St Mary's International Schools</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-slate-600">
+                                            <i class="ph ph-calendar text-red-500"></i>
+                                            <span>April 5, 2026</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-slate-600">
+                                            <i class="ph ph-users text-red-500"></i>
+                                            <span>5,000+ attending</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -177,7 +309,7 @@
 
                     <!-- Conference Video Grid -->
                     <div class="mb-8">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-6">International Easter Conference 2026 - All Sessions</h3>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-6 text-center">International Easter Conference 2026 - All Sessions</h3>
                         <div class="video-grid">
                             <!-- Day 4 -->
                             <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all">
