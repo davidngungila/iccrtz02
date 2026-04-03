@@ -18,621 +18,688 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <style>
-            body { 
-                font-family: 'Manrope', sans-serif; 
-                background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-                min-height: 100vh;
-            }
+            body { font-family: 'Manrope', sans-serif; }
             .font-serif { font-family: 'Playfair Display', serif; }
             [x-cloak] { display: none !important; }
-            
-            .gradient-bg {
-                background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            .nav-link { font-size: 1.05rem; position: relative; }
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: 1.5rem;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
+                transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             }
-            
-            .card-shadow {
-                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            .nav-link:hover::after {
+                width: 100%;
+                animation: borderSlide 1s infinite linear;
+                background: linear-gradient(90deg, #0f172a 25%, #1e293b 25%, #1e293b 50%, #0f172a 50%, #0f172a 75%, #1e293b 75%);
+                background-size: 200% 100%;
             }
-            
-            .section-card {
-                background: white;
-                border-radius: 1rem;
-                padding: 2rem;
-                margin-bottom: 1.5rem;
-                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            @keyframes borderSlide {
+                0% { background-position: 100% 0; }
+                100% { background-position: -100% 0; }
+            }
+            .group:hover .mega-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+            .mega-menu {
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
                 transition: all 0.3s ease;
             }
-            
-            .section-card:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            .nav-border-animate {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background: linear-gradient(90deg, #0f172a 25%, #1e293b 25%, #1e293b 50%, #0f172a 50%, #0f172a 75%, #1e293b 75%);
+                background-size: 200% 100%;
+                animation: borderSlide 3s infinite linear;
             }
-            
-            .nav-link {
-                color: #94a3b8;
-                text-decoration: none;
-                transition: color 0.3s ease;
-                font-weight: 500;
+            .scroll-smooth { scroll-behavior: smooth; }
+            .section-link {
+                position: relative;
+                display: block;
+                padding: 0.75rem 1rem;
+                margin: 0.25rem 0;
+                border-radius: 0.5rem;
+                transition: all 0.3s ease;
+                border-left: 3px solid transparent;
             }
-            
-            .nav-link:hover {
-                color: #3b82f6;
+            .section-link:hover {
+                background: rgba(239, 68, 68, 0.1);
+                border-left-color: #ef4444;
+                color: #ef4444;
             }
-            
-            .nav-link.active {
-                color: #1e293b;
+            .section-link.active {
+                background: rgba(239, 68, 68, 0.15);
+                border-left-color: #ef4444;
+                color: #ef4444;
                 font-weight: 600;
             }
-            
-            .scroll-indicator {
-                position: fixed;
-                top: 0;
-                left: 0;
-                height: 3px;
-                background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-                z-index: 100;
-                transition: width 0.3s ease;
+            .content-section {
+                scroll-margin-top: 6rem;
             }
-            
-            @media (max-width: 768px) {
-                .section-card {
-                    padding: 1.5rem;
-                }
+            .highlight-box {
+                background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+                color: white;
+                border-radius: 1rem;
+                padding: 2rem;
+                position: relative;
+                overflow: hidden;
+            }
+            .highlight-box::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+                animation: shimmer 3s infinite;
+            }
+            @keyframes shimmer {
+                0% { left: -100%; }
+                100% { left: 100%; }
             }
         </style>
     </head>
-    <body class="antialiased" x-data="{ 
+    <body class="min-h-screen bg-white text-slate-900 antialiased font-medium scroll-smooth" x-data="{ 
+        mobileMenuOpen: false,
         activeSection: '',
-        scrollProgress: 0,
-        
+        sections: [
+            'introduction',
+            'acceptance',
+            'membership',
+            'conduct',
+            'intellectual-property',
+            'privacy',
+            'donations',
+            'events',
+            'communications',
+            'prohibited-activities',
+            'disclaimer',
+            'limitation-of-liability',
+            'termination',
+            'dispute-resolution',
+            'governing-law',
+            'policy-updates',
+            'contact'
+        ],
         init() {
-            this.updateScrollProgress();
             this.updateActiveSection();
-            window.addEventListener('scroll', () => {
-                this.updateScrollProgress();
-                this.updateActiveSection();
-            });
+            window.addEventListener('scroll', () => this.updateActiveSection());
         },
-        
-        updateScrollProgress() {
-            const scrollTop = window.pageYOffset;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            this.scrollProgress = (scrollTop / docHeight) * 100;
-        },
-        
         updateActiveSection() {
-            const sections = document.querySelectorAll('section[id]');
-            const scrollY = window.pageYOffset;
+            const scrollPosition = window.scrollY + 100;
             
-            sections.forEach(section => {
-                const sectionHeight = section.offsetHeight;
-                const sectionTop = section.offsetTop - 100;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                    this.activeSection = sectionId;
+            for (const section of this.sections) {
+                const element = document.getElementById(section);
+                if (element) {
+                    const { offsetTop, offsetHeight } = element;
+                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                        this.activeSection = section;
+                        break;
+                    }
                 }
-            });
+            }
         },
-        
         scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             if (element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                element.scrollIntoView({ behavior: 'smooth' });
             }
         }
     }">
-        <!-- Scroll Progress Indicator -->
-        <div class="scroll-indicator" :style="'width: ' + scrollProgress + '%'"></div>
-
         @include('components.header')
 
-        <main class="pt-24 lg:pt-28 pb-16">
+        <main class="pt-24 lg:pt-28">
             <!-- Hero Section -->
-            <section class="gradient-bg text-white py-16 lg:py-20">
-                <div class="max-w-4xl mx-auto px-6 text-center">
-                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-                        <i class="ph ph-file-text text-xl"></i>
-                        <span class="text-sm font-medium">Legal Terms</span>
-                    </div>
-                    <h1 class="text-4xl lg:text-5xl font-bold mb-6 font-serif">Terms & Conditions</h1>
-                    <p class="text-lg lg:text-xl text-slate-200 leading-relaxed max-w-3xl mx-auto">
-                        These terms and conditions govern your use of ICCRTZ services and website. By using our services, you agree to these terms.
-                    </p>
-                    <div class="flex items-center justify-center gap-4 mt-8 text-sm text-slate-300">
-                        <span><i class="ph ph-calendar mr-1"></i> Last updated: April 3, 2026</span>
-                        <span><i class="ph ph-clock mr-1"></i> Effective date: April 3, 2026</span>
-                    </div>
+            <section class="relative py-20 lg:py-32 bg-gradient-to-br from-red-900 via-rose-900 to-slate-900 text-white overflow-hidden">
+                <div class="absolute inset-0 opacity-10">
+                    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.6\"%3E%3Cpath d=\"M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
                 </div>
-            </section>
-
-            <!-- Table of Contents -->
-            <section class="max-w-4xl mx-auto px-6 py-8">
-                <div class="bg-white rounded-xl card-shadow p-6">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="ph ph-list-bullets text-purple-600"></i>
-                        Table of Contents
-                    </h2>
-                    <nav class="grid md:grid-cols-2 gap-3">
-                        <template x-for="section in [
-                            { id: 'acceptance', title: '1. Acceptance of Terms', icon: 'ph ph-check-circle' },
-                            { id: 'services', title: '2. Our Services', icon: 'ph ph-gift' },
-                            { id: 'user-responsibilities', title: '3. User Responsibilities', icon: 'ph ph-user' },
-                            { id: 'conduct', title: '4. Code of Conduct', icon: 'ph ph-heart' },
-                            { id: 'intellectual-property', title: '5. Intellectual Property', icon: 'ph ph-copyright' },
-                            { id: 'privacy', title: '6. Privacy & Data', icon: 'ph ph-lock' },
-                            { id: 'liability', title: '7. Liability & Disclaimers', icon: 'ph ph-warning' },
-                            { id: 'termination', title: '8. Termination', icon: 'ph ph-x-circle' },
-                            { id: 'contact', title: '9. Contact Information', icon: 'ph ph-envelope' }
-                        ]" :key="section.id">
-                            <a 
-                                :href="'#' + section.id" 
-                                @click="scrollToSection(section.id)"
-                                :class="activeSection === section.id ? 'active bg-purple-50 text-purple-600 border-purple-200' : 'hover:bg-slate-50 border-transparent'"
-                                class="flex items-center gap-3 p-3 rounded-lg border transition-all nav-link">
-                                <i :class="section.icon" class="text-lg"></i>
-                                <span class="font-medium" x-text="section.title"></span>
+                
+                <div class="max-w-7xl mx-auto px-6 relative z-10">
+                    <div class="text-center">
+                        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full mb-6">
+                            <i class="ph ph-gavel text-xl"></i>
+                            <span class="font-semibold">Last Updated: April 3, 2026</span>
+                        </div>
+                        <h1 class="text-5xl lg:text-6xl font-bold mb-6 font-serif">Terms & Conditions</h1>
+                        <p class="text-xl lg:text-2xl text-slate-200 max-w-4xl mx-auto leading-relaxed">
+                            These terms govern your use of ICCRTZ services, membership, and participation in our activities and programs.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+                            <a href="#introduction" class="px-8 py-4 bg-white text-red-900 font-bold rounded-full hover:bg-slate-100 transition-all shadow-xl">
+                                <i class="ph ph-book-open mr-2"></i> Read Terms
                             </a>
-                        </template>
-                    </nav>
+                            <a href="#contact" class="px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-bold rounded-full hover:bg-white/30 transition-all border border-white/30">
+                                <i class="ph ph-envelope mr-2"></i> Legal Contact
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <!-- Content Sections -->
-            <div class="max-w-4xl mx-auto px-6">
-                <!-- Acceptance of Terms -->
-                <section id="acceptance" class="section-card">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="ph ph-check-circle text-purple-600"></i>
-                        1. Acceptance of Terms
-                    </h2>
-                    <div class="prose prose-slate max-w-none">
-                        <p class="text-slate-600 leading-relaxed mb-4">
-                            By accessing and using Catholic Charismatic Tanzania – Universities Fellowship (ICCRTZ) website, services, events, or programs, you agree to be bound by these Terms & Conditions and all applicable laws and regulations.
-                        </p>
-                        <p class="text-slate-600 leading-relaxed mb-4">
-                            If you do not agree with any of these terms, you are prohibited from using or accessing our services. The materials contained in this website are protected by applicable copyright and trademark law.
-                        </p>
-                        <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded">
-                            <p class="text-purple-800 font-medium">
-                                <i class="ph ph-info mr-2"></i>
-                                Using our services constitutes your acceptance of these terms and our Privacy Policy.
-                            </p>
+            <!-- Content Section -->
+            <section class="py-16 bg-slate-50">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="grid lg:grid-cols-4 gap-8">
+                        <!-- Sidebar Navigation -->
+                        <div class="lg:col-span-1">
+                            <div class="sticky top-28 space-y-2">
+                                <h3 class="text-lg font-bold text-slate-900 mb-4">Quick Navigation</h3>
+                                <template x-for="section in sections" :key="section">
+                                    <button @click="scrollToSection(section)" 
+                                            :class="activeSection === section ? 'active' : ''"
+                                            class="section-link text-left w-full text-sm">
+                                        <span x-text="section.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())"></span>
+                                    </button>
+                                </template>
+                            </div>
                         </div>
-                    </div>
-                </section>
 
-                <!-- Our Services -->
-                <section id="services" class="section-card">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="ph ph-gift text-purple-600"></i>
-                        2. Our Services
-                    </h2>
-                    <div class="space-y-6">
-                        <p class="text-slate-600 leading-relaxed">
-                            ICCRTZ provides various services including but not limited to:
-                        </p>
-                        
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div class="bg-slate-50 rounded-lg p-4">
-                                <h3 class="font-semibold text-slate-800 mb-3 flex items-center gap-2">
-                                    <i class="ph ph-calendar text-purple-500"></i>
-                                    Events & Programs
-                                </h3>
-                                <ul class="space-y-2 text-sm text-slate-600">
-                                    <li>• International conferences and summits</li>
-                                    <li>• Local and regional events</li>
-                                    <li>• Leadership training programs</li>
-                                    <li>• Youth camps and retreats</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="bg-slate-50 rounded-lg p-4">
-                                <h3 class="font-semibold text-slate-800 mb-3 flex items-center gap-2">
-                                    <i class="ph ph-users text-purple-500"></i>
-                                    Community Services
-                                </h3>
-                                <ul class="space-y-2 text-sm text-slate-600">
-                                    <li>• Fellowship and networking</li>
-                                    <li>• Spiritual guidance and counseling</li>
-                                    <li>• Volunteer opportunities</li>
-                                    <li>• Community outreach programs</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="bg-slate-50 rounded-lg p-4">
-                                <h3 class="font-semibold text-slate-800 mb-3 flex items-center gap-2">
-                                    <i class="ph ph-globe text-purple-500"></i>
-                                    Digital Services
-                                </h3>
-                                <ul class="space-y-2 text-sm text-slate-600">
-                                    <li>• Website and mobile applications</li>
-                                    <li>• Online registration systems</li>
-                                    <li>• Email newsletters and communications</li>
-                                    <li>• Social media platforms</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="bg-slate-50 rounded-lg p-4">
-                                <h3 class="font-semibold text-slate-800 mb-3 flex items-center gap-2">
-                                    <i class="ph ph-graduation-cap text-purple-500"></i>
-                                    Educational Resources
-                                </h3>
-                                <ul class="space-y-2 text-sm text-slate-600">
-                                    <li>• Study materials and resources</li>
-                                    <li>• Workshops and seminars</li>
-                                    <li>• Mentorship programs</li>
-                                    <li>• Leadership development</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded">
-                            <p class="text-amber-800">
-                                <i class="ph ph-warning mr-2"></i>
-                                We reserve the right to modify, suspend, or discontinue any service at any time without notice.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- User Responsibilities -->
-                <section id="user-responsibilities" class="section-card">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="ph ph-user text-purple-600"></i>
-                        3. User Responsibilities
-                    </h2>
-                    <div class="space-y-4">
-                        <p class="text-slate-600 leading-relaxed">
-                            As a user of ICCRTZ services, you agree to:
-                        </p>
-                        
-                        <div class="space-y-3">
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                    <i class="ph ph-check text-green-600 text-sm"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-slate-800">Provide Accurate Information</h4>
-                                    <p class="text-sm text-slate-600">Ensure all information provided is true, accurate, and current</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                    <i class="ph ph-check text-green-600 text-sm"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-slate-800">Maintain Account Security</h4>
-                                    <p class="text-sm text-slate-600">Protect your login credentials and account access</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                    <i class="ph ph-check text-green-600 text-sm"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-slate-800">Comply with Guidelines</h4>
-                                    <p class="text-sm text-slate-600">Follow all applicable rules and regulations</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                    <i class="ph ph-check text-green-600 text-sm"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-slate-800">Respect Others</h4>
-                                    <p class="text-sm text-slate-600">Treat all members and participants with respect and dignity</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded">
-                            <h4 class="font-semibold text-red-800 mb-2">Prohibited Activities</h4>
-                            <ul class="space-y-1 text-red-700">
-                                <li>• Using services for illegal or unauthorized purposes</li>
-                                <li>• Harassing, abusing, or harming others</li>
-                                <li>• Impersonating any person or entity</li>
-                                <li>• Interfering with or disrupting services</li>
-                                <li>• Attempting to gain unauthorized access to systems</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Code of Conduct -->
-                <section id="conduct" class="section-card">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="ph ph-heart text-purple-600"></i>
-                        4. Code of Conduct
-                    </h2>
-                    <div class="space-y-4">
-                        <p class="text-slate-600 leading-relaxed">
-                            ICCRTZ is committed to providing a safe, respectful, and inclusive environment for all participants. Our code of conduct is based on Christian values and principles.
-                        </p>
-                        
-                        <div class="grid md:grid-cols-3 gap-4">
-                            <div class="bg-blue-50 rounded-lg p-4 text-center">
-                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <i class="ph ph-heart text-blue-600 text-xl"></i>
-                                </div>
-                                <h4 class="font-semibold text-blue-800 mb-2">Love & Respect</h4>
-                                <p class="text-sm text-blue-600">Treat others with love, kindness, and respect</p>
-                            </div>
-                            
-                            <div class="bg-green-50 rounded-lg p-4 text-center">
-                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <i class="ph ph-handshake text-green-600 text-xl"></i>
-                                </div>
-                                <h4 class="font-semibold text-green-800 mb-2">Unity & Fellowship</h4>
-                                <p class="text-sm text-green-600">Promote unity and Christian fellowship</p>
-                            </div>
-                            
-                            <div class="bg-purple-50 rounded-lg p-4 text-center">
-                                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <i class="ph ph-crown text-purple-600 text-xl"></i>
-                                </div>
-                                <h4 class="font-semibold text-purple-800 mb-2">Integrity & Honor</h4>
-                                <p class="text-sm text-purple-600">Uphold Christian values and integrity</p>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-slate-50 rounded-lg p-4">
-                            <h4 class="font-semibold text-slate-800 mb-3">Expected Behavior</h4>
-                            <div class="grid md:grid-cols-2 gap-4 text-sm text-slate-600">
-                                <ul class="space-y-1">
-                                    <li>• Dress modestly and appropriately</li>
-                                    <li>• Use respectful language</li>
-                                    <li>• Participate actively and positively</li>
-                                    <li>• Support and encourage others</li>
-                                </ul>
-                                <ul class="space-y-1">
-                                    <li>• Follow event schedules and guidelines</li>
-                                    <li>• Respect leadership and authority</li>
-                                    <li>• Maintain confidentiality when appropriate</li>
-                                    <li>• Represent ICCRTZ positively</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Intellectual Property -->
-                <section id="intellectual-property" class="section-card">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="ph ph-copyright text-purple-600"></i>
-                        5. Intellectual Property
-                    </h2>
-                    <div class="space-y-4">
-                        <p class="text-slate-600 leading-relaxed">
-                            All content, materials, and intellectual property on ICCRTZ platforms are protected by copyright and other intellectual property laws.
-                        </p>
-                        
-                        <div class="space-y-3">
-                            <div class="bg-slate-50 rounded-lg p-4">
-                                <h4 class="font-semibold text-slate-800 mb-2">ICCRTZ Property</h4>
-                                <ul class="space-y-1 text-sm text-slate-600">
-                                    <li>• Website design and content</li>
-                                    <li>• Event materials and resources</li>
-                                    <li>• Educational materials and curriculum</li>
-                                    <li>• Logos, trademarks, and branding</li>
-                                    <li>• Photos, videos, and media content</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="bg-slate-50 rounded-lg p-4">
-                                <h4 class="font-semibold text-slate-800 mb-2">Usage Rights</h4>
-                                <ul class="space-y-1 text-sm text-slate-600">
-                                    <li>• Personal, non-commercial use permitted</li>
-                                    <li>• Attribution required for shared content</li>
-                                    <li>• No modification or derivative works</li>
-                                    <li>• No redistribution without permission</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded">
-                            <p class="text-amber-800">
-                                <i class="ph ph-warning mr-2"></i>
-                                Unauthorized use of ICCRTZ intellectual property may result in legal action.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Privacy & Data -->
-                <section id="privacy" class="section-card">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="ph ph-lock text-purple-600"></i>
-                        6. Privacy & Data Protection
-                    </h2>
-                    <div class="space-y-4">
-                        <p class="text-slate-600 leading-relaxed">
-                            Your privacy is important to us. Our collection and use of personal information is governed by our Privacy Policy, which forms part of these terms.
-                        </p>
-                        
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div class="border border-slate-200 rounded-lg p-4">
-                                <h4 class="font-semibold text-slate-800 mb-2">Data Collection</h4>
-                                <p class="text-sm text-slate-600">We collect information necessary to provide our services and improve user experience.</p>
-                            </div>
-                            
-                            <div class="border border-slate-200 rounded-lg p-4">
-                                <h4 class="font-semibold text-slate-800 mb-2">Data Usage</h4>
-                                <p class="text-sm text-slate-600">Your data is used for service delivery, communication, and improvement purposes.</p>
-                            </div>
-                            
-                            <div class="border border-slate-200 rounded-lg p-4">
-                                <h4 class="font-semibold text-slate-800 mb-2">Data Protection</h4>
-                                <p class="text-sm text-slate-600">We implement appropriate security measures to protect your information.</p>
-                            </div>
-                            
-                            <div class="border border-slate-200 rounded-lg p-4">
-                                <h4 class="font-semibold text-slate-800 mb-2">Your Rights</h4>
-                                <p class="text-sm text-slate-600">You have rights to access, correct, and delete your personal information.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-                            <p class="text-blue-800">
-                                <i class="ph ph-info mr-2"></i>
-                                Please review our Privacy Policy for detailed information about data handling.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Liability & Disclaimers -->
-                <section id="liability" class="section-card">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="ph ph-warning text-purple-600"></i>
-                        7. Liability & Disclaimers
-                    </h2>
-                    <div class="space-y-4">
-                        <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded">
-                            <h3 class="font-semibold text-red-800 mb-2">Limitation of Liability</h3>
-                            <p class="text-red-700">
-                                ICCRTZ shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use of our services or website.
-                            </p>
-                        </div>
-                        
-                        <div class="space-y-3">
-                            <div class="bg-slate-50 rounded-lg p-4">
-                                <h4 class="font-semibold text-slate-800 mb-2">Service Availability</h4>
-                                <p class="text-sm text-slate-600">We do not guarantee uninterrupted or error-free service. Services may be temporarily unavailable for maintenance or other reasons.</p>
-                            </div>
-                            
-                            <div class="bg-slate-50 rounded-lg p-4">
-                                <h4 class="font-semibold text-slate-800 mb-2">Third-Party Links</h4>
-                                <p class="text-sm text-slate-600">Our website may contain links to third-party websites. We are not responsible for the content or practices of these sites.</p>
-                            </div>
-                            
-                            <div class="bg-slate-50 rounded-lg p-4">
-                                <h4 class="font-semibold text-slate-800 mb-2">Content Accuracy</h4>
-                                <p class="text-sm text-slate-600">While we strive to provide accurate information, we make no warranties about the completeness, reliability, or accuracy of content.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded">
-                            <p class="text-amber-800">
-                                <i class="ph ph-warning mr-2"></i>
-                                Your use of our services is at your own risk. This disclaimer applies to all damages arising from the use or inability to use our services.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Termination -->
-                <section id="termination" class="section-card">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="ph ph-x-circle text-purple-600"></i>
-                        8. Termination
-                    </h2>
-                    <div class="space-y-4">
-                        <p class="text-slate-600 leading-relaxed">
-                            We may terminate or suspend your access to our services immediately, without prior notice or liability, for any reason, including if you breach the terms.
-                        </p>
-                        
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div class="bg-red-50 rounded-lg p-4">
-                                <h4 class="font-semibold text-red-800 mb-2">Grounds for Termination</h4>
-                                <ul class="space-y-1 text-sm text-red-700">
-                                    <li>• Violation of terms and conditions</li>
-                                    <li>• Inappropriate conduct or behavior</li>
-                                    <li>• Fraudulent or illegal activities</li>
-                                    <li>• Harm to other members or community</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="bg-blue-50 rounded-lg p-4">
-                                <h4 class="font-semibold text-blue-800 mb-2">Effects of Termination</h4>
-                                <ul class="space-y-1 text-sm text-blue-700">
-                                    <li>• Loss of access to services</li>
-                                    <li>• Removal from events and programs</li>
-                                    <li>• Deletion of account and data</li>
-                                    <li>• No refund for paid services</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-slate-50 rounded-lg p-4">
-                            <h4 class="font-semibold text-slate-800 mb-2">User Termination</h4>
-                            <p class="text-sm text-slate-600">You may terminate your account at any time by contacting us or using account deletion features where available.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Contact Information -->
-                <section id="contact" class="section-card">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="ph ph-envelope text-purple-600"></i>
-                        9. Contact Information
-                    </h2>
-                    <div class="space-y-6">
-                        <p class="text-slate-600 leading-relaxed">
-                            If you have any questions about these Terms & Conditions, please contact us:
-                        </p>
-                        
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div class="bg-slate-50 rounded-lg p-6">
-                                <h3 class="font-semibold text-slate-800 mb-4">Legal Contact</h3>
-                                <div class="space-y-3">
-                                    <div class="flex items-center gap-3">
-                                        <i class="ph ph-envelope text-purple-500"></i>
-                                        <span class="text-slate-600">legal@iccrtz.org</span>
-                                    </div>
-                                    <div class="flex items-center gap-3">
-                                        <i class="ph ph-phone text-purple-500"></i>
-                                        <span class="text-slate-600">+255 712 345 678</span>
-                                    </div>
-                                    <div class="flex items-center gap-3">
-                                        <i class="ph ph-map-pin text-purple-500"></i>
-                                        <span class="text-slate-600">Archdiocese of Mbeya, Tanzania</span>
+                        <!-- Main Content -->
+                        <div class="lg:col-span-3 space-y-12">
+                            <!-- Introduction -->
+                            <div id="introduction" class="content-section">
+                                <h2 class="text-3xl font-bold text-slate-900 mb-6 font-serif">Introduction</h2>
+                                <div class="prose prose-lg max-w-none text-slate-600">
+                                    <p class="mb-4">
+                                        Welcome to Catholic Charismatic Tanzania – Universities Fellowship (ICCRTZ). These Terms & Conditions ("Terms") govern your use of our website, services, events, and participation in our organization.
+                                    </p>
+                                    <p class="mb-4">
+                                        By accessing or using ICCRTZ services, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our services or participate in our activities.
+                                    </p>
+                                    <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg my-6">
+                                        <p class="text-red-800">
+                                            <strong>Important:</strong> These Terms constitute a legally binding agreement between you and ICCRTZ. Please read them carefully before using our services.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="bg-slate-50 rounded-lg p-6">
-                                <h3 class="font-semibold text-slate-800 mb-4">General Inquiries</h3>
-                                <div class="space-y-3">
-                                    <div class="flex items-center gap-3">
-                                        <i class="ph ph-envelope text-purple-500"></i>
-                                        <span class="text-slate-600">info@iccrtz.org</span>
+
+                            <!-- Acceptance -->
+                            <div id="acceptance" class="content-section">
+                                <h2 class="text-3xl font-bold text-slate-900 mb-6 font-serif">Acceptance of Terms</h2>
+                                <div class="prose prose-lg max-w-none text-slate-600">
+                                    <p class="mb-6">By using ICCRTZ services, you acknowledge and agree to:</p>
+                                    <div class="space-y-4">
+                                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                                            <h4 class="font-semibold text-slate-900 mb-2">Legal Capacity</h4>
+                                            <p>You are at least 18 years old and have the legal capacity to enter into these Terms.</p>
+                                        </div>
+                                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                                            <h4 class="font-semibold text-slate-900 mb-2">Compliance</h4>
+                                            <p>You will comply with all applicable laws and regulations in connection with your use of our services.</p>
+                                        </div>
+                                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                                            <h4 class="font-semibold text-slate-900 mb-2">Agreement</h4>
+                                            <p>You accept all terms, conditions, and policies referenced herein and incorporated by reference.</p>
+                                        </div>
                                     </div>
-                                    <div class="flex items-center gap-3">
-                                        <i class="ph ph-globe text-purple-500"></i>
-                                        <span class="text-slate-600">www.iccrtz.org</span>
+                                </div>
+                            </div>
+
+                            <!-- Membership -->
+                            <div id="membership" class="content-section">
+                                <h2 class="text-3xl font-bold text-slate-900 mb-6 font-serif">Membership Terms</h2>
+                                <div class="prose prose-lg max-w-none text-slate-600">
+                                    <div class="highlight-box mb-8">
+                                        <h3 class="text-2xl font-bold mb-4">Becoming a Member</h3>
+                                        <p class="text-lg mb-4">Membership in ICCRTZ is open to university students and young adults who share our values and mission. Membership may involve registration, approval, and adherence to our community standards.</p>
                                     </div>
-                                    <div class="flex items-center gap-3">
-                                        <i class="ph ph-social-media text-purple-500"></i>
-                                        <span class="text-slate-600">Social media channels</span>
+                                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                                        <div class="space-y-4">
+                                            <h4 class="font-semibold text-slate-900">Member Responsibilities</h4>
+                                            <ul class="space-y-3">
+                                                <li class="flex items-start gap-3">
+                                                    <i class="ph ph-check-circle text-green-500 mt-1"></i>
+                                                    <span>Uphold ICCRTZ values and mission</span>
+                                                </li>
+                                                <li class="flex items-start gap-3">
+                                                    <i class="ph ph-check-circle text-green-500 mt-1"></i>
+                                                    <span>Participate actively in community activities</span>
+                                                </li>
+                                                <li class="flex items-start gap-3">
+                                                    <i class="ph ph-check-circle text-green-500 mt-1"></i>
+                                                    <span>Respect fellow members and leaders</span>
+                                                </li>
+                                                <li class="flex items-start gap-3">
+                                                    <i class="ph ph-check-circle text-green-500 mt-1"></i>
+                                                    <span>Maintain accurate membership information</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="space-y-4">
+                                            <h4 class="font-semibold text-slate-900">Member Benefits</h4>
+                                            <ul class="space-y-3">
+                                                <li class="flex items-start gap-3">
+                                                    <i class="ph ph-gift text-blue-500 mt-1"></i>
+                                                    <span>Access to events and programs</span>
+                                                </li>
+                                                <li class="flex items-start gap-3">
+                                                    <i class="ph ph-gift text-blue-500 mt-1"></i>
+                                                    <span>Spiritual growth opportunities</span>
+                                                </li>
+                                                <li class="flex items-start gap-3">
+                                                    <i class="ph ph-gift text-blue-500 mt-1"></i>
+                                                    <span>Leadership development training</span>
+                                                </li>
+                                                <li class="flex items-start gap-3">
+                                                    <i class="ph ph-gift text-blue-500 mt-1"></i>
+                                                    <span>Networking and fellowship</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="bg-amber-50 rounded-xl p-6 border border-amber-200">
+                                        <h4 class="font-semibold text-amber-900 mb-2">Membership Approval</h4>
+                                        <p class="text-amber-800">ICCRTZ reserves the right to approve or deny membership applications at our discretion and may suspend or terminate membership for violations of these Terms.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Code of Conduct -->
+                            <div id="conduct" class="content-section">
+                                <h2 class="text-3xl font-bold text-slate-900 mb-6 font-serif">Code of Conduct</h2>
+                                <div class="prose prose-lg max-w-none text-slate-600">
+                                    <p class="mb-6">All members and participants are expected to maintain high standards of conduct:</p>
+                                    <div class="space-y-4">
+                                        <div class="bg-white rounded-xl p-6 border-l-4 border-green-500">
+                                            <h4 class="font-semibold text-slate-900 mb-2">Christian Values</h4>
+                                            <p>Demonstrate Christian values of love, respect, honesty, and integrity in all interactions.</p>
+                                        </div>
+                                        <div class="bg-white rounded-xl p-6 border-l-4 border-blue-500">
+                                            <h4 class="font-semibold text-slate-900 mb-2">Respectful Communication</h4>
+                                            <p>Communicate respectfully with all members, leaders, and guests, avoiding offensive or inappropriate language.</p>
+                                        </div>
+                                        <div class="bg-white rounded-xl p-6 border-l-4 border-purple-500">
+                                            <h4 class="font-semibold text-slate-900 mb-2">Professional Behavior</h4>
+                                            <p>Maintain professional and appropriate behavior during all ICCRTZ activities and events.</p>
+                                        </div>
+                                        <div class="bg-white rounded-xl p-6 border-l-4 border-orange-500">
+                                            <h4 class="font-semibold text-slate-900 mb-2">Conflict Resolution</h4>
+                                            <p>Address conflicts constructively through appropriate channels, following biblical principles of reconciliation.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Intellectual Property -->
+                            <div id="intellectual-property" class="content-section">
+                                <h2 class="text-3xl font-bold text-slate-900 mb-6 font-serif">Intellectual Property</h2>
+                                <div class="prose prose-lg max-w-none text-slate-600">
+                                    <p class="mb-6">All content, materials, and intellectual property related to ICCRTZ are protected:</p>
+                                    <div class="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-8 border border-purple-200 mb-6">
+                                        <h3 class="text-xl font-bold text-purple-900 mb-4">ICCRTZ Property</h3>
+                                        <p class="text-purple-800 mb-4">All ICCRTZ trademarks, logos, content, materials, and intellectual property remain the exclusive property of ICCRTZ.</p>
+                                        <div class="grid md:grid-cols-2 gap-4">
+                                            <div class="bg-white rounded-lg p-4">
+                                                <h4 class="font-semibold text-slate-900 mb-2">What's Protected</h4>
+                                                <ul class="text-sm space-y-1">
+                                                    <li>• ICCRTZ name and logos</li>
+                                                    <li>• Website content and design</li>
+                                                    <li>• Teaching materials and curriculum</li>
+                                                    <li>• Event recordings and photos</li>
+                                                    <li>• Publications and newsletters</li>
+                                                </ul>
+                                            </div>
+                                            <div class="bg-white rounded-lg p-4">
+                                                <h4 class="font-semibold text-slate-900 mb-2">Usage Restrictions</h4>
+                                                <ul class="text-sm space-y-1">
+                                                    <li>• No unauthorized reproduction</li>
+                                                    <li>• No modification or adaptation</li>
+                                                    <li>• No commercial use</li>
+                                                    <li>• No distribution without permission</li>
+                                                    <li>• No reverse engineering</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Privacy -->
+                            <div id="privacy" class="content-section">
+                                <h2 class="text-3xl font-bold text-slate-900 mb-6 font-serif">Privacy & Data Protection</h2>
+                                <div class="prose prose-lg max-w-none text-slate-600">
+                                    <p class="mb-6">Your privacy is important to us. Our data practices are governed by our Privacy Policy:</p>
+                                    <div class="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                                        <h4 class="font-semibold text-blue-900 mb-2">Privacy Commitment</h4>
+                                        <p class="text-blue-800">We collect, use, and protect your personal information in accordance with our Privacy Policy. By using our services, you consent to the collection and use of information as described therein.</p>
+                                        <div class="mt-4">
+                                            <a href="{{ url('privacy') }}" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold">
+                                                <i class="ph ph-arrow-right"></i>
+                                                Read Our Privacy Policy
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Donations -->
+                            <div id="donations" class="content-section">
+                                <h2 class="text-3xl font-bold text-slate-900 mb-6 font-serif">Donations & Contributions</h2>
+                                <div class="prose prose-lg max-w-none text-slate-600">
+                                    <div class="highlight-box mb-8">
+                                        <h3 class="text-2xl font-bold mb-4">Supporting Our Mission</h3>
+                                        <p class="text-lg mb-4">Donations and contributions support ICCRTZ's mission and activities. All donations are processed securely and used according to our stated purposes.</p>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                                            <h4 class="font-semibold text-slate-900 mb-2">Donation Terms</h4>
+                                            <ul class="space-y-2 text-sm">
+                                                <li>• Donations are non-refundable unless required by law</li>
+                                                <li>• We reserve the right to use donations for our stated purposes</li>
+                                                <li>• Tax receipts will be provided where applicable</li>
+                                                <li>• We may decline donations that conflict with our values</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                                            <h4 class="font-semibold text-slate-900 mb-2">Payment Security</h4>
+                                            <p>All payment processing is conducted through secure, PCI-compliant payment processors. We do not store sensitive payment information on our servers.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Events -->
+                            <div id="events" class="content-section">
+                                <h2 class="text-3xl font-bold text-slate-900 mb-6 font-serif">Events & Activities</h2>
+                                <div class="prose prose-lg max-w-none text-slate-600">
+                                    <p class="mb-6">Participation in ICCRTZ events and activities is subject to specific terms:</p>
+                                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                                            <h4 class="font-semibold text-slate-900 mb-2">Registration</h4>
+                                            <ul class="space-y-2 text-sm">
+                                                <li>• Registration may be required for certain events</li>
+                                                <li>• Registration fees may apply</li>
+                                                <li>• Capacity limits may be enforced</li>
+                                                <li>• Registration may be denied at our discretion</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                                            <h4 class="font-semibold text-slate-900 mb-2">Event Conduct</h4>
+                                            <ul class="space-y-2 text-sm">
+                                                <li>• Follow all event rules and guidelines</li>
+                                                <li>• Respect event staff and volunteers</li>
+                                                <li>• Maintain appropriate behavior</li>
+                                                <li>• Comply with venue regulations</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="bg-amber-50 rounded-xl p-6 border border-amber-200">
+                                        <h4 class="font-semibold text-amber-900 mb-2">Event Cancellations</h4>
+                                        <p class="text-amber-800">ICCRTZ reserves the right to cancel, postpone, or modify events. In such cases, we will provide reasonable notice and refund options where applicable.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Communications -->
+                            <div id="communications" class="content-section">
+                                <h2 class="text-3xl font-bold text-slate-900 mb-6 font-serif">Communications</h2>
+                                <div class="prose prose-lg max-w-none text-slate-600">
+                                    <p class="mb-6">By joining ICCRTZ, you agree to receive communications from us:</p>
+                                    <div class="space-y-4">
+                                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                                            <h4 class="font-semibold text-slate-900 mb-2">Communication Types</h4>
+                                            <ul class="space-y-2 text-sm">
+                                                <li>• Event notifications and updates</li>
+                                                <li>• Newsletters and ministry updates</li>
+                                                <li>• Spiritual resources and teachings</li>
+                                                <li>• Volunteer and service opportunities</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                                            <h4 class="font-semibold text-slate-900 mb-2">Opt-Out Options</h4>
+                                            <p>You may opt-out of certain communications by following the unsubscribe instructions in our emails or contacting us directly.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Prohibited Activities -->
+                            <div id="prohibited-activities" class="content-section">
+                                <h2 class="text-3xl font-bold text-slate-900 mb-6 font-serif">Prohibited Activities</h2>
+                                <div class="prose prose-lg max-w-none text-slate-600">
+                                    <p class="mb-6">The following activities are strictly prohibited when using ICCRTZ services:</p>
+                                    <div class="bg-red-50 rounded-xl p-8 border border-red-200">
+                                        <div class="grid md:grid-cols-2 gap-6">
+                                            <div>
+                                                <h4 class="font-semibold text-red-900 mb-3">Illegal Activities</h4>
+                                                <ul class="text-sm space-y-1">
+                                                    <li>• Violating applicable laws</li>
+                                                    <li>• Fraudulent activities</li>
+                                                    <li>• Harassment or discrimination</li>
+                                                    <li>• Defamation or libel</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-semibold text-red-900 mb-3">Technical Violations</h4>
+                                                <ul class="text-sm space-y-1">
+                                                    <li>• Hacking or security breaches</li>
+                                                    <li>• Spam or unsolicited communications</li>
+                                                    <li>• Malware distribution</li>
+                                                    <li>• System interference</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-semibold text-red-900 mb-3">Content Violations</h4>
+                                                <ul class="text-sm space-y-1">
+                                                    <li>• Inappropriate or offensive content</li>
+                                                    <li>• Copyright infringement</li>
+                                                    <li>• False or misleading information</li>
+                                                    <li>• Proprietary information disclosure</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-semibold text-red-900 mb-3">Community Violations</h4>
+                                                <ul class="text-sm space-y-1">
+                                                    <li>• Disruptive behavior</li>
+                                                    <li>• Misrepresentation of identity</li>
+                                                    <li>• Unauthorized commercial activities</li>
+                                                    <li>• Violation of privacy rights</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Disclaimer -->
+                            <div id="disclaimer" class="content-section">
+                                <h2 class="text-3xl font-bold text-slate-900 mb-6 font-serif">Disclaimer</h2>
+                                <div class="prose prose-lg max-w-none text-slate-600">
+                                    <div class="bg-slate-100 rounded-xl p-8 border border-slate-300">
+                                        <h3 class="text-xl font-bold text-slate-900 mb-4">Important Disclaimer</h3>
+                                        <p class="mb-4">ICCRTZ provides services and information on an "as is" basis. We make no warranties or representations about the accuracy, reliability, completeness, or timeliness of our services.</p>
+                                        <div class="space-y-3">
+                                            <div class="flex items-start gap-3">
+                                                <i class="ph ph-warning text-amber-500 mt-1"></i>
+                                                <span>Religious and spiritual content reflects our beliefs and interpretations</span>
+                                            </div>
+                                            <div class="flex items-start gap-3">
+                                                <i class="ph ph-warning text-amber-500 mt-1"></i>
+                                                <span>Individual results from participation may vary</span>
+                                            </div>
+                                            <div class="flex items-start gap-3">
+                                                <i class="ph ph-warning text-amber-500 mt-1"></i>
+                                                <span>We are not responsible for third-party content or links</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Limitation of Liability -->
+                            <div id="limitation-of-liability" class="content-section">
+                                <h2 class="text-3xl font-bold text-slate-900 mb-6 font-serif">Limitation of Liability</h2>
+                                <div class="prose prose-lg max-w-none text-slate-600">
+                                    <p class="mb-6">To the fullest extent permitted by law, ICCRTZ shall not be liable for:</p>
+                                    <div class="space-y-4">
+                                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                                            <h4 class="font-semibold text-slate-900 mb-2">Excluded Liabilities</h4>
+                                            <ul class="space-y-2 text-sm">
+                                                <li>• Indirect, incidental, or consequential damages</li>
+                                                <li>• Loss of profits, data, or opportunities</li>
+                                                <li>• Personal injury or property damage</li>
+                                                <li>• Emotional or psychological distress</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                                            <h4 class="font-semibold text-slate-900 mb-2">Liability Cap</h4>
+                                            <p>Where liability cannot be excluded, it shall be limited to the maximum extent permitted by applicable law.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Termination -->
+                            <div id="termination" class="content-section">
+                                <h2 class="text-3xl font-bold text-slate-900 mb-6 font-serif">Termination</h2>
+                                <div class="prose prose-lg max-w-none text-slate-600">
+                                    <p class="mb-6">These Terms may be terminated as follows:</p>
+                                    <div class="space-y-4">
+                                        <div class="bg-white rounded-xl p-6 border-l-4 border-blue-500">
+                                            <h4 class="font-semibold text-slate-900 mb-2">By You</h4>
+                                            <p>You may terminate your use of ICCRTZ services at any time by discontinuing use and contacting us to close your account.</p>
+                                        </div>
+                                        <div class="bg-white rounded-xl p-6 border-l-4 border-red-500">
+                                            <h4 class="font-semibold text-slate-900 mb-2">By ICCRTZ</h4>
+                                            <p>We may terminate or suspend your access immediately for violations of these Terms, illegal activities, or at our discretion.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Dispute Resolution -->
+                            <div id="dispute-resolution" class="content-section">
+                                <h2 class="text-3xl font-bold text-slate-900 mb-6 font-serif">Dispute Resolution</h2>
+                                <div class="prose prose-lg max-w-none text-slate-600">
+                                    <p class="mb-6">We prefer to resolve disputes amicably through the following process:</p>
+                                    <div class="bg-gradient-to-r from-blue-50 to-green-50 rounded-xl p-8 border border-blue-200">
+                                        <div class="space-y-4">
+                                            <div class="flex items-start gap-4">
+                                                <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">1</div>
+                                                <div>
+                                                    <h4 class="font-semibold text-slate-900">Informal Discussion</h4>
+                                                    <p>First, contact us to discuss and resolve the issue informally.</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start gap-4">
+                                                <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">2</div>
+                                                <div>
+                                                    <h4 class="font-semibold text-slate-900">Mediation</h4>
+                                                    <p>If informal resolution fails, we may agree to mediation with a neutral third party.</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start gap-4">
+                                                <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">3</div>
+                                                <div>
+                                                    <h4 class="font-semibold text-slate-900">Legal Action</h4>
+                                                    <p>As a last resort, disputes may be resolved through legal proceedings as outlined in the Governing Law section.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Governing Law -->
+                            <div id="governing-law" class="content-section">
+                                <h2 class="text-3xl font-bold text-slate-900 mb-6 font-serif">Governing Law</h2>
+                                <div class="prose prose-lg max-w-none text-slate-600">
+                                    <div class="bg-slate-100 rounded-xl p-8 border border-slate-300">
+                                        <h3 class="text-xl font-bold text-slate-900 mb-4">Jurisdiction & Applicable Law</h3>
+                                        <p class="mb-4">These Terms are governed by and construed in accordance with the laws of the United Republic of Tanzania.</p>
+                                        <div class="space-y-3">
+                                            <div class="flex items-start gap-3">
+                                                <i class="ph ph-map-pin text-slate-600 mt-1"></i>
+                                                <span>Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of Tanzanian courts.</span>
+                                            </div>
+                                            <div class="flex items-start gap-3">
+                                                <i class="ph ph-scales text-slate-600 mt-1"></i>
+                                                <span>If any provision of these Terms is found to be unenforceable, the remaining provisions shall continue in full force.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Policy Updates -->
+                            <div id="policy-updates" class="content-section">
+                                <h2 class="text-3xl font-bold text-slate-900 mb-6 font-serif">Policy Updates</h2>
+                                <div class="prose prose-lg max-w-none text-slate-600">
+                                    <p class="mb-6">We may update these Terms from time to time:</p>
+                                    <div class="space-y-4">
+                                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                                            <h4 class="font-semibold text-slate-900 mb-2">Notification Process</h4>
+                                            <p>We will notify you of material changes by posting the updated Terms on our website and sending email notifications to registered members.</p>
+                                        </div>
+                                        <div class="bg-white rounded-xl p-6 border border-slate-200">
+                                            <h4 class="font-semibold text-slate-900 mb-2">Continued Use</h4>
+                                            <p>Your continued use of ICCRTZ services after updates constitutes acceptance of the revised Terms.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact -->
+                            <div id="contact" class="content-section">
+                                <h2 class="text-3xl font-bold text-slate-900 mb-6 font-serif">Legal Contact</h2>
+                                <div class="prose prose-lg max-w-none text-slate-600">
+                                    <p class="mb-6">For legal inquiries regarding these Terms & Conditions:</p>
+                                    <div class="bg-gradient-to-r from-red-50 to-rose-50 rounded-xl p-8 border border-red-200">
+                                        <div class="grid md:grid-cols-2 gap-6">
+                                            <div>
+                                                <h4 class="font-semibold text-slate-900 mb-4">Legal Department</h4>
+                                                <div class="space-y-3">
+                                                    <div class="flex items-center gap-3">
+                                                        <i class="ph ph-envelope text-red-600"></i>
+                                                        <span>legal@iccrtz.org</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-3">
+                                                        <i class="ph ph-phone text-red-600"></i>
+                                                        <span>+255 712 345 678</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-3">
+                                                        <i class="ph ph-map-pin text-red-600"></i>
+                                                        <span>P.O. Box 1234, Mbeya, Tanzania</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-semibold text-slate-900 mb-4">Response Time</h4>
+                                                <p class="text-slate-600">We will respond to legal inquiries within 14 business days. For urgent legal matters, please mark your email as "Urgent - Legal Inquiry."</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded">
-                            <p class="text-purple-800">
-                                <i class="ph ph-info mr-2"></i>
-                                We are committed to addressing your concerns and providing clarity on our terms and conditions.
-                            </p>
-                        </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
 
-            <!-- Agreement Section -->
-            <section class="max-w-4xl mx-auto px-6 py-8">
-                <div class="bg-gradient-to-r from-purple-100 to-blue-100 rounded-xl p-6">
-                    <h3 class="text-lg font-semibold text-slate-800 mb-3">Agreement to Terms</h3>
-                    <p class="text-slate-600 mb-4">
-                        By using ICCRTZ services, you acknowledge that you have read, understood, and agree to be bound by these Terms & Conditions.
+            <!-- CTA Section -->
+            <section class="py-16 bg-gradient-to-r from-red-900 to-rose-900 text-white">
+                <div class="max-w-4xl mx-auto px-6 text-center">
+                    <h2 class="text-3xl font-bold mb-6">Questions About Our Terms?</h2>
+                    <p class="text-xl mb-8 text-red-100">
+                        Our legal team is here to help clarify any questions about our Terms & Conditions.
                     </p>
-                    <div class="flex items-center gap-4 text-sm text-slate-500">
-                        <span><i class="ph ph-calendar mr-1"></i> Last updated: April 3, 2026</span>
-                        <span><i class="ph ph-arrow-clockwise mr-1"></i> Next review: October 3, 2026</span>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                        <a href="{{ url('contact') }}" class="px-8 py-4 bg-white text-red-900 font-bold rounded-full hover:bg-slate-100 transition-all shadow-xl">
+                            <i class="ph ph-envelope mr-2"></i> Contact Legal Team
+                        </a>
+                        <a href="{{ url('privacy') }}" class="px-8 py-4 bg-red-700 text-white font-bold rounded-full hover:bg-red-600 transition-all">
+                            <i class="ph ph-shield-check mr-2"></i> View Privacy Policy
+                        </a>
                     </div>
                 </div>
             </section>

@@ -18,493 +18,503 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <style>
-            body { 
-                font-family: 'Manrope', sans-serif; 
-                background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-                min-height: 100vh;
-            }
+            body { font-family: 'Manrope', sans-serif; }
             .font-serif { font-family: 'Playfair Display', serif; }
             [x-cloak] { display: none !important; }
-            
-            .gradient-bg {
-                background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            }
-            
-            .card-shadow {
-                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            }
-            
-            .faq-item {
-                background: white;
-                border-radius: 1rem;
-                margin-bottom: 1rem;
-                overflow: hidden;
-                transition: all 0.3s ease;
-                border: 1px solid #e2e8f0;
-            }
-            
-            .faq-item:hover {
-                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            }
-            
-            .faq-item.active {
-                border-color: #3b82f6;
-                box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.2), 0 10px 10px -5px rgba(59, 130, 246, 0.1);
-            }
-            
-            .category-card {
-                background: white;
-                border-radius: 1rem;
-                padding: 1.5rem;
-                border: 1px solid #e2e8f0;
-                transition: all 0.3s ease;
-                cursor: pointer;
-            }
-            
-            .category-card:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-                border-color: #3b82f6;
-            }
-            
-            .category-card.active {
-                background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-                color: white;
-                border-color: #3b82f6;
-            }
-            
-            .search-container {
-                position: relative;
-                max-width: 600px;
-                margin: 0 auto;
-            }
-            
-            .search-input {
-                width: 100%;
-                padding: 1rem 3rem 1rem 1rem;
-                border-radius: 2rem;
-                border: 2px solid #e2e8f0;
-                font-size: 1rem;
-                transition: all 0.3s ease;
-            }
-            
-            .search-input:focus {
-                outline: none;
-                border-color: #3b82f6;
-                box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-            }
-            
-            .search-icon {
+            .nav-link { font-size: 1.05rem; position: relative; }
+            .nav-link::after {
+                content: '';
                 position: absolute;
-                right: 1rem;
-                top: 50%;
-                transform: translateY(-50%);
-                color: #64748b;
+                bottom: 1.5rem;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
+                transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             }
-            
-            @media (max-width: 768px) {
-                .category-card {
-                    padding: 1rem;
-                }
+            .nav-link:hover::after {
+                width: 100%;
+                animation: borderSlide 1s infinite linear;
+                background: linear-gradient(90deg, #0f172a 25%, #1e293b 25%, #1e293b 50%, #0f172a 50%, #0f172a 75%, #1e293b 75%);
+                background-size: 200% 100%;
+            }
+            @keyframes borderSlide {
+                0% { background-position: 100% 0; }
+                100% { background-position: -100% 0; }
+            }
+            .group:hover .mega-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+            .mega-menu {
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+            }
+            .nav-border-animate {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background: linear-gradient(90deg, #0f172a 25%, #1e293b 25%, #1e293b 50%, #0f172a 50%, #0f172a 75%, #1e293b 75%);
+                background-size: 200% 100%;
+                animation: borderSlide 3s infinite linear;
+            }
+            .faq-item {
+                border-bottom: 1px solid #e2e8f0;
+                transition: all 0.3s ease;
+            }
+            .faq-item:hover {
+                background: rgba(99, 102, 241, 0.02);
+            }
+            .faq-question {
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            .faq-question:hover {
+                color: #6366f1;
+            }
+            .faq-answer {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease, padding 0.3s ease;
+            }
+            .faq-answer.open {
+                max-height: 500px;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+            .category-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.25rem;
+                padding: 0.25rem 0.75rem;
+                border-radius: 9999px;
+                font-size: 0.75rem;
+                font-weight: 500;
+                transition: all 0.2s ease;
+            }
+            .category-badge:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            }
+            .search-highlight {
+                background: linear-gradient(120deg, #fef3c7 0%, #fef3c7 100%);
+                background-size: 100% 100%;
+                animation: highlight 0.5s ease;
+            }
+            @keyframes highlight {
+                0% { background-size: 0% 100%; }
+                100% { background-size: 100% 100%; }
+            }
+            .scroll-to-top {
+                position: fixed;
+                bottom: 2rem;
+                right: 2rem;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 50;
+            }
+            .scroll-to-top.show {
+                opacity: 1;
+                visibility: visible;
             }
         </style>
     </head>
-    <body class="antialiased" x-data="{ 
-        activeCategory: 'general',
+    <body class="min-h-screen bg-white text-slate-900 antialiased font-medium" x-data="{ 
+        mobileMenuOpen: false,
         searchQuery: '',
-        expandedItems: [],
-        
-        faqData: {
-            general: [
-                {
-                    id: 1,
-                    question: 'What is ICCRTZ?',
-                    answer: 'ICCRTZ stands for Catholic Charismatic Tanzania – Universities Fellowship. We are a Catholic charismatic organization focused on spiritual renewal, leadership development, and community building among university students and young adults across Tanzania.',
-                    icon: 'ph ph-info'
-                },
-                {
-                    id: 2,
-                    question: 'When was ICCRTZ founded?',
-                    answer: 'ICCRTZ was established to bring together Catholic university students for spiritual growth, fellowship, and service. Our organization has grown to include chapters in universities across Tanzania.',
-                    icon: 'ph ph-calendar'
-                },
-                {
-                    id: 3,
-                    question: 'What is the mission of ICCRTZ?',
-                    answer: 'Our mission is to nurture spiritual growth, develop leadership skills, and build community among Catholic university students through prayer, fellowship, education, and service.',
-                    icon: 'ph ph-target'
-                },
-                {
-                    id: 4,
-                    question: 'How can I join ICCRTZ?',
-                    answer: 'You can join ICCRTZ by registering on our website, attending local chapter meetings, or participating in our events. Visit the registration page or contact your local university chapter for more information.',
-                    icon: 'ph ph-user-plus'
-                }
-            ],
-            membership: [
-                {
-                    id: 5,
-                    question: 'Who can become a member of ICCRTZ?',
-                    answer: 'ICCRTZ membership is open to Catholic university students, young adults, and those interested in spiritual growth and community service. You must be at least 18 years old and agree to our code of conduct.',
-                    icon: 'ph ph-users'
-                },
-                {
-                    id: 6,
-                    question: 'What are the membership requirements?',
-                    answer: 'Members must be practicing Catholics, regularly attend meetings, participate in activities, and uphold our Christian values. Annual membership fees may apply for certain programs.',
-                    icon: 'ph ph-clipboard-text'
-                },
-                {
-                    id: 7,
-                    question: 'What are the benefits of membership?',
-                    answer: 'Members enjoy spiritual growth opportunities, leadership training, community fellowship, access to events and resources, mentorship programs, and networking opportunities with other Catholic students.',
-                    icon: 'ph ph-gift'
-                },
-                {
-                    id: 8,
-                    question: 'Can I join if I\'m not a university student?',
-                    answer: 'While our focus is on university students, we welcome young adults and supporters who align with our mission. Some programs may have specific requirements.',
-                    icon: 'ph ph-graduation-cap'
-                }
-            ],
-            events: [
-                {
-                    id: 9,
-                    question: 'What types of events does ICCRTZ organize?',
-                    answer: 'We organize conferences, retreats, leadership summits, youth camps, workshops, prayer meetings, community service projects, and social events throughout the year.',
-                    icon: 'ph ph-calendar'
-                },
-                {
-                    id: 10,
-                    question: 'How can I register for events?',
-                    answer: 'Event registration is available through our website. Simply navigate to the Events page, select your desired event, and complete the registration form. Early registration is recommended as spaces may be limited.',
-                    icon: 'ph ph-pencil'
-                },
-                {
-                    id: 11,
-                    question: 'Are there costs for attending events?',
-                    answer: 'Some events are free while others require registration fees to cover costs. Fees vary depending on the event type, duration, and location. Scholarships may be available for those with financial constraints.',
-                    icon: 'ph ph-currency-btz'
-                },
-                {
-                    id: 12,
-                    question: 'What should I bring to events?',
-                    answer: 'Bring your Bible, notebook, pen, and an open heart. For overnight events, pack appropriate clothing, toiletries, and any required medications. Specific packing lists are provided for each event.',
-                    icon: 'ph ph-backpack'
-                }
-            ],
-            spiritual: [
-                {
-                    id: 13,
-                    question: 'What spiritual activities does ICCRTZ offer?',
-                    answer: 'We offer daily prayer meetings, Bible study groups, retreats, spiritual direction, charismatic prayer services, healing ministries, and formation programs.',
-                    icon: 'ph ph-hands-praying'
-                },
-                {
-                    id: 14,
-                    question: 'Do I need to be charismatic to join?',
-                    answer: 'No, ICCRTZ welcomes all Catholics interested in spiritual growth. While we incorporate charismatic elements, our focus is on authentic Catholic faith and personal relationship with God.',
-                    icon: 'ph ph-heart'
-                },
-                {
-                    id: 15,
-                    question: 'How often are prayer meetings held?',
-                    answer: 'Prayer meetings are typically held weekly at local chapters. Major prayer events and conferences are scheduled throughout the year. Check your local chapter schedule for specific times.',
-                    icon: 'ph ph-clock'
-                },
-                {
-                    id: 16,
-                    question: 'Can I receive spiritual counseling?',
-                    answer: 'Yes, we offer spiritual counseling and direction through trained leaders and priests. Contact your local chapter to arrange a meeting with a spiritual advisor.',
-                    icon: 'ph ph-chat-circle'
-                }
-            ],
-            leadership: [
-                {
-                    id: 17,
-                    question: 'What leadership opportunities are available?',
-                    answer: 'Members can serve as chapter leaders, event coordinators, ministry heads, prayer group leaders, and various other leadership roles. Training and mentorship are provided.',
-                    icon: 'ph ph-crown'
-                },
-                {
-                    id: 18,
-                    question: 'How can I become a leader in ICCRTZ?',
-                    answer: 'Start by actively participating in your local chapter, express interest to current leaders, complete leadership training programs, and demonstrate commitment to our values and mission.',
-                    icon: 'ph ph-trophy'
-                },
-                {
-                    id: 19,
-                    question: 'What training is provided for leaders?',
-                    answer: 'We offer comprehensive leadership training including spiritual formation, organizational skills, communication, event planning, pastoral care, and Catholic leadership principles.',
-                    icon: 'ph ph-graduation-cap'
-                },
-                {
-                    id: 20,
-                    question: 'Are there leadership camps or programs?',
-                    answer: 'Yes, we organize annual leadership camps, summits, and training programs. These include intensive training, practical experience, and networking opportunities.',
-                    icon: 'ph ph-campsite'
-                }
-            ],
-            support: [
-                {
-                    id: 21,
-                    question: 'How can I support ICCRTZ financially?',
-                    answer: 'You can support us through donations, sponsorships, and partnerships. Visit our donation page or contact our finance team for more information on giving opportunities.',
-                    icon: 'ph ph-hand-heart'
-                },
-                {
-                    id: 22,
-                    question: 'Can I volunteer with ICCRTZ?',
-                    answer: 'Absolutely! We welcome volunteers for events, programs, administrative tasks, and various ministries. Contact your local chapter or fill out our volunteer form.',
-                    icon: 'ph ph-hand-raising'
-                },
-                {
-                    id: 23,
-                    question: 'How can I partner with ICCRTZ?',
-                    answer: 'We partner with churches, organizations, and businesses that align with our mission. Contact our partnership team to explore collaboration opportunities.',
-                    icon: 'ph ph-handshake'
-                },
-                {
-                    id: 24,
-                    question: 'What resources does ICCRTZ need?',
-                    answer: 'We need prayer support, financial contributions, volunteer time, expertise in various areas, venue partnerships, and material resources for our programs.',
-                    icon: 'ph ph-package'
-                }
-            ]
-        },
-        
+        selectedCategory: 'all',
+        expandedItems: new Set(),
+        categories: [
+            { id: 'all', name: 'All Categories', icon: 'ph-grid', color: 'bg-slate-100 text-slate-700' },
+            { id: 'membership', name: 'Membership', icon: 'ph-users', color: 'bg-blue-100 text-blue-700' },
+            { id: 'events', name: 'Events', icon: 'ph-calendar', color: 'bg-green-100 text-green-700' },
+            { id: 'donations', name: 'Donations', icon: 'ph-heart', color: 'bg-red-100 text-red-700' },
+            { id: 'spiritual', name: 'Spiritual', icon: 'ph-cross', color: 'bg-purple-100 text-purple-700' },
+            { id: 'technical', name: 'Technical', icon: 'ph-devices', color: 'bg-orange-100 text-orange-700' },
+            { id: 'legal', name: 'Legal', icon: 'ph-scales', color: 'bg-indigo-100 text-indigo-700' }
+        ],
+        faqs: [
+            {
+                id: 1,
+                category: 'membership',
+                question: 'How do I become a member of ICCRTZ?',
+                answer: 'To become a member of ICCRTZ, you need to be a university student or young adult who shares our Christian values. You can apply online through our registration form, attend an orientation session, and complete the membership approval process. Membership is subject to approval by the local chapter leadership.',
+                tags: ['registration', 'join', 'application']
+            },
+            {
+                id: 2,
+                category: 'membership',
+                question: 'What are the membership requirements?',
+                answer: 'Membership requirements include: being at least 18 years old, being a university student or young adult, agreeing with our statement of faith, committing to our code of conduct, and paying annual membership fees (if applicable). You must also provide valid identification and complete the membership application form.',
+                tags: ['requirements', 'eligibility', 'fees']
+            },
+            {
+                id: 3,
+                category: 'events',
+                question: 'How can I register for ICCRTZ events?',
+                answer: 'You can register for ICCRTZ events through our website, mobile app, or by contacting your local chapter. Most events require pre-registration and may have registration fees. Early registration is recommended as events often have limited capacity. Payment can be made online, mobile money, or at our offices.',
+                tags: ['registration', 'events', 'payment']
+            },
+            {
+                id: 4,
+                category: 'events',
+                question: 'Are ICCRTZ events open to non-members?',
+                answer: 'Most ICCRTZ events are open to both members and non-members, though members may receive priority registration or discounted rates. Some exclusive events may be limited to members only. Check the specific event details for eligibility requirements and pricing information.',
+                tags: ['events', 'non-members', 'pricing']
+            },
+            {
+                id: 5,
+                category: 'donations',
+                question: 'How can I make a donation to ICCRTZ?',
+                answer: 'Donations can be made through multiple channels: online via our website using credit/debit cards, mobile money transfers (M-Pesa, Tigo Pesa), bank transfers, or in person at our offices. We accept one-time donations and recurring monthly contributions. All donations are tax-deductible where applicable.',
+                tags: ['donations', 'payment', 'tax']
+            },
+            {
+                id: 6,
+                category: 'donations',
+                question: 'How are my donations used?',
+                answer: 'Your donations support various ICCRTZ activities including: organizing conferences and events, supporting local chapters, providing leadership training, funding community service projects, maintaining our facilities, and supporting our missionary work. Annual financial reports are available to members showing how funds are allocated.',
+                tags: ['donations', 'usage', 'transparency']
+            },
+            {
+                id: 7,
+                category: 'spiritual',
+                question: 'What is the spiritual focus of ICCRTZ?',
+                answer: 'ICCRTZ focuses on Catholic charismatic spirituality, emphasizing personal relationship with Jesus Christ, baptism in the Holy Spirit, spiritual gifts, evangelization, and community building. We combine traditional Catholic teachings with charismatic expression through worship, prayer, and spiritual formation programs.',
+                tags: ['spirituality', 'catholic', 'charismatic']
+            },
+            {
+                id: 8,
+                category: 'spiritual',
+                question: 'Do I need to be Catholic to join ICCRTZ?',
+                answer: 'While ICCRTZ is a Catholic organization, we welcome all Christians who respect our Catholic identity and values. Non-Catholic members are expected to participate respectfully in Catholic practices and understand that our teachings and activities are based on Catholic doctrine and traditions.',
+                tags: ['catholic', 'interdenominational', 'faith']
+            },
+            {
+                id: 9,
+                category: 'technical',
+                question: 'How do I access the ICCRTZ mobile app?',
+                answer: 'The ICCRTZ mobile app is available for free download on both iOS (App Store) and Android (Google Play Store). Search for "ICCR Tanzania" to find the official app. You\'ll need to create an account using your membership details to access all features.',
+                tags: ['mobile', 'app', 'technology']
+            },
+            {
+                id: 10,
+                category: 'technical',
+                question: 'What should I do if I forget my password?',
+                answer: 'If you forget your password, click the "Forgot Password" link on the login page. Enter your email address, and we\'ll send you instructions to reset your password. For security reasons, password reset links expire after 24 hours. If you don\'t receive the email, check your spam folder.',
+                tags: ['password', 'login', 'security']
+            },
+            {
+                id: 11,
+                category: 'legal',
+                question: 'How is my personal information protected?',
+                answer: 'We protect your personal information according to our Privacy Policy and applicable data protection laws. We use secure servers, encryption, and access controls to safeguard your data. We only collect information necessary for our services and never sell or share your personal information with third parties without your consent.',
+                tags: ['privacy', 'data', 'security']
+            },
+            {
+                id: 12,
+                category: 'legal',
+                question: 'What are ICCRTZ\'s terms and conditions?',
+                answer: 'Our Terms & Conditions govern your use of ICCRTZ services, membership participation, and event attendance. They outline your rights and responsibilities, our obligations, privacy practices, and dispute resolution procedures. You must agree to these terms to use our services.',
+                tags: ['terms', 'conditions', 'legal']
+            },
+            {
+                id: 13,
+                category: 'membership',
+                question: 'Can I transfer my membership to another chapter?',
+                answer: 'Yes, you can transfer your membership to another ICCRTZ chapter if you relocate or wish to join a different chapter. Contact your current chapter leadership to initiate the transfer process. The receiving chapter will need to approve the transfer, and there may be a small administrative fee.',
+                tags: ['transfer', 'chapter', 'relocation']
+            },
+            {
+                id: 14,
+                category: 'events',
+                question: 'What should I bring to ICCRTZ conferences?',
+                answer: 'For ICCRTZ conferences, bring: Bible, notebook, pen, comfortable clothing, personal items, and any required registration confirmation. Some conferences may have specific requirements listed in the event details. Check the conference information packet for any special items needed.',
+                tags: ['conferences', 'preparation', 'requirements']
+            },
+            {
+                id: 15,
+                category: 'donations',
+                question: 'Can I specify how my donation should be used?',
+                answer: 'Yes, you can specify how you\'d like your donation to be used (e.g., specific projects, local chapter, general fund). While we try to honor donor preferences, we reserve the right to redirect funds to where they\'re most needed for the organization\'s mission.',
+                tags: ['donations', 'specification', 'projects']
+            },
+            {
+                id: 16,
+                category: 'spiritual',
+                question: 'Does ICCRTZ offer spiritual counseling?',
+                answer: 'Yes, ICCRTZ offers spiritual counseling through trained leaders and pastoral care teams. This includes prayer support, spiritual guidance, and counseling for personal challenges. All counseling is confidential and provided according to Catholic spiritual direction principles.',
+                tags: ['counseling', 'spiritual', 'support']
+            },
+            {
+                id: 17,
+                category: 'technical',
+                question: 'How do I report technical issues with the website?',
+                answer: 'Report technical issues by emailing support@iccrtz.org or using the contact form on our website. Include details about the problem, your browser/device information, and screenshots if possible. We typically respond within 24-48 hours during business days.',
+                tags: ['support', 'technical', 'issues']
+            },
+            {
+                id: 18,
+                category: 'legal',
+                question: 'What is ICCRTZ\'s refund policy?',
+                answer: 'Refund policies vary by event and service. Generally, event registrations are refundable up to 7 days before the event, minus a processing fee. Donations are typically non-refundable unless required by law. Specific refund terms are provided during registration and in our Terms & Conditions.',
+                tags: ['refunds', 'policy', 'cancellations']
+            }
+        ],
         init() {
-            // Initialize with first item expanded
-            this.expandedItems = [1];
+            this.$watch('searchQuery', () => this.filterFAQs());
+            this.$watch('selectedCategory', () => this.filterFAQs());
         },
-        
-        getFilteredFAQs() {
-            const category = this.faqData[this.activeCategory] || [];
-            if (!this.searchQuery) return category;
-            
-            return category.filter(item => 
-                item.question.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-                item.answer.toLowerCase().includes(this.searchQuery.toLowerCase())
-            );
-        },
-        
-        toggleItem(itemId) {
-            const index = this.expandedItems.indexOf(itemId);
-            if (index > -1) {
-                this.expandedItems.splice(index, 1);
+        toggleItem(id) {
+            if (this.expandedItems.has(id)) {
+                this.expandedItems.delete(id);
             } else {
-                this.expandedItems.push(itemId);
+                this.expandedItems.add(id);
             }
         },
-        
-        isExpanded(itemId) {
-            return this.expandedItems.includes(itemId);
+        isExpanded(id) {
+            return this.expandedItems.has(id);
         },
-        
-        setCategory(category) {
-            this.activeCategory = category;
-            this.expandedItems = [];
+        filterFAQs() {
+            return this.faqs.filter(faq => {
+                const matchesCategory = this.selectedCategory === 'all' || faq.category === this.selectedCategory;
+                const matchesSearch = !this.searchQuery || 
+                    faq.question.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+                    faq.answer.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+                    faq.tags.some(tag => tag.toLowerCase().includes(this.searchQuery.toLowerCase()));
+                return matchesCategory && matchesSearch;
+            });
+        },
+        getCategoryColor(categoryId) {
+            const category = this.categories.find(cat => cat.id === categoryId);
+            return category ? category.color : 'bg-slate-100 text-slate-700';
+        },
+        scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        },
+        showScrollTop: false,
+        initScrollListener() {
+            window.addEventListener('scroll', () => {
+                this.showScrollTop = window.scrollY > 500;
+            });
         }
-    }">
+    }" x-init="initScrollListener()">
         @include('components.header')
 
-        <main class="pt-24 lg:pt-28 pb-16">
+        <main class="pt-24 lg:pt-28">
             <!-- Hero Section -->
-            <section class="gradient-bg text-white py-16 lg:py-20">
-                <div class="max-w-4xl mx-auto px-6 text-center">
-                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-                        <i class="ph ph-question text-xl"></i>
-                        <span class="text-sm font-medium">Help & Support</span>
-                    </div>
-                    <h1 class="text-4xl lg:text-5xl font-bold mb-6 font-serif">Frequently Asked Questions</h1>
-                    <p class="text-lg lg:text-xl text-slate-200 leading-relaxed max-w-3xl mx-auto">
-                        Find answers to common questions about ICCRTZ, our programs, membership, and activities. Can't find what you're looking for? Feel free to contact us.
-                    </p>
+            <section class="relative py-20 lg:py-32 bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 text-white overflow-hidden">
+                <div class="absolute inset-0 opacity-10">
+                    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.6\"%3E%3Cpath d=\"M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
                 </div>
-            </section>
-
-            <!-- Search Section -->
-            <section class="max-w-4xl mx-auto px-6 py-8">
-                <div class="search-container">
-                    <input 
-                        type="text" 
-                        x-model="searchQuery"
-                        placeholder="Search FAQs..."
-                        class="search-input">
-                    <i class="ph ph-magnifying-glass search-icon text-xl"></i>
-                </div>
-                <div x-show="searchQuery" class="text-center mt-4">
-                    <p class="text-slate-600">
-                        Found <span class="font-bold text-blue-600" x-text="getFilteredFAQs().length"></span> results
-                        <template x-if="searchQuery && getFilteredFAQs().length === 0">
-                            <span class="text-amber-600">. Try different keywords.</span>
-                        </template>
-                    </p>
-                </div>
-            </section>
-
-            <!-- Categories -->
-            <section class="max-w-4xl mx-auto px-6 py-8">
-                <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Browse by Category</h2>
-                <div class="grid md:grid-cols-3 gap-4">
-                    <template x-for="(category, key) in {
-                        general: { name: 'General', icon: 'ph ph-info', color: 'blue' },
-                        membership: { name: 'Membership', icon: 'ph ph-users', color: 'green' },
-                        events: { name: 'Events', icon: 'ph ph-calendar', color: 'purple' },
-                        spiritual: { name: 'Spiritual Life', icon: 'ph ph-hands-praying', color: 'amber' },
-                        leadership: { name: 'Leadership', icon: 'ph ph-crown', color: 'red' },
-                        support: { name: 'Support Us', icon: 'ph ph-hand-heart', color: 'indigo' }
-                    }" :key="key">
-                        <div 
-                            @click="setCategory(key)"
-                            :class="activeCategory === key ? 'active' : ''"
-                            class="category-card text-center">
-                            <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-3"
-                                 :class="activeCategory === key ? 'bg-white/20' : ''">
-                                <i :class="category.icon" class="text-xl"
-                                   :class="activeCategory === key ? 'text-white' : 'text-slate-600'"></i>
-                            </div>
-                            <h3 class="font-semibold" x-text="category.name"></h3>
+                
+                <div class="max-w-7xl mx-auto px-6 relative z-10">
+                    <div class="text-center">
+                        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full mb-6">
+                            <i class="ph ph-question text-xl"></i>
+                            <span class="font-semibold">Frequently Asked Questions</span>
                         </div>
-                    </template>
+                        <h1 class="text-5xl lg:text-6xl font-bold mb-6 font-serif">FAQ</h1>
+                        <p class="text-xl lg:text-2xl text-slate-200 max-w-4xl mx-auto leading-relaxed mb-8">
+                            Find answers to common questions about ICCRTZ membership, events, donations, and more.
+                        </p>
+                        
+                        <!-- Search Bar -->
+                        <div class="max-w-2xl mx-auto mb-8">
+                            <div class="relative">
+                                <input type="text" 
+                                       x-model="searchQuery"
+                                       placeholder="Search FAQs..." 
+                                       class="w-full px-6 py-4 pl-14 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:bg-white/20 transition-all">
+                                <i class="ph ph-magnifying-glass absolute left-5 top-4 text-white/70 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <!-- FAQ Items -->
-            <section class="max-w-4xl mx-auto px-6 py-8">
-                <div class="mb-6">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-2">
-                        <template x-if="searchQuery">
-                            Search Results
-                        </template>
-                        <template x-if="!searchQuery">
-                            <template x-for="(category, key) in {
-                                general: 'General',
-                                membership: 'Membership',
-                                events: 'Events',
-                                spiritual: 'Spiritual Life',
-                                leadership: 'Leadership',
-                                support: 'Support Us'
-                            }" :key="key">
-                                <span x-show="activeCategory === key" x-text="category"></span>
-                            </template>
-                        </template>
-                    </h2>
-                    <p class="text-slate-600">
-                        <span x-text="getFilteredFAQs().length"></span> questions found
-                    </p>
-                </div>
-
-                <div class="space-y-4">
-                    <template x-for="faq in getFilteredFAQs()" :key="faq.id">
-                        <div class="faq-item" :class="{ 'active': isExpanded(faq.id) }">
-                            <button 
-                                @click="toggleItem(faq.id)"
-                                class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-slate-50 transition-colors">
-                                <div class="flex items-center gap-3 flex-1">
-                                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <i :class="faq.icon" class="text-blue-600"></i>
-                                    </div>
-                                    <h3 class="font-semibold text-slate-900" x-text="faq.question"></h3>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <span class="text-sm text-slate-500">Click to expand</span>
-                                    <i class="ph ph-chevron-down text-slate-400 transition-transform"
-                                       :class="{ 'rotate-180': isExpanded(faq.id) }"></i>
-                                </div>
+            <!-- Categories Section -->
+            <section class="py-12 bg-white border-b border-slate-200">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <template x-for="category in categories" :key="category.id">
+                            <button @click="selectedCategory = category.id"
+                                    :class="selectedCategory === category.id ? 'ring-2 ring-offset-2 ring-indigo-500' : ''"
+                                    :class="category.color"
+                                    class="category-badge flex items-center gap-2 font-medium">
+                                <i :class="category.icon"></i>
+                                <span x-text="category.name"></span>
                             </button>
-                            <div x-show="isExpanded(faq.id)" 
-                                 x-transition:enter="transition ease-out duration-300"
-                                 x-transition:enter-start="opacity-0 transform -translate-y-4"
-                                 x-transition:enter-end="opacity-100 transform translate-y-0"
-                                 x-transition:leave="transition ease-in duration-200"
-                                 x-transition:leave-start="opacity-100 transform translate-y-0"
-                                 x-transition:leave-end="opacity-0 transform -translate-y-4"
-                                 class="px-6 pb-4">
-                                <div class="pl-13 pr-6">
-                                    <p class="text-slate-600 leading-relaxed" x-text="faq.answer"></p>
+                        </template>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="py-16 bg-slate-50">
+                <div class="max-w-4xl mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-slate-900 mb-4">Common Questions</h2>
+                        <p class="text-lg text-slate-600">
+                            Click on any question to reveal the answer. Can't find what you're looking for? 
+                            <a href="{{ url('contact') }}" class="text-indigo-600 hover:text-indigo-800 font-semibold">Contact us</a>.
+                        </p>
+                    </div>
+
+                    <!-- FAQ Items -->
+                    <div class="space-y-2">
+                        <template x-for="faq in filterFAQs()" :key="faq.id">
+                            <div class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden">
+                                <button @click="toggleItem(faq.id)"
+                                        class="faq-question w-full px-6 py-4 text-left flex items-center justify-between hover:bg-slate-50 transition-colors">
+                                    <div class="flex items-center gap-3 flex-1">
+                                        <span :class="getCategoryColor(faq.category)" class="category-badge">
+                                            <i :class="categories.find(cat => cat.id === faq.category)?.icon"></i>
+                                            <span x-text="categories.find(cat => cat.id === faq.category)?.name"></span>
+                                        </span>
+                                        <span class="font-medium text-slate-900" x-text="faq.question"></span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <template x-for="tag in faq.tags" :key="tag">
+                                            <span class="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded" x-text="tag"></span>
+                                        </template>
+                                        <i class="ph ph-chevron-down text-slate-400 transition-transform duration-300"
+                                           :class="isExpanded(faq.id) ? 'rotate-180' : ''"></i>
+                                    </div>
+                                </button>
+                                <div class="faq-answer px-6 text-slate-600" 
+                                     :class="isExpanded(faq.id) ? 'open' : ''">
+                                    <p x-text="faq.answer"></p>
                                 </div>
                             </div>
-                        </div>
-                    </template>
-                </div>
+                        </template>
+                    </div>
 
-                <!-- No Results -->
-                <div x-show="getFilteredFAQs().length === 0" class="text-center py-12">
-                    <div class="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="ph ph-question text-slate-400 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-slate-900 mb-2">No FAQs Found</h3>
-                    <p class="text-slate-600 mb-6">Try searching with different keywords or browse our categories.</p>
-                    <button @click="searchQuery = ''" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                        Clear Search
-                    </button>
-                </div>
-            </section>
-
-            <!-- Still Have Questions -->
-            <section class="max-w-4xl mx-auto px-6 py-12">
-                <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="ph ph-chat-circle text-blue-600 text-2xl"></i>
-                    </div>
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Still Have Questions?</h2>
-                    <p class="text-slate-600 mb-6 max-w-2xl mx-auto">
-                        Can't find the answer you're looking for? Our team is here to help. Reach out to us through any of the following channels:
-                    </p>
-                    <div class="grid md:grid-cols-3 gap-4 mb-8">
-                        <div class="bg-white rounded-lg p-4">
-                            <i class="ph ph-envelope text-blue-600 text-xl mb-2"></i>
-                            <h3 class="font-semibold text-slate-800 mb-1">Email</h3>
-                            <p class="text-sm text-slate-600">info@iccrtz.org</p>
-                        </div>
-                        <div class="bg-white rounded-lg p-4">
-                            <i class="ph ph-phone text-blue-600 text-xl mb-2"></i>
-                            <h3 class="font-semibold text-slate-800 mb-1">Phone</h3>
-                            <p class="text-sm text-slate-600">+255 712 345 678</p>
-                        </div>
-                        <div class="bg-white rounded-lg p-4">
-                            <i class="ph ph-map-pin text-blue-600 text-xl mb-2"></i>
-                            <h3 class="font-semibold text-slate-800 mb-1">Visit Us</h3>
-                            <p class="text-sm text-slate-600">Archdiocese of Mbeya</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <a href="{{ url('contact') }}" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
-                            Contact Us
-                        </a>
-                        <a href="{{ url('register') }}" class="bg-white text-blue-600 px-6 py-3 rounded-lg hover:bg-slate-50 transition-colors font-medium border border-blue-200">
-                            Join ICCRTZ
-                        </a>
+                    <!-- No Results -->
+                    <div x-show="filterFAQs().length === 0" class="text-center py-12">
+                        <i class="ph ph-search text-6xl text-slate-300 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">No FAQs Found</h3>
+                        <p class="text-slate-600 mb-4">Try adjusting your search or browse all categories.</p>
+                        <button @click="searchQuery = ''; selectedCategory = 'all'" 
+                                class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+                            Clear Filters
+                        </button>
                     </div>
                 </div>
             </section>
 
-            <!-- Quick Links -->
-            <section class="max-w-4xl mx-auto px-6 py-8">
-                <div class="bg-white rounded-xl card-shadow p-6">
-                    <h3 class="text-lg font-semibold text-slate-900 mb-4">Quick Links</h3>
-                    <div class="grid md:grid-cols-4 gap-4">
-                        <a href="{{ url('about') }}" class="flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors">
-                            <i class="ph ph-info"></i>
-                            <span>About Us</span>
+            <!-- Help Section -->
+            <section class="py-16 bg-white">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-slate-900 mb-4">Still Have Questions?</h2>
+                        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                            Our team is here to help you with any additional questions or concerns.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Contact Support -->
+                        <div class="text-center group">
+                            <div class="w-20 h-20 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-indigo-200 transition-colors">
+                                <i class="ph ph-envelope text-indigo-600 text-3xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Email Support</h3>
+                            <p class="text-slate-600 mb-4">Get help via email for detailed questions and support.</p>
+                            <a href="{{ url('contact') }}" class="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-800 font-semibold">
+                                <i class="ph ph-arrow-right"></i>
+                                Contact Us
+                            </a>
+                        </div>
+
+                        <!-- Visit Office -->
+                        <div class="text-center group">
+                            <div class="w-20 h-20 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors">
+                                <i class="ph ph-map-pin text-green-600 text-3xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Visit Our Office</h3>
+                            <p class="text-slate-600 mb-4">Meet with our team in person for immediate assistance.</p>
+                            <div class="text-sm text-slate-600">
+                                <div class="mb-2">P.O. Box 1234, Mbeya</div>
+                                <div>Monday - Friday, 9:00 AM - 5:00 PM</div>
+                            </div>
+                        </div>
+
+                        <!-- Call Us -->
+                        <div class="text-center group">
+                            <div class="w-20 h-20 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-colors">
+                                <i class="ph ph-phone text-purple-600 text-3xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Phone Support</h3>
+                            <p class="text-slate-600 mb-4">Call us for urgent questions and immediate assistance.</p>
+                            <div class="text-sm text-slate-600">
+                                <div class="mb-2">+255 712 345 678</div>
+                                <div>+255 713 456 789</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Popular Topics -->
+            <section class="py-16 bg-slate-50">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-slate-900 mb-4">Popular Topics</h2>
+                        <p class="text-xl text-slate-600">Quick access to frequently searched topics</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <a href="#" class="bg-white rounded-xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-lg transition-all group">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
+                                <i class="ph ph-users text-blue-600 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold text-slate-900 mb-2">Membership</h3>
+                            <p class="text-sm text-slate-600">Join ICCRTZ and become part of our community</p>
                         </a>
-                        <a href="{{ url('events') }}" class="flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors">
-                            <i class="ph ph-calendar"></i>
-                            <span>Events</span>
+
+                        <a href="#" class="bg-white rounded-xl p-6 border border-slate-200 hover:border-green-300 hover:shadow-lg transition-all group">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors">
+                                <i class="ph ph-calendar text-green-600 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold text-slate-900 mb-2">Events</h3>
+                            <p class="text-sm text-slate-600">Register for conferences and activities</p>
                         </a>
-                        <a href="{{ url('register') }}" class="flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors">
-                            <i class="ph ph-user-plus"></i>
-                            <span>Register</span>
+
+                        <a href="#" class="bg-white rounded-xl p-6 border border-slate-200 hover:border-red-300 hover:shadow-lg transition-all group">
+                            <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-red-200 transition-colors">
+                                <i class="ph ph-heart text-red-600 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold text-slate-900 mb-2">Donations</h3>
+                            <p class="text-sm text-slate-600">Support our mission and programs</p>
                         </a>
-                        <a href="{{ url('contact') }}" class="flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors">
-                            <i class="ph ph-envelope"></i>
-                            <span>Contact</span>
+
+                        <a href="#" class="bg-white rounded-xl p-6 border border-slate-200 hover:border-purple-300 hover:shadow-lg transition-all group">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors">
+                                <i class="ph ph-cross text-purple-600 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold text-slate-900 mb-2">Spiritual Life</h3>
+                            <p class="text-sm text-slate-600">Grow in faith and spiritual formation</p>
                         </a>
                     </div>
                 </div>
             </section>
         </main>
+
+        <!-- Scroll to Top Button -->
+        <button @click="scrollToTop()" 
+                x-show="showScrollTop"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 translate-y-2"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 translate-y-2"
+                class="scroll-to-top bg-indigo-600 text-white p-4 rounded-full shadow-lg hover:bg-indigo-700 transition-all">
+            <i class="ph ph-arrow-up text-xl"></i>
+        </button>
 
         @include('components.footer')
     </body>
