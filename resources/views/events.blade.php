@@ -157,29 +157,8 @@
                                 <p class="text-slate-600 leading-relaxed mb-4">
                                     Join thousands of believers for this transformative conference featuring renowned speakers, worship sessions, and spiritual renewal.
                                 </p>
-                                <div class="space-y-2 mb-4">
-                                    <div class="flex items-center justify-between text-sm">
-                                        <span class="text-slate-500"><i class="ph ph-map-pin mr-1"></i> St Mary's International Schools</span>
-                                        <span class="text-slate-500"><i class="ph ph-users mr-1"></i> 5,000+ expected</span>
-                                    </div>
-                                    <div class="flex items-center justify-between text-sm">
-                                        <span class="text-slate-500"><i class="ph ph-clock mr-1"></i> 9:00 AM - 6:00 PM</span>
-                                        <span class="text-slate-500"><i class="ph ph-broadcast mr-1"></i> Live Stream</span>
-                                    </div>
-                                </div>
-                                <div class="mb-4">
-                                    <div class="flex items-center gap-2 text-green-800 text-sm mb-2">
-                                        <i class="ph ph-broadcast"></i>
-                                        <span class="font-semibold">Conference is LIVE! Watch online or join in Mbeya</span>
-                                    </div>
-                                    <div class="flex justify-between text-sm mb-1">
-                                        <span class="font-semibold text-slate-700">Live Attendance</span>
-                                        <span class="font-bold text-green-600">1,250+ joined</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2">
-                                        <div class="bg-green-600 h-2 rounded-full animate-pulse" style="width: 62.5%"></div>
-                                    </div>
-                                </div>
+                            
+                           
                                 <a href="#conference-videos" class="w-full bg-red-600 text-white px-4 py-3 rounded-full font-bold hover:bg-red-700 transition-all text-center">
                                     🔴 Watch Conference Videos
                                 </a>
