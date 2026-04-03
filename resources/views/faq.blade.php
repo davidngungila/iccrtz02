@@ -59,48 +59,53 @@
                 background-size: 200% 100%;
                 animation: borderSlide 3s infinite linear;
             }
+            .scroll-smooth { scroll-behavior: smooth; }
+            .section-link {
+                position: relative;
+                display: block;
+                padding: 0.75rem 1rem;
+                margin: 0.25rem 0;
+                border-radius: 0.5rem;
+                transition: all 0.3s ease;
+                border-left: 3px solid transparent;
+            }
+            .section-link:hover {
+                background: rgba(239, 68, 68, 0.1);
+                border-left-color: #ef4444;
+                color: #ef4444;
+            }
+            .section-link.active {
+                background: rgba(239, 68, 68, 0.15);
+                border-left-color: #ef4444;
+                color: #ef4444;
+                font-weight: 600;
+            }
+            .content-section {
+                scroll-margin-top: 6rem;
+            }
             .faq-item {
                 border-bottom: 1px solid #e2e8f0;
                 transition: all 0.3s ease;
-                position: relative;
             }
             .faq-item:hover {
-                background: rgba(99, 102, 241, 0.02);
-                transform: translateX(4px);
-            }
-            .faq-item::before {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 0;
-                bottom: 0;
-                width: 3px;
-                background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-                transform: scaleY(0);
-                transition: transform 0.3s ease;
-            }
-            .faq-item:hover::before {
-                transform: scaleY(1);
+                background: rgba(239, 68, 68, 0.02);
             }
             .faq-question {
                 cursor: pointer;
                 transition: all 0.3s ease;
-                position: relative;
             }
             .faq-question:hover {
-                color: #6366f1;
+                color: #ef4444;
             }
             .faq-answer {
                 max-height: 0;
                 overflow: hidden;
-                transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.3s ease;
-                opacity: 0;
+                transition: max-height 0.3s ease, padding 0.3s ease;
             }
             .faq-answer.open {
-                max-height: 800px;
-                padding-top: 1.5rem;
-                padding-bottom: 1.5rem;
-                opacity: 1;
+                max-height: 500px;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
             }
             .category-badge {
                 display: inline-flex;
@@ -111,37 +116,10 @@
                 font-size: 0.75rem;
                 font-weight: 500;
                 transition: all 0.2s ease;
-                position: relative;
-                overflow: hidden;
-            }
-            .category-badge::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-                animation: shimmer 3s infinite;
-            }
-            @keyframes shimmer {
-                0% { left: -100%; }
-                100% { left: 100%; }
             }
             .category-badge:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.1);
-            }
-            .search-highlight {
-                background: linear-gradient(120deg, #fef3c7 0%, #fef3c7 100%);
-                background-size: 100% 100%;
-                animation: highlight 0.5s ease;
-                padding: 2px 4px;
-                border-radius: 4px;
-            }
-            @keyframes highlight {
-                0% { background-size: 0% 100%; }
-                100% { background-size: 100% 100%; }
+                transform: translateY(-1px);
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             }
             .scroll-to-top {
                 position: fixed;
@@ -156,145 +134,14 @@
                 opacity: 1;
                 visibility: visible;
             }
-            .stats-card {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                position: relative;
-                overflow: hidden;
-            }
-            .stats-card::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-                animation: shimmer 3s infinite;
-            }
-            .help-card {
-                transition: all 0.3s ease;
-                position: relative;
-                overflow: hidden;
-            }
-            .help-card::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
-                transform: translateX(-100%);
-                transition: transform 0.6s ease;
-            }
-            .help-card:hover::before {
-                transform: translateX(100%);
-            }
-            .help-card:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            }
-            .featured-faq {
-                background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
-                border: 2px solid #f59e0b;
-                position: relative;
-            }
-            .featured-faq::after {
-                content: '⭐';
-                position: absolute;
-                top: 1rem;
-                right: 1rem;
-                font-size: 1.5rem;
-            }
-            .related-links {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                margin-top: 1rem;
-            }
-            .related-link {
-                background: rgba(99, 102, 241, 0.1);
-                color: #6366f1;
-                padding: 0.25rem 0.75rem;
-                border-radius: 9999px;
-                font-size: 0.875rem;
-                transition: all 0.2s ease;
-            }
-            .related-link:hover {
-                background: #6366f1;
-                color: white;
-                transform: translateY(-1px);
-            }
-            .rating-stars {
-                display: flex;
-                gap: 0.25rem;
-                margin-top: 0.5rem;
-            }
-            .rating-stars .star {
-                color: #fbbf24;
-                font-size: 0.875rem;
-            }
-            .view-count {
-                display: flex;
-                align-items: gap: 0.5rem;
-                color: #6b7280;
-                font-size: 0.875rem;
-                margin-top: 0.5rem;
-            }
-            .recent-searches {
-                background: rgba(156, 163, 175, 0.1);
-                border-radius: 0.5rem;
-                padding: 0.75rem;
-                margin-top: 1rem;
-            }
-            .recent-search-tag {
-                background: white;
-                color: #4b5563;
-                padding: 0.25rem 0.5rem;
-                border-radius: 0.25rem;
-                font-size: 0.75rem;
-                cursor: pointer;
-                transition: all 0.2s ease;
-            }
-            .recent-search-tag:hover {
-                background: #6366f1;
-                color: white;
-            }
-            .quick-actions {
-                position: fixed;
-                bottom: 2rem;
-                left: 2rem;
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-                z-index: 40;
-            }
-            .quick-action-btn {
-                width: 3rem;
-                height: 3rem;
-                border-radius: 50%;
-                background: white;
-                border: 2px solid #e5e7eb;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                transition: all 0.2s ease;
-                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            }
-            .quick-action-btn:hover {
-                transform: scale(1.1);
-                border-color: #6366f1;
-                color: #6366f1;
-            }
         </style>
     </head>
-    <body class="min-h-screen bg-white text-slate-900 antialiased font-medium" x-data="faqData()">
+    <body class="min-h-screen bg-white text-slate-900 antialiased font-medium scroll-smooth" x-data="faqData()">
         @include('components.header')
 
         <main class="pt-24 lg:pt-28">
             <!-- Hero Section -->
-            <section class="relative py-20 lg:py-32 bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 text-white overflow-hidden">
+            <section class="relative py-20 lg:py-32 bg-gradient-to-br from-red-900 via-rose-900 to-slate-900 text-white overflow-hidden">
                 <div class="absolute inset-0 opacity-10">
                     <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.6\"%3E%3Cpath d=\"M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
                 </div>
@@ -303,65 +150,35 @@
                     <div class="text-center">
                         <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full mb-6">
                             <i class="ph ph-question text-xl"></i>
-                            <span class="font-semibold">Frequently Asked Questions</span>
+                            <span class="font-semibold">Last Updated: April 3, 2026</span>
                         </div>
-                        <h1 class="text-5xl lg:text-6xl font-bold mb-6 font-serif">FAQ</h1>
-                        <p class="text-xl lg:text-2xl text-slate-200 max-w-4xl mx-auto leading-relaxed mb-8">
-                            Find answers to common questions about ICCRTZ membership, events, donations, and more. Browse by category or search for specific topics.
+                        <h1 class="text-5xl lg:text-6xl font-bold mb-6 font-serif">Frequently Asked Questions</h1>
+                        <p class="text-xl lg:text-2xl text-slate-200 max-w-4xl mx-auto leading-relaxed">
+                            Find answers to common questions about ICCRTZ membership, events, donations, and more.
                         </p>
-                        
-                        <!-- Search Bar -->
-                        <div class="max-w-2xl mx-auto mb-8">
-                            <div class="relative">
-                                <input type="text" 
-                                       x-model="searchQuery"
-                                       @change="addToRecentSearches(searchQuery)"
-                                       placeholder="Search FAQs..." 
-                                       class="w-full px-6 py-4 pl-14 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:bg-white/20 transition-all">
-                                <i class="ph ph-magnifying-glass absolute left-5 top-4 text-white/70 text-xl"></i>
-                            </div>
-                            
-                            <!-- Recent Searches -->
-                            <div x-show="recentSearches.length > 0" class="recent-searches">
-                                <div class="text-xs text-white/70 mb-2">Recent searches:</div>
-                                <div class="flex flex-wrap gap-2">
-                                    <template x-for="search in recentSearches" :key="search">
-                                        <span @click="searchQuery = search" class="recent-search-tag" x-text="search"></span>
-                                    </template>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Stats -->
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-                            <div class="text-center">
-                                <div class="text-3xl font-bold text-white" x-text="faqs.length"></div>
-                                <div class="text-sm text-white/70">Total FAQs</div>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-3xl font-bold text-white" x-text="categories.length"></div>
-                                <div class="text-sm text-white/70">Categories</div>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-3xl font-bold text-white" x-text="faqs.reduce((sum, faq) => sum + faq.helpful, 0)"></div>
-                                <div class="text-sm text-white/70">Helpful Votes</div>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-3xl font-bold text-white" x-text="faqs.reduce((sum, faq) => sum + faq.views, 0)"></div>
-                                <div class="text-sm text-white/70">Total Views</div>
-                            </div>
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+                            <a href="#categories" class="px-8 py-4 bg-white text-red-900 font-bold rounded-full hover:bg-slate-100 transition-all shadow-xl">
+                                <i class="ph ph-book-open mr-2"></i> Browse FAQs
+                            </a>
+                            <a href="#contact" class="px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-bold rounded-full hover:bg-white/30 transition-all border border-white/30">
+                                <i class="ph ph-envelope mr-2"></i> Contact Support
+                            </a>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- Categories Section -->
-            <section class="py-12 bg-white border-b border-slate-200">
+            <section id="categories" class="py-12 bg-white border-b border-slate-200">
                 <div class="max-w-7xl mx-auto px-6">
+                    <div class="text-center mb-8">
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">Browse by Category</h2>
+                        <p class="text-slate-600">Select a category to view related questions</p>
+                    </div>
                     <div class="flex flex-wrap justify-center gap-3">
                         <template x-for="category in categories" :key="category.id">
                             <button @click="selectedCategory = category.id"
-                                    :class="selectedCategory === category.id ? 'ring-2 ring-offset-2 ring-indigo-500' : ''"
+                                    :class="selectedCategory === category.id ? 'ring-2 ring-offset-2 ring-red-500' : ''"
                                     :class="category.color"
                                     class="category-badge flex items-center gap-2 font-medium">
                                 <i :class="category.icon"></i>
@@ -375,90 +192,94 @@
 
             <!-- FAQ Section -->
             <section class="py-16 bg-slate-50">
-                <div class="max-w-4xl mx-auto px-6">
-                    <div class="text-center mb-12">
-                        <h2 class="text-3xl font-bold text-slate-900 mb-4">Common Questions</h2>
-                        <p class="text-lg text-slate-600">
-                            Click on any question to reveal the answer. Found something helpful? 
-                            <span class="text-indigo-600 font-semibold">Mark it as helpful!</span>
-                        </p>
-                    </div>
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="grid lg:grid-cols-4 gap-8">
+                        <!-- Sidebar Navigation -->
+                        <div class="lg:col-span-1">
+                            <div class="sticky top-28 space-y-2">
+                                <h3 class="text-lg font-bold text-slate-900 mb-4">Quick Navigation</h3>
+                                <div class="mb-4">
+                                    <input type="text" 
+                                           x-model="searchQuery"
+                                           placeholder="Search FAQs..." 
+                                           class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                                </div>
+                                <template x-for="category in categories" :key="category.id">
+                                    <button @click="selectedCategory = category.id"
+                                            :class="selectedCategory === category.id ? 'active' : ''"
+                                            class="section-link text-left w-full text-sm">
+                                        <span x-text="category.name"></span>
+                                        <span class="text-xs text-slate-500" x-text="'(' + category.count + ')'"></span>
+                                    </button>
+                                </template>
+                            </div>
+                        </div>
 
-                    <!-- FAQ Items -->
-                    <div class="space-y-2">
-                        <template x-for="faq in filterFAQs()" :key="faq.id">
-                            <div class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden"
-                                 :class="featuredFAQs.includes(faq.id) ? 'featured-faq' : ''">
-                                <button @click="toggleItem(faq.id)"
-                                        class="faq-question w-full px-6 py-4 text-left flex items-center justify-between hover:bg-slate-50 transition-colors">
-                                    <div class="flex items-center gap-3 flex-1">
-                                        <span :class="getCategoryColor(faq.category)" class="category-badge">
-                                            <i :class="categories.find(cat => cat.id === faq.category)?.icon"></i>
-                                            <span x-text="categories.find(cat => cat.id === faq.category)?.name"></span>
-                                        </span>
-                                        <span class="font-medium text-slate-900" x-text="faq.question"></span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <template x-for="tag in faq.tags.slice(0, 2)" :key="tag">
-                                            <span class="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded" x-text="tag"></span>
-                                        </template>
-                                        <div class="flex items-center gap-1 text-xs text-slate-500">
-                                            <i class="ph ph-thumbs-up"></i>
-                                            <span x-text="faq.helpful"></span>
+                        <!-- Main Content -->
+                        <div class="lg:col-span-3 space-y-12">
+                            <!-- FAQ Items -->
+                            <template x-for="faq in filterFAQs()" :key="faq.id">
+                                <div class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden">
+                                    <button @click="toggleItem(faq.id)"
+                                            class="faq-question w-full px-6 py-4 text-left flex items-center justify-between hover:bg-slate-50 transition-colors">
+                                        <div class="flex items-center gap-3 flex-1">
+                                            <span :class="getCategoryColor(faq.category)" class="category-badge">
+                                                <i :class="categories.find(cat => cat.id === faq.category)?.icon"></i>
+                                                <span x-text="categories.find(cat => cat.id === faq.category)?.name"></span>
+                                            </span>
+                                            <span class="font-medium text-slate-900" x-text="faq.question"></span>
                                         </div>
-                                        <div class="flex items-center gap-1 text-xs text-slate-500">
-                                            <i class="ph ph-eye"></i>
-                                            <span x-text="faq.views"></span>
-                                        </div>
-                                        <i class="ph ph-chevron-down text-slate-400 transition-transform duration-300"
-                                           :class="isExpanded(faq.id) ? 'rotate-180' : ''"></i>
-                                    </div>
-                                </button>
-                                <div class="faq-answer px-6 text-slate-600" 
-                                     :class="isExpanded(faq.id) ? 'open' : ''">
-                                    <p x-text="faq.answer"></p>
-                                    
-                                    <!-- Related Links -->
-                                    <div x-show="isExpanded(faq.id)" class="related-links">
-                                        <template x-for="relatedId in faq.related" :key="relatedId">
-                                            <template x-if="faqs.find(f => f.id === relatedId)">
-                                                <span class="related-link" x-text="'Related: ' + faqs.find(f => f.id === relatedId).question.substring(0, 30) + '...'"></span>
+                                        <div class="flex items-center gap-2">
+                                            <template x-for="tag in faq.tags.slice(0, 2)" :key="tag">
+                                                <span class="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded" x-text="tag"></span>
                                             </template>
-                                        </template>
-                                    </div>
-                                    
-                                    <!-- Helpful Buttons -->
-                                    <div x-show="isExpanded(faq.id)" class="flex items-center justify-between mt-4 pt-4 border-t border-slate-100">
-                                        <div class="flex items-center gap-4">
+                                            <i class="ph ph-chevron-down text-slate-400 transition-transform duration-300"
+                                               :class="isExpanded(faq.id) ? 'rotate-180' : ''"></i>
+                                        </div>
+                                    </button>
+                                    <div class="faq-answer px-6 text-slate-600" 
+                                         :class="isExpanded(faq.id) ? 'open' : ''">
+                                        <p x-text="faq.answer"></p>
+                                        
+                                        <!-- Related Links -->
+                                        <div x-show="isExpanded(faq.id)" class="mt-4">
+                                            <div class="flex flex-wrap gap-2">
+                                                <template x-for="relatedId in faq.related" :key="relatedId">
+                                                    <template x-if="faqs.find(f => f.id === relatedId)">
+                                                        <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded cursor-pointer hover:bg-blue-200" 
+                                                              @click="scrollToFAQ(relatedId)"
+                                                              x-text="'See: ' + faqs.find(f => f.id === relatedId).question.substring(0, 30) + '...'"></span>
+                                                    </template>
+                                                </template>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Helpful Buttons -->
+                                        <div x-show="isExpanded(faq.id)" class="flex items-center justify-between mt-4 pt-4 border-t border-slate-100">
                                             <button @click="markHelpful(faq.id)" class="flex items-center gap-2 text-green-600 hover:text-green-800 text-sm font-medium">
                                                 <i class="ph ph-thumbs-up"></i>
                                                 Helpful (<span x-text="faq.helpful"></span>)
                                             </button>
-                                            <div class="rating-stars">
-                                                <template x-for="i in 5" :key="i">
-                                                    <i class="ph ph-star star" :class="i <= Math.floor(faq.helpful / 10) ? '' : 'opacity-30'"></i>
-                                                </template>
+                                            <div class="text-xs text-slate-500">
+                                                <i class="ph ph-eye"></i>
+                                                <span x-text="faq.views + ' views'"></span>
                                             </div>
-                                        </div>
-                                        <div class="view-count">
-                                            <i class="ph ph-eye"></i>
-                                            <span x-text="faq.views + ' views'"></span>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </template>
-                    </div>
+                            </template>
 
-                    <!-- No Results -->
-                    <div x-show="filterFAQs().length === 0" class="text-center py-12">
-                        <i class="ph ph-search text-6xl text-slate-300 mb-4"></i>
-                        <h3 class="text-xl font-semibold text-slate-900 mb-2">No FAQs Found</h3>
-                        <p class="text-slate-600 mb-4">Try adjusting your search or browse all categories.</p>
-                        <button @click="searchQuery = ''; selectedCategory = 'all'" 
-                                class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
-                            Clear Filters
-                        </button>
+                            <!-- No Results -->
+                            <div x-show="filterFAQs().length === 0" class="text-center py-12">
+                                <i class="ph ph-search text-6xl text-slate-300 mb-4"></i>
+                                <h3 class="text-xl font-semibold text-slate-900 mb-2">No FAQs Found</h3>
+                                <p class="text-slate-600 mb-4">Try adjusting your search or browse all categories.</p>
+                                <button @click="searchQuery = ''; selectedCategory = 'all'" 
+                                        class="px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
+                                    Clear Filters
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -469,64 +290,47 @@
                     <div class="text-center mb-12">
                         <h2 class="text-3xl font-bold text-slate-900 mb-4">Still Have Questions?</h2>
                         <p class="text-xl text-slate-600 max-w-3xl mx-auto">
-                            Our team is here to help you with any additional questions or concerns about ICCRTZ.
+                            Our team is here to help you with any additional questions or concerns.
                         </p>
                     </div>
 
                     <div class="grid md:grid-cols-3 gap-8">
                         <!-- Contact Support -->
-                        <div class="help-card bg-white rounded-xl p-8 border border-slate-200 text-center">
-                            <div class="w-20 h-20 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                                <i class="ph ph-envelope text-indigo-600 text-3xl"></i>
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="ph ph-envelope text-red-600 text-3xl"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-4">Email Support</h3>
-                            <p class="text-slate-600 mb-6">Get help via email for detailed questions and support. We typically respond within 24-48 hours.</p>
-                            <div class="space-y-2 text-sm text-slate-600 mb-6">
-                                <div>✓ Detailed responses</div>
-                                <div>✓ Document attachments</div>
-                                <div>✓ Follow-up support</div>
-                            </div>
-                            <a href="{{ url('contact') }}" class="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors">
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Email Support</h3>
+                            <p class="text-slate-600 mb-4">Get help via email for detailed questions and support.</p>
+                            <a href="{{ url('contact') }}" class="inline-flex items-center gap-2 text-red-600 hover:text-red-800 font-semibold">
                                 <i class="ph ph-arrow-right"></i>
                                 Contact Us
                             </a>
                         </div>
 
                         <!-- Visit Office -->
-                        <div class="help-card bg-white rounded-xl p-8 border border-slate-200 text-center">
-                            <div class="w-20 h-20 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
                                 <i class="ph ph-map-pin text-green-600 text-3xl"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-4">Visit Our Office</h3>
-                            <p class="text-slate-600 mb-6">Meet with our team in person for immediate assistance and personal guidance.</p>
-                            <div class="space-y-2 text-sm text-slate-600 mb-6">
-                                <div>✓ Face-to-face meetings</div>
-                                <div>✓ Immediate assistance</div>
-                                <div>✓ Personal counseling</div>
-                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Visit Our Office</h3>
+                            <p class="text-slate-600 mb-4">Meet with our team in person for immediate assistance.</p>
                             <div class="text-sm text-slate-600">
                                 <div class="mb-2">P.O. Box 1234, Mbeya</div>
                                 <div>Monday - Friday, 9:00 AM - 5:00 PM</div>
-                                <div>+255 712 345 678</div>
                             </div>
                         </div>
 
                         <!-- Call Us -->
-                        <div class="help-card bg-white rounded-xl p-8 border border-slate-200 text-center">
-                            <div class="w-20 h-20 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
                                 <i class="ph ph-phone text-purple-600 text-3xl"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-4">Phone Support</h3>
-                            <p class="text-slate-600 mb-6">Call us for urgent questions and immediate assistance during business hours.</p>
-                            <div class="space-y-2 text-sm text-slate-600 mb-6">
-                                <div>✓ Urgent inquiries</div>
-                                <div>✅ Quick responses</div>
-                                <div>✅ Direct assistance</div>
-                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Phone Support</h3>
+                            <p class="text-slate-600 mb-4">Call us for urgent questions and immediate assistance.</p>
                             <div class="text-sm text-slate-600">
-                                <div class="mb-2">Main: +255 712 345 678</div>
-                                <div>Support: +255 713 456 789</div>
-                                <div>Emergency: +255 714 567 890</div>
+                                <div class="mb-2">+255 712 345 678</div>
+                                <div>+255 713 456 789</div>
                             </div>
                         </div>
                     </div>
@@ -538,17 +342,16 @@
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="text-center mb-12">
                         <h2 class="text-3xl font-bold text-slate-900 mb-4">Popular Topics</h2>
-                        <p class="text-xl text-slate-600">Quick access to frequently searched topics and trending questions</p>
+                        <p class="text-xl text-slate-600">Quick access to frequently searched topics</p>
                     </div>
 
                     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <a href="#" class="bg-white rounded-xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-lg transition-all group">
+                        <a href="#" class="bg-white rounded-xl p-6 border border-slate-200 hover:border-red-300 hover:shadow-lg transition-all group">
                             <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
                                 <i class="ph ph-users text-blue-600 text-xl"></i>
                             </div>
                             <h3 class="font-semibold text-slate-900 mb-2">Membership</h3>
-                            <p class="text-sm text-slate-600 mb-3">Join ICCRTZ and become part of our community</p>
-                            <div class="text-xs text-blue-600 font-medium">12 FAQs →</div>
+                            <p class="text-sm text-slate-600">Join ICCRTZ and become part of our community</p>
                         </a>
 
                         <a href="#" class="bg-white rounded-xl p-6 border border-slate-200 hover:border-green-300 hover:shadow-lg transition-all group">
@@ -556,8 +359,7 @@
                                 <i class="ph ph-calendar text-green-600 text-xl"></i>
                             </div>
                             <h3 class="font-semibold text-slate-900 mb-2">Events</h3>
-                            <p class="text-sm text-slate-600 mb-3">Register for conferences and activities</p>
-                            <div class="text-xs text-green-600 font-medium">8 FAQs →</div>
+                            <p class="text-sm text-slate-600">Register for conferences and activities</p>
                         </a>
 
                         <a href="#" class="bg-white rounded-xl p-6 border border-slate-200 hover:border-red-300 hover:shadow-lg transition-all group">
@@ -565,8 +367,7 @@
                                 <i class="ph ph-heart text-red-600 text-xl"></i>
                             </div>
                             <h3 class="font-semibold text-slate-900 mb-2">Donations</h3>
-                            <p class="text-sm text-slate-600 mb-3">Support our mission and programs</p>
-                            <div class="text-xs text-red-600 font-medium">6 FAQs →</div>
+                            <p class="text-sm text-slate-600">Support our mission and programs</p>
                         </a>
 
                         <a href="#" class="bg-white rounded-xl p-6 border border-slate-200 hover:border-purple-300 hover:shadow-lg transition-all group">
@@ -574,59 +375,12 @@
                                 <i class="ph ph-cross text-purple-600 text-xl"></i>
                             </div>
                             <h3 class="font-semibold text-slate-900 mb-2">Spiritual Life</h3>
-                            <p class="text-sm text-slate-600 mb-3">Grow in faith and spiritual formation</p>
-                            <div class="text-xs text-purple-600 font-medium">8 FAQs →</div>
+                            <p class="text-sm text-slate-600">Grow in faith and spiritual formation</p>
                         </a>
                     </div>
                 </div>
             </section>
-
-            <!-- Stats Section -->
-            <section class="py-16 bg-gradient-to-r from-indigo-900 to-purple-900 text-white">
-                <div class="max-w-7xl mx-auto px-6">
-                    <div class="text-center mb-12">
-                        <h2 class="text-3xl font-bold mb-4">FAQ Statistics</h2>
-                        <p class="text-xl text-indigo-100">See how our FAQ system helps our community</p>
-                    </div>
-
-                    <div class="grid md:grid-cols-4 gap-6">
-                        <div class="stats-card rounded-xl p-6 text-center">
-                            <div class="text-4xl font-bold mb-2" x-text="faqs.length"></div>
-                            <div class="text-indigo-100">Total FAQs</div>
-                            <div class="text-sm text-indigo-200 mt-2">Comprehensive coverage</div>
-                        </div>
-                        <div class="stats-card rounded-xl p-6 text-center">
-                            <div class="text-4xl font-bold mb-2" x-text="faqs.reduce((sum, faq) => sum + faq.helpful, 0)"></div>
-                            <div class="text-indigo-100">Helpful Votes</div>
-                            <div class="text-sm text-indigo-200 mt-2">Community feedback</div>
-                        </div>
-                        <div class="stats-card rounded-xl p-6 text-center">
-                            <div class="text-4xl font-bold mb-2" x-text="faqs.reduce((sum, faq) => sum + faq.views, 0)"></div>
-                            <div class="text-indigo-100">Total Views</div>
-                            <div class="text-sm text-indigo-200 mt-2">Engagement metric</div>
-                        </div>
-                        <div class="stats-card rounded-xl p-6 text-center">
-                            <div class="text-4xl font-bold mb-2">98%</div>
-                            <div class="text-indigo-100">Satisfaction</div>
-                            <div class="text-sm text-indigo-200 mt-2">User satisfaction rate</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </main>
-
-        <!-- Quick Actions -->
-        <div class="quick-actions">
-            <div class="quick-action-btn" @click="scrollToTop()" title="Scroll to top">
-                <i class="ph ph-arrow-up"></i>
-            </div>
-            <div class="quick-action-btn" @click="searchQuery = ''; selectedCategory = 'all'" title="Clear filters">
-                <i class="ph ph-funnel"></i>
-            </div>
-            <div class="quick-action-btn" @click="window.print()" title="Print FAQ">
-                <i class="ph ph-printer"></i>
-            </div>
-        </div>
 
         <!-- Scroll to Top Button -->
         <button @click="scrollToTop()" 
@@ -637,7 +391,7 @@
                 x-transition:leave="transition ease-in duration-200"
                 x-transition:leave-start="opacity-100 translate-y-0"
                 x-transition:leave-end="opacity-0 translate-y-2"
-                class="scroll-to-top bg-indigo-600 text-white p-4 rounded-full shadow-lg hover:bg-indigo-700 transition-all">
+                class="scroll-to-top bg-red-600 text-white p-4 rounded-full shadow-lg hover:bg-red-700 transition-all">
             <i class="ph ph-arrow-up text-xl"></i>
         </button>
 
@@ -650,8 +404,6 @@
                     searchQuery: '',
                     selectedCategory: 'all',
                     expandedItems: new Set(),
-                    featuredFAQs: [1, 7, 12, 17],
-                    recentSearches: ['membership', 'events', 'donations', 'spiritual'],
                     categories: [
                         { id: 'all', name: 'All Categories', icon: 'ph-grid', color: 'bg-slate-100 text-slate-700', count: 0 },
                         { id: 'membership', name: 'Membership', icon: 'ph-users', color: 'bg-blue-100 text-blue-700', count: 0 },
@@ -873,28 +625,23 @@
                             return matchesCategory && matchesSearch;
                         });
                         
-                        // Sort by featured status first, then by helpful count
-                        return filtered.sort((a, b) => {
-                            if (this.featuredFAQs.includes(a.id) && !this.featuredFAQs.includes(b.id)) return -1;
-                            if (!this.featuredFAQs.includes(a.id) && this.featuredFAQs.includes(b.id)) return 1;
-                            return b.helpful - a.helpful;
-                        });
+                        return filtered.sort((a, b) => b.helpful - a.helpful);
                     },
                     getCategoryColor(categoryId) {
                         const category = this.categories.find(cat => cat.id === categoryId);
                         return category ? category.color : 'bg-slate-100 text-slate-700';
-                    },
-                    addToRecentSearches(query) {
-                        if (query && !this.recentSearches.includes(query)) {
-                            this.recentSearches.unshift(query);
-                            this.recentSearches = this.recentSearches.slice(0, 5);
-                        }
                     },
                     markHelpful(faqId) {
                         const faq = this.faqs.find(f => f.id === faqId);
                         if (faq) {
                             faq.helpful++;
                             faq.views++;
+                        }
+                    },
+                    scrollToFAQ(faqId) {
+                        const element = document.getElementById('faq-' + faqId);
+                        if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
                         }
                     },
                     scrollToTop() {
