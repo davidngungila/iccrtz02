@@ -1,26 +1,28 @@
 @extends('layouts.admin')
 
-@section('title', 'Advanced Events Management')
+@section('title', 'Comprehensive Events Management')
 
-@section('page-title', 'Advanced Events Management')
+@section('page-title', 'Comprehensive Events Management')
 
 @section('content')
 <div class="p-6" x-data="{ 
-    activeTab: 'calendar',
+    activeTab: 'overview',
     searchQuery: '',
     filterType: 'all',
     filterStatus: 'all',
+    selectedEvent: null,
     showEventModal: false,
     showRegistrationModal: false,
+    showFinanceModal: false,
+    showFacilitatorModal: false,
+    showCollectionModal: false,
+    showLeaderModal: false,
+    showReminderModal: false,
     showEditModal: false,
-    showDeleteModal: false,
-    selectedEvent: null,
     editingEvent: null,
-    deletingEvent: null,
     selectedDate: null,
     currentMonth: new Date().getMonth(),
     currentYear: new Date().getFullYear(),
-    charts: {},
     events: [
         {
             id: 1,
@@ -38,18 +40,47 @@
             capacity: 5000,
             price: 30000,
             currency: 'TSh',
+            budget: {
+                total: 150000000,
+                allocated: 125000000,
+                spent: 87500000,
+                remaining: 62500000,
+                categories: {
+                    venue: 50000000,
+                    catering: 30000000,
+                    speakers: 25000000,
+                    marketing: 15000000,
+                    logistics: 20000000,
+                    contingency: 10000000
+                }
+            },
+            collections: {
+                registration: 37500000,
+                donations: 12500000,
+                sponsorships: 50000000,
+                merchandise: 8000000,
+                total: 108000000
+            },
+            facilitators: [
+                { id: 1, name: 'Bishop Jude Thaddeus Ruwa\'ichi', role: 'Main Speaker', fee: 5000000, status: 'confirmed' },
+                { id: 2, name: 'Fr. John Michael', role: 'Spiritual Director', fee: 3000000, status: 'confirmed' },
+                { id: 3, name: 'Grace Mbeki', role: 'Workshop Facilitator', fee: 2000000, status: 'confirmed' },
+                { id: 4, name: 'Robert Chen', role: 'Music Director', fee: 1500000, status: 'pending' }
+            ],
+            leaders: [
+                { id: 1, name: 'David Ngungila', role: 'Event Coordinator', contact: '+255712345678', email: 'david@iccrtz.org' },
+                { id: 2, name: 'Sarah Kimani', role: 'Registration Manager', contact: '+255713456789', email: 'sarah@iccrtz.org' },
+                { id: 3, name: 'Michael Johnson', role: 'Logistics Lead', contact: '+255714567890', email: 'michael@iccrtz.org' }
+            ],
+            reminders: [
+                { id: 1, type: 'registration', message: 'Early bird registration ends in 3 days', sendDate: '2026-03-15', status: 'sent' },
+                { id: 2, type: 'payment', message: 'Payment reminder for registered participants', sendDate: '2026-03-25', status: 'scheduled' },
+                { id: 3, type: 'event', message: 'Event starts tomorrow - check-in details', sendDate: '2026-03-30', status: 'pending' }
+            ],
             image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=400&fit=crop',
-            videoUrl: 'https://www.youtube.com/embed/PgIJm42OJhw?list=TLPQMzEwMzIwMjbdpT4N3Pb2kA',
             description: 'Join thousands of believers for this transformative conference featuring renowned speakers, worship sessions, and spiritual renewal.',
             organizer: 'ICCRTZ National Team',
             tags: ['easter', 'conference', 'major-event', 'international'],
-            speakers: ['Bishop Jude Thaddeus Ruwa\'ichi', 'Fr. John Michael', 'Grace Mbeki', 'Robert Chen'],
-            sponsors: ['Catholic Relief Services', 'World Vision Tanzania', 'Caritas Tanzania'],
-            socialLinks: {
-                facebook: 'https://facebook.com/iccrtz',
-                twitter: 'https://twitter.com/iccrtz',
-                instagram: 'https://instagram.com/iccrtz'
-            },
             registrationOpen: true,
             livestreamEnabled: true,
             hasCertificate: true,
@@ -73,1203 +104,784 @@
             capacity: 500,
             price: 15000,
             currency: 'TSh',
+            budget: {
+                total: 25000000,
+                allocated: 20000000,
+                spent: 12000000,
+                remaining: 13000000,
+                categories: {
+                    venue: 8000000,
+                    catering: 5000000,
+                    speakers: 4000000,
+                    materials: 2000000,
+                    logistics: 1000000
+                }
+            },
+            collections: {
+                registration: 6750000,
+                donations: 2000000,
+                sponsorships: 8000000,
+                total: 16750000
+            },
+            facilitators: [
+                { id: 5, name: 'Sarah Kimani', role: 'Leadership Coach', fee: 1500000, status: 'confirmed' },
+                { id: 6, name: 'Michael Johnson', role: 'Team Building Expert', fee: 1000000, status: 'confirmed' }
+            ],
+            leaders: [
+                { id: 4, name: 'Grace Mbeki', role: 'Summit Director', contact: '+255715678901', email: 'grace@iccrtz.org' }
+            ],
+            reminders: [
+                { id: 4, type: 'registration', message: 'Summit registration closing soon', sendDate: '2026-04-10', status: 'pending' }
+            ],
             image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=400&fit=crop',
             description: 'A three-day intensive training program for young leaders focusing on spiritual growth, leadership skills, and community service.',
             organizer: 'ICCRTZ Youth Ministry',
             tags: ['youth', 'leadership', 'training', 'summit'],
-            speakers: ['Sarah Kimani', 'Michael Johnson', 'David Ngungila'],
-            sponsors: ['Youth for Christ Tanzania', 'African Leadership Foundation'],
             registrationOpen: true,
             livestreamEnabled: false,
             hasCertificate: true,
             materialsProvided: true,
             createdAt: '2026-02-01',
             updatedAt: '2026-03-28'
-        },
-        {
-            id: 3,
-            name: 'Annual Thanksgiving Service',
-            type: 'service',
-            category: 'spiritual',
-            status: 'completed',
-            date: '2026-03-15',
-            endDate: '2026-03-15',
-            time: '06:00 PM',
-            endTime: '08:30 PM',
-            location: 'St. Mary\'s Cathedral',
-            venue: 'Main Sanctuary',
-            registrations: 800,
-            capacity: 1000,
-            price: 0,
-            currency: 'TSh',
-            image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=400&fit=crop',
-            description: 'A special service of thanksgiving and praise celebrating God\'s faithfulness throughout the year.',
-            organizer: 'St. Mary\'s Cathedral',
-            tags: ['thanksgiving', 'service', 'worship', 'annual'],
-            speakers: ['Fr. John Michael', 'Grace Mbeki'],
-            sponsors: [],
-            registrationOpen: false,
-            livestreamEnabled: true,
-            hasCertificate: false,
-            materialsProvided: false,
-            createdAt: '2026-01-01',
-            updatedAt: '2026-03-16'
-        },
-        {
-            id: 4,
-            name: 'Women\'s Empowerment Workshop',
-            type: 'workshop',
-            category: 'women',
-            status: 'upcoming',
-            date: '2026-04-22',
-            endDate: '2026-04-22',
-            time: '09:00 AM',
-            endTime: '04:00 PM',
-            location: 'Archdiocese of Dar es Salaam',
-            venue: 'Catholic Secretariat',
-            registrations: 120,
-            capacity: 150,
-            price: 10000,
-            currency: 'TSh',
-            image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=400&fit=crop',
-            description: 'Empowering women through spiritual formation, leadership development, and practical skills training.',
-            organizer: 'ICCRTZ Women\'s Guild',
-            tags: ['women', 'empowerment', 'workshop', 'skills'],
-            speakers: ['Grace Mbeki', 'Sarah Kimani', 'Dr. Anna Mwangi'],
-            sponsors: ['Women for Development Tanzania'],
-            registrationOpen: true,
-            livestreamEnabled: false,
-            hasCertificate: true,
-            materialsProvided: true,
-            createdAt: '2026-02-15',
-            updatedAt: '2026-03-25'
-        },
-        {
-            id: 5,
-            name: 'Alumni Reunion 2026',
-            type: 'reunion',
-            category: 'alumni',
-            status: 'planning',
-            date: '2026-05-10',
-            endDate: '2026-05-11',
-            time: '02:00 PM',
-            endTime: '09:00 PM',
-            location: 'University of Dar es Salaam',
-            venue: 'Main Campus',
-            registrations: 200,
-            capacity: 300,
-            price: 25000,
-            currency: 'TSh',
-            image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=400&fit=crop',
-            description: 'Annual gathering of ICCRTZ alumni for networking, fellowship, and sharing testimonies.',
-            organizer: 'ICCRTZ Alumni Network',
-            tags: ['alumni', 'reunion', 'networking', 'fellowship'],
-            speakers: ['Robert Chen', 'Michael Johnson', 'Sarah Kimani'],
-            sponsors: ['Alumni Association'],
-            registrationOpen: false,
-            livestreamEnabled: false,
-            hasCertificate: false,
-            materialsProvided: false,
-            createdAt: '2026-03-01',
-            updatedAt: '2026-03-20'
-        },
-        {
-            id: 6,
-            name: 'Bible Study Marathon',
-            type: 'workshop',
-            category: 'education',
-            status: 'upcoming',
-            date: '2026-04-08',
-            endDate: '2026-04-08',
-            time: '08:00 AM',
-            endTime: '08:00 PM',
-            location: 'Diocese of Arusha',
-            venue: 'Arusha Catholic Centre',
-            registrations: 85,
-            capacity: 100,
-            price: 5000,
-            currency: 'TSh',
-            image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop',
-            description: 'A full day of intensive Bible study sessions covering various books of the Bible.',
-            organizer: 'Diocese of Arusha',
-            tags: ['bible', 'study', 'education', 'marathon'],
-            speakers: ['Fr. Joseph Mwangi', 'Dr. Grace Mbeki'],
-            sponsors: ['Bible Society Tanzania'],
-            registrationOpen: true,
-            livestreamEnabled: true,
-            hasCertificate: true,
-            materialsProvided: true,
-            createdAt: '2026-02-20',
-            updatedAt: '2026-03-22'
-        },
-        {
-            id: 7,
-            name: 'Music Ministry Workshop',
-            type: 'workshop',
-            category: 'music',
-            status: 'completed',
-            date: '2026-03-10',
-            endDate: '2026-03-12',
-            time: '09:00 AM',
-            endTime: '05:00 PM',
-            location: 'Diocese of Dodoma',
-            venue: 'St. Paul\'s Church',
-            registrations: 65,
-            capacity: 80,
-            price: 8000,
-            currency: 'TSh',
-            image: 'https://images.unsplash.com/photo-1464349393765-a70e3e36386d?w=800&h=400&fit=crop',
-            description: 'Three-day workshop for choir members and music ministers focusing on vocal techniques and worship leadership.',
-            organizer: 'Diocese of Dodoma',
-            tags: ['music', 'workshop', 'choir', 'worship'],
-            speakers: ['David Kimani', 'Sarah Mwangi'],
-            sponsors: ['Music Ministry Tanzania'],
-            registrationOpen: false,
-            livestreamEnabled: false,
-            hasCertificate: true,
-            materialsProvided: true,
-            createdAt: '2026-01-20',
-            updatedAt: '2026-03-13'
-        },
-        {
-            id: 8,
-            name: 'Family Life Conference',
-            type: 'conference',
-            category: 'family',
-            status: 'upcoming',
-            date: '2026-05-20',
-            endDate: '2026-05-22',
-            time: '09:00 AM',
-            endTime: '06:00 PM',
-            location: 'Diocese of Mwanza',
-            venue: 'Mwanza Catholic Centre',
-            registrations: 180,
-            capacity: 250,
-            price: 20000,
-            currency: 'TSh',
-            image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop',
-            description: 'A conference focused on strengthening family bonds through faith-based principles and practical guidance.',
-            organizer: 'Diocese of Mwanza',
-            tags: ['family', 'conference', 'relationships', 'faith'],
-            speakers: ['Dr. Anna Mwangi', 'Fr. Michael Johnson', 'Grace Kimani'],
-            sponsors: ['Family Life International'],
-            registrationOpen: true,
-            livestreamEnabled: true,
-            hasCertificate: true,
-            materialsProvided: true,
-            createdAt: '2026-02-25',
-            updatedAt: '2026-03-24'
         }
     ],
-    liveStreams: [
-        {
-            id: 1,
-            title: 'ICCR INTERNATIONAL EASTER CONFERENCE DAY 5',
-            url: 'https://www.youtube.com/embed/1mV8lItaZlY',
-            thumbnail: 'https://img.youtube.com/vi/1mV8lItaZlY/maxresdefault.jpg',
-            views: '12.5K',
-            date: '2026-04-05',
-            status: 'live',
-            duration: '3:45:00',
-            speaker: 'Various Speakers',
-            description: 'Final day of the International Easter Conference with powerful worship and teaching sessions.'
-        },
-        {
-            id: 2,
-            title: 'INTERNATIONAL EASTER CONFERENCE DAY 4 - RELATIONSHIP SEMINAR with Ev. A.Kanuti',
-            url: 'https://www.youtube.com/embed/a_TDzfg9Pgc',
-            thumbnail: 'https://img.youtube.com/vi/a_TDzfg9Pgc/maxresdefault.jpg',
-            views: '8.3K',
-            date: '2026-04-04',
-            status: 'completed',
-            duration: '2:30:00',
-            speaker: 'Ev. A. Kanuti',
-            description: 'Relationship seminar focused on building strong Christian relationships and marriage preparation.'
-        },
-        {
-            id: 3,
-            title: 'INTERNATIONAL EASTER CONFERENCE - THURSDAY HOLY MASS',
-            url: 'https://www.youtube.com/embed/Y6jFbe8N5cI',
-            thumbnail: 'https://img.youtube.com/vi/Y6jFbe8N5cI/maxresdefault.jpg',
-            views: '15.2K',
-            date: '2026-04-03',
-            status: 'completed',
-            duration: '2:15:00',
-            speaker: 'Bishop Jude Thaddeus Ruwa\'ichi',
-            description: 'Holy Mass celebration as part of the International Easter Conference proceedings.'
-        },
-        {
-            id: 4,
-            title: 'HEALING OF FAMILY TREE - INTERNATIONAL EASTER CONFERENCE DAY 3',
-            url: 'https://www.youtube.com/embed/Gah1V3DPhRQ',
-            thumbnail: 'https://img.youtube.com/vi/Gah1V3DPhRQ/maxresdefault.jpg',
-            views: '9.8K',
-            date: '2026-04-02',
-            status: 'completed',
-            duration: '2:45:00',
-            speaker: 'Fr. John Michael',
-            description: 'Powerful teaching on healing generational issues and breaking family curses through prayer.'
-        },
-        {
-            id: 5,
-            title: 'IBADA YA KUABUDU EKARIST',
-            url: 'https://www.youtube.com/embed/tylTppFpWF8',
-            thumbnail: 'https://img.youtube.com/vi/tylTppFpWF8/maxresdefault.jpg',
-            views: '6.7K',
-            date: '2026-04-01',
-            status: 'completed',
-            duration: '1:30:00',
-            speaker: 'Fr. Joseph Mwangi',
-            description: 'Eucharistic worship service with praise and worship led by the ICCRTZ music team.'
-        },
-        {
-            id: 6,
-            title: 'ASKOFU MKUU GERVAS NYAISONGA JIMBO KUU KATOLIKI MBEYA, ANAFUNDISHA',
-            url: 'https://www.youtube.com/embed/A_O5Heqledw',
-            thumbnail: 'https://img.youtube.com/vi/A_O5Heqledw/maxresdefault.jpg',
-            views: '11.4K',
-            date: '2026-03-31',
-            status: 'completed',
-            duration: '3:20:00',
-            speaker: 'Archbishop Gervas Nyaisonga',
-            description: 'Teaching session by the Archbishop of Mbeya Archdiocese on faith and spiritual growth.'
-        },
-        {
-            id: 7,
-            title: 'KUTENDA MAMBO MAKUU (DOING GREAT EXPLOITS), MWALIMU KANUTI ANAFUNDISHA',
-            url: 'https://www.youtube.com/embed/yJ1xwLTidKk',
-            thumbnail: 'https://img.youtube.com/vi/yJ1xwLTidKk/maxresdefault.jpg',
-            views: '7.9K',
-            date: '2026-03-30',
-            status: 'completed',
-            duration: '2:00:00',
-            speaker: 'Mwalimu Kanuti',
-            description: 'Inspirational teaching on achieving great things through faith and determination.'
-        },
-        {
-            id: 8,
-            title: 'INTERNATIONAL EASTER CONFERENCE 2026 ARCHDIOCESE OF MBEYA - TANZANIA',
-            url: 'https://www.youtube.com/embed/PgIJm42OJhw',
-            thumbnail: 'https://img.youtube.com/vi/PgIJm42OJhw/maxresdefault.jpg',
-            views: '18.6K',
-            date: '2026-03-31',
-            status: 'completed',
-            duration: '4:00:00',
-            speaker: 'Various Speakers',
-            description: 'Main conference opening day with keynote addresses and worship sessions.'
-        },
-        {
-            id: 9,
-            title: 'INTERNATIONAL EASTER CONFERENCE DAY 3',
-            url: 'https://www.youtube.com/embed/Rax72Zy8Gx4',
-            thumbnail: 'https://img.youtube.com/vi/Rax72Zy8Gx4/maxresdefault.jpg',
-            views: '10.2K',
-            date: '2026-04-02',
-            status: 'completed',
-            duration: '3:30:00',
-            speaker: 'Various Speakers',
-            description: 'Third day of the conference featuring multiple teaching sessions and workshops.'
+    get filteredEvents() {
+        let filtered = this.events;
+        
+        if (this.filterType !== 'all') {
+            filtered = filtered.filter(e => e.type === this.filterType);
         }
-    ],
-    registrations: [
-        { id: 1, eventId: 1, name: 'John Michael', email: 'john@example.com', phone: '+255 712 345 678', diocese: 'Archdiocese of Dar es Salaam', parish: 'St. Mary\'s Cathedral', registrationDate: '2026-03-25', status: 'confirmed', paymentStatus: 'paid', amount: 30000 },
-        { id: 2, eventId: 1, name: 'Sarah Kimani', email: 'sarah@example.com', phone: '+255 713 456 789', diocese: 'Archdiocese of Mbeya', parish: 'St. Joseph\'s Cathedral', registrationDate: '2026-03-26', status: 'confirmed', paymentStatus: 'paid', amount: 30000 },
-        { id: 3, eventId: 1, name: 'Robert Chen', email: 'robert@example.com', phone: '+255 714 567 890', diocese: 'Diocese of Arusha', parish: 'Holy Spirit Church', registrationDate: '2026-03-27', status: 'pending', paymentStatus: 'pending', amount: 30000 },
-        { id: 4, eventId: 2, name: 'Grace Mbeki', email: 'grace@example.com', phone: '+255 715 678 901', diocese: 'Archdiocese of Mbeya', parish: 'St. Joseph\'s Cathedral', registrationDate: '2026-03-28', status: 'confirmed', paymentStatus: 'paid', amount: 15000 },
-        { id: 5, eventId: 2, name: 'Michael Johnson', email: 'michael@example.com', phone: '+255 716 789 012', diocese: 'Diocese of Mwanza', parish: 'Christ the King Church', registrationDate: '2026-03-29', status: 'confirmed', paymentStatus: 'paid', amount: 15000 },
-        { id: 6, eventId: 3, name: 'David Ngungila', email: 'david@example.com', phone: '+255 717 890 123', diocese: 'Archdiocese of Dar es Salaam', parish: 'St. Mary\'s Cathedral', registrationDate: '2026-03-10', status: 'confirmed', paymentStatus: 'paid', amount: 0 },
-        { id: 7, eventId: 4, name: 'Anna Mwangi', email: 'anna@example.com', phone: '+255 718 901 234', diocese: 'Archdiocese of Dar es Salaam', parish: 'St. Joseph\'s Cathedral', registrationDate: '2026-03-20', status: 'confirmed', paymentStatus: 'paid', amount: 10000 },
-        { id: 8, eventId: 5, name: 'James Kimani', email: 'james@example.com', phone: '+255 719 012 345', diocese: 'University of Dar es Salaam', parish: 'Campus Ministry', registrationDate: '2026-03-15', status: 'pending', paymentStatus: 'pending', amount: 25000 },
-        { id: 9, eventId: 6, name: 'Grace Chen', email: 'grace@example.com', phone: '+255 720 123 456', diocese: 'Diocese of Arusha', parish: 'Holy Spirit Church', registrationDate: '2026-03-18', status: 'confirmed', paymentStatus: 'paid', amount: 5000 },
-        { id: 10, eventId: 7, name: 'Robert Mbeki', email: 'robert@example.com', phone: '+255 721 234 567', diocese: 'Diocese of Dodoma', parish: 'St. Paul\'s Church', registrationDate: '2026-03-05', status: 'confirmed', paymentStatus: 'paid', amount: 8000 },
-        { id: 11, eventId: 8, name: 'Sarah Johnson', email: 'sarah@example.com', phone: '+255 722 345 678', diocese: 'Diocese of Mwanza', parish: 'Christ the King Church', registrationDate: '2026-03-12', status: 'confirmed', paymentStatus: 'paid', amount: 20000 }
-    ],
-    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-    getDaysInMonth() {
-        return new Date(this.currentYear, this.currentMonth + 1, 0).getDate();
-    },
-    getFirstDayOfMonth() {
-        return new Date(this.currentYear, this.currentMonth, 1).getDay();
-    },
-    getEventsForDate(date) {
-        const dateStr = `${this.currentYear}-${String(this.currentMonth + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
-        return this.events.filter(event => {
-            const eventStart = new Date(event.date);
-            const eventEnd = new Date(event.endDate);
-            const checkDate = new Date(dateStr);
-            return checkDate >= eventStart && checkDate <= eventEnd;
-        });
-    },
-    selectDate(date) {
-        this.selectedDate = date;
-    },
-    previousMonth() {
-        if (this.currentMonth === 0) {
-            this.currentMonth = 11;
-            this.currentYear--;
-        } else {
-            this.currentMonth--;
+        
+        if (this.filterStatus !== 'all') {
+            filtered = filtered.filter(e => e.status === this.filterStatus);
         }
-    },
-    nextMonth() {
-        if (this.currentMonth === 11) {
-            this.currentMonth = 0;
-            this.currentYear++;
-        } else {
-            this.currentMonth++;
+        
+        if (this.searchQuery) {
+            filtered = filtered.filter(e => 
+                e.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+                e.location.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+                e.organizer.toLowerCase().includes(this.searchQuery.toLowerCase())
+            );
         }
+        
+        return filtered;
     },
-    goToToday() {
-        this.currentMonth = new Date().getMonth();
-        this.currentYear = new Date().getFullYear();
-        this.selectedDate = new Date().getDate();
-    },
-    getEventTypeColor(type) {
-        const colors = {
-            'conference': 'bg-purple-100 text-purple-800 border-purple-200',
-            'summit': 'bg-blue-100 text-blue-800 border-blue-200',
-            'workshop': 'bg-green-100 text-green-800 border-green-200',
-            'service': 'bg-yellow-100 text-yellow-800 border-yellow-200',
-            'reunion': 'bg-pink-100 text-pink-800 border-pink-200'
+    get stats() {
+        return {
+            total: this.events.length,
+            live: this.events.filter(e => e.status === 'live').length,
+            upcoming: this.events.filter(e => e.status === 'upcoming').length,
+            completed: this.events.filter(e => e.status === 'completed').length,
+            totalRegistrations: this.events.reduce((sum, e) => sum + e.registrations, 0),
+            totalCapacity: this.events.reduce((sum, e) => sum + e.capacity, 0),
+            totalBudget: this.events.reduce((sum, e) => sum + (e.budget?.total || 0), 0),
+            totalCollections: this.events.reduce((sum, e) => sum + (e.collections?.total || 0), 0)
         };
-        return colors[type] || 'bg-slate-100 text-slate-800 border-slate-200';
     },
-    getEventStatusColor(status) {
-        const colors = {
-            'live': 'bg-red-100 text-red-800',
-            'upcoming': 'bg-blue-100 text-blue-800',
-            'completed': 'bg-green-100 text-green-800',
-            'planning': 'bg-slate-100 text-slate-800'
-        };
-        return colors[status] || 'bg-slate-100 text-slate-800';
-    },
-    openEditModal(event) {
-        this.editingEvent = { ...event };
-        this.showEditModal = true;
-    },
-    openDeleteModal(event) {
-        this.deletingEvent = event;
-        this.showDeleteModal = true;
-    },
-    deleteEvent() {
-        this.events = this.events.filter(e => e.id !== this.deletingEvent.id);
-        this.showDeleteModal = false;
-        this.deletingEvent = null;
-    },
-    updateEvent() {
-        const index = this.events.findIndex(e => e.id === this.editingEvent.id);
-        if (index !== -1) {
-            this.events[index] = {
-                ...this.editingEvent,
-                name: document.getElementById('editEventName').value,
-                updatedAt: new Date().toISOString().split('T')[0]
-            };
-        }
-        this.showEditModal = false;
-        this.editingEvent = null;
-    },
-    viewEventDetails(event) {
+    openEventDetails(event) {
         this.selectedEvent = event;
-        this.showRegistrationModal = true;
+        this.activeTab = 'details';
     },
-    getFilteredEvents() {
-        return this.events.filter(e => {
-            const matchesSearch = e.name.toLowerCase().includes(this.searchQuery.toLowerCase()) || 
-                              e.location.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-                              e.organizer.toLowerCase().includes(this.searchQuery.toLowerCase());
-            const matchesType = this.filterType === 'all' || e.type === this.filterType;
-            const matchesStatus = this.filterStatus === 'all' || e.status === this.filterStatus;
-            return matchesSearch && matchesType && matchesStatus;
+    openFinanceModal(event) {
+        this.selectedEvent = event;
+        this.showFinanceModal = true;
+    },
+    openFacilitatorModal(event) {
+        this.selectedEvent = event;
+        this.showFacilitatorModal = true;
+    },
+    openCollectionModal(event) {
+        this.selectedEvent = event;
+        this.showCollectionModal = true;
+    },
+    openLeaderModal(event) {
+        this.selectedEvent = event;
+        this.showLeaderModal = true;
+    },
+    openReminderModal(event) {
+        this.selectedEvent = event;
+        this.showReminderModal = true;
+    },
+    formatCurrency(amount) {
+        return new Intl.NumberFormat('en-TZ', { style: 'currency', currency: 'TZS' }).format(amount);
+    },
+    formatDate(dateString) {
+        return new Date(dateString).toLocaleDateString('en-TZ', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
         });
     },
-    getStreamStatusColor(status) {
+    getStatusColor(status) {
         const colors = {
-            'live': 'bg-red-600 text-white animate-pulse',
-            'upcoming': 'bg-blue-600 text-white',
-            'completed': 'bg-green-600 text-white',
-            'scheduled': 'bg-yellow-600 text-white'
+            live: 'text-green-600 bg-green-50',
+            upcoming: 'text-blue-600 bg-blue-50',
+            completed: 'text-gray-600 bg-gray-50',
+            cancelled: 'text-red-600 bg-red-50'
         };
-        return colors[status] || 'bg-slate-600 text-white';
+        return colors[status] || colors.upcoming;
     },
-    playVideo(stream) {
-        // Video will play in the iframe directly
-        console.log('Playing video:', stream.title);
+    getTypeColor(type) {
+        const colors = {
+            conference: 'text-purple-600 bg-purple-50',
+            summit: 'text-indigo-600 bg-indigo-50',
+            workshop: 'text-orange-600 bg-orange-50',
+            service: 'text-green-600 bg-green-50',
+            retreat: 'text-blue-600 bg-blue-50'
+        };
+        return colors[type] || colors.conference;
     }
-}" x-cloak>
-    <!-- Events Header -->
-    <div class="flex items-center justify-between mb-8">
-        <div>
-            <h1 class="text-3xl font-bold text-slate-900 mb-2">Advanced Events Management</h1>
-            <p class="text-slate-600">Create, manage, and track events with comprehensive analytics and registration management</p>
-        </div>
-        <div class="flex items-center gap-3">
-            <button class="bg-white border border-slate-200 text-slate-700 px-4 py-2 rounded-lg hover:bg-slate-50 transition-all font-medium flex items-center gap-2">
-                <i class="ph ph-download"></i>
-                Export Data
-            </button>
-            <button @click="showEventModal = true" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-all font-medium flex items-center gap-2">
+}">
+    <!-- Page Header -->
+    <div class="mb-8">
+        <div class="flex items-center justify-between">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-900">Comprehensive Events Management</h1>
+                <p class="text-gray-600 mt-1">Manage all aspects of events including registration, finance, facilitators, and more</p>
+            </div>
+            <button @click="showEventModal = true" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
                 <i class="ph ph-plus"></i>
                 Create Event
             </button>
         </div>
     </div>
 
-    <!-- Advanced Stats Dashboard -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
-        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-            <div class="flex items-center justify-between mb-4">
-                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                    <i class="ph ph-calendar text-purple-600 text-xl"></i>
+    <!-- Stats Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm text-gray-600">Total Events</p>
+                    <p class="text-2xl font-bold text-gray-900" x-text="stats.total"></p>
                 </div>
-                <span class="text-sm text-slate-500">Total</span>
-            </div>
-            <h3 class="text-2xl font-bold text-slate-900" x-text="events.length"></h3>
-            <p class="text-sm text-slate-600">All Events</p>
-            <div class="mt-2 flex items-center text-sm">
-                <i class="ph ph-trend-up text-green-500 mr-1"></i>
-                <span class="text-green-500">+3</span>
-                <span class="text-slate-500 ml-1">this month</span>
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                    <i class="ph ph-calendar text-blue-600 text-xl"></i>
+                </div>
             </div>
         </div>
-
-        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-            <div class="flex items-center justify-between mb-4">
-                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-                    <i class="ph ph-broadcast text-red-600 text-xl"></i>
+        
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm text-gray-600">Total Registrations</p>
+                    <p class="text-2xl font-bold text-green-600" x-text="stats.totalRegistrations.toLocaleString()"></p>
                 </div>
-                <span class="text-sm text-slate-500">Live</span>
-            </div>
-            <h3 class="text-2xl font-bold text-slate-900" x-text="events.filter(e => e.status === 'live').length"></h3>
-            <p class="text-sm text-slate-600">Live Events</p>
-            <div class="mt-2 flex items-center text-sm">
-                <span class="w-2 h-2 bg-red-600 rounded-full animate-pulse mr-2"></span>
-                <span class="text-red-600">Broadcasting</span>
+                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                    <i class="ph ph-users text-green-600 text-xl"></i>
+                </div>
             </div>
         </div>
-
-        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-            <div class="flex items-center justify-between mb-4">
-                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <i class="ph ph-users text-blue-600 text-xl"></i>
+        
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm text-gray-600">Total Budget</p>
+                    <p class="text-2xl font-bold text-purple-600" x-text="formatCurrency(stats.totalBudget)"></p>
                 </div>
-                <span class="text-sm text-slate-500">Total</span>
-            </div>
-            <h3 class="text-2xl font-bold text-slate-900" x-text="events.reduce((sum, e) => sum + e.registrations, 0)"></h3>
-            <p class="text-sm text-slate-600">Registrations</p>
-            <div class="mt-2 flex items-center text-sm">
-                <i class="ph ph-trend-up text-green-500 mr-1"></i>
-                <span class="text-green-500">+18%</span>
-                <span class="text-slate-500 ml-1">vs last month</span>
+                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <i class="ph ph-money text-purple-600 text-xl"></i>
+                </div>
             </div>
         </div>
-
-        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-            <div class="flex items-center justify-between mb-4">
-                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <i class="ph ph-currency-btz text-green-600 text-xl"></i>
+        
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm text-gray-600">Total Collections</p>
+                    <p class="text-2xl font-bold text-orange-600" x-text="formatCurrency(stats.totalCollections)"></p>
                 </div>
-                <span class="text-sm text-slate-500">Revenue</span>
-            </div>
-            <h3 class="text-2xl font-bold text-slate-900" x-text="'TSh ' + (events.reduce((sum, e) => sum + (e.registrations * e.price), 0) / 1000000).toFixed(1) + 'M'"></h3>
-            <p class="text-sm text-slate-600">Total Revenue</p>
-            <div class="mt-2 flex items-center text-sm">
-                <i class="ph ph-trend-up text-green-500 mr-1"></i>
-                <span class="text-green-500">+24%</span>
-                <span class="text-slate-500 ml-1">growth</span>
-            </div>
-        </div>
-
-        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-            <div class="flex items-center justify-between mb-4">
-                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
-                    <i class="ph ph-target text-yellow-600 text-xl"></i>
-                </div>
-                <span class="text-sm text-slate-500">Capacity</span>
-            </div>
-            <h3 class="text-2xl font-bold text-slate-900" x-text="Math.round((events.reduce((sum, e) => sum + e.registrations, 0) / events.reduce((sum, e) => sum + e.capacity, 0)) * 100) + '%'"></h3>
-            <p class="text-sm text-slate-600">Occupancy Rate</p>
-            <div class="mt-2">
-                <div class="w-full bg-slate-200 rounded-full h-2">
-                    <div class="bg-yellow-600 h-2 rounded-full" :style="'width: ' + (events.reduce((sum, e) => sum + e.registrations, 0) / events.reduce((sum, e) => sum + e.capacity, 0)) * 100 + '%'"></div>
+                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                    <i class="ph ph-currency-tzs text-orange-600 text-xl"></i>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Live Streaming Section -->
-    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 mb-8">
-        <div class="flex items-center justify-between mb-6">
-            <div>
-                <h2 class="text-2xl font-bold text-slate-900 mb-2">Watch Events Live</h2>
-                <p class="text-slate-600">Can't attend in person? Join us live on YouTube! All our major events are streamed for our global audience.</p>
-            </div>
-            <div class="flex items-center gap-3">
-                <span class="px-3 py-1 bg-red-600 text-white rounded-full text-sm font-medium animate-pulse flex items-center gap-2">
-                    <span class="w-2 h-2 bg-white rounded-full"></span>
-                    <span x-text="liveStreams.filter(s => s.status === 'live').length + ' Live Now'"></span>
-                </span>
-            </div>
-        </div>
-
-        <!-- Live Streams Grid - 4 per row -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <template x-for="stream in liveStreams" :key="stream.id">
-                <div class="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-all">
-                    <!-- Video Thumbnail -->
-                    <div class="relative aspect-video bg-slate-100">
-                        <img :src="stream.thumbnail" :alt="stream.title" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-all">
-                            <button @click="playVideo(stream)" class="bg-white/90 text-slate-900 rounded-full p-3 hover:bg-white transition-all">
-                                <i class="ph ph-play text-xl"></i>
-                            </button>
-                        </div>
-                        <div class="absolute top-2 left-2">
-                            <span class="px-2 py-1 text-xs font-medium rounded" :class="getStreamStatusColor(stream.status)" x-text="stream.status.toUpperCase()"></span>
-                        </div>
-                        <div class="absolute bottom-2 right-2">
-                            <span class="px-2 py-1 text-xs font-medium rounded bg-black/80 text-white" x-text="stream.duration"></span>
-                        </div>
-                    </div>
-                    
-                    <!-- Video Info -->
-                    <div class="p-4">
-                        <h3 class="font-semibold text-slate-900 mb-1 line-clamp-2" x-text="stream.title"></h3>
-                        <p class="text-sm text-slate-600 mb-2" x-text="stream.speaker"></p>
-                        <p class="text-xs text-slate-500 line-clamp-2 mb-3" x-text="stream.description"></p>
-                        
-                        <!-- Video Stats -->
-                        <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
-                            <span x-text="stream.views + ' views'"></span>
-                            <span x-text="stream.date"></span>
-                        </div>
-                        
-                        <!-- Action Buttons -->
-                        <div class="flex items-center gap-2">
-                            <button @click="playVideo(stream)" class="flex-1 bg-purple-600 text-white px-3 py-2 rounded-lg hover:bg-purple-700 transition-all text-sm font-medium">
-                                <i class="ph ph-play mr-1"></i>
-                                Watch Now
-                            </button>
-                            <button class="text-slate-600 hover:text-slate-900">
-                                <i class="ph ph-share"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </template>
-        </div>
-    </div>
-
-    <!-- Advanced Filters and Search -->
-    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 mb-6">
-        <div class="flex items-center justify-between">
-            <div class="relative flex-1 max-w-md">
-                <input type="text" 
-                       x-model="searchQuery" 
-                       placeholder="Search events by name, location, or organizer..." 
-                       class="pl-10 pr-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 w-full">
-                <i class="ph ph-magnifying-glass absolute left-3 top-2.5 text-slate-400"></i>
-            </div>
-            <div class="flex items-center gap-3 ml-4">
-                <select x-model="filterType" class="border border-slate-200 rounded-lg px-3 py-2 text-sm">
-                    <option value="all">All Types</option>
-                    <option value="conference">Conference</option>
-                    <option value="summit">Summit</option>
-                    <option value="workshop">Workshop</option>
-                    <option value="service">Service</option>
-                    <option value="reunion">Reunion</option>
-                </select>
-                <select x-model="filterStatus" class="border border-slate-200 rounded-lg px-3 py-2 text-sm">
-                    <option value="all">All Status</option>
-                    <option value="planning">Planning</option>
-                    <option value="upcoming">Upcoming</option>
-                    <option value="live">Live</option>
-                    <option value="completed">Completed</option>
-                </select>
-                <button class="bg-purple-100 text-purple-700 px-4 py-2 rounded-lg hover:bg-purple-200 transition-all font-medium text-sm">
-                    <i class="ph ph-funnel mr-2"></i>
-                    Advanced Filters
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Tabs Navigation -->
-    <div class="bg-white rounded-xl shadow-sm border border-slate-200">
-        <div class="border-b border-slate-200">
-            <nav class="flex space-x-8 px-6" aria-label="Tabs">
+    <!-- Navigation Tabs -->
+    <div class="bg-white rounded-lg shadow mb-6">
+        <div class="border-b border-gray-200">
+            <nav class="flex -mb-px">
                 <button @click="activeTab = 'overview'" 
-                        :class="activeTab === 'overview' ? 'border-purple-500 text-purple-600' : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'"
-                        class="py-4 px-1 border-b-2 font-medium text-sm transition-all">
-                    <i class="ph ph-grid mr-2"></i>
-                    Event Overview
+                        :class="activeTab === 'overview' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'"
+                        class="py-4 px-6 border-b-2 font-medium text-sm transition-colors">
+                    <i class="ph ph-grid mr-2"></i> Overview
                 </button>
-                <button @click="activeTab = 'calendar'" 
-                        :class="activeTab === 'calendar' ? 'border-purple-500 text-purple-600' : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'"
-                        class="py-4 px-1 border-b-2 font-medium text-sm transition-all">
-                    <i class="ph ph-calendar mr-2"></i>
-                    Calendar View
+                <button @click="activeTab = 'details'" 
+                        :class="activeTab === 'details' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'"
+                        class="py-4 px-6 border-b-2 font-medium text-sm transition-colors">
+                    <i class="ph ph-info mr-2"></i> Event Details
                 </button>
-                <button @click="activeTab = 'registrations'" 
-                        :class="activeTab === 'registrations' ? 'border-purple-500 text-purple-600' : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'"
-                        class="py-4 px-1 border-b-2 font-medium text-sm transition-all">
-                    <i class="ph ph-users mr-2"></i>
-                    Registrations
+                <button @click="activeTab = 'registration'" 
+                        :class="activeTab === 'registration' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'"
+                        class="py-4 px-6 border-b-2 font-medium text-sm transition-colors">
+                    <i class="ph ph-users-three mr-2"></i> Registration
                 </button>
-                <button @click="activeTab = 'analytics'" 
-                        :class="activeTab === 'analytics' ? 'border-purple-500 text-purple-600' : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'"
-                        class="py-4 px-1 border-b-2 font-medium text-sm transition-all">
-                    <i class="ph ph-chart-line mr-2"></i>
-                    Analytics
+                <button @click="activeTab = 'finance'" 
+                        :class="activeTab === 'finance' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'"
+                        class="py-4 px-6 border-b-2 font-medium text-sm transition-colors">
+                    <i class="ph ph-money mr-2"></i> Finance & Budget
+                </button>
+                <button @click="activeTab = 'facilitators'" 
+                        :class="activeTab === 'facilitators' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'"
+                        class="py-4 px-6 border-b-2 font-medium text-sm transition-colors">
+                    <i class="ph ph-chalkboard-teacher mr-2"></i> Facilitators
+                </button>
+                <button @click="activeTab = 'collections'" 
+                        :class="activeTab === 'collections' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'"
+                        class="py-4 px-6 border-b-2 font-medium text-sm transition-colors">
+                    <i class="ph ph-currency-tzs mr-2"></i> Collections
+                </button>
+                <button @click="activeTab = 'leaders'" 
+                        :class="activeTab === 'leaders' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'"
+                        class="py-4 px-6 border-b-2 font-medium text-sm transition-colors">
+                    <i class="ph ph-crown mr-2"></i> Leaders
+                </button>
+                <button @click="activeTab = 'reminders'" 
+                        :class="activeTab === 'reminders' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'"
+                        class="py-4 px-6 border-b-2 font-medium text-sm transition-colors">
+                    <i class="ph ph-bell mr-2"></i> Reminders
                 </button>
             </nav>
         </div>
+    </div>
 
-        <!-- Tab Content -->
-        <div class="p-6">
-            <!-- Event Overview Tab -->
-            <div x-show="activeTab === 'overview'" x-cloak>
-                <div class="grid gap-6 lg:grid-cols-2">
-                    <template x-for="event in getFilteredEvents()" :key="event.id">
-                        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-all">
-                            <!-- Event Header Image -->
-                            <div class="h-48 bg-gradient-to-br from-purple-100 to-purple-200 relative overflow-hidden">
-                                <img :src="event.image" :alt="event.name" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                                <div class="absolute top-4 left-4">
-                                    <span class="px-3 py-1 text-xs font-medium rounded-full"
-                                          :class="event.status === 'live' ? 'bg-red-600 text-white animate-pulse' : 
-                                                  event.status === 'upcoming' ? 'bg-blue-600 text-white' :
-                                                  event.status === 'completed' ? 'bg-green-600 text-white' :
-                                                  'bg-slate-600 text-white'"
-                                          x-text="event.status.toUpperCase()"></span>
-                                </div>
-                                <div class="absolute top-4 right-4">
-                                    <span class="px-3 py-1 text-xs font-medium rounded-full bg-purple-600 text-white" x-text="event.type.toUpperCase()"></span>
-                                </div>
-                                <div class="absolute bottom-4 left-4 right-4">
-                                    <h3 class="text-xl font-bold text-white mb-1" x-text="event.name"></h3>
-                                    <div class="flex items-center gap-3 text-white/90 text-sm">
-                                        <span class="flex items-center gap-1">
-                                            <i class="ph ph-calendar"></i>
-                                            <span x-text="event.date"></span>
-                                        </span>
-                                        <span class="flex items-center gap-1">
-                                            <i class="ph ph-map-pin"></i>
-                                            <span x-text="event.location.split(',')[0]"></span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+    <!-- Overview Tab -->
+    <div x-show="activeTab === 'overview'" class="space-y-6">
+        <!-- Filters and Search -->
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                <div class="flex flex-wrap gap-2">
+                    <select x-model="filterType" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="all">All Types</option>
+                        <option value="conference">Conference</option>
+                        <option value="summit">Summit</option>
+                        <option value="workshop">Workshop</option>
+                        <option value="service">Service</option>
+                    </select>
+                    
+                    <select x-model="filterStatus" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="all">All Status</option>
+                        <option value="live">Live</option>
+                        <option value="upcoming">Upcoming</option>
+                        <option value="completed">Completed</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
+                
+                <div class="relative">
+                    <input type="text" 
+                           x-model="searchQuery"
+                           placeholder="Search events..." 
+                           class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <i class="ph ph-magnifying-glass absolute left-3 top-3 text-gray-400"></i>
+                </div>
+            </div>
+        </div>
 
-                            <!-- Event Details -->
-                            <div class="p-6">
-                                <!-- Quick Stats -->
-                                <div class="grid grid-cols-3 gap-4 mb-4">
-                                    <div class="text-center">
-                                        <div class="text-lg font-bold text-slate-900" x-text="event.registrations"></div>
-                                        <div class="text-xs text-slate-600">Registered</div>
+        <!-- Events List -->
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead class="bg-gray-50 border-b border-gray-200">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Event</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Registrations</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Budget</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Collections</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <template x-for="event in filteredEvents" :key="event.id">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-lg object-cover" :src="event.image" alt="">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900" x-text="event.name"></div>
+                                            <div class="text-sm text-gray-500" x-text="event.location"></div>
+                                        </div>
                                     </div>
-                                    <div class="text-center">
-                                        <div class="text-lg font-bold text-slate-900" x-text="event.capacity"></div>
-                                        <div class="text-xs text-slate-600">Capacity</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span :class="getTypeColor(event.type)" class="px-2 py-1 text-xs font-medium rounded-full" x-text="event.type"></span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    <div x-text="formatDate(event.date)"></div>
+                                    <div class="text-xs" x-text="event.time"></div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900" x-text="event.registrations + ' / ' + event.capacity"></div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-blue-600 h-2 rounded-full" :style="'width: ' + (event.registrations / event.capacity * 100) + '%'"></div>
                                     </div>
-                                    <div class="text-center">
-                                        <div class="text-lg font-bold text-slate-900" x-text="event.price > 0 ? event.currency + ' ' + event.price.toLocaleString() : 'Free'"></div>
-                                        <div class="text-xs text-slate-600">Price</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900" x-text="formatCurrency(event.budget?.total || 0)"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900" x-text="formatCurrency(event.collections?.total || 0)"></td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span :class="getStatusColor(event.status)" class="px-2 py-1 text-xs font-medium rounded-full" x-text="event.status"></span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <div class="flex items-center gap-2">
+                                        <button @click="openEventDetails(event)" class="text-blue-600 hover:text-blue-900" title="View Details">
+                                            <i class="ph ph-eye"></i>
+                                        </button>
+                                        <button @click="openFinanceModal(event)" class="text-green-600 hover:text-green-900" title="Finance">
+                                            <i class="ph ph-money"></i>
+                                        </button>
+                                        <button @click="openFacilitatorModal(event)" class="text-purple-600 hover:text-purple-900" title="Facilitators">
+                                            <i class="ph ph-chalkboard-teacher"></i>
+                                        </button>
+                                        <button @click="openCollectionModal(event)" class="text-orange-600 hover:text-orange-900" title="Collections">
+                                            <i class="ph ph-currency-tzs"></i>
+                                        </button>
+                                        <button @click="openLeaderModal(event)" class="text-indigo-600 hover:text-indigo-900" title="Leaders">
+                                            <i class="ph ph-crown"></i>
+                                        </button>
+                                        <button @click="openReminderModal(event)" class="text-yellow-600 hover:text-yellow-900" title="Reminders">
+                                            <i class="ph ph-bell"></i>
+                                        </button>
                                     </div>
-                                </div>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
-                                <!-- Progress Bar -->
-                                <div class="mb-4">
-                                    <div class="flex justify-between text-sm mb-1">
-                                        <span class="text-slate-600">Registration Progress</span>
-                                        <span class="font-medium" x-text="Math.round((event.registrations / event.capacity) * 100) + '%'"></span>
-                                    </div>
-                                    <div class="w-full bg-slate-200 rounded-full h-2">
-                                        <div class="bg-purple-600 h-2 rounded-full transition-all" :style="'width: ' + (event.registrations / event.capacity) * 100 + '%'"></div>
-                                    </div>
-                                </div>
+    <!-- Event Details Tab -->
+    <div x-show="activeTab === 'details' && selectedEvent" class="space-y-6">
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-xl font-bold text-gray-900" x-text="selectedEvent?.name"></h2>
+                <span :class="getStatusColor(selectedEvent?.status)" class="px-3 py-1 text-sm font-medium rounded-full" x-text="selectedEvent?.status"></span>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Event Information</h3>
+                    <dl class="space-y-3">
+                        <div class="flex justify-between">
+                            <dt class="text-sm font-medium text-gray-500">Type:</dt>
+                            <dd class="text-sm text-gray-900" x-text="selectedEvent?.type"></dd>
+                        </div>
+                        <div class="flex justify-between">
+                            <dt class="text-sm font-medium text-gray-500">Date:</dt>
+                            <dd class="text-sm text-gray-900" x-text="formatDate(selectedEvent?.date)"></dd>
+                        </div>
+                        <div class="flex justify-between">
+                            <dt class="text-sm font-medium text-gray-500">Time:</dt>
+                            <dd class="text-sm text-gray-900" x-text="selectedEvent?.time"></dd>
+                        </div>
+                        <div class="flex justify-between">
+                            <dt class="text-sm font-medium text-gray-500">Location:</dt>
+                            <dd class="text-sm text-gray-900" x-text="selectedEvent?.location"></dd>
+                        </div>
+                        <div class="flex justify-between">
+                            <dt class="text-sm font-medium text-gray-500">Organizer:</dt>
+                            <dd class="text-sm text-gray-900" x-text="selectedEvent?.organizer"></dd>
+                        </div>
+                    </dl>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Registration Details</h3>
+                    <dl class="space-y-3">
+                        <div class="flex justify-between">
+                            <dt class="text-sm font-medium text-gray-500">Registrations:</dt>
+                            <dd class="text-sm text-gray-900" x-text="selectedEvent?.registrations + ' / ' + selectedEvent?.capacity"></dd>
+                        </div>
+                        <div class="flex justify-between">
+                            <dt class="text-sm font-medium text-gray-500">Price:</dt>
+                            <dd class="text-sm text-gray-900" x-text="formatCurrency(selectedEvent?.price)"></dd>
+                        </div>
+                        <div class="flex justify-between">
+                            <dt class="text-sm font-medium text-gray-500">Registration Open:</dt>
+                            <dd class="text-sm text-gray-900" x-text="selectedEvent?.registrationOpen ? 'Yes' : 'No'"></dd>
+                        </div>
+                        <div class="flex justify-between">
+                            <dt class="text-sm font-medium text-gray-500">Livestream:</dt>
+                            <dd class="text-sm text-gray-900" x-text="selectedEvent?.livestreamEnabled ? 'Yes' : 'No'"></dd>
+                        </div>
+                        <div class="flex justify-between">
+                            <dt class="text-sm font-medium text-gray-500">Certificate:</dt>
+                            <dd class="text-sm text-gray-900" x-text="selectedEvent?.hasCertificate ? 'Yes' : 'No'"></dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            
+            <div class="mt-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Description</h3>
+                <p class="text-gray-600" x-text="selectedEvent?.description"></p>
+            </div>
+        </div>
+    </div>
 
-                                <!-- Event Features -->
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    <template x-if="event.livestreamEnabled">
-                                        <span class="px-2 py-1 text-xs font-medium rounded-full bg-red-100 text-red-800 flex items-center gap-1">
-                                            <i class="ph ph-broadcast"></i>
-                                            Livestream
-                                        </span>
-                                    </template>
-                                    <template x-if="event.hasCertificate">
-                                        <span class="px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800 flex items-center gap-1">
-                                            <i class="ph ph-certificate"></i>
-                                            Certificate
-                                        </span>
-                                    </template>
-                                    <template x-if="event.materialsProvided">
-                                        <span class="px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800 flex items-center gap-1">
-                                            <i class="ph ph-folder"></i>
-                                            Materials
-                                        </span>
-                                    </template>
-                                </div>
-
-                                <!-- Description -->
-                                <p class="text-sm text-slate-600 mb-4 line-clamp-2" x-text="event.description"></p>
-
-                                <!-- Action Buttons -->
-                                <div class="flex items-center gap-2">
-                                    <button @click="viewEventDetails(event)" class="flex-1 bg-purple-600 text-white px-3 py-2 rounded-lg hover:bg-purple-700 transition-all text-sm font-medium">
-                                        <i class="ph ph-eye mr-1"></i>
-                                        View Details
-                                    </button>
-                                    <button @click="openEditModal(event)" class="text-purple-600 hover:text-purple-900">
-                                        <i class="ph ph-pencil"></i>
-                                    </button>
-                                    <template x-if="event.videoUrl">
-                                        <a :href="event.videoUrl" target="_blank" class="text-red-600 hover:text-red-900">
-                                            <i class="ph ph-youtube-logo"></i>
-                                        </a>
-                                    </template>
-                                    <button @click="openDeleteModal(event)" class="text-red-600 hover:text-red-900">
-                                        <i class="ph ph-trash"></i>
-                                    </button>
-                                </div>
-                            </div>
+    <!-- Finance & Budget Tab -->
+    <div x-show="activeTab === 'finance' && selectedEvent" class="space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Budget Overview -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Budget Overview</h3>
+                <dl class="space-y-3">
+                    <div class="flex justify-between">
+                        <dt class="text-sm font-medium text-gray-500">Total Budget:</dt>
+                        <dd class="text-sm font-bold text-gray-900" x-text="formatCurrency(selectedEvent?.budget?.total || 0)"></dd>
+                    </div>
+                    <div class="flex justify-between">
+                        <dt class="text-sm font-medium text-gray-500">Allocated:</dt>
+                        <dd class="text-sm text-gray-900" x-text="formatCurrency(selectedEvent?.budget?.allocated || 0)"></dd>
+                    </div>
+                    <div class="flex justify-between">
+                        <dt class="text-sm font-medium text-gray-500">Spent:</dt>
+                        <dd class="text-sm text-orange-600" x-text="formatCurrency(selectedEvent?.budget?.spent || 0)"></dd>
+                    </div>
+                    <div class="flex justify-between">
+                        <dt class="text-sm font-medium text-gray-500">Remaining:</dt>
+                        <dd class="text-sm text-green-600" x-text="formatCurrency(selectedEvent?.budget?.remaining || 0)"></dd>
+                    </div>
+                </dl>
+                
+                <!-- Budget Progress -->
+                <div class="mt-6">
+                    <div class="flex justify-between text-sm mb-2">
+                        <span class="text-gray-500">Budget Usage</span>
+                        <span class="text-gray-900" x-text="Math.round((selectedEvent?.budget?.spent || 0) / (selectedEvent?.budget?.total || 1) * 100) + '%'"></span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3">
+                        <div class="bg-orange-600 h-3 rounded-full transition-all duration-300" :style="'width: ' + Math.round((selectedEvent?.budget?.spent || 0) / (selectedEvent?.budget?.total || 1) * 100) + '%'"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Budget Categories -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Budget Categories</h3>
+                <div class="space-y-3" x-show="selectedEvent?.budget?.categories">
+                    <template x-for="[category, amount] in Object.entries(selectedEvent?.budget?.categories || {})" :key="category">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-600 capitalize" x-text="category"></span>
+                            <span class="text-sm font-medium text-gray-900" x-text="formatCurrency(amount)"></span>
                         </div>
                     </template>
                 </div>
             </div>
+        </div>
+        
+        <!-- Collections Overview -->
+        <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">Collections Overview</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-green-600" x-text="formatCurrency(selectedEvent?.collections?.registration || 0)"></div>
+                    <div class="text-sm text-gray-600">Registration Fees</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-blue-600" x-text="formatCurrency(selectedEvent?.collections?.donations || 0)"></div>
+                    <div class="text-sm text-gray-600">Donations</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-purple-600" x-text="formatCurrency(selectedEvent?.collections?.sponsorships || 0)"></div>
+                    <div class="text-sm text-gray-600">Sponsorships</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-orange-600" x-text="formatCurrency(selectedEvent?.collections?.total || 0)"></div>
+                    <div class="text-sm text-gray-600">Total Collections</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            <!-- Calendar View Tab -->
-            <div x-show="activeTab === 'calendar'" x-cloak>
-                <div class="grid gap-6 lg:grid-cols-3">
-                    <!-- Calendar -->
-                    <div class="lg:col-span-2">
-                        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                            <!-- Calendar Header -->
-                            <div class="flex items-center justify-between mb-6">
-                                <button @click="previousMonth()" class="p-2 hover:bg-slate-100 rounded-lg transition-all">
-                                    <i class="ph ph-arrow-left text-slate-600"></i>
-                                </button>
-                                <h3 class="text-lg font-semibold text-slate-900" x-text="monthNames[currentMonth] + ' ' + currentYear"></h3>
-                                <button @click="nextMonth()" class="p-2 hover:bg-slate-100 rounded-lg transition-all">
-                                    <i class="ph ph-arrow-right text-slate-600"></i>
-                                </button>
+    <!-- Facilitators Tab -->
+    <div x-show="activeTab === 'facilitators' && selectedEvent" class="space-y-6">
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-lg font-semibold text-gray-900">Event Facilitators</h3>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                    <i class="ph ph-plus"></i>
+                    Add Facilitator
+                </button>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead class="bg-gray-50 border-b border-gray-200">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fee</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <template x-for="facilitator in selectedEvent?.facilitators || []" :key="facilitator.id">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900" x-text="facilitator.name"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" x-text="facilitator.role"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900" x-text="formatCurrency(facilitator.fee)"></td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span :class="facilitator.status === 'confirmed' ? 'text-green-600 bg-green-50' : 'text-yellow-600 bg-yellow-50'" class="px-2 py-1 text-xs font-medium rounded-full" x-text="facilitator.status"></span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <button class="text-blue-600 hover:text-blue-900 mr-3">Edit</button>
+                                    <button class="text-red-600 hover:text-red-900">Remove</button>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Collections Tab -->
+    <div x-show="activeTab === 'collections' && selectedEvent" class="space-y-6">
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-lg font-semibold text-gray-900">Collection Management</h3>
+                <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+                    <i class="ph ph-plus"></i>
+                    Add Collection
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-600">Registration Fees</span>
+                        <i class="ph ph-users text-gray-400"></i>
+                    </div>
+                    <div class="text-2xl font-bold text-gray-900" x-text="formatCurrency(selectedEvent?.collections?.registration || 0)"></div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-600">Donations</span>
+                        <i class="ph ph-heart text-gray-400"></i>
+                    </div>
+                    <div class="text-2xl font-bold text-gray-900" x-text="formatCurrency(selectedEvent?.collections?.donations || 0)"></div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-600">Sponsorships</span>
+                        <i class="ph ph-handshake text-gray-400"></i>
+                    </div>
+                    <div class="text-2xl font-bold text-gray-900" x-text="formatCurrency(selectedEvent?.collections?.sponsorships || 0)"></div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-600">Merchandise</span>
+                        <i class="ph ph-shopping-bag text-gray-400"></i>
+                    </div>
+                    <div class="text-2xl font-bold text-gray-900" x-text="formatCurrency(selectedEvent?.collections?.merchandise || 0)"></div>
+                </div>
+            </div>
+            
+            <!-- Recent Collections -->
+            <div>
+                <h4 class="text-md font-semibold text-gray-900 mb-4">Recent Collections</h4>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="ph ph-users text-green-600 text-sm"></i>
                             </div>
-
-                            <!-- Calendar Grid -->
-                            <div class="grid grid-cols-7 gap-1 mb-2">
-                                <div class="text-center text-xs font-medium text-slate-500 py-2">Sun</div>
-                                <div class="text-center text-xs font-medium text-slate-500 py-2">Mon</div>
-                                <div class="text-center text-xs font-medium text-slate-500 py-2">Tue</div>
-                                <div class="text-center text-xs font-medium text-slate-500 py-2">Wed</div>
-                                <div class="text-center text-xs font-medium text-slate-500 py-2">Thu</div>
-                                <div class="text-center text-xs font-medium text-slate-500 py-2">Fri</div>
-                                <div class="text-center text-xs font-medium text-slate-500 py-2">Sat</div>
+                            <div>
+                                <div class="text-sm font-medium text-gray-900">Registration Payment - John Doe</div>
+                                <div class="text-xs text-gray-500">2 hours ago</div>
                             </div>
-
-                            <!-- Empty cells for first week -->
-                            <template x-for="i in getFirstDayOfMonth()" :key="'empty-' + i">
-                                <div class="h-20"></div>
-                            </template>
-
-                            <!-- Calendar days -->
-                            <template x-for="day in getDaysInMonth()" :key="'day-' + day">
-                                <div @click="selectDate(day)" 
-                                     :class="selectedDate === day ? 'bg-purple-100 border-purple-500' : 'hover:bg-slate-50 border-slate-200'"
-                                     class="border rounded-lg p-2 min-h-[80px] cursor-pointer transition-all relative">
-                                    <div class="text-sm font-medium text-slate-900 mb-1" x-text="day"></div>
-                                    <div class="space-y-1">
-                                        <template x-for="event in getEventsForDate(day).slice(0, 2)" :key="event.id">
-                                            <div class="text-xs p-1 rounded truncate" 
-                                                 :class="getEventTypeColor(event.type)"
-                                                 x-text="event.name.length > 15 ? event.name.substring(0, 15) + '...' : event.name"></div>
-                                        </template>
-                                        <div x-show="getEventsForDate(day).length > 2" class="text-xs text-slate-500">
-                                            +<span x-text="getEventsForDate(day).length - 2"></span> more
-                                        </div>
-                                    </div>
-                                </div>
-                            </template>
                         </div>
-
-                        <!-- Calendar Controls -->
-                        <div class="flex items-center justify-center mt-4 gap-3">
-                            <button @click="goToToday()" class="bg-purple-100 text-purple-700 px-4 py-2 rounded-lg hover:bg-purple-200 transition-all font-medium text-sm">
-                                <i class="ph ph-calendar mr-2"></i>
-                                Today
-                            </button>
-                        </div>
+                        <div class="text-sm font-medium text-gray-900">30,000 TSh</div>
                     </div>
                     
-                    <!-- Selected Date Events -->
-                    <div>
-                        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Events</h3>
-                            
-                            <!-- Selected Date Header -->
-                            <div x-show="selectedDate" class="mb-4">
-                                <h4 class="font-medium text-slate-900" x-text="'Events for ' + monthNames[currentMonth] + ' ' + selectedDate + ', ' + currentYear"></h4>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="ph ph-heart text-blue-600 text-sm"></i>
                             </div>
-                            
-                            <div x-show="!selectedDate" class="text-center py-8">
-                                <i class="ph ph-calendar text-4xl text-slate-300 mb-2"></i>
-                                <p class="text-slate-500">Select a date to view events</p>
-                            </div>
-
-                            <!-- Events for Selected Date -->
-                            <div x-show="selectedDate" class="space-y-3">
-                                <template x-for="event in getEventsForDate(selectedDate)" :key="event.id">
-                                    <div class="border border-slate-200 rounded-lg p-3 hover:bg-slate-50 transition-all">
-                                        <div class="flex items-start justify-between mb-2">
-                                            <h4 class="font-medium text-slate-900 text-sm" x-text="event.name"></h4>
-                                            <span class="px-2 py-1 text-xs font-medium rounded-full" 
-                                                  :class="getEventStatusColor(event.status)"
-                                                  x-text="event.status"></span>
-                                        </div>
-                                        <div class="text-xs text-slate-600 space-y-1">
-                                            <div class="flex items-center gap-2">
-                                                <i class="ph ph-clock"></i>
-                                                <span x-text="event.time + ' - ' + event.endTime"></span>
-                                            </div>
-                                            <div class="flex items-center gap-2">
-                                                <i class="ph ph-map-pin"></i>
-                                                <span x-text="event.location"></span>
-                                            </div>
-                                            <div class="flex items-center gap-2">
-                                                <i class="ph ph-users"></i>
-                                                <span x-text="event.registrations + '/' + event.capacity + ' registered'"></span>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-center gap-2 mt-2">
-                                            <button @click="viewEventDetails(event)" 
-                                                    class="text-purple-600 hover:text-purple-900 text-xs font-medium">
-                                                View Details
-                                            </button>
-                                            <button @click="openEditModal(event)" 
-                                                    class="text-blue-600 hover:text-blue-900 text-xs font-medium">
-                                                Edit
-                                            </button>
-                                        </div>
-                                    </div>
-                                </template>
-
-                                <div x-show="getEventsForDate(selectedDate).length === 0" class="text-center py-8">
-                                    <i class="ph ph-calendar-x text-4xl text-slate-300 mb-2"></i>
-                                    <p class="text-slate-500">No events on this date</p>
-                                </div>
+                            <div>
+                                <div class="text-sm font-medium text-gray-900">Donation - Jane Smith</div>
+                                <div class="text-xs text-gray-500">5 hours ago</div>
                             </div>
                         </div>
+                        <div class="text-sm font-medium text-gray-900">50,000 TSh</div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <!-- Registrations Tab -->
-            <div x-show="activeTab === 'registrations'" x-cloak>
-                <div class="flex items-center justify-between mb-6">
-                    <h3 class="text-lg font-semibold text-slate-900">Event Registrations</h3>
-                    <div class="flex items-center gap-3">
-                        <select class="border border-slate-200 rounded-lg px-3 py-2 text-sm">
-                            <option>All Events</option>
-                            <template x-for="event in events" :key="event.id">
-                                <option x-text="event.name"></option>
-                            </template>
-                        </select>
-                        <button class="bg-white border border-slate-200 text-slate-700 px-4 py-2 rounded-lg hover:bg-slate-50 transition-all font-medium text-sm">
-                            <i class="ph ph-download mr-2"></i>
-                            Export Registrations
-                        </button>
+    <!-- Leaders Tab -->
+    <div x-show="activeTab === 'leaders' && selectedEvent" class="space-y-6">
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-lg font-semibold text-gray-900">Event Leadership Team</h3>
+                <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors flex items-center gap-2">
+                    <i class="ph ph-plus"></i>
+                    Add Leader
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <template x-for="leader in selectedEvent?.leaders || []" :key="leader.id">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+                                <i class="ph ph-crown text-indigo-600 text-xl"></i>
+                            </div>
+                            <span class="text-xs text-gray-500" x-text="leader.role"></span>
+                        </div>
+                        <h4 class="font-medium text-gray-900 mb-1" x-text="leader.name"></h4>
+                        <div class="space-y-1 text-sm text-gray-600">
+                            <div class="flex items-center gap-2">
+                                <i class="ph ph-phone text-gray-400"></i>
+                                <span x-text="leader.contact"></span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ph ph-envelope text-gray-400"></i>
+                                <span x-text="leader.email"></span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mt-3">
+                            <button class="text-blue-600 hover:text-blue-900 text-sm">Edit</button>
+                            <button class="text-red-600 hover:text-red-900 text-sm">Remove</button>
+                        </div>
                     </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reminders Tab -->
+    <div x-show="activeTab === 'reminders' && selectedEvent" class="space-y-6">
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-lg font-semibold text-gray-900">Event Reminders</h3>
+                <button class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition-colors flex items-center gap-2">
+                    <i class="ph ph-plus"></i>
+                    Create Reminder
+                </button>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead class="bg-gray-50 border-b border-gray-200">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Message</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Send Date</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <template x-for="reminder in selectedEvent?.reminders || []" :key="reminder.id">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 py-1 text-xs font-medium rounded-full bg-yellow-100 text-yellow-800" x-text="reminder.type"></span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-900" x-text="reminder.message"></div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" x-text="formatDate(reminder.sendDate)"></td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span :class="reminder.status === 'sent' ? 'text-green-600 bg-green-50' : reminder.status === 'scheduled' ? 'text-blue-600 bg-blue-50' : 'text-gray-600 bg-gray-50'" class="px-2 py-1 text-xs font-medium rounded-full" x-text="reminder.status"></span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <button class="text-blue-600 hover:text-blue-900 mr-3">Edit</button>
+                                    <button class="text-red-600 hover:text-red-900">Delete</button>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Tab -->
+    <div x-show="activeTab === 'registration' && selectedEvent" class="space-y-6">
+        <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-6">Registration Management</h3>
+            
+            <!-- Registration Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <div class="text-2xl font-bold text-gray-900" x-text="selectedEvent?.registrations || 0"></div>
+                    <div class="text-sm text-gray-600">Total Registrations</div>
                 </div>
-
-                <!-- Registration Stats -->
-                <div class="grid gap-4 md:grid-cols-4 mb-6">
-                    <div class="bg-slate-50 rounded-lg p-4">
-                        <div class="text-2xl font-bold text-slate-900" x-text="registrations.length"></div>
-                        <div class="text-sm text-slate-600">Total Registrations</div>
-                    </div>
-                    <div class="bg-green-50 rounded-lg p-4">
-                        <div class="text-2xl font-bold text-green-900" x-text="registrations.filter(r => r.status === 'confirmed').length"></div>
-                        <div class="text-sm text-green-600">Confirmed</div>
-                    </div>
-                    <div class="bg-yellow-50 rounded-lg p-4">
-                        <div class="text-2xl font-bold text-yellow-900" x-text="registrations.filter(r => r.status === 'pending').length"></div>
-                        <div class="text-sm text-yellow-600">Pending</div>
-                    </div>
-                    <div class="bg-blue-50 rounded-lg p-4">
-                        <div class="text-2xl font-bold text-blue-900" x-text="'TSh ' + (registrations.reduce((sum, r) => sum + r.amount, 0) / 1000000).toFixed(1) + 'M'"></div>
-                        <div class="text-sm text-blue-600">Total Revenue</div>
-                    </div>
+                
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <div class="text-2xl font-bold text-green-600" x-text="selectedEvent?.capacity - (selectedEvent?.registrations || 0)"></div>
+                    <div class="text-sm text-gray-600">Available Slots</div>
                 </div>
-
-                <!-- Registration Table -->
+                
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <div class="text-2xl font-bold text-blue-600" x-text="formatCurrency((selectedEvent?.registrations || 0) * (selectedEvent?.price || 0))"></div>
+                    <div class="text-sm text-gray-600">Revenue from Registrations</div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <div class="text-2xl font-bold text-purple-600" x-text="Math.round((selectedEvent?.registrations || 0) / (selectedEvent?.capacity || 1) * 100) + '%'"></div>
+                    <div class="text-sm text-gray-600">Occupancy Rate</div>
+                </div>
+            </div>
+            
+            <!-- Recent Registrations -->
+            <div>
+                <h4 class="text-md font-semibold text-gray-900 mb-4">Recent Registrations</h4>
                 <div class="overflow-x-auto">
-                    <table class="min-w-full divide-y divide-slate-200">
-                        <thead>
+                    <table class="w-full">
+                        <thead class="bg-gray-50 border-b border-gray-200">
                             <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Name</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Contact</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Location</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Event</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Registration</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Payment</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Actions</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Registration Date</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Payment Status</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                             </tr>
                         </thead>
-                        <tbody class="bg-white divide-y divide-slate-200">
-                            <template x-for="registration in registrations" :key="registration.id">
-                                <tr class="hover:bg-slate-50">
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm font-medium text-slate-900" x-text="registration.name"></div>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-slate-900" x-text="registration.email"></div>
-                                        <div class="text-sm text-slate-500" x-text="registration.phone"></div>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-slate-900" x-text="registration.diocese"></div>
-                                        <div class="text-sm text-slate-500" x-text="registration.parish"></div>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-900">
-                                        <span x-text="events.find(e => e.id === registration.eventId)?.name || 'Unknown Event'"></span>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-slate-900" x-text="registration.registrationDate"></div>
-                                        <span class="px-2 py-1 text-xs font-medium rounded-full"
-                                              :class="registration.status === 'confirmed' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'"
-                                              x-text="registration.status"></span>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-slate-900" x-text="'TSh ' + registration.amount.toLocaleString()"></div>
-                                        <span class="px-2 py-1 text-xs font-medium rounded-full"
-                                              :class="registration.paymentStatus === 'paid' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'"
-                                              x-text="registration.paymentStatus"></span>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                        <button class="text-purple-600 hover:text-purple-900 mr-3">Edit</button>
-                                        <button class="text-red-600 hover:text-red-900">Cancel</button>
-                                    </td>
-                                </tr>
-                            </template>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">John Doe</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">john.doe@email.com</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">+255712345678</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2026-03-28</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 py-1 text-xs font-medium rounded-full bg-green-50 text-green-800">Paid</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <button class="text-blue-600 hover:text-blue-900 mr-3">View</button>
+                                    <button class="text-red-600 hover:text-red-900">Cancel</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Jane Smith</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">jane.smith@email.com</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">+255713456789</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2026-03-27</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 py-1 text-xs font-medium rounded-full bg-yellow-50 text-yellow-800">Pending</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <button class="text-blue-600 hover:text-blue-900 mr-3">View</button>
+                                    <button class="text-red-600 hover:text-red-900">Cancel</button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
-                </div>
-            </div>
-
-            <!-- Analytics Tab -->
-            <div x-show="activeTab === 'analytics'" x-cloak>
-                <div class="space-y-6">
-                    <!-- Event Performance Overview -->
-                    <div class="grid gap-6 md:grid-cols-3">
-                        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Event Performance</h3>
-                            <div class="space-y-4">
-                                <template x-for="event in events" :key="event.id">
-                                    <div class="flex items-center justify-between">
-                                        <div class="flex-1">
-                                            <div class="font-medium text-slate-900" x-text="event.name.length > 25 ? event.name.substring(0, 25) + '...' : event.name"></div>
-                                            <div class="text-sm text-slate-600" x-text="event.registrations + ' / ' + event.capacity + ' registered'"></div>
-                                        </div>
-                                        <div class="text-right">
-                                            <div class="font-medium text-slate-900" x-text="Math.round((event.registrations / event.capacity) * 100) + '%'"></div>
-                                            <div class="text-sm text-slate-600">Occupancy</div>
-                                        </div>
-                                    </div>
-                                    <div class="w-full bg-slate-200 rounded-full h-2">
-                                        <div class="bg-purple-600 h-2 rounded-full" :style="'width: ' + (event.registrations / event.capacity) * 100 + '%'"></div>
-                                    </div>
-                                </template>
-                            </div>
-                        </div>
-
-                        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Revenue by Event</h3>
-                            <div class="space-y-4">
-                                <template x-for="event in events.filter(e => e.price > 0)" :key="'revenue-' + event.id">
-                                    <div class="flex items-center justify-between">
-                                        <div class="flex-1">
-                                            <div class="font-medium text-slate-900" x-text="event.name.length > 25 ? event.name.substring(0, 25) + '...' : event.name"></div>
-                                            <div class="text-sm text-slate-600" x-text="event.registrations + ' registrations'"></div>
-                                        </div>
-                                        <div class="text-right">
-                                            <div class="font-medium text-slate-900" x-text="'TSh ' + (event.registrations * event.price).toLocaleString()"></div>
-                                            <div class="text-sm text-slate-600">Revenue</div>
-                                        </div>
-                                    </div>
-                                </template>
-                            </div>
-                        </div>
-
-                        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Event Categories</h3>
-                            <div class="space-y-4">
-                                <template x-for="category in [...new Set(events.map(e => e.category))]" :key="category">
-                                    <div class="flex items-center justify-between">
-                                        <div class="flex-1">
-                                            <div class="font-medium text-slate-900 capitalize" x-text="category"></div>
-                                            <div class="text-sm text-slate-600" x-text="events.filter(e => e.category === category).length + ' events'"></div>
-                                        </div>
-                                        <div class="text-right">
-                                            <div class="font-medium text-slate-900" x-text="events.filter(e => e.category === category).reduce((sum, e) => sum + e.registrations, 0)"></div>
-                                            <div class="text-sm text-slate-600">Registrations</div>
-                                        </div>
-                                    </div>
-                                </template>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Detailed Analytics Table -->
-                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                        <h3 class="text-lg font-semibold text-slate-900 mb-4">Detailed Analytics</h3>
-                        <div class="overflow-x-auto">
-                            <table class="min-w-full divide-y divide-slate-200">
-                                <thead>
-                                    <tr>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Event</th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Type</th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Status</th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Registrations</th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Capacity</th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Occupancy</th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Revenue</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="bg-white divide-y divide-slate-200">
-                                    <template x-for="event in events" :key="event.id">
-                                        <tr class="hover:bg-slate-50">
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-900" x-text="event.name"></td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-900" x-text="event.type"></td>
-                                            <td class="px-6 py-4 whitespace-nowrap">
-                                                <span class="px-2 py-1 text-xs font-medium rounded-full" 
-                                                      :class="getEventStatusColor(event.status)"
-                                                      x-text="event.status"></span>
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-900" x-text="event.registrations"></td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-900" x-text="event.capacity"></td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-900" x-text="Math.round((event.registrations / event.capacity) * 100) + '%'"></td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-900" x-text="'TSh ' + (event.registrations * event.price).toLocaleString()"></td>
-                                        </tr>
-                                    </template>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Event Details Modal -->
-    <div x-show="showRegistrationModal" x-cloak class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div class="p-6 border-b border-slate-200">
-                <div class="flex items-center justify-between">
-                    <h3 class="text-xl font-semibold text-slate-900" x-text="selectedEvent ? selectedEvent.name : 'Event Details'"></h3>
-                    <button @click="showRegistrationModal = false" class="text-slate-400 hover:text-slate-600">
-                        <i class="ph ph-x text-xl"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="p-6" x-show="selectedEvent">
-                <div class="space-y-4">
-                    <div>
-                        <h4 class="font-medium text-slate-900 mb-2">Event Information</h4>
-                        <div class="space-y-2 text-sm text-slate-600">
-                            <div><strong>Type:</strong> <span x-text="selectedEvent.type"></span></div>
-                            <div><strong>Date:</strong> <span x-text="selectedEvent.date + ' - ' + selectedEvent.endDate"></span></div>
-                            <div><strong>Time:</strong> <span x-text="selectedEvent.time + ' - ' + selectedEvent.endTime"></span></div>
-                            <div><strong>Location:</strong> <span x-text="selectedEvent.location"></span></div>
-                            <div><strong>Venue:</strong> <span x-text="selectedEvent.venue"></span></div>
-                            <div><strong>Organizer:</strong> <span x-text="selectedEvent.organizer"></span></div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-medium text-slate-900 mb-2">Registration Details</h4>
-                        <div class="space-y-2 text-sm text-slate-600">
-                            <div><strong>Registered:</strong> <span x-text="selectedEvent.registrations + '/' + selectedEvent.capacity"></span></div>
-                            <div><strong>Price:</strong> <span x-text="selectedEvent.price > 0 ? selectedEvent.currency + ' ' + selectedEvent.price.toLocaleString() : 'Free'"></span></div>
-                            <div><strong>Status:</strong> <span x-text="selectedEvent.status"></span></div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h4 class="font-medium text-slate-900 mb-2">Description</h4>
-                        <p class="text-sm text-slate-600" x-text="selectedEvent.description"></p>
-                    </div>
-
-                    <template x-if="selectedEvent.videoUrl">
-                        <div>
-                            <h4 class="font-medium text-slate-900 mb-2">Live Stream</h4>
-                            <div class="aspect-video bg-slate-100 rounded-lg overflow-hidden">
-                                <iframe :src="selectedEvent.videoUrl" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </template>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Edit Event Modal -->
-    <div x-show="showEditModal" x-cloak class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div class="p-6 border-b border-slate-200">
-                <div class="flex items-center justify-between">
-                    <h3 class="text-xl font-semibold text-slate-900">Edit Event</h3>
-                    <button @click="showEditModal = false" class="text-slate-400 hover:text-slate-600">
-                        <i class="ph ph-x text-xl"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="p-6" x-show="editingEvent">
-                <form @submit.prevent="updateEvent()" class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2">Event Name</label>
-                        <input type="text" id="editEventName" required :value="editingEvent.name" class="w-full border border-slate-200 rounded-lg px-4 py-2">
-                    </div>
-                    <div class="flex justify-end gap-3">
-                        <button type="button" @click="showEditModal = false" class="px-4 py-2 border border-slate-200 text-slate-600 rounded-lg hover:bg-slate-50">
-                            Cancel
-                        </button>
-                        <button type="submit" class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">
-                            Update Event
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Delete Confirmation Modal -->
-    <div x-show="showDeleteModal" x-cloak class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-xl max-w-md w-full">
-            <div class="p-6 border-b border-slate-200">
-                <div class="flex items-center justify-between">
-                    <h3 class="text-xl font-semibold text-slate-900">Delete Event</h3>
-                    <button @click="showDeleteModal = false" class="text-slate-400 hover:text-slate-600">
-                        <i class="ph ph-x text-xl"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="p-6" x-show="deletingEvent">
-                <div class="bg-red-50 border border-red-200 rounded-lg p-4 mb-4">
-                    <div class="flex items-start gap-3">
-                        <i class="ph ph-warning text-red-600 text-xl mt-0.5"></i>
-                        <div>
-                            <h4 class="font-semibold text-red-900 mb-1">Warning</h4>
-                            <p class="text-sm text-red-700">This action cannot be undone. All event data and registrations will be permanently deleted.</p>
-                        </div>
-                    </div>
-                </div>
-                <p class="text-sm text-slate-600 mb-4">Are you sure you want to delete <strong x-text="deletingEvent.name"></strong>?</p>
-                <div class="flex justify-end gap-3">
-                    <button @click="showDeleteModal = false" class="px-4 py-2 border border-slate-200 text-slate-600 rounded-lg hover:bg-slate-50">
-                        Cancel
-                    </button>
-                    <button @click="deleteEvent()" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">
-                        Delete Event
-                    </button>
                 </div>
             </div>
         </div>
