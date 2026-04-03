@@ -84,6 +84,21 @@
                 50% { opacity: 0.5; }
                 100% { opacity: 1; }
             }
+            .video-grid {
+                display: grid;
+                gap: 1.5rem;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            }
+            @media (min-width: 768px) {
+                .video-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            @media (min-width: 1024px) {
+                .video-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
         </style>
     </head>
     <body class="min-h-screen bg-white text-slate-900 antialiased font-medium" x-data="{ mobileMenuOpen: false }">
@@ -98,19 +113,17 @@
                 </div>
                 
                 <div class="max-w-7xl mx-auto px-6 relative z-10">
-                    <div class="text-center max-w-4xl mx-auto">
-                        <span class="inline-block px-4 py-2 bg-slate-700 text-slate-200 rounded-full text-sm font-bold tracking-widest uppercase mb-6">Events & Programs</span>
-                        <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 font-bold leading-[1.05]">Grow <span class="text-slate-300">Together</span></h1>
-                        <p class="text-xl text-slate-200 leading-relaxed mb-12">
-                            Join our transformative events and programs designed to deepen your faith, develop your leadership skills, 
-                            and build lasting connections with fellow Catholic students and alumni.
+                    <div class="text-center">
+                        <h1 class="text-5xl lg:text-6xl font-bold mb-6 font-serif">Events & Programs</h1>
+                        <p class="text-xl lg:text-2xl text-slate-200 max-w-4xl mx-auto leading-relaxed">
+                            Join us for transformative experiences that bring together thousands of believers across Tanzania and beyond.
                         </p>
-                        <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-                            <a href="#upcoming" class="px-8 py-4 bg-white text-slate-900 font-bold rounded-full hover:bg-slate-100 transition-all shadow-xl">
-                                <i class="ph ph-calendar mr-2"></i> Upcoming Events
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+                            <a href="#livestream" class="px-8 py-4 bg-red-600 text-white font-bold rounded-full hover:bg-red-700 transition-all shadow-xl">
+                                <i class="ph ph-broadcast mr-2"></i> Watch Live Stream
                             </a>
-                            <a href="#livestream" class="px-8 py-4 bg-red-600 text-white font-bold rounded-full hover:bg-red-700 transition-all">
-                                <i class="ph ph-broadcast mr-2"></i> Watch Live
+                            <a href="#featured" class="px-8 py-4 bg-white text-slate-900 font-bold rounded-full hover:bg-slate-100 transition-all shadow-xl">
+                                <i class="ph ph-calendar mr-2"></i> View Events
                             </a>
                         </div>
                     </div>
@@ -118,12 +131,12 @@
             </section>
 
             <!-- Live Streaming Section -->
-            <section id="livestream" class="py-16 bg-gradient-to-br from-red-50 to-purple-50 -mt-10 relative z-20">
+            <section id="livestream" class="py-16 bg-gradient-to-br from-red-50 to-slate-50">
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="text-center mb-12">
-                        <div class="inline-flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
-                            <span class="w-2 h-2 bg-white rounded-full live-badge"></span>
-                            LIVE STREAMING
+                        <div class="inline-flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-full mb-4">
+                            <span class="w-3 h-3 bg-white rounded-full live-badge"></span>
+                            <span class="font-bold">LIVE STREAMING NOW</span>
                         </div>
                         <h2 class="text-4xl font-bold text-slate-900 mb-4">Watch Events Live</h2>
                         <p class="text-xl text-slate-600 max-w-3xl mx-auto">
@@ -131,274 +144,239 @@
                         </p>
                     </div>
 
-                    <!-- Featured Live Event -->
-                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden mb-12">
-                        <div class="bg-gradient-to-r from-red-600 to-purple-600 text-white p-6">
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <div class="flex items-center gap-3 mb-2">
-                                        <span class="bg-white text-red-600 px-3 py-1 rounded-full text-sm font-bold">LIVE NOW</span>
-                                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm font-semibold">ICCR 2026</span>
-                                    </div>
-                                    <h3 class="text-2xl font-bold mb-2">ICCR INTERNATIONAL EASTER CONFERENCE 2026</h3>
-                                    <p class="text-white/90">Archdiocese of Mbeya, Tanzania • March 31 - April 5, 2026</p>
+                    <!-- Featured Live Stream -->
+                    <div class="mb-12">
+                        <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
+                            <div class="relative">
+                                <div class="absolute top-4 left-4 z-10">
+                                    <span class="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-2">
+                                        <span class="w-2 h-2 bg-white rounded-full live-badge"></span>
+                                        LIVE NOW
+                                    </span>
                                 </div>
-                                <div class="text-right">
-                                    <div class="text-3xl font-bold">1,250+</div>
-                                    <div class="text-sm text-white/80">Watching Live</div>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/1mV8lItaZlY" 
+                                            title="ICCR INTERNATIONAL EASTER CONFERENCE DAY 5" 
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                    </iframe>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="p-6">
-                            <div class="grid gap-6 lg:grid-cols-2">
-                                <!-- Main Live Stream -->
-                                <div>
-                                    <h4 class="text-lg font-bold text-slate-900 mb-4">Main Conference Stream</h4>
-                                    <div class="video-container rounded-xl overflow-hidden shadow-lg mb-4">
-                                        <iframe src="https://www.youtube.com/embed/1mV8lItaZlY" 
-                                                frameborder="0" 
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                                allowfullscreen>
-                                        </iframe>
-                                    </div>
-                                    <div class="flex items-center justify-between text-sm">
-                                        <div class="flex items-center gap-2">
-                                            <span class="w-2 h-2 bg-red-600 rounded-full live-badge"></span>
-                                            <span class="text-slate-600">Day 5 - Final Session</span>
-                                        </div>
-                                        <div class="flex items-center gap-2">
-                                            <i class="ph ph-eye text-slate-400"></i>
-                                            <span class="text-slate-600">1.2K viewers</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Additional Streams -->
-                                <div>
-                                    <h4 class="text-lg font-bold text-slate-900 mb-4">Conference Sessions</h4>
-                                    <div class="space-y-4">
-                                        <!-- Day 4 -->
-                                        <div class="bg-slate-50 rounded-xl p-4">
-                                            <div class="flex items-start gap-3">
-                                                <div class="video-container rounded-lg overflow-hidden flex-shrink-0 w-32 h-18">
-                                                    <iframe src="https://www.youtube.com/embed/a_TDzfg9Pgc" 
-                                                            frameborder="0" 
-                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                                            allowfullscreen>
-                                                    </iframe>
-                                                </div>
-                                                <div class="flex-1">
-                                                    <h5 class="font-semibold text-slate-900 mb-1">Day 4 - Relationship Seminar</h5>
-                                                    <p class="text-sm text-slate-600 mb-2">with Ev. A. Kanuti</p>
-                                                    <div class="flex items-center gap-3 text-xs text-slate-500">
-                                                        <span><i class="ph ph-clock"></i> 2:45:39</span>
-                                                        <span><i class="ph ph-eye"></i> 856 views</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Holy Mass -->
-                                        <div class="bg-slate-50 rounded-xl p-4">
-                                            <div class="flex items-start gap-3">
-                                                <div class="video-container rounded-lg overflow-hidden flex-shrink-0 w-32 h-18">
-                                                    <iframe src="https://www.youtube.com/embed/Y6jFbe8N5cI" 
-                                                            frameborder="0" 
-                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                                            allowfullscreen>
-                                                    </iframe>
-                                                </div>
-                                                <div class="flex-1">
-                                                    <h5 class="font-semibold text-slate-900 mb-1">Thursday Holy Mass</h5>
-                                                    <p class="text-sm text-slate-600 mb-2">International Easter Conference</p>
-                                                    <div class="flex items-center gap-3 text-xs text-slate-500">
-                                                        <span><i class="ph ph-clock"></i> 2:39:59</span>
-                                                        <span><i class="ph ph-eye"></i> 1.2K views</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Day 3 Healing -->
-                                        <div class="bg-slate-50 rounded-xl p-4">
-                                            <div class="flex items-start gap-3">
-                                                <div class="video-container rounded-lg overflow-hidden flex-shrink-0 w-32 h-18">
-                                                    <iframe src="https://www.youtube.com/embed/Gah1V3DPhRQ" 
-                                                            frameborder="0" 
-                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                                            allowfullscreen>
-                                                    </iframe>
-                                                </div>
-                                                <div class="flex-1">
-                                                    <h5 class="font-semibold text-slate-900 mb-1">Day 3 - Healing of Family Tree</h5>
-                                                    <p class="text-sm text-slate-600 mb-2">International Easter Conference</p>
-                                                    <div class="flex items-center gap-3 text-xs text-slate-500">
-                                                        <span><i class="ph ph-clock"></i> 1:45:22</span>
-                                                        <span><i class="ph ph-eye"></i> 945 views</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-slate-900 mb-2">ICCR INTERNATIONAL EASTER CONFERENCE DAY 5</h3>
+                                <p class="text-slate-600 mb-4">Join us for the final day of the International Easter Conference 2026 - Archdiocese of Mbeya, Tanzania</p>
+                                <div class="flex items-center gap-4 text-sm text-slate-500">
+                                    <span><i class="ph ph-map-pin mr-1"></i> St Mary's International Schools</span>
+                                    <span><i class="ph ph-calendar mr-1"></i> April 5, 2026</span>
+                                    <span><i class="ph ph-users mr-1"></i> 5,000+ attending</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Additional Conference Videos Grid -->
-                    <div class="mb-12">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-6">Complete Conference Sessions</h3>
-                        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                            <!-- Eucharist Adoration -->
-                            <div class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
+                    <!-- Conference Video Grid -->
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-6">International Easter Conference 2026 - All Sessions</h3>
+                        <div class="video-grid">
+                            <!-- Day 4 -->
+                            <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all">
                                 <div class="video-container">
-                                    <iframe src="https://www.youtube.com/embed/tylTppFpWF8" 
+                                    <iframe src="https://www.youtube.com/embed/a_TDzfg9Pgc?t=3439" 
+                                            title="INTERNATIONAL EASTER CONFERENCE DAY 4 - RELATIONSHIP SEMINAR" 
                                             frameborder="0" 
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                             allowfullscreen>
                                     </iframe>
                                 </div>
                                 <div class="p-4">
-                                    <h4 class="font-semibold text-slate-900 mb-2">Eucharist Adoration</h4>
-                                    <p class="text-sm text-slate-600 mb-2">IBADA YA KUABUDU EKARIST</p>
-                                    <div class="flex items-center gap-3 text-xs text-slate-500">
-                                        <span><i class="ph ph-eye"></i> 678 views</span>
-                                        <span><i class="ph ph-clock"></i> 1:23:45</span>
+                                    <h4 class="font-bold text-slate-900 mb-2">Day 4 - Relationship Seminar</h4>
+                                    <p class="text-sm text-slate-600 mb-2">with Ev. A. Kanuti</p>
+                                    <div class="flex items-center gap-2 text-xs text-slate-500">
+                                        <span><i class="ph ph-clock mr-1"></i> April 4, 2026</span>
+                                        <span><i class="ph ph-eye mr-1"></i> 2.3K views</span>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Bishop Teaching -->
-                            <div class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
+                            <!-- Holy Mass -->
+                            <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all">
                                 <div class="video-container">
-                                    <iframe src="https://www.youtube.com/embed/A_O5Heqledw" 
+                                    <iframe src="https://www.youtube.com/embed/Y6jFbe8N5cI?t=9599" 
+                                            title="INTERNATIONAL EASTER CONFERENCE - THURSDAY HOLY MASS" 
                                             frameborder="0" 
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                             allowfullscreen>
                                     </iframe>
                                 </div>
                                 <div class="p-4">
-                                    <h4 class="font-semibold text-slate-900 mb-2">Bishop Gervas Nyaisonga</h4>
-                                    <p class="text-sm text-slate-600 mb-2">Archdiocese of Mbeya Teaching</p>
-                                    <div class="flex items-center gap-3 text-xs text-slate-500">
-                                        <span><i class="ph ph-eye"></i> 1.1K views</span>
-                                        <span><i class="ph ph-clock"></i> 4:23:07</span>
+                                    <h4 class="font-bold text-slate-900 mb-2">Thursday Holy Mass</h4>
+                                    <p class="text-sm text-slate-600 mb-2">International Easter Conference</p>
+                                    <div class="flex items-center gap-2 text-xs text-slate-500">
+                                        <span><i class="ph ph-clock mr-1"></i> April 3, 2026</span>
+                                        <span><i class="ph ph-eye mr-1"></i> 3.1K views</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Healing of Family Tree -->
+                            <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all">
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/Gah1V3DPhRQ" 
+                                            title="HEALING OF FAMILY TREE - INTERNATIONAL EASTER CONFERENCE DAY 3" 
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <div class="p-4">
+                                    <h4 class="font-bold text-slate-900 mb-2">Healing of Family Tree</h4>
+                                    <p class="text-sm text-slate-600 mb-2">Day 3 - International Easter Conference</p>
+                                    <div class="flex items-center gap-2 text-xs text-slate-500">
+                                        <span><i class="ph ph-clock mr-1"></i> April 3, 2026</span>
+                                        <span><i class="ph ph-eye mr-1"></i> 1.8K views</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ekarist -->
+                            <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all">
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/tylTppFpWF8" 
+                                            title="IBADA YA KUABUDU EKARIST" 
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <div class="p-4">
+                                    <h4 class="font-bold text-slate-900 mb-2">Ibada ya Kuabudu Ekarist</h4>
+                                    <p class="text-sm text-slate-600 mb-2">Holy Eucharist Celebration</p>
+                                    <div class="flex items-center gap-2 text-xs text-slate-500">
+                                        <span><i class="ph ph-clock mr-1"></i> April 2, 2026</span>
+                                        <span><i class="ph ph-eye mr-1"></i> 2.5K views</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bishop Gervas -->
+                            <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all">
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/A_O5Heqledw?t=15787" 
+                                            title="ASKOFU MKUU GERVAS NYAISONGA JIMBO KUU KATOLIKI MBEYA" 
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <div class="p-4">
+                                    <h4 class="font-bold text-slate-900 mb-2">Bishop Gervas Nyaigosa</h4>
+                                    <p class="text-sm text-slate-600 mb-2">Jimbo Kuu Katoliki Mbeya Teaching</p>
+                                    <div class="flex items-center gap-2 text-xs text-slate-500">
+                                        <span><i class="ph ph-clock mr-1"></i> April 2, 2026</span>
+                                        <span><i class="ph ph-eye mr-1"></i> 2.1K views</span>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Doing Great Exploits -->
-                            <div class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
+                            <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all">
                                 <div class="video-container">
                                     <iframe src="https://www.youtube.com/embed/yJ1xwLTidKk" 
+                                            title="KUTENDA MAMBO MAKUU (DOING GREAT EXPLOITS)" 
                                             frameborder="0" 
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                             allowfullscreen>
                                     </iframe>
                                 </div>
                                 <div class="p-4">
-                                    <h4 class="font-semibold text-slate-900 mb-2">Doing Great Exploits</h4>
-                                    <p class="text-sm text-slate-600 mb-2">Mwalimu Kanuti Teaching</p>
-                                    <div class="flex items-center gap-3 text-xs text-slate-500">
-                                        <span><i class="ph ph-eye"></i> 892 views</span>
-                                        <span><i class="ph ph-clock"></i> 2:15:30</span>
+                                    <h4 class="font-bold text-slate-900 mb-2">Kutenda Mambo Makuu</h4>
+                                    <p class="text-sm text-slate-600 mb-2">Doing Great Exploits - Mwalimu Kanuti</p>
+                                    <div class="flex items-center gap-2 text-xs text-slate-500">
+                                        <span><i class="ph ph-clock mr-1"></i> April 1, 2026</span>
+                                        <span><i class="ph ph-eye mr-1"></i> 1.9K views</span>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Conference Main -->
-                            <div class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
+                            <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all">
                                 <div class="video-container">
                                     <iframe src="https://www.youtube.com/embed/PgIJm42OJhw" 
+                                            title="INTERNATIONAL EASTER CONFERENCE 2026 ARCHDIOCESE OF MBEYA - TANZANIA" 
                                             frameborder="0" 
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                             allowfullscreen>
                                     </iframe>
                                 </div>
                                 <div class="p-4">
-                                    <h4 class="font-semibold text-slate-900 mb-2">Conference Main</h4>
+                                    <h4 class="font-bold text-slate-900 mb-2">Conference Opening</h4>
                                     <p class="text-sm text-slate-600 mb-2">International Easter Conference 2026</p>
-                                    <div class="flex items-center gap-3 text-xs text-slate-500">
-                                        <span><i class="ph ph-eye"></i> 2.3K views</span>
-                                        <span><i class="ph ph-clock"></i> 3:45:00</span>
+                                    <div class="flex items-center gap-2 text-xs text-slate-500">
+                                        <span><i class="ph ph-clock mr-1"></i> March 31, 2026</span>
+                                        <span><i class="ph ph-eye mr-1"></i> 4.2K views</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Day 3 Additional -->
+                            <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all">
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/Rax72Zy8Gx4" 
+                                            title="INTERNATIONAL EASTER CONFERENCE DAY 3" 
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <div class="p-4">
+                                    <h4 class="font-bold text-slate-900 mb-2">Day 3 Sessions</h4>
+                                    <p class="text-sm text-slate-600 mb-2">International Easter Conference</p>
+                                    <div class="flex items-center gap-2 text-xs text-slate-500">
+                                        <span><i class="ph ph-clock mr-1"></i> April 3, 2026</span>
+                                        <span><i class="ph ph-eye mr-1"></i> 2.7K views</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Additional Conference Videos -->
-                    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                        <!-- Day 3 Complete -->
-                        <div class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
-                            <div class="video-container">
-                                <iframe src="https://www.youtube.com/embed/Rax72Zy8Gx4" 
-                                        frameborder="0" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                        allowfullscreen>
-                                </iframe>
-                            </div>
-                            <div class="p-4">
-                                <h4 class="font-semibold text-slate-900 mb-2">Day 3 Complete</h4>
-                                <p class="text-sm text-slate-600 mb-2">International Easter Conference</p>
-                                <div class="flex items-center gap-3 text-xs text-slate-500">
-                                    <span><i class="ph ph-eye"></i> 567 views</span>
-                                    <span><i class="ph ph-clock"></i> 4:12:15</span>
+                    <!-- Live Stream Info -->
+                    <div class="bg-gradient-to-r from-slate-900 to-slate-800 rounded-3xl p-8 text-white">
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4">Join Our Global Community</h3>
+                                <p class="text-slate-200 mb-6">
+                                    Experience the power of unity as believers from across Tanzania and around the world gather for this transformative conference. Whether you're joining us in person at St Mary's International Schools or watching online, you'll be part of something extraordinary.
+                                </p>
+                                <div class="space-y-3">
+                                    <div class="flex items-center gap-3">
+                                        <i class="ph ph-map-pin text-red-400"></i>
+                                        <span>Location: St Mary's International Schools, Mbeya</span>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <i class="ph ph-calendar text-red-400"></i>
+                                        <span>Dates: March 31 - April 5, 2026</span>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <i class="ph ph-broadcast text-red-400"></i>
+                                        <span>Live Streaming: Available on YouTube</span>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <i class="ph ph-users text-red-400"></i>
+                                        <span>Expected Attendance: 5,000+ participants</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- St Mary's Schools -->
-                        <div class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
-                            <div class="relative">
-                                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&h=225&fit=crop" alt="St Mary's International Schools" class="w-full h-32 object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                                <div class="absolute bottom-2 left-2 right-2">
-                                    <h4 class="font-semibold text-white text-sm mb-1">St Mary's International Schools</h4>
-                                    <p class="text-xs text-white/90">Educational Excellence</p>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <div class="flex items-center gap-3 text-xs text-slate-500">
-                                    <span><i class="ph ph-graduation-cap"></i> Education</span>
-                                    <span><i class="ph ph-map-pin"></i> Mbeya</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Additional Content 1 -->
-                        <div class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
-                            <div class="relative">
-                                <img src="https://images.unsplash.com/photo-1573865526739-1064fec7a7bf?w=400&h=225&fit=crop" alt="Conference Worship" class="w-full h-32 object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                                <div class="absolute bottom-2 left-2 right-2">
-                                    <h4 class="font-semibold text-white text-sm mb-1">Conference Worship</h4>
-                                    <p class="text-xs text-white/90">Praise & Worship Sessions</p>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <div class="flex items-center gap-3 text-xs text-slate-500">
-                                    <span><i class="ph ph-music-notes"></i> Worship</span>
-                                    <span><i class="ph ph-clock"></i> Daily</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Additional Content 2 -->
-                        <div class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
-                            <div class="relative">
-                                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=225&fit=crop" alt="Conference Fellowship" class="w-full h-32 object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                                <div class="absolute bottom-2 left-2 right-2">
-                                    <h4 class="font-semibold text-white text-sm mb-1">Fellowship & Networking</h4>
-                                    <p class="text-xs text-white/90">Community Building</p>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <div class="flex items-center gap-3 text-xs text-slate-500">
-                                    <span><i class="ph ph-users"></i> Community</span>
-                                    <span><i class="ph ph-heart"></i> Fellowship</span>
+                            <div class="text-center">
+                                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+                                    <i class="ph ph-youtube-logo text-6xl text-red-500 mb-4"></i>
+                                    <h4 class="text-xl font-bold mb-2">Subscribe to Our Channel</h4>
+                                    <p class="text-slate-200 mb-4">Never miss a live stream or update</p>
+                                    <a href="https://www.youtube.com/@iccrtz" target="_blank" class="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-full font-bold hover:bg-red-700 transition-all">
+                                        <i class="ph ph-youtube-logo"></i>
+                                        Subscribe Now
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -407,7 +385,7 @@
             </section>
 
             <!-- Featured Event -->
-            <section class="py-16 bg-slate-50">
+            <section id="featured" class="py-16 bg-slate-50">
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="text-center mb-12">
                         <h2 class="text-4xl font-bold text-slate-900 mb-4">Featured Events</h2>
@@ -435,7 +413,7 @@
                                 </p>
                                 <div class="space-y-2 mb-4">
                                     <div class="flex items-center justify-between text-sm">
-                                        <span class="text-slate-500"><i class="ph ph-map-pin mr-1"></i> Mbeya City Stadium</span>
+                                        <span class="text-slate-500"><i class="ph ph-map-pin mr-1"></i> St Mary's International Schools</span>
                                         <span class="text-slate-500"><i class="ph ph-users mr-1"></i> 5,000+ expected</span>
                                     </div>
                                     <div class="flex items-center justify-between text-sm">
