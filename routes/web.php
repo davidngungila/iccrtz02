@@ -241,5 +241,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/backup', function () {
             return view('admin.backup');
         })->name('admin.backup');
+        
+        Route::get('/notifications', function () {
+            return view('admin.notifications');
+        })->name('admin.notifications');
     });
 });
