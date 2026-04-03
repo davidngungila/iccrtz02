@@ -1,5 +1,5 @@
 <!-- Navigation Header -->
-<nav class="fixed top-0 w-full z-50 glass border-b border-slate-100">
+<nav class="fixed top-0 w-full z-50 bg-white border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
         <a href="{{ url('/') }}" class="flex items-center gap-3 group/logo">
             <div class="h-20 w-20 rounded-2xl object-contain bg-white p-3 transition-transform group-hover/logo:scale-105 overflow-hidden shadow-lg">
