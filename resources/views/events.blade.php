@@ -276,6 +276,26 @@
                     </div>
 
                     <div class="video-grid">
+                        <!-- ICCR INTERNATIONAL EASTER CONFERENCE -->
+                        <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/iankOP8Lzcw" 
+                                        title="ICCR INTERNATIONAL EASTER CONFERENCE" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-slate-900 mb-2">ICCR INTERNATIONAL EASTER CONFERENCE</h4>
+                                <p class="text-sm text-slate-600 mb-2">Complete Conference Highlights</p>
+                                <div class="flex items-center gap-2 text-xs text-slate-500">
+                                    <span><i class="ph ph-clock mr-1"></i> March 31 - April 5, 2026</span>
+                                    <span><i class="ph ph-eye mr-1"></i> 8.2K views</span>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Day 5 -->
                         <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all">
                             <div class="video-container">
@@ -485,7 +505,7 @@
                                     <i class="ph ph-youtube-logo text-6xl text-red-500 mb-4"></i>
                                     <h4 class="text-xl font-bold mb-2">Watch All Sessions</h4>
                                     <p class="text-slate-200 mb-4">All conference sessions available on YouTube</p>
-                                    <a href="https://www.youtube.com/@iccrtz" target="_blank" class="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-full font-bold hover:bg-red-700 transition-all">
+                                    <a href="https://www.youtube.com/@karismatikikatolikiumojawa4252" target="_blank" class="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-full font-bold hover:bg-red-700 transition-all">
                                         <i class="ph ph-youtube-logo"></i>
                                         Visit Channel
                                     </a>
