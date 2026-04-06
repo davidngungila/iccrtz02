@@ -1,4 +1,47 @@
 <!-- Navigation Header -->
+<style>
+.nav-link.active {
+    color: #dc2626 !important;
+    position: relative;
+}
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #dc2626, #b91c1c);
+    border-radius: 2px 2px 0 0;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
+    const mobileNavLinks = document.querySelectorAll('.nav-link-mobile');
+    
+    // Handle desktop navigation
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === '/' && currentPath === '/') {
+            link.classList.add('active');
+        } else if (href !== '/' && currentPath.includes(href.replace('{{ url(\'\') }', '').replace('\' }}', ''))) {
+            link.classList.add('active');
+        }
+    });
+    
+    // Handle mobile navigation
+    mobileNavLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === '/' && currentPath === '/') {
+            link.style.color = '#dc2626';
+        } else if (href !== '/' && currentPath.includes(href.replace('{{ url(\'\') }', '').replace('\' }}', ''))) {
+            link.style.color = '#dc2626';
+        }
+    });
+});
+</script>
 <nav class="fixed top-0 w-full z-50 bg-white border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
         <a href="{{ url('/') }}" class="flex items-center gap-3 group/logo">
@@ -138,10 +181,10 @@
                     </ul>
                 </div>
 
-                <a href="{{ url('students-ministry') }}" class="block text-2xl font-serif font-black text-slate-900 hover:text-slate-900">Students</a>
-                <a href="{{ url('alumni-network') }}" class="block text-2xl font-serif font-black text-slate-900 hover:text-slate-900">Alumni</a>
-                <a href="{{ url('events') }}" class="block text-2xl font-serif font-black text-slate-900 hover:text-slate-900">Events</a>
-                <a href="{{ url('resources') }}" class="block text-2xl font-serif font-black text-slate-900 hover:text-slate-900">Resources</a>
+                <a href="{{ url('students-ministry') }}" class="block text-2xl font-serif font-black text-slate-900 hover:text-slate-900 nav-link-mobile">Students</a>
+                <a href="{{ url('alumni-network') }}" class="block text-2xl font-serif font-black text-slate-900 hover:text-slate-900 nav-link-mobile">Alumni</a>
+                <a href="{{ url('events') }}" class="block text-2xl font-serif font-black text-slate-900 hover:text-slate-900 nav-link-mobile">Events</a>
+                <a href="{{ url('resources') }}" class="block text-2xl font-serif font-black text-slate-900 hover:text-slate-900 nav-link-mobile">Resources</a>
             </nav>
 
             <div class="mt-8 pt-8 border-t border-slate-200">

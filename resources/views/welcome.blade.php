@@ -80,7 +80,7 @@
                             <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
                                 <div class="max-w-2xl translate-y-10 opacity-0 transition-all duration-1000 slide-content">
                                     <div class="flex items-center gap-3 mb-4">
-                                        <span class="inline-block px-4 py-1.5 bg-green-600 text-white rounded-full text-xs font-bold tracking-widest uppercase">THANK YOU</span>
+                                       
                                         <span class="inline-block px-4 py-1.5 bg-red-900/20 text-white rounded-full text-xs font-bold tracking-widest uppercase border border-red-900/30">Holy Eucharist</span>
                                     </div>
                                     <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 leading-[1.05]">Congratulations <span class="text-red-300">Easter Conference 2026</span></h1>
@@ -88,18 +88,17 @@
                                     <div class="bg-green-400/20 border border-green-400/30 rounded-xl p-4 mb-6 backdrop-blur-sm">
                                         <div class="flex items-center gap-3 text-green-300">
                                             <i class="ph ph-check-circle text-xl"></i>
-                                            <span class="font-bold">✅ CONFERENCE SUCCESSFULLY COMPLETED! God's presence was manifest throughout.</span>
+                                            <span class="font-bold">CONFERENCE SUCCESSFULLY COMPLETED! God's presence was manifest throughout.</span>
                                         </div>
                                     </div>
-                                    <div class="flex items-center gap-3 text-yellow-300">
-                                        <i class="ph ph-calendar-check text-2xl"></i>
-                                        <div>
-                                            <div class="font-bold text-lg">March 30 - April 5, 2026 • Mbeya</div>
-                                        </div>
-                                    </div>
+                                   
                                     <div class="flex flex-col sm:flex-row items-center gap-4">
-                                        <a href="{{ url('register/easter-conference-2026') }}" class="w-full sm:w-auto px-10 py-4 bg-red-600 text-white font-bold rounded-full hover:bg-red-700 shadow-xl shadow-red-600/30 transition-all text-center">Register Now</a>
-                                        <a href="{{ url('events') }}" class="w-full sm:w-auto px-10 py-4 bg-white/10 text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all text-center backdrop-blur-md">Learn More</a>
+                                        <a href="https://ccrifmfellowship.pixieset.com/internationaleasterconference2026/" target="_blank" class="w-full sm:w-auto px-10 py-4 bg-purple-600 text-white font-bold rounded-full hover:bg-purple-700 shadow-xl shadow-purple-600/30 transition-all text-center">
+                                            <i class="ph ph-images mr-2"></i> View Photo Gallery
+                                        </a>
+                                        <a href="{{ url('events') }}" class="w-full sm:w-auto px-10 py-4 bg-white/10 text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all text-center backdrop-blur-md">
+                                            <i class="ph ph-calendar mr-2"></i> More Events
+                                        </a>
                                     </div>
                                 </div>
                             </div>
