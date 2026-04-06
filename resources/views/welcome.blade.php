@@ -85,12 +85,7 @@
                                     </div>
                                     <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 leading-[1.05]">Congratulations <span class="text-red-300">Easter Conference 2026</span></h1>
                                     <p class="text-lg md:text-xl text-slate-200 mb-6 leading-relaxed">Thank you for attending our International Easter Conference! Your presence made this spiritual journey truly special and blessed.</p>
-                                    <div class="bg-green-400/20 border border-green-400/30 rounded-xl p-4 mb-6 backdrop-blur-sm">
-                                        <div class="flex items-center gap-3 text-green-300">
-                                            <i class="ph ph-check-circle text-xl"></i>
-                                            <span class="font-bold">CONFERENCE SUCCESSFULLY COMPLETED! God's presence was manifest throughout.</span>
-                                        </div>
-                                    </div>
+                                    
                                    
                                     <div class="flex flex-col sm:flex-row items-center gap-4">
                                         <a href="https://ccrifmfellowship.pixieset.com/internationaleasterconference2026/" target="_blank" class="w-full sm:w-auto px-10 py-4 bg-purple-600 text-white font-bold rounded-full hover:bg-purple-700 shadow-xl shadow-purple-600/30 transition-all text-center">
