@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const href = link.getAttribute('href');
         if (href === '/' && currentPath === '/') {
             link.classList.add('active');
-        } else if (href !== '/' && currentPath.includes(href.replace('{{ url(\'\') }', '').replace('\' }}', ''))) {
+        } else if (href !== '/' && currentPath.includes(href.replace('/',''))) {
             link.classList.add('active');
         }
     });
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const href = link.getAttribute('href');
         if (href === '/' && currentPath === '/') {
             link.style.color = '#dc2626';
-        } else if (href !== '/' && currentPath.includes(href.replace('{{ url(\'\') }', '').replace('\' }}', ''))) {
+        } else if (href !== '/' && currentPath.includes(href.replace('/',''))) {
             link.style.color = '#dc2626';
         }
     });
