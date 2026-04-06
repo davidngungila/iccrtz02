@@ -105,51 +105,57 @@
                     </div>
 
                     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                        <div class="text-center">
-                            <div class="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                                <i class="ph ph-heart text-white text-2xl"></i>
+                        <div class="text-center bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-100">
+                            <div class="relative h-32 mb-4">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457129/0304_233_zvkodm.jpg" alt="Spiritual Growth" class="w-full h-full object-cover">
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Spiritual Growth</h3>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-slate-900 mb-2">Spiritual Growth</h3>
                             <p class="text-slate-600">Deepen your faith through service and experience God's love in action</p>
                         </div>
 
-                        <div class="text-center">
-                            <div class="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                                <i class="ph ph-users text-white text-2xl"></i>
+                        <div class="text-center bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-100">
+                            <div class="relative h-32 mb-4">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457145/0204_44_adnyre.jpg" alt="Community Impact" class="w-full h-full object-cover">
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Community Impact</h3>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-slate-900 mb-2">Community Impact</h3>
                             <p class="text-slate-600">Build strong Catholic communities and transform lives through service</p>
                         </div>
 
-                        <div class="text-center">
-                            <div class="w-16 h-16 bg-slate-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                                <i class="ph ph-graduation-cap text-white text-2xl"></i>
+                        <div class="text-center bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-100">
+                            <div class="relative h-32 mb-4">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457162/0104_33_gh3ckn.jpg" alt="Leadership Skills" class="w-full h-full object-cover">
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Leadership Skills</h3>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-slate-900 mb-2">Leadership Skills</h3>
                             <p class="text-slate-600">Develop valuable leadership and organizational skills through hands-on experience</p>
                         </div>
 
-                        <div class="text-center">
-                            <div class="w-16 h-16 bg-slate-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                                <i class="ph ph-globe text-white text-2xl"></i>
+                        <div class="text-center bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-100">
+                            <div class="relative h-32 mb-4">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457151/0204_21_mugaed.jpg" alt="Network Building" class="w-full h-full object-cover">
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Network Building</h3>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-slate-900 mb-2">Network Building</h3>
                             <p class="text-slate-600">Connect with like-minded Catholics and build lasting relationships</p>
                         </div>
 
-                        <div class="text-center">
-                            <div class="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                                <i class="ph ph-clock text-white text-2xl"></i>
+                        <div class="text-center bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-100">
+                            <div class="relative h-32 mb-4">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457159/0104_57_jbgeri.jpg" alt="Flexible Commitment" class="w-full h-full object-cover">
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Flexible Commitment</h3>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-slate-900 mb-2">Flexible Commitment</h3>
                             <p class="text-slate-600">Find opportunities that fit your schedule and availability</p>
                         </div>
 
-                        <div class="text-center">
-                            <div class="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                                <i class="ph ph-trophy text-white text-2xl"></i>
+                        <div class="text-center bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-100">
+                            <div class="relative h-32 mb-4">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457124/0304_sauiub.jpg" alt="Personal Fulfillment" class="w-full h-full object-cover">
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Personal Fulfillment</h3>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-slate-900 mb-2">Personal Fulfillment</h3>
                             <p class="text-slate-600">Experience the joy and fulfillment that comes from serving others</p>
                         </div>
                     </div>
