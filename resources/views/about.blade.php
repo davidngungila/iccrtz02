@@ -134,7 +134,7 @@
                         </div>
                         <div class="relative">
                             <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="CCT-UF History" class="w-full h-full object-cover">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457152/0104_64_bu7rig.jpg" alt="CCT-UF History" class="w-full h-full object-cover">
                             </div>
                             <div class="absolute -bottom-6 -left-6 bg-slate-900 text-white p-6 rounded-2xl shadow-xl">
                                 <i class="ph ph-church text-3xl mb-2"></i>
@@ -221,7 +221,7 @@
                     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                         <div class="text-center group">
                             <div class="aspect-square rounded-2xl overflow-hidden mb-6 bg-slate-200">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613879/volunteer-helping-with-donation-box_dwuyr7.jpg" alt="National Coordinator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457151/0204_21_mugaed.jpg" alt="National Coordinator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                             </div>
                             <h3 class="text-xl font-bold text-slate-900 mb-2">Fr. John Mwanga</h3>
                             <p class="text-slate-600 mb-2">National Coordinator</p>
@@ -230,7 +230,7 @@
 
                         <div class="text-center group">
                             <div class="aspect-square rounded-2xl overflow-hidden mb-6 bg-slate-200">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613870/african-kid-marketplace-_7_xiwx7g.jpg" alt="Vice Coordinator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457162/0104_33_gh3ckn.jpg" alt="Vice Coordinator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                             </div>
                             <h3 class="text-xl font-bold text-slate-900 mb-2">Grace Joseph</h3>
                             <p class="text-slate-600 mb-2">Vice Coordinator</p>
@@ -239,7 +239,7 @@
 
                         <div class="text-center group">
                             <div class="aspect-square rounded-2xl overflow-hidden mb-6 bg-slate-200">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613873/african-kid-marketplace-_8_caa2f7.jpg" alt="Secretary General" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457145/0204_44_adnyre.jpg" alt="Secretary General" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                             </div>
                             <h3 class="text-xl font-bold text-slate-900 mb-2">Michael Kimario</h3>
                             <p class="text-slate-600 mb-2">Secretary General</p>
@@ -248,7 +248,7 @@
 
                         <div class="text-center group">
                             <div class="aspect-square rounded-2xl overflow-hidden mb-6 bg-slate-200">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613868/african-children-enjoying-life_sebm6h.jpg" alt="Treasurer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457124/0304_sauiub.jpg" alt="Treasurer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                             </div>
                             <h3 class="text-xl font-bold text-slate-900 mb-2">Anna Mwalimu</h3>
                             <p class="text-slate-600 mb-2">Treasurer</p>

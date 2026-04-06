@@ -74,17 +74,17 @@
                         <!-- Slide 1: International Easter Conference 2026 - URGENT -->
                         <div class="swiper-slide relative flex items-center">
                             <div class="absolute inset-0 z-0">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="International Easter Conference" class="w-full h-full object-cover">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457129/0304_233_zvkodm.jpg" alt="Holy Eucharist Worship" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-r from-red-950/90 via-red-950/40 to-transparent"></div>
                             </div>
                             <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
                                 <div class="max-w-2xl translate-y-10 opacity-0 transition-all duration-1000 slide-content">
                                     <div class="flex items-center gap-3 mb-4">
                                         <span class="inline-block px-4 py-1.5 bg-green-600 text-white rounded-full text-xs font-bold tracking-widest uppercase animate-pulse">LIVE NOW</span>
-                                        <span class="inline-block px-4 py-1.5 bg-red-900/20 text-white rounded-full text-xs font-bold tracking-widest uppercase border border-red-900/30">International Event</span>
+                                        <span class="inline-block px-4 py-1.5 bg-red-900/20 text-white rounded-full text-xs font-bold tracking-widest uppercase border border-red-900/30">Holy Eucharist</span>
                                     </div>
                                     <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 leading-[1.05]">Easter <span class="text-red-300">Conference 2026</span></h1>
-                                    <p class="text-lg md:text-xl text-slate-200 mb-6 leading-relaxed">Experience resurrection power at our biggest international gathering! Join thousands from across Tanzania and East Africa.</p>
+                                    <p class="text-lg md:text-xl text-slate-200 mb-6 leading-relaxed">Experience the power of Holy Eucharist at our International Easter Conference! Join thousands in divine worship.</p>
                                     <div class="bg-green-400/20 border border-green-400/30 rounded-xl p-4 mb-6 backdrop-blur-sm">
                                         <div class="flex items-center gap-3 text-green-300">
                                             <i class="ph ph-broadcast text-xl"></i>
@@ -108,16 +108,16 @@
                         <!-- Slide 2: Students Ministry -->
                         <div class="swiper-slide relative flex items-center">
                             <div class="absolute inset-0 z-0">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="Students Ministry" class="w-full h-full object-cover">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457145/0204_44_adnyre.jpg" alt="Prayer Time" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/35 to-transparent"></div>
                             </div>
                             <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
                                 <div class="max-w-2xl translate-y-10 opacity-0 transition-all duration-1000 slide-content">
-                                    <span class="inline-block px-4 py-1.5 bg-slate-900/20 text-slate-300 rounded-full text-xs font-bold tracking-widest uppercase mb-6 border border-slate-900/30">Students Ministry</span>
-                                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 leading-[1.05]">Empowering <span class="text-slate-300">university students</span></h1>
-                                    <p class="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed">Building spiritual formation and leadership development for Catholic students across Tanzania universities.</p>
+                                    <span class="inline-block px-4 py-1.5 bg-slate-900/20 text-slate-300 rounded-full text-xs font-bold tracking-widest uppercase mb-6 border border-slate-900/30">Prayer Time</span>
+                                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 leading-[1.05]">Powerful <span class="text-slate-300">prayer</span></h1>
+                                    <p class="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed">Join us in powerful prayer sessions that transform lives and deepen your connection with God.</p>
                                     <div class="flex flex-col sm:flex-row items-center gap-4">
-                                        <a href="{{ url('students-ministry') }}" class="w-full sm:w-auto px-10 py-4 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 shadow-xl shadow-slate-900/30 transition-all text-center">Join Students</a>
+                                        <a href="{{ url('students-ministry') }}" class="w-full sm:w-auto px-10 py-4 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 shadow-xl shadow-slate-900/30 transition-all text-center">Join Prayer</a>
                                         <a href="{{ url('about') }}" class="w-full sm:w-auto px-10 py-4 bg-white/10 text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all text-center backdrop-blur-md">Learn More</a>
                                     </div>
                                 </div>
@@ -127,16 +127,16 @@
                         <!-- Slide 3: Alumni Network -->
                         <div class="swiper-slide relative flex items-center">
                             <div class="absolute inset-0 z-0">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613879/volunteer-helping-with-donation-box_dwuyr7.jpg" alt="Alumni Network" class="w-full h-full object-cover">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457124/0304_sauiub.jpg" alt="Preaching Time" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/35 to-transparent"></div>
                             </div>
                             <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
                                 <div class="max-w-2xl translate-y-10 opacity-0 transition-all duration-1000 slide-content">
-                                    <span class="inline-block px-4 py-1.5 bg-slate-800/20 text-slate-300 rounded-full text-xs font-bold tracking-widest uppercase mb-6 border border-slate-800/30">Alumni Network</span>
-                                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 leading-[1.05]">Connected <span class="text-slate-300">community</span></h1>
-                                    <p class="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed">Professional networking and spiritual growth for graduates continuing their faith journey.</p>
+                                    <span class="inline-block px-4 py-1.5 bg-slate-800/20 text-slate-300 rounded-full text-xs font-bold tracking-widest uppercase mb-6 border border-slate-800/30">Preaching Time</span>
+                                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 leading-[1.05]">Life-changing <span class="text-slate-300">preaching</span></h1>
+                                    <p class="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed">Experience transformative preaching that inspires faith and empowers spiritual growth.</p>
                                     <div class="flex flex-col sm:flex-row items-center gap-4">
-                                        <a href="{{ url('alumni-network') }}" class="w-full sm:w-auto px-10 py-4 bg-slate-800 text-white font-bold rounded-full hover:bg-slate-700 shadow-xl shadow-slate-800/30 transition-all text-center">Join Alumni</a>
+                                        <a href="{{ url('alumni-network') }}" class="w-full sm:w-auto px-10 py-4 bg-slate-800 text-white font-bold rounded-full hover:bg-slate-700 shadow-xl shadow-slate-800/30 transition-all text-center">Hear More</a>
                                         <a href="{{ url('about') }}" class="w-full sm:w-auto px-10 py-4 bg-white/10 text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all text-center backdrop-blur-md">Connect Now</a>
                                     </div>
                                 </div>
@@ -146,60 +146,42 @@
                         <!-- Slide 4: Spiritual Formation -->
                         <div class="swiper-slide relative flex items-center">
                             <div class="absolute inset-0 z-0">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613870/african-kid-marketplace-_7_xiwx7g.jpg" alt="Spiritual Formation" class="w-full h-full object-cover">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457162/0104_33_gh3ckn.jpg" alt="Praise and Worship Time" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/35 to-transparent"></div>
                             </div>
                             <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
                                 <div class="max-w-2xl translate-y-10 opacity-0 transition-all duration-1000 slide-content">
-                                    <span class="inline-block px-4 py-1.5 bg-slate-900/20 text-slate-300 rounded-full text-xs font-bold tracking-widest uppercase mb-6 border border-slate-900/30">Spiritual Formation</span>
-                                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 leading-[1.05]">Deep <span class="text-slate-300">faith</span></h1>
-                                    <p class="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed">Nurturing spiritual growth through prayer, Bible study, and charismatic worship experiences.</p>
+                                    <span class="inline-block px-4 py-1.5 bg-slate-900/20 text-slate-300 rounded-full text-xs font-bold tracking-widest uppercase mb-6 border border-slate-900/30">Praise & Worship</span>
+                                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 leading-[1.05]">Joyful <span class="text-slate-300">worship</span></h1>
+                                    <p class="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed">Experience the joy of praise and worship that lifts your spirit and brings you closer to God.</p>
                                     <div class="flex flex-col sm:flex-row items-center gap-4">
-                                        <a href="{{ url('teachings') }}" class="w-full sm:w-auto px-10 py-4 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 shadow-xl shadow-slate-900/30 transition-all text-center">Explore Faith</a>
+                                        <a href="{{ url('teachings') }}" class="w-full sm:w-auto px-10 py-4 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 shadow-xl shadow-slate-900/30 transition-all text-center">Join Worship</a>
                                         <a href="{{ url('about') }}" class="w-full sm:w-auto px-10 py-4 bg-white/10 text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all text-center backdrop-blur-md">Grow Spiritually</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Slide 5: Leadership Development -->
+                        <!-- Slide 5: Dancing in Praise -->
                         <div class="swiper-slide relative flex items-center">
                             <div class="absolute inset-0 z-0">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613873/african-kid-marketplace-_8_caa2f7.jpg" alt="Leadership Development" class="w-full h-full object-cover">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457159/0104_57_jbgeri.jpg" alt="Dancing in Praise" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/35 to-transparent"></div>
                             </div>
                             <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
                                 <div class="max-w-2xl translate-y-10 opacity-0 transition-all duration-1000 slide-content">
-                                    <span class="inline-block px-4 py-1.5 bg-slate-900/20 text-slate-300 rounded-full text-xs font-bold tracking-widest uppercase mb-6 border border-slate-900/30">Leadership Development</span>
-                                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 leading-[1.05]">Future <span class="text-slate-300">leaders</span></h1>
-                                    <p class="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed">Training and equipping the next generation of Catholic leaders for church and society.</p>
+                                    <span class="inline-block px-4 py-1.5 bg-slate-900/20 text-slate-300 rounded-full text-xs font-bold tracking-widest uppercase mb-6 border border-slate-900/30">Celebration</span>
+                                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 leading-[1.05]">Dancing in <span class="text-slate-300">praise</span></h1>
+                                    <p class="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed">Join the celebration as we dance in praise and experience the joy of the Lord's presence.</p>
                                     <div class="flex flex-col sm:flex-row items-center gap-4">
-                                        <a href="{{ url('leadership') }}" class="w-full sm:w-auto px-10 py-4 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 shadow-xl shadow-slate-900/30 transition-all text-center">Become Leader</a>
-                                        <a href="{{ url('about') }}" class="w-full sm:w-auto px-10 py-4 bg-white/10 text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all text-center backdrop-blur-md">Start Training</a>
+                                        <a href="{{ url('events') }}" class="w-full sm:w-auto px-10 py-4 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 shadow-xl shadow-slate-900/30 transition-all text-center">Celebrate</a>
+                                        <a href="{{ url('about') }}" class="w-full sm:w-auto px-10 py-4 bg-white/10 text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all text-center backdrop-blur-md">Join Us</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Slide 5: Community Service -->
-                        <div class="swiper-slide relative flex items-center">
-                            <div class="absolute inset-0 z-0">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613868/african-children-enjoying-life_sebm6h.jpg" alt="Community Service" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/35 to-transparent"></div>
-                            </div>
-                            <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
-                                <div class="max-w-2xl translate-y-10 opacity-0 transition-all duration-1000 slide-content">
-                                    <span class="inline-block px-4 py-1.5 bg-slate-900/20 text-slate-300 rounded-full text-xs font-bold tracking-widest uppercase mb-6 border border-slate-900/30">Community Service</span>
-                                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 leading-[1.05]">Serving <span class="text-slate-300">together</span></h1>
-                                    <p class="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed">Putting faith into action through outreach programs and charitable service to communities.</p>
-                                    <div class="flex flex-col sm:flex-row items-center gap-4">
-                                        <a href="{{ url('outreach') }}" class="w-full sm:w-auto px-10 py-4 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 shadow-xl shadow-slate-900/30 transition-all text-center">Serve Now</a>
-                                        <a href="{{ url('contact') }}" class="w-full sm:w-auto px-10 py-4 bg-white/10 text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all text-center backdrop-blur-md">Get Involved</a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                    </div>
 
                     <div class="absolute bottom-10 right-10 z-20 hidden sm:flex gap-4">
                         <button class="swiper-prev w-14 h-14 rounded-full border border-white/20 bg-white/10 text-white flex items-center justify-center hover:bg-slate-900 hover:border-slate-900 transition-all backdrop-blur-md" type="button" aria-label="Previous">

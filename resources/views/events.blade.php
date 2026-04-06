@@ -148,7 +148,7 @@
                                 LIVE NOW
                             </div>
                             <div class="relative">
-                                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop" alt="International Easter Conference" class="w-full h-48 object-cover">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457152/0104_64_bu7rig.jpg" alt="International Easter Conference" class="w-full h-48 object-cover">
                                 <div class="absolute top-4 left-4 bg-slate-900 text-white px-3 py-1 rounded-full text-sm font-semibold">Mar 31 - Apr 5, 2026</div>
                             </div>
                             <div class="p-6">
@@ -171,7 +171,7 @@
                                 DECEMBER
                             </div>
                             <div class="relative">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="Night of Praise" class="w-full h-48 object-cover">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457151/0204_21_mugaed.jpg" alt="Night of Praise" class="w-full h-48 object-cover">
                                 <div class="absolute top-4 left-4 bg-slate-900 text-white px-3 py-1 rounded-full text-sm font-semibold">Dec 15-16, 2026</div>
                             </div>
                             <div class="p-6">
@@ -211,7 +211,7 @@
                                 AUGUST
                             </div>
                             <div class="relative">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613879/volunteer-helping-with-donation-box_dwuyr7.jpg" alt="NexGen Camp" class="w-full h-48 object-cover">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457159/0104_57_jbgeri.jpg" alt="NexGen Camp" class="w-full h-48 object-cover">
                                 <div class="absolute top-4 left-4 bg-slate-800 text-white px-3 py-1 rounded-full text-sm font-semibold">Aug 8-14, 2026</div>
                             </div>
                             <div class="p-6">

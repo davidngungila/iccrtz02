@@ -95,7 +95,7 @@
                         </div>
                         <div class="relative">
                             <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="Students Ministry" class="w-full h-full object-cover">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457152/0104_64_bu7rig.jpg" alt="Students Ministry" class="w-full h-full object-cover">
                             </div>
                             <div class="absolute -bottom-6 -right-6 bg-white text-slate-900 p-6 rounded-2xl shadow-xl">
                                 <div class="text-3xl font-black">50+</div>
@@ -428,7 +428,7 @@
                             <div class="swiper-slide">
                                 <div class="bg-slate-50 rounded-3xl p-8 text-center">
                                     <div class="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden bg-slate-200">
-                                        <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613879/volunteer-helping-with-donation-box_dwuyr7.jpg" alt="Student" class="w-full h-full object-cover">
+                                        <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457151/0204_21_mugaed.jpg" alt="Student" class="w-full h-full object-cover">
                                     </div>
                                     <blockquote class="text-lg text-slate-600 leading-relaxed mb-6 italic">
                                         "CCT-UF helped me discover my purpose and develop my leadership skills. I've grown so much in faith 
@@ -444,7 +444,7 @@
                             <div class="swiper-slide">
                                 <div class="bg-slate-50 rounded-3xl p-8 text-center">
                                     <div class="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden bg-slate-200">
-                                        <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613870/african-kid-marketplace-_7_xiwx7g.jpg" alt="Student" class="w-full h-full object-cover">
+                                        <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457162/0104_33_gh3ckn.jpg" alt="Student" class="w-full h-full object-cover">
                                     </div>
                                     <blockquote class="text-lg text-slate-600 leading-relaxed mb-6 italic">
                                         "The spiritual formation programs have deepened my relationship with God. I feel more confident 
@@ -460,7 +460,7 @@
                             <div class="swiper-slide">
                                 <div class="bg-slate-50 rounded-3xl p-8 text-center">
                                     <div class="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden bg-slate-200">
-                                        <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613873/african-kid-marketplace-_8_caa2f7.jpg" alt="Student" class="w-full h-full object-cover">
+                                        <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457145/0204_44_adnyre.jpg" alt="Student" class="w-full h-full object-cover">
                                     </div>
                                     <blockquote class="text-lg text-slate-600 leading-relaxed mb-6 italic">
                                         "Being part of CCT-UF has been life-changing. I've found a community that supports my academic 

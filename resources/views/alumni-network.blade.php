@@ -95,7 +95,7 @@
                         </div>
                         <div class="relative">
                             <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613879/volunteer-helping-with-donation-box_dwuyr7.jpg" alt="Alumni Network" class="w-full h-full object-cover">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457151/0204_21_mugaed.jpg" alt="Alumni Network" class="w-full h-full object-cover">
                             </div>
                             <div class="absolute -bottom-6 -right-6 bg-white text-slate-900 p-6 rounded-2xl shadow-xl">
                                 <div class="text-3xl font-black">2,000+</div>
@@ -431,7 +431,7 @@
                             <div class="swiper-slide">
                                 <div class="bg-slate-50 rounded-3xl p-8 text-center">
                                     <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden bg-slate-200">
-                                        <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613870/african-kid-marketplace-_7_xiwx7g.jpg" alt="Alumni" class="w-full h-full object-cover">
+                                        <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457162/0104_33_gh3ckn.jpg" alt="Alumni" class="w-full h-full object-cover">
                                     </div>
                                     <div class="mb-4">
                                         <div class="font-bold text-slate-900 text-xl mb-1">Dr. Sarah Mwanga</div>
@@ -448,7 +448,7 @@
                             <div class="swiper-slide">
                                 <div class="bg-slate-50 rounded-3xl p-8 text-center">
                                     <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden bg-slate-200">
-                                        <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613873/african-kid-marketplace-_8_caa2f7.jpg" alt="Alumni" class="w-full h-full object-cover">
+                                        <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457145/0204_44_adnyre.jpg" alt="Alumni" class="w-full h-full object-cover">
                                     </div>
                                     <div class="mb-4">
                                         <div class="font-bold text-slate-900 text-xl mb-1">Eng. Joseph Kimario</div>
@@ -465,7 +465,7 @@
                             <div class="swiper-slide">
                                 <div class="bg-slate-50 rounded-3xl p-8 text-center">
                                     <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden bg-slate-200">
-                                        <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613868/african-children-enjoying-life_sebm6h.jpg" alt="Alumni" class="w-full h-full object-cover">
+                                        <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457124/0304_sauiub.jpg" alt="Alumni" class="w-full h-full object-cover">
                                     </div>
                                     <div class="mb-4">
                                         <div class="font-bold text-slate-900 text-xl mb-1">Anna Joseph</div>

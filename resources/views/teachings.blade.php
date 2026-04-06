@@ -111,7 +111,7 @@
                             <div class="swiper-slide">
                                 <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-100">
                                     <div class="aspect-video bg-slate-200 relative">
-                                        <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="Teaching" class="w-full h-full object-cover">
+                                        <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457152/0104_64_bu7rig.jpg" alt="Teaching" class="w-full h-full object-cover">
                                         <div class="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                                             Featured
                                         </div>
@@ -139,7 +139,7 @@
                             <div class="swiper-slide">
                                 <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-100">
                                     <div class="aspect-video bg-slate-200 relative">
-                                        <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613879/volunteer-helping-with-donation-box_dwuyr7.jpg" alt="Teaching" class="w-full h-full object-cover">
+                                        <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457151/0204_21_mugaed.jpg" alt="Teaching" class="w-full h-full object-cover">
                                         <div class="absolute top-4 left-4 bg-slate-800 text-white px-3 py-1 rounded-full text-sm font-semibold">
                                             Popular
                                         </div>
@@ -167,7 +167,7 @@
                             <div class="swiper-slide">
                                 <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-100">
                                     <div class="aspect-video bg-slate-200 relative">
-                                        <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613870/african-kid-marketplace-_7_xiwx7g.jpg" alt="Teaching" class="w-full h-full object-cover">
+                                        <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457162/0104_33_gh3ckn.jpg" alt="Teaching" class="w-full h-full object-cover">
                                         <div class="absolute top-4 left-4 bg-slate-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
                                             New
                                         </div>
@@ -247,7 +247,7 @@
                         <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all"
                              x-show="selectedCategory === 'all' || selectedCategory === 'spiritual'">
                             <div class="aspect-video bg-slate-200 relative">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613873/african-kid-marketplace-_8_caa2f7.jpg" alt="Teaching" class="w-full h-full object-cover">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457145/0204_44_adnyre.jpg" alt="Teaching" class="w-full h-full object-cover">
                                 <div class="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
                                     <i class="ph ph-play mr-1"></i> 25 min
                                 </div>
@@ -271,7 +271,7 @@
                         <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all"
                              x-show="selectedCategory === 'all' || selectedCategory === 'leadership'">
                             <div class="aspect-video bg-slate-200 relative">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613868/african-children-enjoying-life_sebm6h.jpg" alt="Teaching" class="w-full h-full object-cover">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457124/0304_sauiub.jpg" alt="Teaching" class="w-full h-full object-cover">
                                 <div class="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
                                     <i class="ph ph-play mr-1"></i> 38 min
                                 </div>
@@ -367,7 +367,7 @@
                         <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all"
                              x-show="selectedCategory === 'all' || selectedCategory === 'spiritual'">
                             <div class="aspect-video bg-slate-200 relative">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613873/african-kid-marketplace-_8_caa2f7.jpg" alt="Teaching" class="w-full h-full object-cover">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457145/0204_44_adnyre.jpg" alt="Teaching" class="w-full h-full object-cover">
                                 <div class="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
                                     <i class="ph ph-play mr-1"></i> 28 min
                                 </div>

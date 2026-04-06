@@ -77,7 +77,7 @@
                 { id: 2, type: 'payment', message: 'Payment reminder for registered participants', sendDate: '2026-03-25', status: 'scheduled' },
                 { id: 3, type: 'event', message: 'Event starts tomorrow - check-in details', sendDate: '2026-03-30', status: 'pending' }
             ],
-            image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=400&fit=crop',
+            image: 'https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457129/0304_233_zvkodm.jpg',
             description: 'Join thousands of believers for this transformative conference featuring renowned speakers, worship sessions, and spiritual renewal.',
             organizer: 'ICCRTZ National Team',
             tags: ['easter', 'conference', 'major-event', 'international'],
@@ -133,7 +133,7 @@
             reminders: [
                 { id: 4, type: 'registration', message: 'Summit registration closing soon', sendDate: '2026-04-10', status: 'pending' }
             ],
-            image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=400&fit=crop',
+            image: 'https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457162/0104_33_gh3ckn.jpg',
             description: 'A three-day intensive training program for young leaders focusing on spiritual growth, leadership skills, and community service.',
             organizer: 'ICCRTZ Youth Ministry',
             tags: ['youth', 'leadership', 'training', 'summit'],
