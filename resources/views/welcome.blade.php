@@ -80,19 +80,19 @@
                             <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
                                 <div class="max-w-2xl translate-y-10 opacity-0 transition-all duration-1000 slide-content">
                                     <div class="flex items-center gap-3 mb-4">
-                                        <span class="inline-block px-4 py-1.5 bg-green-600 text-white rounded-full text-xs font-bold tracking-widest uppercase animate-pulse">LIVE NOW</span>
+                                        <span class="inline-block px-4 py-1.5 bg-green-600 text-white rounded-full text-xs font-bold tracking-widest uppercase">THANK YOU</span>
                                         <span class="inline-block px-4 py-1.5 bg-red-900/20 text-white rounded-full text-xs font-bold tracking-widest uppercase border border-red-900/30">Holy Eucharist</span>
                                     </div>
-                                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 leading-[1.05]">Easter <span class="text-red-300">Conference 2026</span></h1>
-                                    <p class="text-lg md:text-xl text-slate-200 mb-6 leading-relaxed">Experience the power of Holy Eucharist at our International Easter Conference! Join thousands in divine worship.</p>
+                                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 leading-[1.05]">Congratulations <span class="text-red-300">Easter Conference 2026</span></h1>
+                                    <p class="text-lg md:text-xl text-slate-200 mb-6 leading-relaxed">Thank you for attending our International Easter Conference! Your presence made this spiritual journey truly special and blessed.</p>
                                     <div class="bg-green-400/20 border border-green-400/30 rounded-xl p-4 mb-6 backdrop-blur-sm">
                                         <div class="flex items-center gap-3 text-green-300">
-                                            <i class="ph ph-broadcast text-xl"></i>
-                                            <span class="font-bold">🔴 CONFERENCE IS LIVE! Join us in Mbeya or watch online</span>
+                                            <i class="ph ph-check-circle text-xl"></i>
+                                            <span class="font-bold">✅ CONFERENCE SUCCESSFULLY COMPLETED! God's presence was manifest throughout.</span>
                                         </div>
                                     </div>
                                     <div class="flex items-center gap-3 text-yellow-300">
-                                        <i class="ph ph-warning-circle text-2xl"></i>
+                                        <i class="ph ph-calendar-check text-2xl"></i>
                                         <div>
                                             <div class="font-bold text-lg">March 30 - April 5, 2026 • Mbeya</div>
                                         </div>
@@ -357,8 +357,8 @@
             <!-- Easter Conference -->
             <div class="group bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
                 <div class="relative">
-                    <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="Easter Conference" class="w-full h-32 object-cover">
-                    <div class="absolute top-2 left-2 bg-green-600 text-white px-2 py-1 rounded-full text-xs font-semibold">LIVE</div>
+                    <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457152/0104_64_bu7rig.jpg" alt="Easter Conference" class="w-full h-32 object-cover">
+                    <div class="absolute top-2 left-2 bg-green-600 text-white px-2 py-1 rounded-full text-xs font-semibold">LIVEDAY 1</div>
                     <div class="absolute top-2 right-2 bg-red-600 text-white px-2 py-1 rounded-full text-xs font-bold animate-pulse">DAY 1</div>
                 </div>
                 <div class="p-4">
@@ -368,7 +368,7 @@
                         <span><i class="ph ph-map-pin mr-1"></i> Mbeya</span>
                         <span><i class="ph ph-users mr-1"></i> 2,000+</span>
                     </div>
-                    <a href="{{ url('register/easter-conference-2026') }}" class="w-full bg-green-600 text-white px-3 py-2 rounded-lg text-sm font-bold hover:bg-green-700 transition-all text-center">
+                    <a href="{{ url('events') }}" class="w-full bg-green-600 text-white px-3 py-2 rounded-lg text-sm font-bold hover:bg-green-700 transition-all text-center">
                         Join Live Stream
                     </a>
                 </div>
@@ -377,7 +377,7 @@
             <!-- Night of Praise -->
             <div class="group bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
                 <div class="relative">
-                    <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613879/volunteer-helping-with-donation-box_dwuyr7.jpg" alt="Night of Praise" class="w-full h-32 object-cover">
+                    <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457151/0204_21_mugaed.jpg" alt="Night of Praise" class="w-full h-32 object-cover">
                     <div class="absolute top-2 left-2 bg-slate-900 text-white px-2 py-1 rounded-full text-xs font-semibold">Dec 15-16</div>
                 </div>
                 <div class="p-4">
@@ -396,7 +396,7 @@
             <!-- NexGen Camp -->
             <div class="group bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-all">
                 <div class="relative">
-                    <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613870/african-kid-marketplace-_7_xiwx7g.jpg" alt="NexGen Camp" class="w-full h-32 object-cover">
+                    <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457162/0104_33_gh3ckn.jpg" alt="NexGen Camp" class="w-full h-32 object-cover">
                     <div class="absolute top-2 left-2 bg-slate-800 text-white px-2 py-1 rounded-full text-xs font-semibold">Aug 8-14</div>
                 </div>
                 <div class="p-4">
@@ -528,7 +528,7 @@
                     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
                         <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-100">
                             <div class="relative">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613875/happy-students-receiving-donations_hkmhgf.jpg" alt="National Conference" class="w-full h-56 object-cover">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457145/0204_44_adnyre.jpg" alt="National Conference" class="w-full h-56 object-cover">
                                 <div class="absolute top-4 left-4 bg-slate-900 text-white px-3 py-1 rounded-full text-sm font-semibold">Dec 15-17</div>
                             </div>
                             <div class="p-8">
@@ -553,7 +553,7 @@
 
                         <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-100">
                             <div class="relative">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613879/volunteer-helping-with-donation-box_dwuyr7.jpg" alt="Leadership Retreat" class="w-full h-56 object-cover">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457124/0304_sauiub.jpg" alt="Leadership Retreat" class="w-full h-56 object-cover">
                                 <div class="absolute top-4 left-4 bg-slate-800 text-white px-3 py-1 rounded-full text-sm font-semibold">Jan 5-7</div>
                             </div>
                             <div class="p-8">
@@ -578,7 +578,7 @@
 
                         <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-100">
                             <div class="relative">
-                                <img src="https://res.cloudinary.com/dzv1tksr2/image/upload/v1772613870/african-kid-marketplace-_7_xiwx7g.jpg" alt="Spiritual Formation" class="w-full h-56 object-cover">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457159/0104_57_jbgeri.jpg" alt="Spiritual Formation" class="w-full h-56 object-cover">
                                 <div class="absolute top-4 left-4 bg-slate-900 text-white px-3 py-1 rounded-full text-sm font-semibold">Ongoing</div>
                             </div>
                             <div class="p-8">
