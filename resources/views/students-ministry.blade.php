@@ -148,103 +148,131 @@
 
                     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                         <div class="group bg-slate-50 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-slate-100">
-                            <div class="relative h-32 mb-6">
-                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457129/0304_233_zvkodm.jpg" alt="Faith Formation" class="w-full h-full object-cover">
+                            <div class="relative h-48 mb-6">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457129/0304_233_zvkodm.jpg" alt="Faith Formation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-slate-900 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                        <i class="ph ph-cross text-white text-xl"></i>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="p-6">
+                            <div class="p-8">
                                 <h3 class="text-2xl font-bold text-slate-900 mb-4">Faith Formation</h3>
-                            <p class="text-slate-600 leading-relaxed mb-6">
-                                Deepen your Catholic faith through prayer groups, Bible studies, sacraments, and charismatic worship experiences.
-                            </p>
-                            <ul class="space-y-3 text-slate-600">
-                                <li class="flex items-start gap-2">
-                                    <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
-                                    <span>Daily prayer meetings</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
-                                    <span>Bible study groups</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
-                                    <span>Sacramental preparation</span>
-                                </li>
-                            </ul>
+                                <p class="text-slate-600 leading-relaxed mb-6">
+                                    Deepen your Catholic faith through prayer groups, Bible studies, sacraments, and charismatic worship experiences.
+                                </p>
+                                <ul class="space-y-3 text-slate-600">
+                                    <li class="flex items-start gap-2">
+                                        <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
+                                        <span>Daily prayer meetings</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
+                                        <span>Bible study groups</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
+                                        <span>Sacramental preparation</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div class="group bg-slate-50 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-slate-100">
-                            <div class="relative h-32 mb-6">
-                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457145/0204_44_adnyre.jpg" alt="Leadership Training" class="w-full h-full object-cover">
+                            <div class="relative h-48 mb-6">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457145/0204_44_adnyre.jpg" alt="Leadership Training" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-slate-800 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                        <i class="ph ph-users-three text-white text-xl"></i>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="p-6">
+                            <div class="p-8">
                                 <h3 class="text-2xl font-bold text-slate-900 mb-4">Leadership Training</h3>
-                            <p class="text-slate-600 leading-relaxed mb-6">
-                                Develop essential leadership skills through workshops, seminars, and hands-on ministry experience.
-                            </p>
-                            <ul class="space-y-3 text-slate-600">
-                                <li class="flex items-start gap-2">
-                                    <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
-                                    <span>Leadership workshops</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
-                                    <span>Mentorship programs</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
-                                    <span>Practical ministry experience</span>
-                                </li>
-                            </ul>
+                                <p class="text-slate-600 leading-relaxed mb-6">
+                                    Develop essential leadership skills through workshops, seminars, and hands-on ministry experience.
+                                </p>
+                                <ul class="space-y-3 text-slate-600">
+                                    <li class="flex items-start gap-2">
+                                        <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
+                                        <span>Leadership workshops</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
+                                        <span>Mentorship programs</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
+                                        <span>Practical ministry experience</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div class="group bg-slate-50 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-slate-100">
-                            <div class="relative h-32 mb-6">
-                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457162/0104_33_gh3ckn.jpg" alt="Community Service" class="w-full h-full object-cover">
+                            <div class="relative h-48 mb-6">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457162/0104_33_gh3ckn.jpg" alt="Community Service" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-slate-700 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                        <i class="ph ph-heart text-white text-xl"></i>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="p-6">
+                            <div class="p-8">
                                 <h3 class="text-2xl font-bold text-slate-900 mb-4">Community Service</h3>
-                            <p class="text-slate-600 leading-relaxed mb-6">
-                                Put your faith into action through outreach programs, charity work, and service to local communities.
-                            </p>
-                            <ul class="space-y-3 text-slate-600">
-                                <li class="flex items-start gap-2">
-                                    <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
-                                    <span>Community outreach</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
-                                    <span>Charity projects</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
-                                    <span>Mission trips</span>
-                                </li>
-                            </ul>
+                                <p class="text-slate-600 leading-relaxed mb-6">
+                                    Put your faith into action through outreach programs, charity work, and service to local communities.
+                                </p>
+                                <ul class="space-y-3 text-slate-600">
+                                    <li class="flex items-start gap-2">
+                                        <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
+                                        <span>Community outreach</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
+                                        <span>Charity projects</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
+                                        <span>Mission trips</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div class="group bg-slate-50 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-slate-100">
-                            <div class="relative h-32 mb-6">
-                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457159/0104_57_jbgeri.jpg" alt="Academic Support" class="w-full h-full object-cover">
+                            <div class="relative h-48 mb-6">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457159/0104_57_jbgeri.jpg" alt="Academic Support" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-slate-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                        <i class="ph ph-book text-white text-xl"></i>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="p-6">
+                            <div class="p-8">
                                 <h3 class="text-2xl font-bold text-slate-900 mb-4">Academic Support</h3>
-                            <p class="text-slate-600 leading-relaxed mb-6">
-                                Excel in your studies with peer tutoring, study groups, and academic mentorship from senior students.
-                            </p>
-                            <ul class="space-y-3 text-slate-600">
-                                <li class="flex items-start gap-2">
-                                    <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
-                                    <span>Study groups</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
-                                    <span>Peer tutoring</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
-                                    <span>Academic mentorship</span>
-                                </li>
-                            </ul>
+                                <p class="text-slate-600 leading-relaxed mb-6">
+                                    Excel in your studies with peer tutoring, study groups, and academic mentorship from senior students.
+                                </p>
+                                <ul class="space-y-3 text-slate-600">
+                                    <li class="flex items-start gap-2">
+                                        <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
+                                        <span>Study groups</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
+                                        <span>Peer tutoring</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="ph ph-check-circle text-slate-900 mt-0.5"></i>
+                                        <span>Academic mentorship</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div class="group bg-slate-50 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 border border-slate-100">

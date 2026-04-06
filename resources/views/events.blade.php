@@ -507,12 +507,14 @@
 
                     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                         <!-- Leadership Summit -->
-                        <div class="text-center bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-100">
-                            <div class="relative h-32 mb-4">
-                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457124/0304_sauiub.jpg" alt="Leadership Summit" class="w-full h-full object-cover">
+                        <div class="text-center">
+                            <div class="relative mb-4">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457129/0304_233_zvkodm.jpg" alt="Leadership Summit" class="w-full h-32 object-cover rounded-2xl">
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/80 to-blue-600 rounded-2xl flex items-center justify-center">
+                                    <i class="ph ph-crown text-white text-3xl"></i>
+                                </div>
                             </div>
-                            <div class="p-4">
-                                <h3 class="text-xl font-bold text-slate-900 mb-3">Leadership Summit</h3>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">Leadership Summit</h3>
                             <p class="text-slate-600 mb-4">Quarterly leadership development program for student leaders and young professionals.</p>
                             <div class="text-sm text-slate-500">
                                 <div class="mb-2"><i class="ph ph-calendar mr-1"></i> Quarterly</div>
@@ -521,12 +523,14 @@
                         </div>
 
                         <!-- Bible Study -->
-                        <div class="text-center bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-100">
-                            <div class="relative h-32 mb-4">
-                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457151/0204_21_mugaed.jpg" alt="Bible Study" class="w-full h-full object-cover">
+                        <div class="text-center">
+                            <div class="relative mb-4">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457145/0204_44_adnyre.jpg" alt="Bible Study" class="w-full h-32 object-cover rounded-2xl">
+                                <div class="absolute inset-0 bg-gradient-to-br from-green-500/80 to-green-600 rounded-2xl flex items-center justify-center">
+                                    <i class="ph ph-book-open text-white text-3xl"></i>
+                                </div>
                             </div>
-                            <div class="p-4">
-                                <h3 class="text-xl font-bold text-slate-900 mb-3">Bible Study</h3>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">Bible Study</h3>
                             <p class="text-slate-600 mb-4">Weekly bible study sessions focusing on spiritual formation and biblical understanding.</p>
                             <div class="text-sm text-slate-500">
                                 <div class="mb-2"><i class="ph ph-calendar mr-1"></i> Weekly</div>
@@ -535,12 +539,14 @@
                         </div>
 
                         <!-- Prayer Meetings -->
-                        <div class="text-center bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-100">
-                            <div class="relative h-32 mb-4">
-                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457152/0104_64_bu7rig.jpg" alt="Prayer Meetings" class="w-full h-full object-cover">
+                        <div class="text-center">
+                            <div class="relative mb-4">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457124/0304_sauiub.jpg" alt="Prayer Meetings" class="w-full h-32 object-cover rounded-2xl">
+                                <div class="absolute inset-0 bg-gradient-to-br from-purple-500/80 to-purple-600 rounded-2xl flex items-center justify-center">
+                                    <i class="ph ph-hands-praying text-white text-3xl"></i>
+                                </div>
                             </div>
-                            <div class="p-4">
-                                <h3 class="text-xl font-bold text-slate-900 mb-3">Prayer Meetings</h3>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">Prayer Meetings</h3>
                             <p class="text-slate-600 mb-4">Regular prayer gatherings for intercession, worship, and spiritual warfare.</p>
                             <div class="text-sm text-slate-500">
                                 <div class="mb-2"><i class="ph ph-calendar mr-1"></i> Bi-weekly</div>
@@ -549,12 +555,14 @@
                         </div>
 
                         <!-- Community Service -->
-                        <div class="text-center bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-100">
-                            <div class="relative h-32 mb-4">
-                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457145/0204_44_adnyre.jpg" alt="Community Service" class="w-full h-full object-cover">
+                        <div class="text-center">
+                            <div class="relative mb-4">
+                                <img src="https://res.cloudinary.com/dpyppzvzj/image/upload/v1775457151/0204_21_mugaed.jpg" alt="Community Service" class="w-full h-32 object-cover rounded-2xl">
+                                <div class="absolute inset-0 bg-gradient-to-br from-orange-500/80 to-orange-600 rounded-2xl flex items-center justify-center">
+                                    <i class="ph ph-heart text-white text-3xl"></i>
+                                </div>
                             </div>
-                            <div class="p-4">
-                                <h3 class="text-xl font-bold text-slate-900 mb-3">Community Service</h3>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">Community Service</h3>
                             <p class="text-slate-600 mb-4">Monthly outreach programs serving local communities through various initiatives.</p>
                             <div class="text-sm text-slate-500">
                                 <div class="mb-2"><i class="ph ph-calendar mr-1"></i> Monthly</div>
